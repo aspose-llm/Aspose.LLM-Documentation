@@ -8,7 +8,7 @@ feedback: LLMNET
 aliases:
 - /net/developer-guide/
 title: Developer's reference
-description: Aspose.LLM for .NET developer reference: presets, chat sessions, persistence, license.
+description: "Aspose.LLM for .NET developer reference: presets, chat sessions, persistence, license."
 keywords:
 - reference
 - preset
