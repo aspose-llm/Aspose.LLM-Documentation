@@ -6,7 +6,7 @@ type: docs
 url: /net/hello-world/
 feedback: LLMNET
 title: Hello, world!
-description: Minimal example with Aspose.LLM for .NET: create API, send a message, get a response.
+description: "Minimal example with Aspose.LLM for .NET: create API, send a message, get a response."
 keywords:
 - hello world
 - example
