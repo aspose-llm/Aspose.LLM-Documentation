@@ -20,9 +20,9 @@ keywords:
 
 {{% alert color="primary" %}}
 
-[![Aspose.LLM for .NET](net/aspose-llm-net.png)](/net/)
+[![Aspose.LLM for .NET](net/aspose-llm-net.png)](./net/)
 
-[**Aspose.LLM for .NET**](/net/) lets you add large language model (LLM) functionality to your .NET applications. Use built-in presets for popular models (Qwen, Gemma, Llama, Phi, and others), run chat sessions, save and load conversation state, and optionally send multimodal input (e.g. images) with your messages.
+[**Aspose.LLM for .NET**](./net/) lets you add large language model (LLM) functionality to your .NET applications. Use built-in presets for popular models (Qwen, Gemma, Llama, Phi, and others), run chat sessions, save and load conversation state, and optionally send multimodal input (e.g. images) with your messages.
 
 The library is implemented in C# and can be used with supported .NET runtimes. Create an API instance from a preset, start a chat session, and send messages in a few lines of code.
 
