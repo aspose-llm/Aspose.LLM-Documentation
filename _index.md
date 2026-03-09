@@ -30,8 +30,8 @@ The library is implemented in C# and can be used with supported .NET runtimes. C
 
 ### Resources
 
-- [Aspose.LLM for .NET documentation](/net/)
-- [API reference](https://reference.aspose.com/net/)
+- [Aspose.LLM for .NET documentation](./net/)
+- [API reference](https://reference.aspose.com/llm/net/)
 - [NuGet package](https://www.nuget.org/packages/Aspose.LLM/)
 - [Free Support Forum](https://forum.aspose.com/)
 - [Paid Support Helpdesk](https://helpdesk.aspose.com/)
