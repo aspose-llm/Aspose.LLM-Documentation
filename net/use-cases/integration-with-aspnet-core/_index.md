@@ -7,7 +7,7 @@ url: /net/use-cases/integration-with-aspnet-core/
 feedback: LLMNET
 version: 26.5.0
 title: Integration with ASP.NET Core
-description: Host Aspose.LLM for .NET behind an ASP.NET Core Minimal API — DI registration, request routing, per-user sessions, and graceful shutdown.
+description: Host Aspose.LLM for .NET behind ASP.NET Core — DI registration, routing, per-user sessions, and graceful shutdown.
 keywords:
 - ASP.NET Core
 - Minimal API

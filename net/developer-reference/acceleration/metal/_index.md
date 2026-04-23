@@ -19,7 +19,7 @@ keywords:
 - macOS
 ---
 
-Metal is Aspose.LLM for .NET's preferred backend on Apple Silicon Macs (M1, M2, M3, M4). It leverages the unified memory architecture — the CPU and GPU share the same physical RAM — so there is no separate VRAM budget to worry about.
+Metal is Aspose.LLM for .NET's preferred backend on Apple Silicon Macs (M1, M2, M3, M4). It uses the unified memory architecture — the CPU and GPU share the same physical RAM — so there is no separate VRAM budget to worry about.
 
 ## Requirements
 

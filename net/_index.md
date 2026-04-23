@@ -38,6 +38,7 @@ Learn about Aspose.LLM for .NET, its architecture, capabilities, and supported m
 - [Architecture](/net/product-overview/architecture/)
 - [Features](/net/product-overview/features/)
 - [Supported presets](/net/product-overview/supported-presets/)
+- [Supported acceleration](/net/product-overview/supported-acceleration/)
 
 ## Getting started
 

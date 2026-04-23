@@ -7,7 +7,7 @@ url: /net/use-cases/batch-processing/
 feedback: LLMNET
 version: 26.5.0
 title: Batch processing
-description: Process many prompts with one loaded model in Aspose.LLM for .NET — amortize the load cost, choose session-per-prompt vs shared-session patterns, and manage memory across the run.
+description: Run many prompts through one loaded Aspose.LLM model — amortize the load cost, pick session-per-prompt vs shared-session patterns.
 keywords:
 - batch processing
 - bulk

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/
 feedback: LLMNET
 version: 26.5.0
 title: Context parameters
-description: Configure the runtime context in Aspose.LLM for .NET — context size, batch sizes, threading, RoPE and YaRN scaling, flash attention, KV cache quantization, pooling, and embeddings.
+description: Reference for Aspose.LLM for .NET context parameters — context size, batch, threading, rope/YaRN scaling, flash attention, KV cache types.
 keywords:
 - ContextParameters
 - ContextSize
