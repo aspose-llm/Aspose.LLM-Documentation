@@ -43,7 +43,7 @@ Start with the smallest preset that meets your quality bar:
 | `Qwen25VL3BPreset` | 3B VL | ~4-6 GB + projector |
 | `Qwen3VL2BPreset` | 2B VL | ~3-5 GB + projector |
 
-Larger presets (7B, 8B, 20B) push past 8 GB easily — avoid them when memory is scarce.
+Larger presets (7B, 8B, 20B) push past 8 GB — avoid them when memory is scarce.
 
 ## Shrink context size
 
@@ -172,5 +172,5 @@ Start by cutting context and enabling KV quantization. Only if memory is still t
 ## What's next
 
 - [Context parameters](/net/developer-reference/parameters/context/) — every knob that affects memory.
-- [CPU-only deployment](/net/use-cases/cpu-only-deployment/) — when GPU memory is simply unavailable.
+- [CPU-only deployment](/net/use-cases/cpu-only-deployment/) — when GPU memory is unavailable.
 - [Long context tuning](/net/use-cases/long-context-tuning/) — the opposite direction.

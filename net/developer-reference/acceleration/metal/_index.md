@@ -45,7 +45,7 @@ On Apple Silicon with `PreferredAcceleration = null`, auto-detection picks Metal
 
 ## Unified memory
 
-Because RAM and GPU memory are the same physical chip, `GpuLayers = 999` does not create a separate VRAM claim — it just tells the Metal backend to run the layers on the GPU compute units. The total memory footprint is the same whether you run on CPU or Metal, but Metal is significantly faster for matrix math.
+Because RAM and GPU memory are the same physical chip, `GpuLayers = 999` does not create a separate VRAM claim — it tells the Metal backend to run the layers on the GPU compute units. The total memory footprint is the same whether you run on CPU or Metal, but Metal is significantly faster for matrix math.
 
 You do not need to worry about "VRAM fits" calculations on Apple Silicon. If the model plus KV cache fit in system RAM, they fit for Metal too.
 

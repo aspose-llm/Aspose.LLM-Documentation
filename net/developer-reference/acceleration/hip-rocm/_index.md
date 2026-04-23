@@ -76,7 +76,7 @@ Apply this before starting your process. The override tricks ROCm into treating 
 ## Performance tips
 
 - **Flash Attention** — supported on recent ROCm releases; enable via `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled`.
-- **Partial offload** — for consumer Radeon cards with limited VRAM (16-24 GB), tune `GpuLayers` just below full to leave room for KV cache.
+- **Partial offload** — for consumer Radeon cards with limited VRAM (16-24 GB), tune `GpuLayers` to slightly below full to leave room for KV cache.
 - **KV quantization** — aggressive `TypeV = GgmlType.Q8_0` or even `Q4_0` claws back meaningful VRAM on long contexts.
 
 ## Windows AMD users: use Vulkan

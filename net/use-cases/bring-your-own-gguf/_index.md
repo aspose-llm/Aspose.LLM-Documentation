@@ -17,7 +17,7 @@ keywords:
 - fine-tune
 ---
 
-When a built-in preset does not cover your model — your organization's fine-tune, a just-released open-weight model, a community variant — extend `PresetCoreBase` and point it at the GGUF file. This use case walks through the full workflow from download to first response.
+When a built-in preset does not cover your model — your organization's fine-tune, a newly-released open-weight model, a community variant — extend `PresetCoreBase` and point it at the GGUF file. This use case walks through the full workflow from download to first response.
 
 ## When to use this pattern
 

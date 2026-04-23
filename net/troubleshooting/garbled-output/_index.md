@@ -17,7 +17,7 @@ keywords:
 - hallucination
 ---
 
-The model loaded successfully, but its replies are nonsensical, repetitive, or obviously broken. This is almost always a configuration issue rather than a model issue.
+The model loaded successfully, but its replies are nonsensical, repetitive, or broken in a way that points to misconfiguration rather than a model problem.
 
 ## Symptom
 
