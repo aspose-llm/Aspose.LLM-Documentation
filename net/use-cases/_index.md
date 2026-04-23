@@ -1,24 +1,39 @@
 ---
 weight: 60
-date: "2026-02-19"
+date: "2026-04-23"
 author: "Aleksandr Sudakov"
 type: docs
 url: /net/use-cases/
 feedback: LLMNET
+version: 26.5.0
 title: Use cases
-description: Learn how to build applications with Aspose.LLM for .NET.
+description: End-to-end scenarios with runnable code for Aspose.LLM for .NET — simple chat, multi-turn conversations, session persistence, and custom presets.
 keywords:
 - use case
+- example
 - chat
 - session
 - preset
+- scenario
 ---
 
-**Aspose.LLM for .NET** lets you add LLM-based chat to your applications. This section shows common scenarios:
+This section shows how to build real applications with Aspose.LLM for .NET. Each use case is a complete, runnable scenario — paste it into a .NET 8 or .NET 10 project, apply a license, and run.
 
-- [Simple chat](/net/use-cases/simple-chat/) — One or a few messages without explicit session management.
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — Explicit session and multiple exchanges in one conversation.
-- [Save and restore session](/net/use-cases/save-and-restore-session/) — Persist conversation state and resume later.
-- [Custom preset](/net/use-cases/custom-preset/) — Use or extend a preset with your own parameters.
+For compact snippets that illustrate a single call, see [Quick wins](/net/quick-wins/). For the first runnable example, see [Hello, world!](/net/hello-world/).
 
-We assume basic familiarity with C# and .NET. If you are new, start with [Hello, world!](/net/hello-world/) and [Developer's reference](/net/developer-reference/).
+We assume familiarity with C# and `async`/`await`. If you are new to the SDK, read [Getting started](/net/getting-started/) first.
+
+## Scenarios
+
+- [Simple chat](/net/use-cases/simple-chat/) — one or a few messages without managing sessions yourself.
+- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — an explicit session with several exchanges in one conversation, including multiple concurrent sessions.
+- [Save and restore session](/net/use-cases/save-and-restore-session/) — persist conversation state to disk and resume it later.
+- [Custom preset](/net/use-cases/custom-preset/) — three patterns for customizing a built-in preset or building one from scratch.
+
+More scenarios — vision question answering, batch processing, offline deployment, CPU-only and GPU-specific tuning, bring-your-own-GGUF, long-context handling, and ASP.NET Core integration — are planned for future updates.
+
+## What's next
+
+- [Quick wins](/net/quick-wins/) — compact recipes for single tasks.
+- [Developer's reference](/net/developer-reference/) — conceptual reference for presets, sessions, and the API.
+- [Supported presets](/net/product-overview/supported-presets/) — pick a preset for your scenario.
