@@ -24,18 +24,7 @@ Read this page before tuning performance, planning an offline deployment, or int
 
 ## Layered architecture
 
-```mermaid
-flowchart TD
-    A[Your .NET app] --> B[AsposeLLMApi facade]
-    B --> C[Engine]
-    C --> D[ModelManager]
-    C --> E[BinaryManager]
-    C --> F[ChatSession]
-    D --> G[Aspose.LLM.Interop]
-    E --> H[GitHub release binaries]
-    F --> G
-    G --> I[llama.cpp native: libllama, libmtmd, libggml-*]
-```
+![Aspose.LLM for .NET layered architecture](architecture-layers.svg)
 
 | Layer | Role |
 |---|---|
@@ -101,19 +90,7 @@ Both GPU and CPU memory are claimed in proportion to `BaseModelInferenceParamete
 
 ## Lifecycle
 
-```mermaid
-flowchart LR
-    A[Create preset] --> B[AsposeLLMApi.Create]
-    B --> C[Stage 1: guard]
-    C --> D[Stage 2: binaries]
-    D --> E[Stage 3: model load]
-    E --> F[Ready]
-    F --> G[StartNewChatAsync / SendMessageAsync]
-    G --> H[Sessions exchange messages]
-    H --> I[Dispose]
-    I --> J[Native memory released]
-    J --> K[Another AsposeLLMApi can be created]
-```
+![Aspose.LLM for .NET lifecycle from preset creation through disposal and reuse](architecture-lifecycle.svg)
 
 The facade implements `IDisposable`. Calling `Dispose`:
 
