@@ -23,14 +23,39 @@ For compact snippets that illustrate a single call, see [Quick wins](/net/quick-
 
 We assume familiarity with C# and `async`/`await`. If you are new to the SDK, read [Getting started](/net/getting-started/) first.
 
-## Scenarios
+## Core scenarios
 
 - [Simple chat](/net/use-cases/simple-chat/) — one or a few messages without managing sessions yourself.
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — an explicit session with several exchanges in one conversation, including multiple concurrent sessions.
-- [Save and restore session](/net/use-cases/save-and-restore-session/) — persist conversation state to disk and resume it later.
-- [Custom preset](/net/use-cases/custom-preset/) — three patterns for customizing a built-in preset or building one from scratch.
+- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — an explicit session with several exchanges in one conversation.
+- [Save and restore session](/net/use-cases/save-and-restore-session/) — persist conversation state to disk and resume later.
+- [Custom preset](/net/use-cases/custom-preset/) — patterns for customizing a built-in preset or building one from scratch.
 
-More scenarios — vision question answering, batch processing, offline deployment, CPU-only and GPU-specific tuning, bring-your-own-GGUF, long-context handling, and ASP.NET Core integration — are planned for future updates.
+## Vision
+
+- [Vision question answering](/net/use-cases/vision-qa/) — ask questions about images, compare images, transcribe documents.
+
+## Throughput and scaling
+
+- [Batch processing](/net/use-cases/batch-processing/) — run many prompts through one loaded model.
+- [Streaming-like responses](/net/use-cases/streaming-like-responses/) — the no-streaming limitation and workarounds.
+- [Multiple concurrent sessions](/net/use-cases/multiple-concurrent-sessions/) — serve many users or workflows from a single instance.
+
+## Deployment
+
+- [Offline deployment](/net/use-cases/offline-deployment/) — air-gapped, firewalled, or no-internet targets.
+- [CPU-only deployment](/net/use-cases/cpu-only-deployment/) — no GPU, tune threads, set realistic expectations.
+- [GPU deployment with CUDA](/net/use-cases/gpu-deployment-cuda/) — NVIDIA GPUs, single and multi-GPU.
+- [Integration with ASP.NET Core](/net/use-cases/integration-with-aspnet-core/) — host behind HTTP via Minimal API.
+
+## Tuning
+
+- [Long context tuning](/net/use-cases/long-context-tuning/) — 128K-262K contexts with flash attention and KV quantization.
+- [Low memory tuning](/net/use-cases/low-memory-tuning/) — fit into tight memory budgets.
+
+## Advanced
+
+- [Bring your own GGUF](/net/use-cases/bring-your-own-gguf/) — custom models from Hugging Face or disk.
+- [System prompt recipes](/net/use-cases/system-prompt-recipes/) — effective system-prompt patterns.
 
 ## What's next
 

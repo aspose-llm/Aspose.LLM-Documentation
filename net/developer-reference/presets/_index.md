@@ -25,15 +25,15 @@ All presets derive from `PresetCoreBase` in namespace `Aspose.LLM.Abstractions.P
 
 | Property | Type | Purpose |
 |---|---|---|
-| `BaseModelSourceParameters` | `ModelSourceParameters` | Where to load the main model (local path, Aspose model ID, or Hugging Face repo and file name). |
-| `MmprojSourceParameters` | `ModelSourceParameters` | Optional vision projector (mmproj). Set by vision presets; empty on text presets. |
-| `BinaryManagerParameters` | `BinaryManagerParameters` | Native `llama.cpp` release tag, binary cache path, and preferred acceleration backend. |
-| `EngineParameters` | `EngineParameters` | Engine-wide settings: model cache path, debug logging, log directory, default threads. |
-| `ChatParameters` | `ChatParameters` | System prompt, optional history, max tokens, cache cleanup strategy. |
-| `ContextParameters` | `ContextParameters` | `llama.cpp` context knobs: context size, batch sizes, rope scaling, flash attention, KV cache dtype. |
-| `SamplerParameters` | `SamplerParameters` | Sampler knobs: temperature, top-p, top-k, min-p, penalties, DRY, XTC, mirostat, seed, logit bias. |
-| `BaseModelInferenceParameters` | `ModelInferenceParameters` | Model-load knobs: GPU layers, main GPU, split mode, tensor split, memory mapping, KV overrides. |
-| `MtmdContextParameters` | `MultimodalContextParameters` | `mtmd` (vision) context: GPU use, timings, thread count, verbosity, media marker. Set by vision presets. |
+| `BaseModelSourceParameters` | [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/) | Where to load the main model (local path, Aspose model ID, or Hugging Face repo and file name). |
+| `MmprojSourceParameters` | [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/) | Optional vision projector (mmproj). Set by vision presets; empty on text presets. |
+| `BinaryManagerParameters` | [`BinaryManagerParameters`](/net/developer-reference/parameters/binary-manager/) | Native `llama.cpp` release tag, binary cache path, and preferred acceleration backend. |
+| `EngineParameters` | [`EngineParameters`](/net/developer-reference/parameters/engine/) | Engine-wide settings: model cache path, debug logging, log directory, default threads. |
+| `ChatParameters` | [`ChatParameters`](/net/developer-reference/parameters/chat/) | System prompt, optional history, max tokens, cache cleanup strategy. |
+| `ContextParameters` | [`ContextParameters`](/net/developer-reference/parameters/context/) | `llama.cpp` context knobs: context size, batch sizes, rope scaling, flash attention, KV cache dtype. |
+| `SamplerParameters` | [`SamplerParameters`](/net/developer-reference/parameters/sampler/) | Sampler knobs: temperature, top-p, top-k, min-p, penalties, DRY, XTC, mirostat, seed, logit bias. |
+| `BaseModelInferenceParameters` | [`ModelInferenceParameters`](/net/developer-reference/parameters/model-inference/) | Model-load knobs: GPU layers, main GPU, split mode, tensor split, memory mapping, KV overrides. |
+| `MtmdContextParameters` | [`MultimodalContextParameters`](/net/developer-reference/parameters/multimodal-context/) | `mtmd` (vision) context: GPU use, timings, thread count, verbosity, media marker. Set by vision presets. |
 
 Every bag is lazy-initialized — accessing any property is safe even if you did not set it explicitly.
 

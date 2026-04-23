@@ -40,9 +40,17 @@ For end-to-end scenarios, see [Use cases](/net/use-cases/). For compact task-ori
 
 ## Sections
 
+- [AsposeLLMApi facade](/net/developer-reference/asposellmapi/) — the single-instance facade class: every method, lifecycle, and exception semantics.
 - [Presets](/net/developer-reference/presets/) — preset base class, parameter bags, and override patterns.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — starting sessions, sending messages, and cache management.
+- [Parameters](/net/developer-reference/parameters/) — detailed reference for each of the eight parameter bags.
+- [Chat sessions](/net/developer-reference/chat-sessions/) — starting sessions, sending messages, and `ChatMessage` structure.
 - [Session persistence](/net/developer-reference/session-persistence/) — saving and loading sessions to disk.
+- [Cache management](/net/developer-reference/cache-management/) — five `CacheCleanupStrategy` modes and when to apply each.
+- [Multimodal](/net/developer-reference/multimodal/) — vision presets, attaching images, chat templates, and debugging.
+- [Acceleration](/net/developer-reference/acceleration/) — CUDA, HIP, Metal, Vulkan, CPU backends.
+- [Dependency injection](/net/developer-reference/dependency-injection/) — `AddLlamaServices` for ASP.NET Core and Worker Service hosts.
+- [Extensibility](/net/developer-reference/extensibility/) — replace core services via `IModelLoader`, `IModelFileProvider`, `IPromptFormatter`, `IMediaProcessor`.
+- [Logging and diagnostics](/net/developer-reference/logging-and-diagnostics/) — `ILogger` integration, debug logs, tagged output.
 - [License](/net/developer-reference/license/) — the `License` class API.
 - [API reference](/net/developer-reference/api-reference/) — link to the full class-level API reference on reference.aspose.com.
 
