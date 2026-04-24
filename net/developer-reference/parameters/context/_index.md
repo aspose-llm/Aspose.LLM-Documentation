@@ -79,6 +79,24 @@ public partial class ContextParameters
 }
 ```
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions. The rest of this page is an inline overview of the same content; follow the links for the deeper treatment.
+
+**Context size and batching**: [ContextSize](/net/developer-reference/parameters/context/context-size/), [NBatch](/net/developer-reference/parameters/context/n-batch/), [NUbatch](/net/developer-reference/parameters/context/n-ubatch/), [NSeqMax](/net/developer-reference/parameters/context/n-seq-max/).
+
+**Threading**: [NThreads](/net/developer-reference/parameters/context/n-threads/), [NThreadsBatch](/net/developer-reference/parameters/context/n-threads-batch/).
+
+**RoPE and YaRN**: [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/), [RopeFreqBase](/net/developer-reference/parameters/context/rope-freq-base/), [RopeFreqScale](/net/developer-reference/parameters/context/rope-freq-scale/), [YarnExtFactor](/net/developer-reference/parameters/context/yarn-ext-factor/), [YarnAttnFactor](/net/developer-reference/parameters/context/yarn-attn-factor/), [YarnBetaFast](/net/developer-reference/parameters/context/yarn-beta-fast/), [YarnBetaSlow](/net/developer-reference/parameters/context/yarn-beta-slow/), [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/).
+
+**Attention**: [AttentionType](/net/developer-reference/parameters/context/attention-type/), [FlashAttentionMode](/net/developer-reference/parameters/context/flash-attention-mode/), [FlashAttention](/net/developer-reference/parameters/context/flash-attention/) (legacy).
+
+**Pooling and embeddings**: [PoolingType](/net/developer-reference/parameters/context/pooling-type/), [Embeddings](/net/developer-reference/parameters/context/embeddings/).
+
+**KV cache**: [TypeK](/net/developer-reference/parameters/context/type-k/), [TypeV](/net/developer-reference/parameters/context/type-v/), [OffloadKqv](/net/developer-reference/parameters/context/offload-kqv/), [DefragThreshold](/net/developer-reference/parameters/context/defrag-threshold/), [SwaFull](/net/developer-reference/parameters/context/swa-full/), [KvUnified](/net/developer-reference/parameters/context/kv-unified/).
+
+**Other**: [OpOffload](/net/developer-reference/parameters/context/op-offload/), [NoPerf](/net/developer-reference/parameters/context/no-perf/).
+
 ## Context size and batching
 
 ### `ContextSize`

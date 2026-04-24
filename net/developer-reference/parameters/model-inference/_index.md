@@ -43,6 +43,14 @@ public class ModelInferenceParameters
 }
 ```
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions. The rest of this page is an inline overview of the same content; follow the links for the deeper treatment.
+
+**Load knobs**: [GpuLayers](/net/developer-reference/parameters/model-inference/gpu-layers/), [UseMemoryMapping](/net/developer-reference/parameters/model-inference/use-memory-mapping/), [UseMemoryLocking](/net/developer-reference/parameters/model-inference/use-memory-locking/), [MainGpu](/net/developer-reference/parameters/model-inference/main-gpu/), [SplitMode](/net/developer-reference/parameters/model-inference/split-mode/).
+
+**Other knobs**: [VocabOnly](/net/developer-reference/parameters/model-inference/vocab-only/), [CheckTensors](/net/developer-reference/parameters/model-inference/check-tensors/), [UseExtraBuffers](/net/developer-reference/parameters/model-inference/use-extra-buffers/), [TensorSplit](/net/developer-reference/parameters/model-inference/tensor-split/), [KvOverrides](/net/developer-reference/parameters/model-inference/kv-overrides/).
+
 ## Fields
 
 | Field | Type | Default | Purpose |

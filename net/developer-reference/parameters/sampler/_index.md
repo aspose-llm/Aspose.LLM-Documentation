@@ -80,6 +80,28 @@ public class SamplerParameters
 }
 ```
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions. The rest of this page is an inline overview of the same content; follow the links for the deeper treatment.
+
+**Core sampling**: [Temperature](/net/developer-reference/parameters/sampler/temperature/), [TopP](/net/developer-reference/parameters/sampler/top-p/), [TopK](/net/developer-reference/parameters/sampler/top-k/), [MinP](/net/developer-reference/parameters/sampler/min-p/).
+
+**Reproducibility**: [Seed](/net/developer-reference/parameters/sampler/seed/), [MinKeep](/net/developer-reference/parameters/sampler/min-keep/).
+
+**Repetition controls**: [PenaltyContextSize](/net/developer-reference/parameters/sampler/penalty-context-size/), [RepetitionPenalty](/net/developer-reference/parameters/sampler/repetition-penalty/), [PresencePenalty](/net/developer-reference/parameters/sampler/presence-penalty/), [FrequencyPenalty](/net/developer-reference/parameters/sampler/frequency-penalty/).
+
+**Advanced filters**: [TypicalP](/net/developer-reference/parameters/sampler/typical-p/), [TopNSigma](/net/developer-reference/parameters/sampler/top-n-sigma/).
+
+**Dynamic temperature**: [DynatempRange](/net/developer-reference/parameters/sampler/dynatemp-range/), [DynatempExponent](/net/developer-reference/parameters/sampler/dynatemp-exponent/).
+
+**XTC (Exclude Top Choices)**: [XtcProbability](/net/developer-reference/parameters/sampler/xtc-probability/), [XtcThreshold](/net/developer-reference/parameters/sampler/xtc-threshold/).
+
+**DRY (Don't Repeat Yourself)**: [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/), [DryBase](/net/developer-reference/parameters/sampler/dry-base/), [DryAllowedLength](/net/developer-reference/parameters/sampler/dry-allowed-length/), [DryPenaltyLastN](/net/developer-reference/parameters/sampler/dry-penalty-last-n/), [DrySequenceBreakers](/net/developer-reference/parameters/sampler/dry-sequence-breakers/).
+
+**Mirostat**: [Mirostat](/net/developer-reference/parameters/sampler/mirostat/), [MirostatTau](/net/developer-reference/parameters/sampler/mirostat-tau/), [MirostatEta](/net/developer-reference/parameters/sampler/mirostat-eta/).
+
+**Fine-grained controls**: [LogitBias](/net/developer-reference/parameters/sampler/logit-bias/), [EnableInfill](/net/developer-reference/parameters/sampler/enable-infill/).
+
 ## Core sampling
 
 These four fields govern the baseline sampling pipeline. Start with these; rarely do you need the advanced filters.
