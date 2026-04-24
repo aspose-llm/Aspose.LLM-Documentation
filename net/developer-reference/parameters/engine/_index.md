@@ -35,6 +35,15 @@ public class EngineParameters
 
 All four properties have working defaults. Override only when the default does not match your deployment.
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
+
+- [ModelCachePath](/net/developer-reference/parameters/engine/model-cache-path/)
+- [EnableDebugLogging](/net/developer-reference/parameters/engine/enable-debug-logging/)
+- [LogDirectoryPath](/net/developer-reference/parameters/engine/log-directory-path/)
+- [DefaultThreads](/net/developer-reference/parameters/engine/default-threads/)
+
 ## Fields
 
 | Field | Type | Default | Purpose |

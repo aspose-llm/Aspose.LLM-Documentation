@@ -39,6 +39,15 @@ public class ModelSourceParameters
 
 All four properties are nullable. Leave a property `null` to defer to the next priority source.
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
+
+- [ModelFilePath](/net/developer-reference/parameters/model-source/model-file-path/)
+- [AsposeModelId](/net/developer-reference/parameters/model-source/aspose-model-id/)
+- [HuggingFaceRepoId](/net/developer-reference/parameters/model-source/hugging-face-repo-id/)
+- [HuggingFaceFileName](/net/developer-reference/parameters/model-source/hugging-face-file-name/)
+
 ## Resolution order
 
 At `AsposeLLMApi.Create`, the engine walks the sources in priority order and uses the first one that resolves.

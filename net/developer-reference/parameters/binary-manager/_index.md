@@ -36,6 +36,17 @@ public class BinaryManagerParameters
 }
 ```
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
+
+- [Owner](/net/developer-reference/parameters/binary-manager/owner/)
+- [Repo](/net/developer-reference/parameters/binary-manager/repo/)
+- [ReleaseTag](/net/developer-reference/parameters/binary-manager/release-tag/)
+- [BinaryPath](/net/developer-reference/parameters/binary-manager/binary-path/)
+- [SystemSpecification](/net/developer-reference/parameters/binary-manager/system-specification/)
+- [PreferredAcceleration](/net/developer-reference/parameters/binary-manager/preferred-acceleration/)
+
 ## Fields
 
 | Field | Type | Default | Purpose |

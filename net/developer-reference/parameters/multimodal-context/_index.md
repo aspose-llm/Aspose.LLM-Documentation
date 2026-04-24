@@ -39,6 +39,16 @@ public class MultimodalContextParameters
 
 Every field is nullable. A `null` value means "use the native `mtmd` default" — override only when you have a specific reason.
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
+
+- [UseGpu](/net/developer-reference/parameters/multimodal-context/use-gpu/)
+- [PrintTimings](/net/developer-reference/parameters/multimodal-context/print-timings/)
+- [ThreadCount](/net/developer-reference/parameters/multimodal-context/thread-count/)
+- [Verbosity](/net/developer-reference/parameters/multimodal-context/verbosity/)
+- [MediaMarker](/net/developer-reference/parameters/multimodal-context/media-marker/)
+
 ## Fields
 
 | Field | Type | Default | Purpose |

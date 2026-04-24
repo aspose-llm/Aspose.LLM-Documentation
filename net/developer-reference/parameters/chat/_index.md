@@ -43,6 +43,15 @@ public enum CacheCleanupStrategy
 }
 ```
 
+## Detailed field reference
+
+Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
+
+- [SystemPrompt](/net/developer-reference/parameters/chat/system-prompt/)
+- [History](/net/developer-reference/parameters/chat/history/)
+- [MaxTokens](/net/developer-reference/parameters/chat/max-tokens/)
+- [CacheCleanupStrategy](/net/developer-reference/parameters/chat/cache-cleanup-strategy/)
+
 ## Fields
 
 | Field | Type | Default | Purpose |
