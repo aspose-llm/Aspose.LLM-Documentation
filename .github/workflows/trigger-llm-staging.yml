@@ -1,0 +1,16 @@
+name: Trigger LLM Staging Deployment
+
+on:
+  push:
+    branches: [ staging ]
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger LLM Staging Workflow
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: llm-staging.yml
+          repo: Aspose/aspose-docs-workflows
+          token: ${{ secrets.REPO_TOKEN }}
