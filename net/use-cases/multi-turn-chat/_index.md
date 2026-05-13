@@ -25,13 +25,13 @@ When you need a sustained conversation and want explicit control over it — for
 - Multiple users, each with their own conversation on a single process.
 - Multi-stage workflows where each stage has its own dialogue history.
 - Long conversations where you need to clean up the KV cache manually.
-- Any scenario where the current-session shortcut from [Simple chat](/net/use-cases/simple-chat/) is not enough.
+- Any scenario where the current-session shortcut from [Simple chat](/llm/net/use-cases/simple-chat/) is not enough.
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
-- A working `AsposeLLMApi` instance (see [Hello, world!](/net/hello-world/)).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
+- A working `AsposeLLMApi` instance (see [Hello, world!](/llm/net/hello-world/)).
 
 ## Start a session
 
@@ -131,7 +131,7 @@ api.ForceCacheCleanup(CacheCleanupStrategy.KeepSystemPromptOnly);
 
 This operates on the **current session**. To trim a different session, set it as current first (e.g., by calling `SendMessageToSessionAsync` once on that session, which does not change `ChatParameters` but keeps the session warm), or use the default strategy and let the engine trim when needed.
 
-See [Chat sessions — Manage the KV cache](/net/developer-reference/chat-sessions/#manage-the-kv-cache) for all five strategies and how to pick one.
+See [Chat sessions — Manage the KV cache](/llm/net/developer-reference/chat-sessions/#manage-the-kv-cache) for all five strategies and how to pick one.
 
 ## Pick a session ID strategy
 
@@ -146,6 +146,6 @@ See [Chat sessions — Manage the KV cache](/net/developer-reference/chat-sessio
 
 ## What's next
 
-- [Save and restore session](/net/use-cases/save-and-restore-session/) — persist a long conversation across runs.
-- [Custom preset](/net/use-cases/custom-preset/) — tune the preset for your scenario (system prompt, sampler, context size).
-- [Chat sessions reference](/net/developer-reference/chat-sessions/) — full semantics of session creation, messaging, and cache management.
+- [Save and restore session](/llm/net/use-cases/save-and-restore-session/) — persist a long conversation across runs.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — tune the preset for your scenario (system prompt, sampler, context size).
+- [Chat sessions reference](/llm/net/developer-reference/chat-sessions/) — full semantics of session creation, messaging, and cache management.

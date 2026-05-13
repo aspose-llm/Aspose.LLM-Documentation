@@ -104,13 +104,13 @@ Always enable when supported.
 
 Reuse sessions across requests instead of creating a fresh one each time. Session creation costs prefill time; reusing amortizes it across turns.
 
-In HTTP hosts, map user IDs to session IDs — see [Multiple concurrent sessions](/net/use-cases/multiple-concurrent-sessions/).
+In HTTP hosts, map user IDs to session IDs — see [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/).
 
 ## Pre-populate binary and model caches
 
 In offline or container deployments, download binaries and models on the build machine; ship them with your image. The runtime host skips the multi-minute initial download.
 
-See [Offline deployment](/net/use-cases/offline-deployment/).
+See [Offline deployment](/llm/net/use-cases/offline-deployment/).
 
 ## Measure
 
@@ -144,6 +144,6 @@ CPU numbers are roughly 5-10× higher for each stage.
 
 ## What's next
 
-- [Architecture](/net/product-overview/architecture/) — what happens during `Create`.
-- [Context parameters](/net/developer-reference/parameters/context/) — `NBatch`, flash attention.
-- [Offline deployment](/net/use-cases/offline-deployment/) — skip the initial download at runtime.
+- [Architecture](/llm/net/product-overview/architecture/) — what happens during `Create`.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — `NBatch`, flash attention.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/) — skip the initial download at runtime.

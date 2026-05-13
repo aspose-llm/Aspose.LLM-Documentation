@@ -65,12 +65,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`SystemPrompt`](/net/developer-reference/parameters/chat/system-prompt/) — applied before `History`.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — pre-seeded turns consume tokens from the window.
+- [`SystemPrompt`](/llm/net/developer-reference/parameters/chat/system-prompt/) — applied before `History`.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — pre-seeded turns consume tokens from the window.
 - `ChatMessage.CreateUserMessage` / `CreateAssistantMessage` / `CreateSystemMessage` — factories for building entries.
 
 ## What's next
 
-- [Chat history reference](/net/developer-reference/chat-sessions/chat-history/) — `ChatMessage` structure in detail.
-- [System prompt recipes](/net/use-cases/system-prompt-recipes/) — priming patterns.
-- [Chat parameters hub](/net/developer-reference/parameters/chat/) — all chat knobs.
+- [Chat history reference](/llm/net/developer-reference/chat-sessions/chat-history/) — `ChatMessage` structure in detail.
+- [System prompt recipes](/llm/net/use-cases/system-prompt-recipes/) — priming patterns.
+- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/) — all chat knobs.

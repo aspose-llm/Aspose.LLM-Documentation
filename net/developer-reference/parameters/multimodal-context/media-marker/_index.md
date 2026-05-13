@@ -61,11 +61,11 @@ preset.MtmdContextParameters.MediaMarker = "<|image|>";
 
 ## Interactions
 
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — which template is selected automatically.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — diagnose marker-related misalignment.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — which template is selected automatically.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — diagnose marker-related misalignment.
 
 ## What's next
 
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — supported template list.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — marker-related troubleshooting.
-- [Multimodal context hub](/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — supported template list.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — marker-related troubleshooting.
+- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.

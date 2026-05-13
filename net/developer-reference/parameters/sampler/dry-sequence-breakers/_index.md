@@ -64,11 +64,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) — DRY gate.
-- [`DryAllowedLength`](/net/developer-reference/parameters/sampler/dry-allowed-length/) — match length threshold within a phrase boundary.
+- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — DRY gate.
+- [`DryAllowedLength`](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/) — match length threshold within a phrase boundary.
 
 ## What's next
 
-- [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
-- [DryAllowedLength](/net/developer-reference/parameters/sampler/dry-allowed-length/) — length threshold.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
+- [DryAllowedLength](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/) — length threshold.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

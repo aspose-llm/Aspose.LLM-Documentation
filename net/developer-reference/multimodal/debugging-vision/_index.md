@@ -96,7 +96,7 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Fix**:
 
-- Verify you are using a supported preset family (Qwen VL, Gemma 3 Vision, Ministral, LLaVA, Pixtral, InternVL, Llama 4, MiniCPMV). See [Chat templates](/net/developer-reference/multimodal/chat-templates/).
+- Verify you are using a supported preset family (Qwen VL, Gemma 3 Vision, Ministral, LLaVA, Pixtral, InternVL, Llama 4, MiniCPMV). See [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/).
 - If using a custom GGUF, try a different export from Hugging Face with richer metadata.
 - Inspect `[MM] selected template: ...` in logs — if it says "fallback", detection failed.
 
@@ -108,8 +108,8 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Fix**:
 
-- Raise [`ChatParameters.MaxTokens`](/net/developer-reference/parameters/chat/) to 1024 or 2048.
-- Change [`CacheCleanupStrategy`](/net/developer-reference/cache-management/) to `KeepSystemPromptAndFirstUserMessage` if the model loses the image reference during generation.
+- Raise [`ChatParameters.MaxTokens`](/llm/net/developer-reference/parameters/chat/) to 1024 or 2048.
+- Change [`CacheCleanupStrategy`](/llm/net/developer-reference/cache-management/) to `KeepSystemPromptAndFirstUserMessage` if the model loses the image reference during generation.
 
 ### Slow first response
 
@@ -119,7 +119,7 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Fix**:
 
-- Set [`MtmdContextParameters.UseGpu = true`](/net/developer-reference/parameters/multimodal-context/).
+- Set [`MtmdContextParameters.UseGpu = true`](/llm/net/developer-reference/parameters/multimodal-context/).
 - Downscale large images before attaching.
 - Enable `MtmdContextParameters.PrintTimings` to see per-stage time.
 
@@ -127,7 +127,7 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Symptom**: `InvalidOperationException: Unknown or unsupported image format.`
 
-**Fix**: convert to JPEG, PNG, BMP, GIF, or WebP. See [Attaching images](/net/developer-reference/multimodal/attaching-images/#supported-formats).
+**Fix**: convert to JPEG, PNG, BMP, GIF, or WebP. See [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/#supported-formats).
 
 ### Image too large
 
@@ -153,6 +153,6 @@ Submit via the [Aspose Support Forum](https://forum.aspose.com/) or a paid suppo
 
 ## What's next
 
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — the eight supported template families.
-- [Multimodal context parameters](/net/developer-reference/parameters/multimodal-context/) — GPU offload and verbosity for the projector.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — correct image input.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — the eight supported template families.
+- [Multimodal context parameters](/llm/net/developer-reference/parameters/multimodal-context/) — GPU offload and verbosity for the projector.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — correct image input.

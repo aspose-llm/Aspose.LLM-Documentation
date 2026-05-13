@@ -54,12 +54,12 @@ Match a built-in preset to the task. Start small; move up only if output quality
 
 ## After you pick
 
-Override the default values where they do not fit your scenario. See [Customizing presets](/net/developer-reference/presets/customizing/).
+Override the default values where they do not fit your scenario. See [Customizing presets](/llm/net/developer-reference/presets/customizing/).
 
-If none of the built-ins fit, [bring your own GGUF](/net/use-cases/bring-your-own-gguf/).
+If none of the built-ins fit, [bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/).
 
 ## What's next
 
-- [Supported presets](/net/product-overview/supported-presets/) — catalog with Hugging Face sources.
-- [Using built-in presets](/net/developer-reference/presets/using-built-in/) — full picker guidance.
-- [Custom preset](/net/use-cases/custom-preset/) — patterns for tuning.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — catalog with Hugging Face sources.
+- [Using built-in presets](/llm/net/developer-reference/presets/using-built-in/) — full picker guidance.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — patterns for tuning.

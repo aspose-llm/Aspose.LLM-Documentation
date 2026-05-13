@@ -76,7 +76,7 @@ The exception message usually states the cause (file not found, parse error, sig
 
 ### 3. Verify the license file path
 
-When you pass only a file name, `SetLicense` searches several locations (see [Licensing](/net/licensing/)). If the file lives elsewhere, pass the full path:
+When you pass only a file name, `SetLicense` searches several locations (see [Licensing](/llm/net/licensing/)). If the file lives elsewhere, pass the full path:
 
 ```csharp
 license.SetLicense(@"C:\licenses\Aspose.LLM.lic");
@@ -144,6 +144,6 @@ Ensure the stream is at position 0 before `SetLicense`. If an earlier read consu
 
 ## What's next
 
-- [Licensing](/net/licensing/) — full license setup (file, stream, embedded resource, temporary).
-- [License class reference](/net/developer-reference/license/) — API surface of `License`.
-- [AsposeLLMApi facade](/net/developer-reference/asposellmapi/) — where license checks sit in the chat API surface.
+- [Licensing](/llm/net/licensing/) — full license setup (file, stream, embedded resource, temporary).
+- [License class reference](/llm/net/developer-reference/license/) — API surface of `License`.
+- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/) — where license checks sit in the chat API surface.

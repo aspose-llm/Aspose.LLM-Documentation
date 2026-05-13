@@ -20,7 +20,7 @@ keywords:
 
 Aspose.LLM for .NET provides an extension method for `IServiceCollection` that registers the engine and its dependencies in a Microsoft.Extensions.DependencyInjection container. This is the idiomatic entry point for ASP.NET Core, Worker Service, and any application that wires services through DI.
 
-The [`AsposeLLMApi`](/net/developer-reference/asposellmapi/) facade and the DI path are **two ways to reach the same engine**. Use whichever suits your application shape:
+The [`AsposeLLMApi`](/llm/net/developer-reference/asposellmapi/) facade and the DI path are **two ways to reach the same engine**. Use whichever suits your application shape:
 
 - **Facade** — simple console apps, CLI tools, scripts. One object to instantiate and dispose.
 - **DI** — ASP.NET Core, hosted services, Workers. Engine and its dependencies become DI-resolvable singletons.
@@ -181,6 +181,6 @@ public class ChatWorker : BackgroundService
 
 ## What's next
 
-- [AsposeLLMApi facade](/net/developer-reference/asposellmapi/) — the simpler non-DI entry point.
-- [Engine parameters](/net/developer-reference/parameters/engine/) — logging and threading defaults applied via `AddLlamaServices`.
-- [Licensing](/net/licensing/) — license application in host startup.
+- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/) — the simpler non-DI entry point.
+- [Engine parameters](/llm/net/developer-reference/parameters/engine/) — logging and threading defaults applied via `AddLlamaServices`.
+- [Licensing](/llm/net/licensing/) — license application in host startup.

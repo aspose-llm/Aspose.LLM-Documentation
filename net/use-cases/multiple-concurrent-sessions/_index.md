@@ -30,9 +30,9 @@ Inference itself is serialized: the native layer does not run multiple inference
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
-- Familiarity with [Chat sessions](/net/developer-reference/chat-sessions/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
+- Familiarity with [Chat sessions](/llm/net/developer-reference/chat-sessions/).
 
 ## Per-user sessions
 
@@ -227,6 +227,6 @@ internal class ChatServer
 
 ## What's next
 
-- [Chat sessions](/net/developer-reference/chat-sessions/) — full session reference.
-- [Integration with ASP.NET Core](/net/use-cases/integration-with-aspnet-core/) — putting this pattern behind HTTP.
-- [Cache management](/net/developer-reference/cache-management/) — control session memory over time.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — full session reference.
+- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/) — putting this pattern behind HTTP.
+- [Cache management](/llm/net/developer-reference/cache-management/) — control session memory over time.

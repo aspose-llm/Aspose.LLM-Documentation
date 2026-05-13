@@ -52,8 +52,8 @@ var preset = new Qwen25Preset();
 
 ## Interactions
 
-- [`NSeqMax`](/net/developer-reference/parameters/context/n-seq-max/) — multi-sequence scenarios may interact with unified-buffer layout.
+- [`NSeqMax`](/llm/net/developer-reference/parameters/context/n-seq-max/) — multi-sequence scenarios may interact with unified-buffer layout.
 
 ## What's next
 
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

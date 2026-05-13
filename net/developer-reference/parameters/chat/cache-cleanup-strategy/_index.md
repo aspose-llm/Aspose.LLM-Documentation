@@ -16,7 +16,7 @@ keywords:
 - conversation trimming
 ---
 
-`CacheCleanupStrategy` is the policy the engine applies when a session's KV cache would overflow [`ContextSize`](/net/developer-reference/parameters/context/context-size/). Five named strategies, each keeping a different subset of history.
+`CacheCleanupStrategy` is the policy the engine applies when a session's KV cache would overflow [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/). Five named strategies, each keeping a different subset of history.
 
 ## Quick reference
 
@@ -73,13 +73,13 @@ api.ForceCacheCleanup(CacheCleanupStrategy.KeepSystemPromptOnly);
 
 ## Interactions
 
-- [`SystemPrompt`](/net/developer-reference/parameters/chat/system-prompt/) — all strategies preserve it.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — the ceiling this strategy serves.
-- [`DefragThreshold`](/net/developer-reference/parameters/context/defrag-threshold/) — compacts holes left behind by cleanup.
+- [`SystemPrompt`](/llm/net/developer-reference/parameters/chat/system-prompt/) — all strategies preserve it.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — the ceiling this strategy serves.
+- [`DefragThreshold`](/llm/net/developer-reference/parameters/context/defrag-threshold/) — compacts holes left behind by cleanup.
 - `AsposeLLMApi.ForceCacheCleanup(strategy)` — manual trigger with an override strategy.
 
 ## What's next
 
-- [Cache management](/net/developer-reference/cache-management/) — full guide with practical patterns.
-- [Multi-turn chat use case](/net/use-cases/multi-turn-chat/) — cache management in practice.
-- [Chat parameters hub](/net/developer-reference/parameters/chat/) — all chat knobs.
+- [Cache management](/llm/net/developer-reference/cache-management/) — full guide with practical patterns.
+- [Multi-turn chat use case](/llm/net/use-cases/multi-turn-chat/) — cache management in practice.
+- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/) — all chat knobs.

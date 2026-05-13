@@ -85,6 +85,6 @@ Metal respects macOS power policy. On battery, macOS may throttle GPU clocks and
 
 ## What's next
 
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — `GpuLayers` configuration.
-- [Context parameters](/net/developer-reference/parameters/context/) — flash attention and KV cache settings.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers` configuration.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — flash attention and KV cache settings.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.

@@ -37,7 +37,7 @@ This how-to helps you predict the total before deployment.
 
 ## Step 1. Weights from quantization
 
-See [Understand quantization](/net/how-to/understand-quantization/) for the per-parameter bytes table.
+See [Understand quantization](/llm/net/how-to/understand-quantization/) for the per-parameter bytes table.
 
 Rough: `weights_bytes ≈ parameters × bytes_per_param`.
 
@@ -73,7 +73,7 @@ Scales roughly linearly with actual session length. A 32K-capable preset at only
 | Q8_0 | 500 MB – 1 GB |
 | Q4_K_M | 250 MB – 500 MB |
 
-Each vision preset declares its `mmproj` file in `MmprojSourceParameters` — see [Supported presets](/net/product-overview/supported-presets/#vision-presets).
+Each vision preset declares its `mmproj` file in `MmprojSourceParameters` — see [Supported presets](/llm/net/product-overview/supported-presets/#vision-presets).
 
 ## Step 4. Add overhead
 
@@ -133,7 +133,7 @@ In order of quality impact (least to most):
 4. **Quantize K cache** (`TypeK = Q8_0`) — larger quality impact than V.
 5. **Use a smaller preset** — last resort when the model itself is too large.
 
-See [Low-memory tuning](/net/use-cases/low-memory-tuning/) for the full recipe.
+See [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/) for the full recipe.
 
 ## Measuring actual usage
 
@@ -152,6 +152,6 @@ The number you read includes OS page cache of memory-mapped files — some of it
 
 ## What's next
 
-- [Understand quantization](/net/how-to/understand-quantization/) — precision impact on weights.
-- [System requirements](/net/system-requirements/) — per-preset memory ranges.
-- [Low-memory tuning](/net/use-cases/low-memory-tuning/) — when the numbers do not fit your budget.
+- [Understand quantization](/llm/net/how-to/understand-quantization/) — precision impact on weights.
+- [System requirements](/llm/net/system-requirements/) — per-preset memory ranges.
+- [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/) — when the numbers do not fit your budget.

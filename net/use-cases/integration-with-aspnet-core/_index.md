@@ -28,9 +28,9 @@ ASP.NET Core is the idiomatic way to put Aspose.LLM for .NET behind HTTP. The SD
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
-- Familiarity with [Dependency injection](/net/developer-reference/dependency-injection/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
+- Familiarity with [Dependency injection](/llm/net/developer-reference/dependency-injection/).
 
 ## Minimal API — single-user demo
 
@@ -264,6 +264,6 @@ MyLlmService/
 
 ## What's next
 
-- [Dependency injection](/net/developer-reference/dependency-injection/) — full DI reference.
-- [Multiple concurrent sessions](/net/use-cases/multiple-concurrent-sessions/) — the session-routing pattern.
-- [Cache management](/net/developer-reference/cache-management/) — keep session memory under control in long-running hosts.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/) — full DI reference.
+- [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/) — the session-routing pattern.
+- [Cache management](/llm/net/developer-reference/cache-management/) — keep session memory under control in long-running hosts.

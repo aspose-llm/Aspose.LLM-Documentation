@@ -21,7 +21,7 @@ keywords:
 
 The built-in presets ship tuned defaults for every popular open-weight model family. Pick one, pass it to `AsposeLLMApi.Create`, and the engine handles model download, binary deployment, sampler tuning, and chat template selection.
 
-This page helps you pick the right preset for your scenario and highlights the minimal code to use it. For full catalog details, see [Supported presets](/net/product-overview/supported-presets/).
+This page helps you pick the right preset for your scenario and highlights the minimal code to use it. For full catalog details, see [Supported presets](/llm/net/product-overview/supported-presets/).
 
 ## Minimal usage
 
@@ -48,7 +48,7 @@ Every preset follows the same pattern — swap the class name to change the mode
 | Very long context | `Llama32Preset` (131K), `Oss20Preset` (131K), `DeepSeekCoder2Preset` (163K) | For long documents. |
 | Coding | `DeepSeekCoder2Preset` | Specialized training on code. |
 | Step-by-step reasoning | `DeepseekR1Qwen3Preset` or `Oss20Preset` (multilingual-reasoner) | Chain-of-thought style output. Budget 1024-2048 MaxTokens. |
-| No built-in preset — use your own GGUF | Extend `PresetCoreBase` | See [Creating from scratch](/net/developer-reference/presets/creating-from-scratch/). |
+| No built-in preset — use your own GGUF | Extend `PresetCoreBase` | See [Creating from scratch](/llm/net/developer-reference/presets/creating-from-scratch/). |
 
 ### Vision
 
@@ -59,7 +59,7 @@ Every preset follows the same pattern — swap the class name to change the mode
 | Document / text-heavy images | `Gemma3VisionPreset` | Fine-tuned for Latex and structured text. |
 | Strongest reasoning on images | `Ministral3VisionPreset` | 8B, 262K. |
 
-See [Vision presets](/net/developer-reference/multimodal/vision-presets/) for details and memory requirements.
+See [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) for details and memory requirements.
 
 ## Trade-offs
 
@@ -91,10 +91,10 @@ preset.ChatParameters.SystemPrompt = "You are a concise assistant.";
 using var api = AsposeLLMApi.Create(preset);
 ```
 
-See [Customizing](/net/developer-reference/presets/customizing/) for the full pattern and common knobs.
+See [Customizing](/llm/net/developer-reference/presets/customizing/) for the full pattern and common knobs.
 
 ## What's next
 
-- [Customizing](/net/developer-reference/presets/customizing/) — override fields on built-in presets.
-- [Creating from scratch](/net/developer-reference/presets/creating-from-scratch/) — extend `PresetCoreBase` for a custom model.
-- [Supported presets](/net/product-overview/supported-presets/) — full catalog with Hugging Face sources.
+- [Customizing](/llm/net/developer-reference/presets/customizing/) — override fields on built-in presets.
+- [Creating from scratch](/llm/net/developer-reference/presets/creating-from-scratch/) — extend `PresetCoreBase` for a custom model.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — full catalog with Hugging Face sources.

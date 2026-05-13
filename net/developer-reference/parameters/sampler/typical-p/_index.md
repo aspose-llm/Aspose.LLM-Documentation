@@ -62,15 +62,15 @@ Console.WriteLine(reply);
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — applied before `TypicalP`.
-- [`TopP`](/net/developer-reference/parameters/sampler/top-p/) — both can be active; most users pick one or the other.
-- [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — compatible as a count cap.
-- [`MinP`](/net/developer-reference/parameters/sampler/min-p/) — compatible.
-- [`MinKeep`](/net/developer-reference/parameters/sampler/min-keep/) — floor applies.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — bypasses all standard filters including `TypicalP`.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — applied before `TypicalP`.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — both can be active; most users pick one or the other.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — compatible as a count cap.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — compatible.
+- [`MinKeep`](/llm/net/developer-reference/parameters/sampler/min-keep/) — floor applies.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — bypasses all standard filters including `TypicalP`.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [TopP](/net/developer-reference/parameters/sampler/top-p/) — the common alternative.
-- [TopNSigma](/net/developer-reference/parameters/sampler/top-n-sigma/) — another experimental filter.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [TopP](/llm/net/developer-reference/parameters/sampler/top-p/) — the common alternative.
+- [TopNSigma](/llm/net/developer-reference/parameters/sampler/top-n-sigma/) — another experimental filter.

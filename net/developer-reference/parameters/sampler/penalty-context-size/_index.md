@@ -30,7 +30,7 @@ keywords:
 
 ## What it does
 
-Before each sampling step, the three penalty knobs ([`RepetitionPenalty`](/net/developer-reference/parameters/sampler/repetition-penalty/), [`PresencePenalty`](/net/developer-reference/parameters/sampler/presence-penalty/), [`FrequencyPenalty`](/net/developer-reference/parameters/sampler/frequency-penalty/)) need to know which prior tokens to examine. `PenaltyContextSize` defines that window.
+Before each sampling step, the three penalty knobs ([`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/), [`PresencePenalty`](/llm/net/developer-reference/parameters/sampler/presence-penalty/), [`FrequencyPenalty`](/llm/net/developer-reference/parameters/sampler/frequency-penalty/)) need to know which prior tokens to examine. `PenaltyContextSize` defines that window.
 
 - `PenaltyContextSize = -1` — use the full context (equivalent to `ContextParameters.ContextSize`). Maximum recall; penalties apply across the entire conversation.
 - `PenaltyContextSize = 256` — only the last 256 tokens contribute. Penalties are local; the model can freely reuse words that appeared earlier than that.
@@ -62,13 +62,13 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`RepetitionPenalty`](/net/developer-reference/parameters/sampler/repetition-penalty/) — applied within this window.
-- [`PresencePenalty`](/net/developer-reference/parameters/sampler/presence-penalty/) — same window.
-- [`FrequencyPenalty`](/net/developer-reference/parameters/sampler/frequency-penalty/) — same window.
-- [`ContextParameters.ContextSize`](/net/developer-reference/parameters/context/context-size/) — upper bound; at `-1`, `PenaltyContextSize` equals this.
+- [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — applied within this window.
+- [`PresencePenalty`](/llm/net/developer-reference/parameters/sampler/presence-penalty/) — same window.
+- [`FrequencyPenalty`](/llm/net/developer-reference/parameters/sampler/frequency-penalty/) — same window.
+- [`ContextParameters.ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — upper bound; at `-1`, `PenaltyContextSize` equals this.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [RepetitionPenalty](/net/developer-reference/parameters/sampler/repetition-penalty/) — the main penalty that uses this window.
-- [Garbled output — repetition loops](/net/troubleshooting/garbled-output/) — when penalty tuning helps.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — the main penalty that uses this window.
+- [Garbled output — repetition loops](/llm/net/troubleshooting/garbled-output/) — when penalty tuning helps.

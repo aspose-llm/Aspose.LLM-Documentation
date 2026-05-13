@@ -27,8 +27,8 @@ Batch processing runs many prompts through the same `AsposeLLMApi` instance with
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 
 ## Two patterns
 
@@ -212,6 +212,6 @@ internal class BatchDemo
 
 ## What's next
 
-- [Multiple concurrent sessions](/net/use-cases/multiple-concurrent-sessions/) — when sessions represent separate users.
-- [Cache management](/net/developer-reference/cache-management/) — strategy details.
-- [Chat parameters](/net/developer-reference/parameters/chat/) — `MaxTokens` and `CacheCleanupStrategy`.
+- [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/) — when sessions represent separate users.
+- [Cache management](/llm/net/developer-reference/cache-management/) — strategy details.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — `MaxTokens` and `CacheCleanupStrategy`.

@@ -50,9 +50,9 @@ preset.EngineParameters.EnableDebugLogging = true;
 
 If the template is `fallback` or does not match your model family, the model needs a supported template. Options:
 
-- Verify you are using the correct built-in preset (see [Supported presets](/net/product-overview/supported-presets/)).
+- Verify you are using the correct built-in preset (see [Supported presets](/llm/net/product-overview/supported-presets/)).
 - For a custom GGUF, try a different export from the same model with richer metadata.
-- For vision: see [Chat templates](/net/developer-reference/multimodal/chat-templates/).
+- For vision: see [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/).
 
 ### 2. Repetition loops
 
@@ -72,7 +72,7 @@ preset.SamplerParameters.DryBase = 1.75f;
 preset.SamplerParameters.DryAllowedLength = 3;
 ```
 
-See [Sampler parameters](/net/developer-reference/parameters/sampler/) for the full repetition knob set.
+See [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) for the full repetition knob set.
 
 ### 3. Truncated output (cuts off mid-sentence)
 
@@ -110,7 +110,7 @@ F16 is the safe default; drop to Q8_0 only with memory pressure.
 
 **Diagnosis**: custom GGUF paired with a wrong preset, or the preset's sampler settings do not match the model's training distribution.
 
-- Use a built-in preset for the model family, or set up a [custom preset](/net/use-cases/custom-preset/) from scratch rather than reusing an unrelated built-in.
+- Use a built-in preset for the model family, or set up a [custom preset](/llm/net/use-cases/custom-preset/) from scratch rather than reusing an unrelated built-in.
 - Start with conservative sampler settings: `Temperature = 0.3`, `TopP = 0.9`.
 - Test with the reference prompt from the model's Hugging Face page to rule out sampling issues.
 
@@ -120,7 +120,7 @@ F16 is the safe default; drop to Q8_0 only with memory pressure.
 
 - Enable `MtmdContextParameters.PrintTimings = true` to verify the image was processed.
 - Enable debug logging and look for `[MM]` lines — confirm image chunks are tokenized.
-- See [Debugging vision](/net/developer-reference/multimodal/debugging-vision/).
+- See [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/).
 
 ## Prevention
 
@@ -130,7 +130,7 @@ F16 is the safe default; drop to Q8_0 only with memory pressure.
 
 ## What's next
 
-- [Sampler parameters](/net/developer-reference/parameters/sampler/) — repetition penalties, DRY.
-- [Chat parameters](/net/developer-reference/parameters/chat/) — `MaxTokens`, `CacheCleanupStrategy`.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — vision template selection.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnosis.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) — repetition penalties, DRY.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — `MaxTokens`, `CacheCleanupStrategy`.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — vision template selection.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnosis.

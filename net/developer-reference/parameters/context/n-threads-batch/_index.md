@@ -36,7 +36,7 @@ During prompt processing, the engine runs matrix multiplications over many token
 - `NThreadsBatch = half ProcessorCount` — leave room for other CPU workloads.
 - `NThreadsBatch < NThreads` — unusual, almost always wrong for modern CPUs.
 
-Prompt processing happens once per incoming message (on user input). Generation ([`NThreads`](/net/developer-reference/parameters/context/n-threads/)) happens per output token. For chat, prompt-processing time dominates when the prompt is long, generation dominates when the output is long.
+Prompt processing happens once per incoming message (on user input). Generation ([`NThreads`](/llm/net/developer-reference/parameters/context/n-threads/)) happens per output token. For chat, prompt-processing time dominates when the prompt is long, generation dominates when the output is long.
 
 ## When to change it
 
@@ -57,12 +57,12 @@ preset.ContextParameters.NThreadsBatch = Environment.ProcessorCount; // prompt p
 
 ## Interactions
 
-- [`NThreads`](/net/developer-reference/parameters/context/n-threads/) — generation threads; typically different from `NThreadsBatch`.
-- [`NBatch`](/net/developer-reference/parameters/context/n-batch/) — larger batch sizes better utilize high `NThreadsBatch`.
-- [`EngineParameters.DefaultThreads`](/net/developer-reference/parameters/engine/) — fallback when null.
+- [`NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) — generation threads; typically different from `NThreadsBatch`.
+- [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/) — larger batch sizes better utilize high `NThreadsBatch`.
+- [`EngineParameters.DefaultThreads`](/llm/net/developer-reference/parameters/engine/) — fallback when null.
 
 ## What's next
 
-- [NThreads](/net/developer-reference/parameters/context/n-threads/) — generation-phase threads.
-- [NBatch](/net/developer-reference/parameters/context/n-batch/) — batch size.
-- [Reduce first-token latency](/net/how-to/reduce-first-token-latency/) — prompt-processing throughput's role in TTFT.
+- [NThreads](/llm/net/developer-reference/parameters/context/n-threads/) — generation-phase threads.
+- [NBatch](/llm/net/developer-reference/parameters/context/n-batch/) — batch size.
+- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/) — prompt-processing throughput's role in TTFT.

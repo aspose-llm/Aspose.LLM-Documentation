@@ -40,12 +40,12 @@ public class BinaryManagerParameters
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
 
-- [Owner](/net/developer-reference/parameters/binary-manager/owner/)
-- [Repo](/net/developer-reference/parameters/binary-manager/repo/)
-- [ReleaseTag](/net/developer-reference/parameters/binary-manager/release-tag/)
-- [BinaryPath](/net/developer-reference/parameters/binary-manager/binary-path/)
-- [SystemSpecification](/net/developer-reference/parameters/binary-manager/system-specification/)
-- [PreferredAcceleration](/net/developer-reference/parameters/binary-manager/preferred-acceleration/)
+- [Owner](/llm/net/developer-reference/parameters/binary-manager/owner/)
+- [Repo](/llm/net/developer-reference/parameters/binary-manager/repo/)
+- [ReleaseTag](/llm/net/developer-reference/parameters/binary-manager/release-tag/)
+- [BinaryPath](/llm/net/developer-reference/parameters/binary-manager/binary-path/)
+- [SystemSpecification](/llm/net/developer-reference/parameters/binary-manager/system-specification/)
+- [PreferredAcceleration](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/)
 
 ## Fields
 
@@ -158,6 +158,6 @@ Make sure every service using this cache runs the same SDK version — version m
 
 ## What's next
 
-- [System requirements](/net/system-requirements/) — what runtimes and hardware the binaries support.
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — complement `PreferredAcceleration` with `GpuLayers` and split settings.
-- [Architecture](/net/product-overview/architecture/) — what happens during first-run binary deployment.
+- [System requirements](/llm/net/system-requirements/) — what runtimes and hardware the binaries support.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — complement `PreferredAcceleration` with `GpuLayers` and split settings.
+- [Architecture](/llm/net/product-overview/architecture/) — what happens during first-run binary deployment.

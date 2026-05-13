@@ -19,7 +19,7 @@ keywords:
 
 Every built-in preset is a plain class with public settable fields on nine parameter bags. Customize a preset by mutating fields before calling `AsposeLLMApi.Create`, or by creating a subclass that applies your defaults in its constructor.
 
-For customizations that substitute entire services (custom model loaders, custom prompt formatters), see [Extensibility](/net/developer-reference/extensibility/).
+For customizations that substitute entire services (custom model loaders, custom prompt formatters), see [Extensibility](/llm/net/developer-reference/extensibility/).
 
 ## Two patterns
 
@@ -85,7 +85,7 @@ Subclasses inherit the base preset's model source and chat template — you chan
 | `PreferredAcceleration` | `BinaryManagerParameters` | Force a specific GPU backend. |
 | `ModelCachePath` | `EngineParameters` | Shared model cache across processes. |
 
-See the individual [parameter reference pages](/net/developer-reference/parameters/) for each bag's full field list and semantics.
+See the individual [parameter reference pages](/llm/net/developer-reference/parameters/) for each bag's full field list and semantics.
 
 ## Common recipes
 
@@ -133,6 +133,6 @@ preset.ContextParameters.TypeV = GgmlType.Q8_0;        // halve V-cache memory
 
 ## What's next
 
-- [Creating from scratch](/net/developer-reference/presets/creating-from-scratch/) — new preset for a custom GGUF.
-- [Parameters reference](/net/developer-reference/parameters/) — every knob on every bag.
-- [Custom preset use case](/net/use-cases/custom-preset/) — runnable end-to-end example.
+- [Creating from scratch](/llm/net/developer-reference/presets/creating-from-scratch/) — new preset for a custom GGUF.
+- [Parameters reference](/llm/net/developer-reference/parameters/) — every knob on every bag.
+- [Custom preset use case](/llm/net/use-cases/custom-preset/) — runnable end-to-end example.

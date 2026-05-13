@@ -97,7 +97,7 @@ public Task<string> SendMessageToSessionAsync(
 The engine tracks a **current session** that `SendMessageAsync` uses when you do not specify a session ID. Two things set the current session:
 
 - **`StartNewChatAsync`** — the newly created session becomes current.
-- **`LoadChatSession(filePath)`** — the loaded session becomes current (see [Session persistence](/net/developer-reference/session-persistence/)).
+- **`LoadChatSession(filePath)`** — the loaded session becomes current (see [Session persistence](/llm/net/developer-reference/session-persistence/)).
 
 `SendMessageToSessionAsync(sessionId, ...)` targets the specified session without changing the current one.
 
@@ -145,7 +145,7 @@ Each session keeps its own history and KV region. The loaded model is shared acr
 - **Do not call inference concurrently on the same session.** Serialize `SendMessageToSessionAsync(sessionId, ...)` for a given `sessionId`.
 - **Serialize inference across sessions** at the application level. The native model and KV pool are shared, and a single inference call holds native resources. If you need concurrent request handling, queue requests or route them through a single worker.
 
-See [Architecture — Threading and concurrency](/net/product-overview/architecture/#threading-and-concurrency) for more.
+See [Architecture — Threading and concurrency](/llm/net/product-overview/architecture/#threading-and-concurrency) for more.
 
 ## Lifecycle
 
@@ -158,6 +158,6 @@ There is no explicit "delete session" API in the current version. For very long-
 
 ## What's next
 
-- [Session persistence](/net/developer-reference/session-persistence/) — save and load sessions to disk.
-- [Presets](/net/developer-reference/presets/) — configure parameter bags that affect session behavior.
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — full use case with multiple messages in one session.
+- [Session persistence](/llm/net/developer-reference/session-persistence/) — save and load sessions to disk.
+- [Presets](/llm/net/developer-reference/presets/) — configure parameter bags that affect session behavior.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) — full use case with multiple messages in one session.

@@ -73,11 +73,11 @@ preset.ChatParameters.MaxTokens = 2048; // room for <think> + answer
 
 ## Interactions
 
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — input plus output plus history must fit; a high `MaxTokens` leaves less room for input.
-- [`CacheCleanupStrategy`](/net/developer-reference/parameters/chat/cache-cleanup-strategy/) — trims history as output approaches the context cap.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — input plus output plus history must fit; a high `MaxTokens` leaves less room for input.
+- [`CacheCleanupStrategy`](/llm/net/developer-reference/parameters/chat/cache-cleanup-strategy/) — trims history as output approaches the context cap.
 
 ## What's next
 
-- [Chat parameters hub](/net/developer-reference/parameters/chat/) — all chat knobs.
-- [Garbled output troubleshooting](/net/troubleshooting/garbled-output/) — truncation symptoms.
-- [Tune for speed vs quality](/net/how-to/tune-for-speed-vs-quality/) — response length trade-offs.
+- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/) — all chat knobs.
+- [Garbled output troubleshooting](/llm/net/troubleshooting/garbled-output/) — truncation symptoms.
+- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/) — response length trade-offs.

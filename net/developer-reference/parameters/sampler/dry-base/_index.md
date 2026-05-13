@@ -15,7 +15,7 @@ keywords:
 - exponent
 ---
 
-`DryBase` is the exponent base of the DRY penalty growth formula. It determines how quickly the penalty ramps up as a repeated phrase extends. `DryBase` only has effect when [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) is enabled (positive).
+`DryBase` is the exponent base of the DRY penalty growth formula. It determines how quickly the penalty ramps up as a repeated phrase extends. `DryBase` only has effect when [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) is enabled (positive).
 
 ## Quick reference
 
@@ -49,7 +49,7 @@ Larger `DryBase` means the penalty grows faster. A 5-token match with `DryBase =
 | Gentle phrase anti-repetition | `1.5` |
 | Aggressive (model keeps finding ways to repeat) | `2.0` – `2.5` |
 
-Most workloads leave `DryBase` alone and tune [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) and [`DryAllowedLength`](/net/developer-reference/parameters/sampler/dry-allowed-length/). Change `DryBase` as a last resort if the standard combination does not stop repeats.
+Most workloads leave `DryBase` alone and tune [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) and [`DryAllowedLength`](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/). Change `DryBase` as a last resort if the standard combination does not stop repeats.
 
 ## Example
 
@@ -64,13 +64,13 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) — must be positive for `DryBase` to matter.
-- [`DryAllowedLength`](/net/developer-reference/parameters/sampler/dry-allowed-length/) — sets the exponent's zero-point.
-- [`DryPenaltyLastN`](/net/developer-reference/parameters/sampler/dry-penalty-last-n/) — window of history DRY scans.
-- [`DrySequenceBreakers`](/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — tokens that reset match detection.
+- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — must be positive for `DryBase` to matter.
+- [`DryAllowedLength`](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/) — sets the exponent's zero-point.
+- [`DryPenaltyLastN`](/llm/net/developer-reference/parameters/sampler/dry-penalty-last-n/) — window of history DRY scans.
+- [`DrySequenceBreakers`](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — tokens that reset match detection.
 
 ## What's next
 
-- [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
-- [DryAllowedLength](/net/developer-reference/parameters/sampler/dry-allowed-length/) — match-length threshold.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
+- [DryAllowedLength](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/) — match-length threshold.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

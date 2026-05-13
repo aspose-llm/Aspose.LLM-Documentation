@@ -28,9 +28,9 @@ Presets bundle the settings needed to run a model. When a built-in preset does n
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
-- Familiarity with [Presets](/net/developer-reference/presets/) and [Supported presets](/net/product-overview/supported-presets/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
+- Familiarity with [Presets](/llm/net/developer-reference/presets/) and [Supported presets](/llm/net/product-overview/supported-presets/).
 
 ## Pattern 1. Override before `Create`
 
@@ -230,6 +230,6 @@ internal class CustomPresetDemo
 
 ## What's next
 
-- [Presets reference](/net/developer-reference/presets/) — every bag on `PresetCoreBase` and its role.
-- [Supported presets](/net/product-overview/supported-presets/) — built-in presets you can start from.
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — use your custom preset across many sessions.
+- [Presets reference](/llm/net/developer-reference/presets/) — every bag on `PresetCoreBase` and its role.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — built-in presets you can start from.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) — use your custom preset across many sessions.

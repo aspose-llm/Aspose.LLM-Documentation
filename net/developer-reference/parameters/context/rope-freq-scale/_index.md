@@ -15,7 +15,7 @@ keywords:
 - linear scaling
 ---
 
-`RopeFreqScale` is a multiplicative scaling factor applied to RoPE frequencies. It implements simple linear scaling of positions — equivalent to `Linear` [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) at the value set here.
+`RopeFreqScale` is a multiplicative scaling factor applied to RoPE frequencies. It implements simple linear scaling of positions — equivalent to `Linear` [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) at the value set here.
 
 ## Quick reference
 
@@ -59,12 +59,12 @@ preset.ContextParameters.RopeFreqScale = 0.5f;  // 2x linear extension
 
 ## Interactions
 
-- [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — `Linear` uses this scale; `Yarn`/`LongRope` have their own knobs.
-- [`RopeFreqBase`](/net/developer-reference/parameters/context/rope-freq-base/) — base frequency.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — the target extended context size.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — `Linear` uses this scale; `Yarn`/`LongRope` have their own knobs.
+- [`RopeFreqBase`](/llm/net/developer-reference/parameters/context/rope-freq-base/) — base frequency.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — the target extended context size.
 
 ## What's next
 
-- [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/) — algorithm selector.
-- [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/) — better long-context extension via YaRN.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — practical recipes.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — algorithm selector.
+- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/) — better long-context extension via YaRN.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/) — practical recipes.

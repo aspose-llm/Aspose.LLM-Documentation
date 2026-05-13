@@ -39,10 +39,10 @@ All four properties have working defaults. Override only when the default does n
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
 
-- [ModelCachePath](/net/developer-reference/parameters/engine/model-cache-path/)
-- [EnableDebugLogging](/net/developer-reference/parameters/engine/enable-debug-logging/)
-- [LogDirectoryPath](/net/developer-reference/parameters/engine/log-directory-path/)
-- [DefaultThreads](/net/developer-reference/parameters/engine/default-threads/)
+- [ModelCachePath](/llm/net/developer-reference/parameters/engine/model-cache-path/)
+- [EnableDebugLogging](/llm/net/developer-reference/parameters/engine/enable-debug-logging/)
+- [LogDirectoryPath](/llm/net/developer-reference/parameters/engine/log-directory-path/)
+- [DefaultThreads](/llm/net/developer-reference/parameters/engine/default-threads/)
 
 ## Fields
 
@@ -58,7 +58,7 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 Points to the folder where downloaded GGUF files are cached. On first run, the engine:
 
 1. Checks whether the model file already exists under this folder.
-2. If not, downloads it from the source defined in [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/).
+2. If not, downloads it from the source defined in [`ModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/).
 3. Loads the cached file on subsequent runs.
 
 Typical reasons to override:
@@ -123,7 +123,7 @@ Override in two situations:
 preset.EngineParameters.DefaultThreads = 4;
 ```
 
-For finer control over threading during generation, set [`ContextParameters.NThreads`](/net/developer-reference/parameters/context/) and `NThreadsBatch` directly — those override `DefaultThreads` when set.
+For finer control over threading during generation, set [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/) and `NThreadsBatch` directly — those override `DefaultThreads` when set.
 
 ## Typical recipes
 
@@ -156,6 +156,6 @@ preset.EngineParameters.DefaultThreads = 4;                   // CPU quota
 
 ## What's next
 
-- [Context parameters](/net/developer-reference/parameters/context/) — threads per inference call, batch sizes.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — where native `llama.cpp` binaries are cached.
-- [Logging and diagnostics](/net/developer-reference/) — `ILogger` integration and native log tags (planned reference page in a future release).
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — threads per inference call, batch sizes.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — where native `llama.cpp` binaries are cached.
+- [Logging and diagnostics](/llm/net/developer-reference/) — `ILogger` integration and native log tags (planned reference page in a future release).

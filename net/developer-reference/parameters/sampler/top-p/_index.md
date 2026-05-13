@@ -71,15 +71,15 @@ preset.SamplerParameters.TopP = 0.8f;
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — applied before `TopP`. Very low `Temperature` + loose `TopP` still produces near-greedy output.
-- [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — stacks with `TopP`. The final candidate set is the intersection.
-- [`MinP`](/net/developer-reference/parameters/sampler/min-p/) — complements `TopP` on the tail; both can be active.
-- [`TypicalP`](/net/developer-reference/parameters/sampler/typical-p/) — alternative to `TopP` based on local typicality.
-- [`MinKeep`](/net/developer-reference/parameters/sampler/min-keep/) — floor on candidate count; `TopP` never cuts below `MinKeep`.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — bypasses `TopP` when active.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — applied before `TopP`. Very low `Temperature` + loose `TopP` still produces near-greedy output.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — stacks with `TopP`. The final candidate set is the intersection.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — complements `TopP` on the tail; both can be active.
+- [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/) — alternative to `TopP` based on local typicality.
+- [`MinKeep`](/llm/net/developer-reference/parameters/sampler/min-keep/) — floor on candidate count; `TopP` never cuts below `MinKeep`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — bypasses `TopP` when active.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [Temperature](/net/developer-reference/parameters/sampler/temperature/) — the partner knob that runs before `TopP`.
-- [MinP](/net/developer-reference/parameters/sampler/min-p/) — another probability-relative cutoff.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/) — the partner knob that runs before `TopP`.
+- [MinP](/llm/net/developer-reference/parameters/sampler/min-p/) — another probability-relative cutoff.

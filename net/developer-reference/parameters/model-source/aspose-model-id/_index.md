@@ -15,7 +15,7 @@ keywords:
 - priority
 ---
 
-`AsposeModelId` is the second-priority source — an identifier into Aspose's internal model catalog hosted at `releases.aspose.com`. The engine downloads by ID when no [`ModelFilePath`](/net/developer-reference/parameters/model-source/model-file-path/) is set.
+`AsposeModelId` is the second-priority source — an identifier into Aspose's internal model catalog hosted at `releases.aspose.com`. The engine downloads by ID when no [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) is set.
 
 ## Quick reference
 
@@ -29,7 +29,7 @@ keywords:
 
 ## What it does
 
-When set, the engine resolves the ID against the Aspose model catalog and downloads the named file into [`EngineParameters.ModelCachePath`](/net/developer-reference/parameters/engine/model-cache-path/). Subsequent runs use the cache.
+When set, the engine resolves the ID against the Aspose model catalog and downloads the named file into [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/model-cache-path/). Subsequent runs use the cache.
 
 - `null` — skip this priority; fall through to Hugging Face fields.
 - An ID — resolve against the Aspose catalog.
@@ -53,10 +53,10 @@ preset.BaseModelSourceParameters.HuggingFaceRepoId = null; // clear the default 
 
 ## Interactions
 
-- [`ModelFilePath`](/net/developer-reference/parameters/model-source/model-file-path/) — if set, overrides `AsposeModelId`.
+- [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) — if set, overrides `AsposeModelId`.
 - Hugging Face fields — only used when both `ModelFilePath` and `AsposeModelId` are null.
 
 ## What's next
 
-- [Model source hub](/net/developer-reference/parameters/model-source/) — resolution order.
-- [HuggingFaceRepoId](/net/developer-reference/parameters/model-source/hugging-face-repo-id/) — priority-3 source.
+- [Model source hub](/llm/net/developer-reference/parameters/model-source/) — resolution order.
+- [HuggingFaceRepoId](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/) — priority-3 source.

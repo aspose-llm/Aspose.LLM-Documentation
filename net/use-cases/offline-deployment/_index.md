@@ -32,8 +32,8 @@ Aspose.LLM for .NET downloads native `llama.cpp` binaries and model files from t
 
 - A connected machine where you can run the SDK once to populate the caches.
 - The same platform / acceleration profile on the connected machine as the production host (so the downloaded binaries match).
-- [Install the NuGet package](/net/installation/) on both.
-- [Apply a license](/net/licensing/) on the production host.
+- [Install the NuGet package](/llm/net/installation/) on both.
+- [Apply a license](/llm/net/licensing/) on the production host.
 
 ## Step 1. Populate caches on a connected machine
 
@@ -174,6 +174,6 @@ preset.EngineParameters.ModelCachePath =
 
 ## What's next
 
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — full reference for `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
-- [Engine parameters](/net/developer-reference/parameters/engine/) — `ModelCachePath`.
-- [Installation](/net/installation/) — initial NuGet setup.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — full reference for `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
+- [Engine parameters](/llm/net/developer-reference/parameters/engine/) — `ModelCachePath`.
+- [Installation](/llm/net/installation/) — initial NuGet setup.

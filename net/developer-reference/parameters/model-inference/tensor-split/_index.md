@@ -29,7 +29,7 @@ keywords:
 
 ## What it does
 
-When [`SplitMode`](/net/developer-reference/parameters/model-inference/split-mode/) is `LAYER` or `ROW`, the engine distributes layers (or row blocks) across GPUs according to `TensorSplit`. Each GPU gets a share proportional to its entry in the array.
+When [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/) is `LAYER` or `ROW`, the engine distributes layers (or row blocks) across GPUs according to `TensorSplit`. Each GPU gets a share proportional to its entry in the array.
 
 - `null` — equal distribution. Splits evenly regardless of VRAM.
 - `[2.0, 1.0]` — 2:1 split. First GPU gets twice the share.
@@ -63,12 +63,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`SplitMode`](/net/developer-reference/parameters/model-inference/split-mode/) — `TensorSplit` applies only when mode is `LAYER` or `ROW`.
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — total layers on GPUs are distributed per `TensorSplit`.
-- [`MainGpu`](/net/developer-reference/parameters/model-inference/main-gpu/) — ignored when `TensorSplit` is active.
+- [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/) — `TensorSplit` applies only when mode is `LAYER` or `ROW`.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — total layers on GPUs are distributed per `TensorSplit`.
+- [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/) — ignored when `TensorSplit` is active.
 
 ## What's next
 
-- [SplitMode](/net/developer-reference/parameters/model-inference/split-mode/) — split strategy selector.
-- [CUDA multi-GPU](/net/developer-reference/acceleration/cuda/) — NVIDIA multi-GPU setup.
-- [GPU deployment use case](/net/use-cases/gpu-deployment-cuda/) — runnable example.
+- [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/) — split strategy selector.
+- [CUDA multi-GPU](/llm/net/developer-reference/acceleration/cuda/) — NVIDIA multi-GPU setup.
+- [GPU deployment use case](/llm/net/use-cases/gpu-deployment-cuda/) — runnable example.

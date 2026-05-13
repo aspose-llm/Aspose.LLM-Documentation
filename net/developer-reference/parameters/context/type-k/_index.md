@@ -66,12 +66,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`TypeV`](/net/developer-reference/parameters/context/type-v/) — companion V-cache dtype.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — cache cost scales with context; quantization pays off more at long contexts.
-- [`FlashAttentionMode`](/net/developer-reference/parameters/context/flash-attention-mode/) — works with quantized KV on recent backends.
+- [`TypeV`](/llm/net/developer-reference/parameters/context/type-v/) — companion V-cache dtype.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — cache cost scales with context; quantization pays off more at long contexts.
+- [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/) — works with quantized KV on recent backends.
 
 ## What's next
 
-- [TypeV](/net/developer-reference/parameters/context/type-v/) — V-cache dtype.
-- [Low memory tuning](/net/use-cases/low-memory-tuning/) — practical quantization recipes.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [TypeV](/llm/net/developer-reference/parameters/context/type-v/) — V-cache dtype.
+- [Low memory tuning](/llm/net/use-cases/low-memory-tuning/) — practical quantization recipes.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

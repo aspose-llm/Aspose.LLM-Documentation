@@ -43,10 +43,10 @@ All four properties are nullable. Leave a property `null` to defer to the next p
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
 
-- [ModelFilePath](/net/developer-reference/parameters/model-source/model-file-path/)
-- [AsposeModelId](/net/developer-reference/parameters/model-source/aspose-model-id/)
-- [HuggingFaceRepoId](/net/developer-reference/parameters/model-source/hugging-face-repo-id/)
-- [HuggingFaceFileName](/net/developer-reference/parameters/model-source/hugging-face-file-name/)
+- [ModelFilePath](/llm/net/developer-reference/parameters/model-source/model-file-path/)
+- [AsposeModelId](/llm/net/developer-reference/parameters/model-source/aspose-model-id/)
+- [HuggingFaceRepoId](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/)
+- [HuggingFaceFileName](/llm/net/developer-reference/parameters/model-source/hugging-face-file-name/)
 
 ## Resolution order
 
@@ -62,7 +62,7 @@ The engine throws an exception if none of the three resolve.
 
 ## Where models are cached
 
-Downloaded models live in `EngineParameters.ModelCachePath`. The default on Windows is `%LOCALAPPDATA%\Aspose.LLM\models`; on Linux and macOS it is the equivalent `LocalApplicationData` folder. Change the cache location per preset on [`EngineParameters.ModelCachePath`](/net/developer-reference/parameters/engine/).
+Downloaded models live in `EngineParameters.ModelCachePath`. The default on Windows is `%LOCALAPPDATA%\Aspose.LLM\models`; on Linux and macOS it is the equivalent `LocalApplicationData` folder. Change the cache location per preset on [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/).
 
 When a model has already been downloaded, subsequent runs load from the cache. Delete the cache to force a re-download.
 
@@ -80,7 +80,7 @@ var preset = new Qwen25Preset();
 using var api = AsposeLLMApi.Create(preset);
 ```
 
-See [Supported presets](/net/product-overview/supported-presets/) for the exact values per preset.
+See [Supported presets](/llm/net/product-overview/supported-presets/) for the exact values per preset.
 
 ### Load a model from a local file
 
@@ -122,7 +122,7 @@ public class MyCustomPreset : PresetCoreBase
 }
 ```
 
-See [Custom preset](/net/use-cases/custom-preset/) for the full pattern.
+See [Custom preset](/llm/net/use-cases/custom-preset/) for the full pattern.
 
 ### Configure a vision projector
 
@@ -147,6 +147,6 @@ Leaving the Hugging Face fields on an override is harmless — `ModelFilePath` w
 
 ## What's next
 
-- [Engine parameters](/net/developer-reference/parameters/engine/) — change the cache location.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — pre-populate native binaries for offline scenarios.
-- [Custom preset](/net/use-cases/custom-preset/) — full preset-customization patterns.
+- [Engine parameters](/llm/net/developer-reference/parameters/engine/) — change the cache location.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — pre-populate native binaries for offline scenarios.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — full preset-customization patterns.

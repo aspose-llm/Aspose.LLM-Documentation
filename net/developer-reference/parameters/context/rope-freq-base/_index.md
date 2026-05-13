@@ -44,7 +44,7 @@ Built-in presets leave this as `null` — the metadata is usually correct.
 | Running a model in a non-standard context regime | Set per upstream model card |
 | Extending a short-context model with hand-tuned RoPE | Non-trivial — refer to papers |
 
-Changing `RopeFreqBase` without understanding the effect usually degrades quality. Prefer [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) approaches for context extension.
+Changing `RopeFreqBase` without understanding the effect usually degrades quality. Prefer [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) approaches for context extension.
 
 ## Example
 
@@ -55,11 +55,11 @@ preset.ContextParameters.RopeFreqBase = 1_000_000f;  // only if the model docume
 
 ## Interactions
 
-- [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — overall scaling algorithm.
-- [`RopeFreqScale`](/net/developer-reference/parameters/context/rope-freq-scale/) — multiplicative scaler applied on top.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — overall scaling algorithm.
+- [`RopeFreqScale`](/llm/net/developer-reference/parameters/context/rope-freq-scale/) — multiplicative scaler applied on top.
 
 ## What's next
 
-- [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/) — algorithm selector.
-- [RopeFreqScale](/net/developer-reference/parameters/context/rope-freq-scale/) — scale factor.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — algorithm selector.
+- [RopeFreqScale](/llm/net/developer-reference/parameters/context/rope-freq-scale/) — scale factor.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

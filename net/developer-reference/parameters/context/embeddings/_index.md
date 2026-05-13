@@ -15,7 +15,7 @@ keywords:
 - semantic similarity
 ---
 
-`Embeddings` is a boolean flag. When `true`, the engine extracts embedding vectors alongside (or instead of) logits. Use it with a [`PoolingType`](/net/developer-reference/parameters/context/pooling-type/) that matches the model's training regime.
+`Embeddings` is a boolean flag. When `true`, the engine extracts embedding vectors alongside (or instead of) logits. Use it with a [`PoolingType`](/llm/net/developer-reference/parameters/context/pooling-type/) that matches the model's training regime.
 
 ## Quick reference
 
@@ -58,11 +58,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`PoolingType`](/net/developer-reference/parameters/context/pooling-type/) — reducer for token-level embeddings.
-- [`AttentionType`](/net/developer-reference/parameters/context/attention-type/) — usually `NonCausal` for embedding-only models.
+- [`PoolingType`](/llm/net/developer-reference/parameters/context/pooling-type/) — reducer for token-level embeddings.
+- [`AttentionType`](/llm/net/developer-reference/parameters/context/attention-type/) — usually `NonCausal` for embedding-only models.
 
 ## What's next
 
-- [PoolingType](/net/developer-reference/parameters/context/pooling-type/) — pooling strategy.
-- [AttentionType](/net/developer-reference/parameters/context/attention-type/) — attention direction.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [PoolingType](/llm/net/developer-reference/parameters/context/pooling-type/) — pooling strategy.
+- [AttentionType](/llm/net/developer-reference/parameters/context/attention-type/) — attention direction.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

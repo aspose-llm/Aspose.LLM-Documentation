@@ -126,6 +126,6 @@ Native `llama.cpp` libraries are **not** bundled with the NuGet payload. They ar
 
 ## What's next
 
-- [Supported presets](/net/product-overview/supported-presets/) — pick a preset that matches your model and hardware.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how sessions are created, used, and disposed.
-- [Hello, world!](/net/hello-world/) — a minimal runnable example.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — pick a preset that matches your model and hardware.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — how sessions are created, used, and disposed.
+- [Hello, world!](/llm/net/hello-world/) — a minimal runnable example.

@@ -28,79 +28,79 @@ keywords:
 
 The library targets .NET Standard 2.0 and ships native `llama.cpp` runtimes for CPU, CUDA, HIP, Metal, and Vulkan — downloaded automatically on first use. A single NuGet package (`Aspose.LLM`) adds everything you need to one project.
 
-Start with [system requirements](/net/system-requirements/), [installation](/net/installation/), and the [Hello, world! example](/net/hello-world/) — or jump straight into the [quick-win recipes](/net/quick-wins/).
+Start with [system requirements](/llm/net/system-requirements/), [installation](/llm/net/installation/), and the [Hello, world! example](/llm/net/hello-world/) — or jump straight into the [quick-win recipes](/llm/net/quick-wins/).
 
 ## Product overview
 
 Learn about Aspose.LLM for .NET, its architecture, capabilities, and supported models.
 
-- [Introduction](/net/product-overview/)
-- [Architecture](/net/product-overview/architecture/)
-- [Features](/net/product-overview/features/)
-- [Supported presets](/net/product-overview/supported-presets/)
-- [Supported acceleration](/net/product-overview/supported-acceleration/)
+- [Introduction](/llm/net/product-overview/)
+- [Architecture](/llm/net/product-overview/architecture/)
+- [Features](/llm/net/product-overview/features/)
+- [Supported presets](/llm/net/product-overview/supported-presets/)
+- [Supported acceleration](/llm/net/product-overview/supported-acceleration/)
 
 ## Getting started
 
 Install, license, and run your first example.
 
-- [System requirements](/net/system-requirements/)
-- [Installation](/net/installation/)
-- [Licensing](/net/licensing/)
-- [How to run examples](/net/how-to-run-the-examples/)
-- [Hello, world!](/net/hello-world/)
-- [Quick wins](/net/quick-wins/)
+- [System requirements](/llm/net/system-requirements/)
+- [Installation](/llm/net/installation/)
+- [Licensing](/llm/net/licensing/)
+- [How to run examples](/llm/net/how-to-run-the-examples/)
+- [Hello, world!](/llm/net/hello-world/)
+- [Quick wins](/llm/net/quick-wins/)
 
 ## Developer's reference
 
 Conceptual reference for every public type and pattern.
 
-- [AsposeLLMApi facade](/net/developer-reference/asposellmapi/), [presets](/net/developer-reference/presets/), [chat sessions](/net/developer-reference/chat-sessions/), [session persistence](/net/developer-reference/session-persistence/)
-- [Parameters](/net/developer-reference/parameters/) — 8 bags: model source, inference, context, chat, sampler, engine, binary manager, multimodal context
-- [Cache management](/net/developer-reference/cache-management/), [multimodal](/net/developer-reference/multimodal/), [acceleration](/net/developer-reference/acceleration/)
-- [Dependency injection](/net/developer-reference/dependency-injection/), [extensibility](/net/developer-reference/extensibility/), [logging and diagnostics](/net/developer-reference/logging-and-diagnostics/)
-- [License](/net/developer-reference/license/), [API reference](https://reference.aspose.com/llm/net/)
+- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/), [presets](/llm/net/developer-reference/presets/), [chat sessions](/llm/net/developer-reference/chat-sessions/), [session persistence](/llm/net/developer-reference/session-persistence/)
+- [Parameters](/llm/net/developer-reference/parameters/) — 8 bags: model source, inference, context, chat, sampler, engine, binary manager, multimodal context
+- [Cache management](/llm/net/developer-reference/cache-management/), [multimodal](/llm/net/developer-reference/multimodal/), [acceleration](/llm/net/developer-reference/acceleration/)
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/), [extensibility](/llm/net/developer-reference/extensibility/), [logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/)
+- [License](/llm/net/developer-reference/license/), [API reference](https://reference.aspose.com/llm/net/)
 
-See the full [Developer's reference](/net/developer-reference/) hub.
+See the full [Developer's reference](/llm/net/developer-reference/) hub.
 
 ## Use cases
 
 Build common scenarios with Aspose.LLM for .NET — full runnable code for each.
 
-- [Simple chat](/net/use-cases/simple-chat/), [multi-turn chat](/net/use-cases/multi-turn-chat/), [save and restore session](/net/use-cases/save-and-restore-session/)
-- [Custom preset](/net/use-cases/custom-preset/), [bring your own GGUF](/net/use-cases/bring-your-own-gguf/), [system prompt recipes](/net/use-cases/system-prompt-recipes/)
-- [Vision Q&A](/net/use-cases/vision-qa/), [batch processing](/net/use-cases/batch-processing/), [multiple concurrent sessions](/net/use-cases/multiple-concurrent-sessions/)
-- [CPU-only](/net/use-cases/cpu-only-deployment/), [CUDA GPU](/net/use-cases/gpu-deployment-cuda/), [offline](/net/use-cases/offline-deployment/), [ASP.NET Core](/net/use-cases/integration-with-aspnet-core/)
-- [Long context tuning](/net/use-cases/long-context-tuning/), [low memory tuning](/net/use-cases/low-memory-tuning/)
+- [Simple chat](/llm/net/use-cases/simple-chat/), [multi-turn chat](/llm/net/use-cases/multi-turn-chat/), [save and restore session](/llm/net/use-cases/save-and-restore-session/)
+- [Custom preset](/llm/net/use-cases/custom-preset/), [bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/), [system prompt recipes](/llm/net/use-cases/system-prompt-recipes/)
+- [Vision Q&A](/llm/net/use-cases/vision-qa/), [batch processing](/llm/net/use-cases/batch-processing/), [multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/)
+- [CPU-only](/llm/net/use-cases/cpu-only-deployment/), [CUDA GPU](/llm/net/use-cases/gpu-deployment-cuda/), [offline](/llm/net/use-cases/offline-deployment/), [ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/)
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/), [low memory tuning](/llm/net/use-cases/low-memory-tuning/)
 
-See the full [Use cases](/net/use-cases/) hub.
+See the full [Use cases](/llm/net/use-cases/) hub.
 
 ## How-to recipes
 
 Short focused answers for common questions.
 
-- [Select a model by task](/net/how-to/select-model-by-task/)
-- [Understand quantization](/net/how-to/understand-quantization/)
-- [Tune for speed vs quality](/net/how-to/tune-for-speed-vs-quality/)
-- [Handle cancellation](/net/how-to/handle-cancellation/)
-- [Reduce first-token latency](/net/how-to/reduce-first-token-latency/)
-- [Estimate memory requirements](/net/how-to/estimate-memory-requirements/)
+- [Select a model by task](/llm/net/how-to/select-model-by-task/)
+- [Understand quantization](/llm/net/how-to/understand-quantization/)
+- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/)
+- [Handle cancellation](/llm/net/how-to/handle-cancellation/)
+- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/)
+- [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/)
 
-See the full [How-to recipes](/net/how-to/) hub.
+See the full [How-to recipes](/llm/net/how-to/) hub.
 
 ## Troubleshooting
 
 Diagnose and fix common problems.
 
-- [Binary download fails](/net/troubleshooting/binary-download-fails/)
-- [Out of memory](/net/troubleshooting/out-of-memory/)
-- [GPU not detected](/net/troubleshooting/gpu-not-detected/)
-- [Model not loading](/net/troubleshooting/model-not-loading/)
-- [Garbled output](/net/troubleshooting/garbled-output/)
-- [License errors](/net/troubleshooting/license-errors/)
-- [Performance issues](/net/troubleshooting/performance-issues/)
+- [Binary download fails](/llm/net/troubleshooting/binary-download-fails/)
+- [Out of memory](/llm/net/troubleshooting/out-of-memory/)
+- [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/)
+- [Model not loading](/llm/net/troubleshooting/model-not-loading/)
+- [Garbled output](/llm/net/troubleshooting/garbled-output/)
+- [License errors](/llm/net/troubleshooting/license-errors/)
+- [Performance issues](/llm/net/troubleshooting/performance-issues/)
 
-See the full [Troubleshooting](/net/troubleshooting/) hub.
+See the full [Troubleshooting](/llm/net/troubleshooting/) hub.
 
 ## Resources
 

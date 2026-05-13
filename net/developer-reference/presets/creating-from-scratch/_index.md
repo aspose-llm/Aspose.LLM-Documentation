@@ -123,7 +123,7 @@ For a custom GGUF:
   - Pick a different GGUF export with richer metadata.
   - File a [support request](https://forum.aspose.com/) with the model's Hugging Face URL.
 
-See [Chat templates](/net/developer-reference/multimodal/chat-templates/) for the vision side.
+See [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) for the vision side.
 
 ## Source priority
 
@@ -147,13 +147,13 @@ Before deploying a new custom preset, verify:
 - Model downloads successfully from Hugging Face (or the file exists locally).
 - The first `Create` completes without errors.
 - A simple prompt produces coherent output.
-- Multimodal input (for vision presets) is processed correctly — see [Debugging vision](/net/developer-reference/multimodal/debugging-vision/).
+- Multimodal input (for vision presets) is processed correctly — see [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/).
 
 Enable debug logging (`EngineParameters.EnableDebugLogging = true`) during initial testing to see template selection, projector load, and batch sizes.
 
 ## What's next
 
-- [Using built-in presets](/net/developer-reference/presets/using-built-in/) — for models that already have a preset.
-- [Customizing](/net/developer-reference/presets/customizing/) — tweak a built-in preset.
-- [Parameters reference](/net/developer-reference/parameters/) — every knob available to a custom preset.
-- [Custom preset use case](/net/use-cases/custom-preset/) — runnable end-to-end example.
+- [Using built-in presets](/llm/net/developer-reference/presets/using-built-in/) — for models that already have a preset.
+- [Customizing](/llm/net/developer-reference/presets/customizing/) — tweak a built-in preset.
+- [Parameters reference](/llm/net/developer-reference/parameters/) — every knob available to a custom preset.
+- [Custom preset use case](/llm/net/use-cases/custom-preset/) — runnable end-to-end example.

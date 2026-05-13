@@ -29,11 +29,11 @@ CUDA is the fastest backend for Aspose.LLM for .NET on NVIDIA hardware. This use
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 - NVIDIA GPU with compute capability 5.0+.
 - NVIDIA driver 525 or later.
-- [System requirements](/net/system-requirements/) → GPU section for the full matrix.
+- [System requirements](/llm/net/system-requirements/) → GPU section for the full matrix.
 
 Verify with `nvidia-smi`:
 
@@ -236,6 +236,6 @@ Ensure the image ships with NVIDIA driver 525+ and CUDA runtime. Most GPU AMIs a
 
 ## What's next
 
-- [CUDA acceleration](/net/developer-reference/acceleration/cuda/) — full CUDA reference.
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `TensorSplit`, `SplitMode`, `MainGpu`.
-- [Context parameters](/net/developer-reference/parameters/context/) — flash attention and KV dtype.
+- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/) — full CUDA reference.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `TensorSplit`, `SplitMode`, `MainGpu`.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — flash attention and KV dtype.

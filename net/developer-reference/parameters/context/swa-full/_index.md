@@ -55,9 +55,9 @@ preset.ContextParameters.SwaFull = null;  // default
 ## Interactions
 
 - Only relevant for SWA-architected models.
-- [`TypeK`](/net/developer-reference/parameters/context/type-k/), [`TypeV`](/net/developer-reference/parameters/context/type-v/) — the dtype applies regardless.
+- [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/), [`TypeV`](/llm/net/developer-reference/parameters/context/type-v/) — the dtype applies regardless.
 
 ## What's next
 
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
-- [Supported presets](/net/product-overview/supported-presets/) — check which presets use SWA.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — check which presets use SWA.

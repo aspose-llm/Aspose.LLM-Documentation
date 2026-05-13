@@ -15,7 +15,7 @@ keywords:
 - flash attention
 ---
 
-`FlashAttention` is the legacy boolean toggle for flash attention. It predates the more granular [`FlashAttentionMode`](/net/developer-reference/parameters/context/flash-attention-mode/) enum. Prefer `FlashAttentionMode` for new code.
+`FlashAttention` is the legacy boolean toggle for flash attention. It predates the more granular [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/) enum. Prefer `FlashAttentionMode` for new code.
 
 ## Quick reference
 
@@ -41,7 +41,7 @@ keywords:
 | Default — prefer `FlashAttentionMode` instead | `null` |
 | Legacy code using this field | Keep for backwards compatibility |
 
-For new code, use [`FlashAttentionMode`](/net/developer-reference/parameters/context/flash-attention-mode/) which offers the three-way `Auto` / `Disabled` / `Enabled` choice.
+For new code, use [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/) which offers the three-way `Auto` / `Disabled` / `Enabled` choice.
 
 ## Example
 
@@ -55,9 +55,9 @@ preset.ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled;
 
 ## Interactions
 
-- [`FlashAttentionMode`](/net/developer-reference/parameters/context/flash-attention-mode/) — newer enum replacement.
+- [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/) — newer enum replacement.
 
 ## What's next
 
-- [FlashAttentionMode](/net/developer-reference/parameters/context/flash-attention-mode/) — recommended replacement.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [FlashAttentionMode](/llm/net/developer-reference/parameters/context/flash-attention-mode/) — recommended replacement.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

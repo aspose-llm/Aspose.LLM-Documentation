@@ -131,6 +131,6 @@ For long-term archives, store the `.json` file together with a small manifest re
 
 ## What's next
 
-- [Chat sessions](/net/developer-reference/chat-sessions/) — create and use sessions at runtime.
-- [Save and restore session](/net/use-cases/save-and-restore-session/) — a complete runnable example.
-- [Presets](/net/developer-reference/presets/) — configure the parameters that apply to new sessions.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — create and use sessions at runtime.
+- [Save and restore session](/llm/net/use-cases/save-and-restore-session/) — a complete runnable example.
+- [Presets](/llm/net/developer-reference/presets/) — configure the parameters that apply to new sessions.

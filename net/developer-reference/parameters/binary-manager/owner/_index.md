@@ -51,11 +51,11 @@ var preset = new Qwen25Preset();
 
 ## Interactions
 
-- [`Repo`](/net/developer-reference/parameters/binary-manager/repo/) — the repository name on that owner.
-- [`ReleaseTag`](/net/developer-reference/parameters/binary-manager/release-tag/) — specific release under the owner/repo.
+- [`Repo`](/llm/net/developer-reference/parameters/binary-manager/repo/) — the repository name on that owner.
+- [`ReleaseTag`](/llm/net/developer-reference/parameters/binary-manager/release-tag/) — specific release under the owner/repo.
 
 ## What's next
 
-- [Repo](/net/developer-reference/parameters/binary-manager/repo/) — repository name.
-- [ReleaseTag](/net/developer-reference/parameters/binary-manager/release-tag/) — version pin.
-- [Binary manager hub](/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [Repo](/llm/net/developer-reference/parameters/binary-manager/repo/) — repository name.
+- [ReleaseTag](/llm/net/developer-reference/parameters/binary-manager/release-tag/) — version pin.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.

@@ -164,6 +164,6 @@ Budget time for the **first** response — filling a 131K context takes tens of 
 
 ## What's next
 
-- [Context parameters](/net/developer-reference/parameters/context/) — full list of context knobs.
-- [Low-memory tuning](/net/use-cases/low-memory-tuning/) — when long context is not worth the memory cost.
-- [Cache management](/net/developer-reference/cache-management/) — keep sessions fresh over time.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — full list of context knobs.
+- [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/) — when long context is not worth the memory cost.
+- [Cache management](/llm/net/developer-reference/cache-management/) — keep sessions fresh over time.

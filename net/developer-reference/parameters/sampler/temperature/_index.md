@@ -74,15 +74,15 @@ preset.SamplerParameters.Seed = 42; // seed is ignored when Temperature == 0
 
 ## Interactions
 
-- [`TopP`](/net/developer-reference/parameters/sampler/top-p/) — applies after temperature to trim the tail.
-- [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — hard cap on candidate count after temperature.
-- [`MinP`](/net/developer-reference/parameters/sampler/min-p/) — minimum relative probability after temperature.
-- [`Seed`](/net/developer-reference/parameters/sampler/seed/) — irrelevant when `Temperature = 0`.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — when active, adaptively adjusts entropy and bypasses `Temperature` tuning.
-- [`DynatempRange`](/net/developer-reference/parameters/sampler/dynatemp-range/) — dynamically varies `Temperature` per step based on entropy.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — applies after temperature to trim the tail.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — hard cap on candidate count after temperature.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — minimum relative probability after temperature.
+- [`Seed`](/llm/net/developer-reference/parameters/sampler/seed/) — irrelevant when `Temperature = 0`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — when active, adaptively adjusts entropy and bypasses `Temperature` tuning.
+- [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) — dynamically varies `Temperature` per step based on entropy.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [Tune for speed vs quality](/net/how-to/tune-for-speed-vs-quality/) — where `Temperature` sits in the trade-off.
-- [Garbled output troubleshooting](/net/troubleshooting/garbled-output/) — when high temperature causes incoherence.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/) — where `Temperature` sits in the trade-off.
+- [Garbled output troubleshooting](/llm/net/troubleshooting/garbled-output/) — when high temperature causes incoherence.

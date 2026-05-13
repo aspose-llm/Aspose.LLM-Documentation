@@ -149,6 +149,6 @@ Aspose.LLM does not ship HIP binaries for Windows. On Windows with AMD, Vulkan i
 
 ## What's next
 
-- [Acceleration](/net/developer-reference/acceleration/) — detailed per-backend setup.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `SplitMode`, `MainGpu`.
+- [Acceleration](/llm/net/developer-reference/acceleration/) — detailed per-backend setup.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `SplitMode`, `MainGpu`.

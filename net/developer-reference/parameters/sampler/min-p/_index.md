@@ -69,14 +69,14 @@ preset.SamplerParameters.Temperature = 0.9f;
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — applied before `MinP`.
-- [`TopP`](/net/developer-reference/parameters/sampler/top-p/) — can coexist; final candidate set respects both.
-- [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — count-based cap; stacks with `MinP`.
-- [`MinKeep`](/net/developer-reference/parameters/sampler/min-keep/) — floor; `MinP` never cuts below `MinKeep`.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — bypasses `MinP` when active.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — applied before `MinP`.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — can coexist; final candidate set respects both.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — count-based cap; stacks with `MinP`.
+- [`MinKeep`](/llm/net/developer-reference/parameters/sampler/min-keep/) — floor; `MinP` never cuts below `MinKeep`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — bypasses `MinP` when active.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [TopP](/net/developer-reference/parameters/sampler/top-p/) — cumulative-mass cousin of `MinP`.
-- [TopK](/net/developer-reference/parameters/sampler/top-k/) — count-based cap.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [TopP](/llm/net/developer-reference/parameters/sampler/top-p/) — cumulative-mass cousin of `MinP`.
+- [TopK](/llm/net/developer-reference/parameters/sampler/top-k/) — count-based cap.

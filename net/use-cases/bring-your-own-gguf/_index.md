@@ -28,8 +28,8 @@ When a built-in preset does not cover your model — your organization's fine-tu
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 - A GGUF file — either a local path or a Hugging Face repo identifier.
 
 ## Step 1. Identify the model
@@ -131,7 +131,7 @@ Expected log highlights:
 - Chat template selected matches your model family.
 - First token produced within a reasonable time.
 
-If the reply contains literal `<image>` or other template markers — the engine fell back to a generic template. Check the model's GGUF metadata; see [Chat templates](/net/developer-reference/multimodal/chat-templates/).
+If the reply contains literal `<image>` or other template markers — the engine fell back to a generic template. Check the model's GGUF metadata; see [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/).
 
 ## Step 5. Validate quality
 
@@ -179,7 +179,7 @@ public class MyCustomVisionPreset : PresetCoreBase
 }
 ```
 
-See [Vision presets](/net/developer-reference/multimodal/vision-presets/) for the chat-template caveats.
+See [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) for the chat-template caveats.
 
 ## Step 6. Share the preset
 
@@ -197,6 +197,6 @@ Commit the preset class to your source control. Team members get the same tuning
 
 ## What's next
 
-- [Creating a preset from scratch](/net/developer-reference/presets/creating-from-scratch/) — presets reference.
-- [Custom preset use case](/net/use-cases/custom-preset/) — simpler override patterns.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — how detection works.
+- [Creating a preset from scratch](/llm/net/developer-reference/presets/creating-from-scratch/) — presets reference.
+- [Custom preset use case](/llm/net/use-cases/custom-preset/) — simpler override patterns.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — how detection works.

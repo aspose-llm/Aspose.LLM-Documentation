@@ -53,11 +53,11 @@ preset.BaseModelInferenceParameters.GpuLayers = 999;   // base model fully on GP
 
 ## Interactions
 
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — base model offload; projector placement is independent.
-- [`PrintTimings`](/net/developer-reference/parameters/multimodal-context/print-timings/) — diagnose projector performance.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — base model offload; projector placement is independent.
+- [`PrintTimings`](/llm/net/developer-reference/parameters/multimodal-context/print-timings/) — diagnose projector performance.
 
 ## What's next
 
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — projector diagnostics.
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — built-in presets.
-- [Multimodal context hub](/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — projector diagnostics.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) — built-in presets.
+- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.

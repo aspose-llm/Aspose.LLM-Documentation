@@ -15,7 +15,7 @@ keywords:
 - RoPE
 ---
 
-`YarnAttnFactor` scales attention logit magnitudes as part of the YaRN algorithm. It compensates for the attention-softmax becoming too flat at extreme positions. Relevant only when [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
+`YarnAttnFactor` scales attention logit magnitudes as part of the YaRN algorithm. It compensates for the attention-softmax becoming too flat at extreme positions. Relevant only when [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
 
 ## Quick reference
 
@@ -53,10 +53,10 @@ preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 
 ## Interactions
 
-- [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
 - Other YaRN knobs operate together.
 
 ## What's next
 
-- [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/) — the primary YaRN field you might touch.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/) — the primary YaRN field you might touch.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

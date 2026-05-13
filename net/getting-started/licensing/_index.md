@@ -138,6 +138,6 @@ All three methods from the [Apply a license](#apply-a-license) section work — 
 
 ## What's next
 
-- [Hello, world!](/net/hello-world/) — run the first licensed example.
-- [License reference](/net/developer-reference/license/) — the `License` class in the developer reference.
-- [Installation](/net/installation/) — if you have not yet installed the package.
+- [Hello, world!](/llm/net/hello-world/) — run the first licensed example.
+- [License reference](/llm/net/developer-reference/license/) — the `License` class in the developer reference.
+- [Installation](/llm/net/installation/) — if you have not yet installed the package.

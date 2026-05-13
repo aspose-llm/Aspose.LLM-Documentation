@@ -63,15 +63,15 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — applied before `TopNSigma`.
-- [`TopP`](/net/developer-reference/parameters/sampler/top-p/) — can coexist; experimental combinations are not well-studied.
-- [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — can coexist.
-- [`MinP`](/net/developer-reference/parameters/sampler/min-p/) — can coexist.
-- [`MinKeep`](/net/developer-reference/parameters/sampler/min-keep/) — floor applies.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — bypasses `TopNSigma` when active.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — applied before `TopNSigma`.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — can coexist; experimental combinations are not well-studied.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — can coexist.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — can coexist.
+- [`MinKeep`](/llm/net/developer-reference/parameters/sampler/min-keep/) — floor applies.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — bypasses `TopNSigma` when active.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [TypicalP](/net/developer-reference/parameters/sampler/typical-p/) — another experimental filter.
-- [TopP](/net/developer-reference/parameters/sampler/top-p/) — the standard alternative.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [TypicalP](/llm/net/developer-reference/parameters/sampler/typical-p/) — another experimental filter.
+- [TopP](/llm/net/developer-reference/parameters/sampler/top-p/) — the standard alternative.

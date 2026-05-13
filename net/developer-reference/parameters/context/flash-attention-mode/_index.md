@@ -16,7 +16,7 @@ keywords:
 - memory
 ---
 
-`FlashAttentionMode` controls flash attention — a fused-kernel optimization that reduces memory usage and speeds up attention, especially at long contexts. Prefer `FlashAttentionMode` over the legacy [`FlashAttention`](/net/developer-reference/parameters/context/flash-attention/) boolean.
+`FlashAttentionMode` controls flash attention — a fused-kernel optimization that reduces memory usage and speeds up attention, especially at long contexts. Prefer `FlashAttentionMode` over the legacy [`FlashAttention`](/llm/net/developer-reference/parameters/context/flash-attention/) boolean.
 
 ## Quick reference
 
@@ -63,13 +63,13 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — larger contexts benefit more from flash attention.
-- [`TypeK`](/net/developer-reference/parameters/context/type-k/), [`TypeV`](/net/developer-reference/parameters/context/type-v/) — flash attention works with quantized KV cache.
-- [`FlashAttention`](/net/developer-reference/parameters/context/flash-attention/) — legacy boolean; prefer `FlashAttentionMode`.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — larger contexts benefit more from flash attention.
+- [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/), [`TypeV`](/llm/net/developer-reference/parameters/context/type-v/) — flash attention works with quantized KV cache.
+- [`FlashAttention`](/llm/net/developer-reference/parameters/context/flash-attention/) — legacy boolean; prefer `FlashAttentionMode`.
 - Acceleration backends — CUDA, Metal, HIP, Vulkan all support flash attention on recent drivers.
 
 ## What's next
 
-- [FlashAttention](/net/developer-reference/parameters/context/flash-attention/) — legacy field; documented for completeness.
-- [ContextSize](/net/developer-reference/parameters/context/context-size/) — the axis where FA matters most.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — practical recipe.
+- [FlashAttention](/llm/net/developer-reference/parameters/context/flash-attention/) — legacy field; documented for completeness.
+- [ContextSize](/llm/net/developer-reference/parameters/context/context-size/) — the axis where FA matters most.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/) — practical recipe.

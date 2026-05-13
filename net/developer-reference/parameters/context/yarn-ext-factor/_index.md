@@ -15,7 +15,7 @@ keywords:
 - RoPE
 ---
 
-`YarnExtFactor` is the YaRN extrapolation mix factor. It blends between base RoPE and NTK-aware scaling in the YaRN algorithm. Relevant only when [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
+`YarnExtFactor` is the YaRN extrapolation mix factor. It blends between base RoPE and NTK-aware scaling in the YaRN algorithm. Relevant only when [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
 
 ## Quick reference
 
@@ -53,11 +53,11 @@ preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 
 ## Interactions
 
-- [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
-- [`YarnAttnFactor`](/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/net/developer-reference/parameters/context/yarn-beta-slow/), [`YarnOrigCtx`](/net/developer-reference/parameters/context/yarn-orig-ctx/) — other YaRN knobs.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
+- [`YarnAttnFactor`](/llm/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/), [`YarnOrigCtx`](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/) — other YaRN knobs.
 
 ## What's next
 
-- [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/) — the most commonly set YaRN knob.
-- [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/) — enables YaRN.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/) — the most commonly set YaRN knob.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — enables YaRN.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

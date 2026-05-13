@@ -16,7 +16,7 @@ keywords:
 - threshold
 ---
 
-`XtcThreshold` is the probability cutoff for XTC (eXclude Top Choices). Only tokens whose probability is **above** `XtcThreshold` are candidates for XTC exclusion. This field has no effect unless [`XtcProbability`](/net/developer-reference/parameters/sampler/xtc-probability/) is enabled.
+`XtcThreshold` is the probability cutoff for XTC (eXclude Top Choices). Only tokens whose probability is **above** `XtcThreshold` are candidates for XTC exclusion. This field has no effect unless [`XtcProbability`](/llm/net/developer-reference/parameters/sampler/xtc-probability/) is enabled.
 
 ## Quick reference
 
@@ -63,10 +63,10 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`XtcProbability`](/net/developer-reference/parameters/sampler/xtc-probability/) — gate; `XtcThreshold` only matters when XTC fires.
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/), [`TopP`](/net/developer-reference/parameters/sampler/top-p/), [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — apply before XTC.
+- [`XtcProbability`](/llm/net/developer-reference/parameters/sampler/xtc-probability/) — gate; `XtcThreshold` only matters when XTC fires.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/), [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/), [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — apply before XTC.
 
 ## What's next
 
-- [XtcProbability](/net/developer-reference/parameters/sampler/xtc-probability/) — enables XTC.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [XtcProbability](/llm/net/developer-reference/parameters/sampler/xtc-probability/) — enables XTC.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

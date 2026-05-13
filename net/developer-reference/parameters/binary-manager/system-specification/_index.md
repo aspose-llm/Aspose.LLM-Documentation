@@ -51,9 +51,9 @@ var preset = new Qwen25Preset();
 
 ## Interactions
 
-- [`PreferredAcceleration`](/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — higher-level acceleration selector; usually preferred over raw `SystemSpec` overrides.
+- [`PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — higher-level acceleration selector; usually preferred over raw `SystemSpec` overrides.
 
 ## What's next
 
-- [PreferredAcceleration](/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — acceleration control.
-- [Binary manager hub](/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [PreferredAcceleration](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — acceleration control.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.

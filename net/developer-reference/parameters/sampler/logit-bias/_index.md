@@ -62,10 +62,10 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/), other filters — run after `LogitBias` is applied.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — `LogitBias` still applies; Mirostat adapts around the biased distribution.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/), other filters — run after `LogitBias` is applied.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — `LogitBias` still applies; Mirostat adapts around the biased distribution.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
-- [EnableInfill](/net/developer-reference/parameters/sampler/enable-infill/) — specialized sampling mode.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [EnableInfill](/llm/net/developer-reference/parameters/sampler/enable-infill/) — specialized sampling mode.

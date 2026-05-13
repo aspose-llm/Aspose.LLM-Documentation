@@ -29,7 +29,7 @@ The SDK ships four built-in vision presets. Each preset configures both the base
 | `Gemma3VisionPreset` | Gemma 3 Vision (Latex fine-tune) | 8 096 | Q4_K_M | `Gemma-3-Vision-Latex.mmproj-f16.gguf` |
 | `Ministral3VisionPreset` | Ministral 3 8B Instruct (Mistral AI, 2512 release) | 262 144 | Q4_K_M | `Ministral-3-8B-Instruct-2512-BF16-mmproj.gguf` |
 
-See [Supported presets](/net/product-overview/supported-presets/#vision-presets) for the Hugging Face source repositories.
+See [Supported presets](/llm/net/product-overview/supported-presets/#vision-presets) for the Hugging Face source repositories.
 
 ## Picker
 
@@ -75,21 +75,21 @@ string reply = await api.SendMessageAsync(
 Console.WriteLine(reply);
 ```
 
-See [Attaching images](/net/developer-reference/multimodal/attaching-images/) for format and size rules.
+See [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) for format and size rules.
 
 ## Customizing a vision preset
 
-The same override patterns as text presets apply. See [Presets](/net/developer-reference/presets/) for the three approaches:
+The same override patterns as text presets apply. See [Presets](/llm/net/developer-reference/presets/) for the three approaches:
 
 - **Override before `Create`** — tweak fields on the preset instance.
 - **Subclass** — inherit from a built-in vision preset and set defaults in the constructor.
 - **From scratch** — extend `PresetCoreBase` and populate both `BaseModelSourceParameters` and `MmprojSourceParameters`.
 
-Additional vision-only knobs live on [`MtmdContextParameters`](/net/developer-reference/parameters/multimodal-context/) — control projector GPU offload, threading, and verbosity.
+Additional vision-only knobs live on [`MtmdContextParameters`](/llm/net/developer-reference/parameters/multimodal-context/) — control projector GPU offload, threading, and verbosity.
 
 ## What's next
 
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — how to pass image bytes.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — how the SDK selects the right template per model.
-- [Multimodal context parameters](/net/developer-reference/parameters/multimodal-context/) — vision-side tuning knobs.
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — configure the `mmproj` download source.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — how to pass image bytes.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — how the SDK selects the right template per model.
+- [Multimodal context parameters](/llm/net/developer-reference/parameters/multimodal-context/) — vision-side tuning knobs.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/) — configure the `mmproj` download source.

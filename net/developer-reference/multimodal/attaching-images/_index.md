@@ -171,11 +171,11 @@ preset.ChatParameters.History = new List<ChatMessage> { msg };
 |---|---|---|
 | `Unknown or unsupported image format` | File is TIFF, HEIC, SVG, or corrupt. | Convert to JPEG/PNG/BMP/GIF/WebP. |
 | `Image size exceeds maximum allowed (50MB)` | Very high-resolution image. | Downscale or recompress before attaching. |
-| Garbled reply, no image detail | Chat template mismatch or wrong preset. | Verify you are using a vision preset; see [Chat templates](/net/developer-reference/multimodal/chat-templates/). |
+| Garbled reply, no image detail | Chat template mismatch or wrong preset. | Verify you are using a vision preset; see [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/). |
 | Reply ignores the image | Prompt is too generic. | Reference "the image", "this diagram", etc. explicitly. |
 
 ## What's next
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — pick the right preset for your images.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — how the engine inserts image markers.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — diagnose misalignments and garbled output.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) — pick the right preset for your images.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — how the engine inserts image markers.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — diagnose misalignments and garbled output.

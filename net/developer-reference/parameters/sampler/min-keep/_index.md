@@ -60,14 +60,14 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — `MinKeep` floors the candidate count regardless.
-- [`TopP`](/net/developer-reference/parameters/sampler/top-p/) — same — nucleus can't cut below `MinKeep`.
-- [`MinP`](/net/developer-reference/parameters/sampler/min-p/) — same.
-- [`TypicalP`](/net/developer-reference/parameters/sampler/typical-p/) — same.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — uses its own candidate-management algorithm; `MinKeep` is not relevant when Mirostat is active.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — `MinKeep` floors the candidate count regardless.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — same — nucleus can't cut below `MinKeep`.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — same.
+- [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/) — same.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — uses its own candidate-management algorithm; `MinKeep` is not relevant when Mirostat is active.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [TopK](/net/developer-reference/parameters/sampler/top-k/) — count-based filter that respects `MinKeep`.
-- [TopP](/net/developer-reference/parameters/sampler/top-p/) — cumulative-mass filter that respects `MinKeep`.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [TopK](/llm/net/developer-reference/parameters/sampler/top-k/) — count-based filter that respects `MinKeep`.
+- [TopP](/llm/net/developer-reference/parameters/sampler/top-p/) — cumulative-mass filter that respects `MinKeep`.

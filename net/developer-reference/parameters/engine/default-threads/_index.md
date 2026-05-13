@@ -15,7 +15,7 @@ keywords:
 - default
 ---
 
-`DefaultThreads` is the thread count the engine uses when the more specific [`ContextParameters.NThreads`](/net/developer-reference/parameters/context/n-threads/) and [`NThreadsBatch`](/net/developer-reference/parameters/context/n-threads-batch/) are not set.
+`DefaultThreads` is the thread count the engine uses when the more specific [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) and [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) are not set.
 
 ## Quick reference
 
@@ -28,7 +28,7 @@ keywords:
 
 ## What it does
 
-When [`ContextParameters.NThreads`](/net/developer-reference/parameters/context/n-threads/) is `null`, the engine falls back to `DefaultThreads`. Same for `NThreadsBatch`.
+When [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) is `null`, the engine falls back to `DefaultThreads`. Same for `NThreadsBatch`.
 
 The default leaves one logical core free for the rest of your application. On an 8-core machine, the default is 7. On a 16-core machine, 15.
 
@@ -41,7 +41,7 @@ The default leaves one logical core free for the rest of your application. On an
 | CPU-quota-limited container | Fixed smaller number matching quota |
 | Shared host with other heavy work | Half `ProcessorCount` |
 
-For per-phase control (generation vs prompt processing), set [`NThreads`](/net/developer-reference/parameters/context/n-threads/) and [`NThreadsBatch`](/net/developer-reference/parameters/context/n-threads-batch/) directly — they override `DefaultThreads`.
+For per-phase control (generation vs prompt processing), set [`NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) and [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) directly — they override `DefaultThreads`.
 
 ## Example
 
@@ -55,11 +55,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`ContextParameters.NThreads`](/net/developer-reference/parameters/context/n-threads/) — generation threads; overrides default when set.
-- [`ContextParameters.NThreadsBatch`](/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads; overrides default when set.
+- [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) — generation threads; overrides default when set.
+- [`ContextParameters.NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads; overrides default when set.
 
 ## What's next
 
-- [NThreads](/net/developer-reference/parameters/context/n-threads/) — per-phase override.
-- [CPU acceleration](/net/developer-reference/acceleration/cpu/) — threading strategy.
-- [Engine parameters hub](/net/developer-reference/parameters/engine/) — all engine knobs.
+- [NThreads](/llm/net/developer-reference/parameters/context/n-threads/) — per-phase override.
+- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/) — threading strategy.
+- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/) — all engine knobs.

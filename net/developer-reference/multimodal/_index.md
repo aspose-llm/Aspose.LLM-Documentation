@@ -24,10 +24,10 @@ The SDK does **not** support audio input in the current release, even though the
 
 ## Sections
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — built-in presets with their model sources, projector sources, and picker guidance.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — `MediaAttachment`, supported formats (JPEG, PNG, BMP, GIF, WebP), the 50 MB limit, and how to pass images to `SendMessageAsync`.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — the eight vision chat templates the SDK recognizes and how auto-selection works.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — tagged logs, `parse_mm_logs.zsh`, and common misalignments.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) — built-in presets with their model sources, projector sources, and picker guidance.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — `MediaAttachment`, supported formats (JPEG, PNG, BMP, GIF, WebP), the 50 MB limit, and how to pass images to `SendMessageAsync`.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — the eight vision chat templates the SDK recognizes and how auto-selection works.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — tagged logs, `parse_mm_logs.zsh`, and common misalignments.
 
 ## At a glance
 
@@ -56,6 +56,6 @@ Console.WriteLine(reply);
 
 ## What's next
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — pick the right built-in preset.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — formats and limits.
-- [Supported presets](/net/product-overview/supported-presets/#vision-presets) — quick catalog.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) — pick the right built-in preset.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — formats and limits.
+- [Supported presets](/llm/net/product-overview/supported-presets/#vision-presets) — quick catalog.

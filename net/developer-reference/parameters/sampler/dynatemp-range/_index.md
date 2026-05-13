@@ -35,7 +35,7 @@ At each step, `llama.cpp` computes the Shannon entropy of the current token dist
 - When entropy is low (model is confident about the next token), temperature drops toward the lower bound — preserves the confident choice.
 - When entropy is high (many plausible tokens), temperature rises toward the upper bound — encourages variety where the model has no strong preference.
 
-The exact shape of the entropy-to-temperature curve is controlled by [`DynatempExponent`](/net/developer-reference/parameters/sampler/dynatemp-exponent/).
+The exact shape of the entropy-to-temperature curve is controlled by [`DynatempExponent`](/llm/net/developer-reference/parameters/sampler/dynatemp-exponent/).
 
 - `DynatempRange = 0.0` (default) — dynatemp disabled; `Temperature` is used as-is.
 - `DynatempRange = 0.3` — moderate adaptive variation.
@@ -65,12 +65,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — the base / mid-point around which dynatemp varies.
-- [`DynatempExponent`](/net/developer-reference/parameters/sampler/dynatemp-exponent/) — shapes the entropy-to-temperature curve.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — alternative entropy-aware sampler; do not combine.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — the base / mid-point around which dynatemp varies.
+- [`DynatempExponent`](/llm/net/developer-reference/parameters/sampler/dynatemp-exponent/) — shapes the entropy-to-temperature curve.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — alternative entropy-aware sampler; do not combine.
 
 ## What's next
 
-- [DynatempExponent](/net/developer-reference/parameters/sampler/dynatemp-exponent/) — the curve-shape knob.
-- [Temperature](/net/developer-reference/parameters/sampler/temperature/) — the fixed baseline.
-- [Mirostat](/net/developer-reference/parameters/sampler/mirostat/) — alternative adaptive sampler.
+- [DynatempExponent](/llm/net/developer-reference/parameters/sampler/dynatemp-exponent/) — the curve-shape knob.
+- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/) — the fixed baseline.
+- [Mirostat](/llm/net/developer-reference/parameters/sampler/mirostat/) — alternative adaptive sampler.

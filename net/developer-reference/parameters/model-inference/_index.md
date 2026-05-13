@@ -47,9 +47,9 @@ public class ModelInferenceParameters
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions. The rest of this page is an inline overview of the same content; follow the links for the deeper treatment.
 
-**Load knobs**: [GpuLayers](/net/developer-reference/parameters/model-inference/gpu-layers/), [UseMemoryMapping](/net/developer-reference/parameters/model-inference/use-memory-mapping/), [UseMemoryLocking](/net/developer-reference/parameters/model-inference/use-memory-locking/), [MainGpu](/net/developer-reference/parameters/model-inference/main-gpu/), [SplitMode](/net/developer-reference/parameters/model-inference/split-mode/).
+**Load knobs**: [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/), [UseMemoryMapping](/llm/net/developer-reference/parameters/model-inference/use-memory-mapping/), [UseMemoryLocking](/llm/net/developer-reference/parameters/model-inference/use-memory-locking/), [MainGpu](/llm/net/developer-reference/parameters/model-inference/main-gpu/), [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/).
 
-**Other knobs**: [VocabOnly](/net/developer-reference/parameters/model-inference/vocab-only/), [CheckTensors](/net/developer-reference/parameters/model-inference/check-tensors/), [UseExtraBuffers](/net/developer-reference/parameters/model-inference/use-extra-buffers/), [TensorSplit](/net/developer-reference/parameters/model-inference/tensor-split/), [KvOverrides](/net/developer-reference/parameters/model-inference/kv-overrides/).
+**Other knobs**: [VocabOnly](/llm/net/developer-reference/parameters/model-inference/vocab-only/), [CheckTensors](/llm/net/developer-reference/parameters/model-inference/check-tensors/), [UseExtraBuffers](/llm/net/developer-reference/parameters/model-inference/use-extra-buffers/), [TensorSplit](/llm/net/developer-reference/parameters/model-inference/tensor-split/), [KvOverrides](/llm/net/developer-reference/parameters/model-inference/kv-overrides/).
 
 ## Fields
 
@@ -227,6 +227,6 @@ preset.BaseModelInferenceParameters.CheckTensors = true;
 
 ## What's next
 
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — pair with `PreferredAcceleration` to select the right native binary.
-- [Context parameters](/net/developer-reference/parameters/context/) — KV cache configuration and batch sizes that interact with GPU offload.
-- [System requirements](/net/system-requirements/) — GPU backends and their driver / runtime requirements.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — pair with `PreferredAcceleration` to select the right native binary.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — KV cache configuration and batch sizes that interact with GPU offload.
+- [System requirements](/llm/net/system-requirements/) — GPU backends and their driver / runtime requirements.

@@ -28,7 +28,7 @@ keywords:
 
 ## What it does
 
-When the native logger writes (mostly when [`EnableDebugLogging`](/net/developer-reference/parameters/engine/enable-debug-logging/) is `true`), output goes to this file. If the file does not exist, it is created; if it does, output is appended.
+When the native logger writes (mostly when [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) is `true`), output goes to this file. If the file does not exist, it is created; if it does, output is appended.
 
 - Default `logs/log.txt` — a file `log.txt` inside a `logs` folder, resolved relative to the current working directory.
 - Absolute path — write to a specific location regardless of working directory.
@@ -62,10 +62,10 @@ preset.EngineParameters.LogDirectoryPath = logFile;
 
 ## Interactions
 
-- [`EnableDebugLogging`](/net/developer-reference/parameters/engine/enable-debug-logging/) — the main switch for output that this file receives.
+- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) — the main switch for output that this file receives.
 - `ILogger` passed to `AsposeLLMApi.Create` — complementary managed-side logging.
 
 ## What's next
 
-- [Logging and diagnostics](/net/developer-reference/logging-and-diagnostics/) — full logging reference.
-- [Engine parameters hub](/net/developer-reference/parameters/engine/) — all engine knobs.
+- [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/) — full logging reference.
+- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/) — all engine knobs.

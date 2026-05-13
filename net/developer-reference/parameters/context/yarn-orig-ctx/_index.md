@@ -15,7 +15,7 @@ keywords:
 - training window
 ---
 
-`YarnOrigCtx` tells YaRN the model's **original** trained context length. The scaling factor is derived from the ratio between the target [`ContextSize`](/net/developer-reference/parameters/context/context-size/) and `YarnOrigCtx`. This is the most commonly set YaRN knob.
+`YarnOrigCtx` tells YaRN the model's **original** trained context length. The scaling factor is derived from the ratio between the target [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) and `YarnOrigCtx`. This is the most commonly set YaRN knob.
 
 ## Quick reference
 
@@ -65,12 +65,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — target; scale = `ContextSize / YarnOrigCtx`.
-- [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
-- Other YaRN knobs ([`YarnExtFactor`](/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/net/developer-reference/parameters/context/yarn-beta-slow/)) — usually null; model defaults work.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — target; scale = `ContextSize / YarnOrigCtx`.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
+- Other YaRN knobs ([`YarnExtFactor`](/llm/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/llm/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/)) — usually null; model defaults work.
 
 ## What's next
 
-- [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/) — enables YaRN.
-- [ContextSize](/net/developer-reference/parameters/context/context-size/) — the extended target.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — full recipe.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — enables YaRN.
+- [ContextSize](/llm/net/developer-reference/parameters/context/context-size/) — the extended target.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/) — full recipe.

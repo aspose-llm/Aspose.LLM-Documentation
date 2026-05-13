@@ -132,6 +132,6 @@ For application-level time limits on startup, wrap `Create` in a `Task.Run` with
 
 ## What's next
 
-- [AsposeLLMApi facade](/net/developer-reference/asposellmapi/) — method signatures including `CancellationToken`.
-- [Integration with ASP.NET Core](/net/use-cases/integration-with-aspnet-core/) — cancellation in HTTP hosts.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — session lifecycle around cancellation.
+- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/) — method signatures including `CancellationToken`.
+- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/) — cancellation in HTTP hosts.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle around cancellation.

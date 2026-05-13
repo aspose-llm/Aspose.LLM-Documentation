@@ -110,6 +110,6 @@ Word count is an approximation — real tokens are usually 1.3-1.5× the word co
 
 ## What's next
 
-- [Sampler parameters](/net/developer-reference/parameters/sampler/) — fine-grained sampler control.
-- [Context parameters](/net/developer-reference/parameters/context/) — context, flash attention, KV cache.
-- [Understand quantization](/net/how-to/understand-quantization/) — how quantization affects throughput.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) — fine-grained sampler control.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — context, flash attention, KV cache.
+- [Understand quantization](/llm/net/how-to/understand-quantization/) — how quantization affects throughput.

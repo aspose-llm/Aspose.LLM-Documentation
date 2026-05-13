@@ -60,11 +60,11 @@ preset.BaseModelInferenceParameters.UseMemoryMapping = false;
 
 ## Interactions
 
-- [`UseMemoryLocking`](/net/developer-reference/parameters/model-inference/use-memory-locking/) — lock working set to prevent paging.
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — offloaded layers are copied from the mapped file to GPU memory.
+- [`UseMemoryLocking`](/llm/net/developer-reference/parameters/model-inference/use-memory-locking/) — lock working set to prevent paging.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — offloaded layers are copied from the mapped file to GPU memory.
 
 ## What's next
 
-- [UseMemoryLocking](/net/developer-reference/parameters/model-inference/use-memory-locking/) — prevent paging.
-- [GpuLayers](/net/developer-reference/parameters/model-inference/gpu-layers/) — GPU offload.
-- [Model inference hub](/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [UseMemoryLocking](/llm/net/developer-reference/parameters/model-inference/use-memory-locking/) — prevent paging.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — GPU offload.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/) — all inference knobs.

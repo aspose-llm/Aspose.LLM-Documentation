@@ -134,6 +134,6 @@ preset.MmprojSourceParameters.HuggingFaceFileName = "mmproj-F16.gguf";
 
 ## What's next
 
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — priority and resolution.
-- [Supported presets](/net/product-overview/supported-presets/) — confirmed compatible models and files.
-- [Binary download fails](/net/troubleshooting/binary-download-fails/) — related network issues.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/) — priority and resolution.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — confirmed compatible models and files.
+- [Binary download fails](/llm/net/troubleshooting/binary-download-fails/) — related network issues.

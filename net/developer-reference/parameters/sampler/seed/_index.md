@@ -69,8 +69,8 @@ preset.SamplerParameters.Temperature = 0.0f;
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — at `Temperature = 0`, `Seed` has no effect.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — uses its own adaptive process; `Seed` still affects the underlying RNG but the entropy target dominates.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — at `Temperature = 0`, `Seed` has no effect.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — uses its own adaptive process; `Seed` still affects the underlying RNG but the entropy target dominates.
 - Session history — a fixed `Seed` only produces identical output when the entire preceding history is identical. A fresh session and a loaded session with the same history will both honor the seed.
 
 ## Notes
@@ -79,6 +79,6 @@ Reproducibility is deterministic within the same SDK version and `BinaryManagerP
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [Temperature](/net/developer-reference/parameters/sampler/temperature/) — the primary randomness knob.
-- [Session persistence portability](/net/developer-reference/session-persistence/portability/) — interaction between seeding and restored sessions.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/) — the primary randomness knob.
+- [Session persistence portability](/llm/net/developer-reference/session-persistence/portability/) — interaction between seeding and restored sessions.

@@ -15,7 +15,7 @@ keywords:
 - repository
 ---
 
-`Repo` is the GitHub repository name paired with [`Owner`](/net/developer-reference/parameters/binary-manager/owner/) to form the source URL.
+`Repo` is the GitHub repository name paired with [`Owner`](/llm/net/developer-reference/parameters/binary-manager/owner/) to form the source URL.
 
 ## Quick reference
 
@@ -51,11 +51,11 @@ var preset = new Qwen25Preset();
 
 ## Interactions
 
-- [`Owner`](/net/developer-reference/parameters/binary-manager/owner/) — paired.
-- [`ReleaseTag`](/net/developer-reference/parameters/binary-manager/release-tag/) — release selector.
+- [`Owner`](/llm/net/developer-reference/parameters/binary-manager/owner/) — paired.
+- [`ReleaseTag`](/llm/net/developer-reference/parameters/binary-manager/release-tag/) — release selector.
 
 ## What's next
 
-- [Owner](/net/developer-reference/parameters/binary-manager/owner/) — repository owner.
-- [ReleaseTag](/net/developer-reference/parameters/binary-manager/release-tag/) — version pin.
-- [Binary manager hub](/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [Owner](/llm/net/developer-reference/parameters/binary-manager/owner/) — repository owner.
+- [ReleaseTag](/llm/net/developer-reference/parameters/binary-manager/release-tag/) — version pin.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.

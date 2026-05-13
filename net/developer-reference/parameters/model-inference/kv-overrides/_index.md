@@ -91,11 +91,11 @@ Exact key names vary by architecture. Inspect the model's metadata with a tool l
 
 ## Interactions
 
-- [`ContextParameters.RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — overriding `llama.rope.scaling.type` via `KvOverrides` has similar effect.
-- [`ContextParameters.ContextSize`](/net/developer-reference/parameters/context/context-size/) — at load time, `KvOverrides` of `llama.context_length` defines what the runtime treats as the trained window.
+- [`ContextParameters.RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — overriding `llama.rope.scaling.type` via `KvOverrides` has similar effect.
+- [`ContextParameters.ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — at load time, `KvOverrides` of `llama.context_length` defines what the runtime treats as the trained window.
 
 ## What's next
 
-- [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/) — alternative way to control scaling.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — when `KvOverrides` helps.
-- [Bring your own GGUF](/net/use-cases/bring-your-own-gguf/) — custom-model workflows.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — alternative way to control scaling.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/) — when `KvOverrides` helps.
+- [Bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/) — custom-model workflows.

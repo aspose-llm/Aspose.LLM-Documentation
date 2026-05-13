@@ -83,19 +83,19 @@ public partial class ContextParameters
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions. The rest of this page is an inline overview of the same content; follow the links for the deeper treatment.
 
-**Context size and batching**: [ContextSize](/net/developer-reference/parameters/context/context-size/), [NBatch](/net/developer-reference/parameters/context/n-batch/), [NUbatch](/net/developer-reference/parameters/context/n-ubatch/), [NSeqMax](/net/developer-reference/parameters/context/n-seq-max/).
+**Context size and batching**: [ContextSize](/llm/net/developer-reference/parameters/context/context-size/), [NBatch](/llm/net/developer-reference/parameters/context/n-batch/), [NUbatch](/llm/net/developer-reference/parameters/context/n-ubatch/), [NSeqMax](/llm/net/developer-reference/parameters/context/n-seq-max/).
 
-**Threading**: [NThreads](/net/developer-reference/parameters/context/n-threads/), [NThreadsBatch](/net/developer-reference/parameters/context/n-threads-batch/).
+**Threading**: [NThreads](/llm/net/developer-reference/parameters/context/n-threads/), [NThreadsBatch](/llm/net/developer-reference/parameters/context/n-threads-batch/).
 
-**RoPE and YaRN**: [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/), [RopeFreqBase](/net/developer-reference/parameters/context/rope-freq-base/), [RopeFreqScale](/net/developer-reference/parameters/context/rope-freq-scale/), [YarnExtFactor](/net/developer-reference/parameters/context/yarn-ext-factor/), [YarnAttnFactor](/net/developer-reference/parameters/context/yarn-attn-factor/), [YarnBetaFast](/net/developer-reference/parameters/context/yarn-beta-fast/), [YarnBetaSlow](/net/developer-reference/parameters/context/yarn-beta-slow/), [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/).
+**RoPE and YaRN**: [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/), [RopeFreqBase](/llm/net/developer-reference/parameters/context/rope-freq-base/), [RopeFreqScale](/llm/net/developer-reference/parameters/context/rope-freq-scale/), [YarnExtFactor](/llm/net/developer-reference/parameters/context/yarn-ext-factor/), [YarnAttnFactor](/llm/net/developer-reference/parameters/context/yarn-attn-factor/), [YarnBetaFast](/llm/net/developer-reference/parameters/context/yarn-beta-fast/), [YarnBetaSlow](/llm/net/developer-reference/parameters/context/yarn-beta-slow/), [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/).
 
-**Attention**: [AttentionType](/net/developer-reference/parameters/context/attention-type/), [FlashAttentionMode](/net/developer-reference/parameters/context/flash-attention-mode/), [FlashAttention](/net/developer-reference/parameters/context/flash-attention/) (legacy).
+**Attention**: [AttentionType](/llm/net/developer-reference/parameters/context/attention-type/), [FlashAttentionMode](/llm/net/developer-reference/parameters/context/flash-attention-mode/), [FlashAttention](/llm/net/developer-reference/parameters/context/flash-attention/) (legacy).
 
-**Pooling and embeddings**: [PoolingType](/net/developer-reference/parameters/context/pooling-type/), [Embeddings](/net/developer-reference/parameters/context/embeddings/).
+**Pooling and embeddings**: [PoolingType](/llm/net/developer-reference/parameters/context/pooling-type/), [Embeddings](/llm/net/developer-reference/parameters/context/embeddings/).
 
-**KV cache**: [TypeK](/net/developer-reference/parameters/context/type-k/), [TypeV](/net/developer-reference/parameters/context/type-v/), [OffloadKqv](/net/developer-reference/parameters/context/offload-kqv/), [DefragThreshold](/net/developer-reference/parameters/context/defrag-threshold/), [SwaFull](/net/developer-reference/parameters/context/swa-full/), [KvUnified](/net/developer-reference/parameters/context/kv-unified/).
+**KV cache**: [TypeK](/llm/net/developer-reference/parameters/context/type-k/), [TypeV](/llm/net/developer-reference/parameters/context/type-v/), [OffloadKqv](/llm/net/developer-reference/parameters/context/offload-kqv/), [DefragThreshold](/llm/net/developer-reference/parameters/context/defrag-threshold/), [SwaFull](/llm/net/developer-reference/parameters/context/swa-full/), [KvUnified](/llm/net/developer-reference/parameters/context/kv-unified/).
 
-**Other**: [OpOffload](/net/developer-reference/parameters/context/op-offload/), [NoPerf](/net/developer-reference/parameters/context/no-perf/).
+**Other**: [OpOffload](/llm/net/developer-reference/parameters/context/op-offload/), [NoPerf](/llm/net/developer-reference/parameters/context/no-perf/).
 
 ## Context size and batching
 
@@ -103,7 +103,7 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 
 Length of the context window in tokens — the maximum number of tokens the model sees at once. Set to `null` (or `0`) to use the model's maximum from its GGUF metadata.
 
-Built-in presets pre-set this: `Qwen25Preset` uses 32 768, `Llama32Preset` uses 131 072, `Oss20Preset` uses 131 072. See [Supported presets](/net/product-overview/supported-presets/) for each default.
+Built-in presets pre-set this: `Qwen25Preset` uses 32 768, `Llama32Preset` uses 131 072, `Oss20Preset` uses 131 072. See [Supported presets](/llm/net/product-overview/supported-presets/) for each default.
 
 Trade-off: larger context allows longer conversations and documents, but the KV cache size scales with `ContextSize × model-depth`. Going from 32K to 131K quadruples KV memory.
 
@@ -242,7 +242,7 @@ The KV cache stores the keys and values of every token the model has seen. Its s
 
 Data type for the K and V tensors in the cache. Lower precision saves memory but can degrade output quality.
 
-Common values (full enum has 30+ entries; see the [API reference](/net/developer-reference/api-reference/) for the complete list):
+Common values (full enum has 30+ entries; see the [API reference](/llm/net/developer-reference/api-reference/) for the complete list):
 
 | Type | Bits per value | Relative size | Notes |
 |---|---:|---:|---|
@@ -284,7 +284,7 @@ When `true`, uses a unified buffer across input sequences for attention. Impleme
 
 ### `OpOffload`
 
-Offload host tensor operations to the device. Supplementary to `GpuLayers` in [`ModelInferenceParameters`](/net/developer-reference/parameters/model-inference/). Leave `null` unless you know why.
+Offload host tensor operations to the device. Supplementary to `GpuLayers` in [`ModelInferenceParameters`](/llm/net/developer-reference/parameters/model-inference/). Leave `null` unless you know why.
 
 ### `NoPerf`
 
@@ -350,6 +350,6 @@ Chat APIs are not the right surface for embedding workflows — this recipe is p
 
 ## What's next
 
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — GPU layers and tensor split that complement context KV settings.
-- [Chat parameters](/net/developer-reference/parameters/chat/) — per-session max tokens and cache cleanup strategy.
-- [Sampler parameters](/net/developer-reference/parameters/sampler/) — how the engine picks tokens within the context.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — GPU layers and tensor split that complement context KV settings.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — per-session max tokens and cache cleanup strategy.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) — how the engine picks tokens within the context.

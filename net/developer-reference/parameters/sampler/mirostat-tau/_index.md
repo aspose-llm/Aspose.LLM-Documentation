@@ -35,7 +35,7 @@ Entropy is measured in nats (natural-log units) over the per-step token distribu
 - `MirostatTau = 5.0` (default) — balanced. Good match for general chat.
 - `MirostatTau = 7.0+` — looser. Output has more variety, higher perplexity.
 
-`MirostatTau` only matters when [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) is enabled (`1` or `2`). Otherwise the field is ignored.
+`MirostatTau` only matters when [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) is enabled (`1` or `2`). Otherwise the field is ignored.
 
 ## When to change it
 
@@ -58,11 +58,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — must be `1` or `2` for `MirostatTau` to take effect.
-- [`MirostatEta`](/net/developer-reference/parameters/sampler/mirostat-eta/) — how fast Mirostat adapts toward `Tau`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — must be `1` or `2` for `MirostatTau` to take effect.
+- [`MirostatEta`](/llm/net/developer-reference/parameters/sampler/mirostat-eta/) — how fast Mirostat adapts toward `Tau`.
 
 ## What's next
 
-- [Mirostat](/net/developer-reference/parameters/sampler/mirostat/) — main mode selector.
-- [MirostatEta](/net/developer-reference/parameters/sampler/mirostat-eta/) — learning rate.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [Mirostat](/llm/net/developer-reference/parameters/sampler/mirostat/) — main mode selector.
+- [MirostatEta](/llm/net/developer-reference/parameters/sampler/mirostat-eta/) — learning rate.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

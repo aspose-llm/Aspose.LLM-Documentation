@@ -59,8 +59,8 @@ The SDK downloads the Vulkan variant (typically 200-400 MB) on first run.
 
 For dedicated NVIDIA or AMD workloads, vendor-specific backends are usually faster:
 
-- [CUDA](/net/developer-reference/acceleration/cuda/) is typically 20-40 % faster than Vulkan on NVIDIA.
-- [HIP](/net/developer-reference/acceleration/hip-rocm/) is faster than Vulkan on AMD for most workloads.
+- [CUDA](/llm/net/developer-reference/acceleration/cuda/) is typically 20-40 % faster than Vulkan on NVIDIA.
+- [HIP](/llm/net/developer-reference/acceleration/hip-rocm/) is faster than Vulkan on AMD for most workloads.
 
 Use Vulkan when portability trumps raw speed.
 
@@ -90,7 +90,7 @@ preset.BaseModelInferenceParameters.GpuLayers = 999;
 
 ## What's next
 
-- [CUDA](/net/developer-reference/acceleration/cuda/) — faster on NVIDIA.
-- [HIP / ROCm](/net/developer-reference/acceleration/hip-rocm/) — faster on AMD.
-- [CPU](/net/developer-reference/acceleration/cpu/) — last-resort fallback.
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — GPU offload configuration.
+- [CUDA](/llm/net/developer-reference/acceleration/cuda/) — faster on NVIDIA.
+- [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/) — faster on AMD.
+- [CPU](/llm/net/developer-reference/acceleration/cpu/) — last-resort fallback.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — GPU offload configuration.

@@ -68,12 +68,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`RopeFreqBase`](/net/developer-reference/parameters/context/rope-freq-base/), [`RopeFreqScale`](/net/developer-reference/parameters/context/rope-freq-scale/) — apply on top of the chosen scaling.
-- [`YarnExtFactor`](/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/net/developer-reference/parameters/context/yarn-beta-slow/), [`YarnOrigCtx`](/net/developer-reference/parameters/context/yarn-orig-ctx/) — only used when `RopeScalingType = Yarn`.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — larger than the model's training window requires RoPE scaling.
+- [`RopeFreqBase`](/llm/net/developer-reference/parameters/context/rope-freq-base/), [`RopeFreqScale`](/llm/net/developer-reference/parameters/context/rope-freq-scale/) — apply on top of the chosen scaling.
+- [`YarnExtFactor`](/llm/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/llm/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/), [`YarnOrigCtx`](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/) — only used when `RopeScalingType = Yarn`.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — larger than the model's training window requires RoPE scaling.
 
 ## What's next
 
-- [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/) — the model's native context length.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — practical recipes.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/) — the model's native context length.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/) — practical recipes.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

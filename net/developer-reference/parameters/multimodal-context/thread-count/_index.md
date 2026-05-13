@@ -52,9 +52,9 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`ContextParameters.NThreads`](/net/developer-reference/parameters/context/n-threads/) — base-model generation threads; independent of mtmd's thread count.
+- [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) — base-model generation threads; independent of mtmd's thread count.
 
 ## What's next
 
-- [Multimodal context hub](/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.
-- [Context parameters — NThreads](/net/developer-reference/parameters/context/n-threads/) — base-model counterpart.
+- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.
+- [Context parameters — NThreads](/llm/net/developer-reference/parameters/context/n-threads/) — base-model counterpart.

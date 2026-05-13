@@ -29,7 +29,7 @@ keywords:
 
 ## What it does
 
-When messages are evicted from the KV cache (by [`CacheCleanupStrategy`](/net/developer-reference/parameters/chat/)), their slots become holes. Over many cycles, the cache may hold scattered used slots interspersed with holes, wasting capacity.
+When messages are evicted from the KV cache (by [`CacheCleanupStrategy`](/llm/net/developer-reference/parameters/chat/)), their slots become holes. Over many cycles, the cache may hold scattered used slots interspersed with holes, wasting capacity.
 
 If `DefragThreshold` is set, the engine monitors the hole fraction. When it crosses the threshold, the engine compacts the cache — moves live tokens together and frees the tail.
 
@@ -56,10 +56,10 @@ preset.ContextParameters.DefragThreshold = 0.3f;
 
 ## Interactions
 
-- [`CacheCleanupStrategy`](/net/developer-reference/parameters/chat/) — the policy that creates the holes defrag compacts.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — larger caches benefit more from defrag.
+- [`CacheCleanupStrategy`](/llm/net/developer-reference/parameters/chat/) — the policy that creates the holes defrag compacts.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — larger caches benefit more from defrag.
 
 ## What's next
 
-- [Cache management](/net/developer-reference/cache-management/) — cleanup strategies and compaction together.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [Cache management](/llm/net/developer-reference/cache-management/) — cleanup strategies and compaction together.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

@@ -21,7 +21,7 @@ keywords:
 
 `AsposeLLMApi` is the single public facade class of Aspose.LLM for .NET. Every chat operation in your application goes through it — model loading, session creation, message exchange, cache management, session persistence, and disposal.
 
-This page covers the class surface in depth. For the short API-card summary, see [API reference](/net/developer-reference/api-reference/). For a compact hello-world, see [Hello, world!](/net/hello-world/).
+This page covers the class surface in depth. For the short API-card summary, see [API reference](/llm/net/developer-reference/api-reference/). For a compact hello-world, see [Hello, world!](/llm/net/hello-world/).
 
 ## Class overview
 
@@ -94,7 +94,7 @@ Both accept the same arguments:
 | `preset` | `PresetCoreBase` | yes | Default preset for chat operations. Throws `ArgumentNullException` on null. |
 | `logger` | `ILogger?` | no | Optional logger for engine + native debug output. |
 
-The preset is applied once at construction. Later mutations to the preset have no effect — the engine has already read it. See [Presets](/net/developer-reference/presets/) for the override-before-Create pattern.
+The preset is applied once at construction. Later mutations to the preset have no effect — the engine has already read it. See [Presets](/llm/net/developer-reference/presets/) for the override-before-Create pattern.
 
 Construction **synchronously blocks** on three stages:
 
@@ -102,7 +102,7 @@ Construction **synchronously blocks** on three stages:
 2. Native binary deployment (downloads from GitHub on first run — 100-500 MB).
 3. Model load (downloads from Hugging Face on first run — 2-15 GB).
 
-On a cold machine, `Create` can take several minutes. Subsequent runs use the local caches. See [Architecture](/net/product-overview/architecture/#what-happens-when-you-create-the-api) for the full flow.
+On a cold machine, `Create` can take several minutes. Subsequent runs use the local caches. See [Architecture](/llm/net/product-overview/architecture/#what-happens-when-you-create-the-api) for the full flow.
 
 ## Default accessors
 
@@ -225,7 +225,7 @@ Throws:
 - `InvalidOperationException` — file is corrupt or from an incompatible SDK version.
 
 {{% alert color="primary" %}}
-`LoadChatSession` restores the session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters` — not the preset's values or the values in effect when the session was saved. See [Session persistence](/net/developer-reference/session-persistence/) for the full nuance.
+`LoadChatSession` restores the session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters` — not the preset's values or the values in effect when the session was saved. See [Session persistence](/llm/net/developer-reference/session-persistence/) for the full nuance.
 {{% /alert %}}
 
 ## Cache management
@@ -241,7 +241,7 @@ public void ForceCacheCleanup(
 
 Throws `InvalidOperationException` when no current session exists.
 
-Five strategies — see [Cache management](/net/developer-reference/cache-management/) for the trade-offs.
+Five strategies — see [Cache management](/llm/net/developer-reference/cache-management/) for the trade-offs.
 
 ## Disposal
 
@@ -274,8 +274,8 @@ Calling methods after `Dispose` throws `ObjectDisposedException`.
 
 ## What's next
 
-- [Chat sessions](/net/developer-reference/chat-sessions/) — session lifecycle and messaging semantics.
-- [Session persistence](/net/developer-reference/session-persistence/) — save / load details.
-- [Cache management](/net/developer-reference/cache-management/) — trimming strategies.
-- [Presets](/net/developer-reference/presets/) — the preset passed at construction.
-- [Dependency injection](/net/developer-reference/dependency-injection/) — the alternative `AddLlamaServices` path.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle and messaging semantics.
+- [Session persistence](/llm/net/developer-reference/session-persistence/) — save / load details.
+- [Cache management](/llm/net/developer-reference/cache-management/) — trimming strategies.
+- [Presets](/llm/net/developer-reference/presets/) — the preset passed at construction.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/) — the alternative `AddLlamaServices` path.

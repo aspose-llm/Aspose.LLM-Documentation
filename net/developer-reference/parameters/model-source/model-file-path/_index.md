@@ -29,7 +29,7 @@ keywords:
 
 ## What it does
 
-- `null` or empty — skip this priority level; fall through to [`AsposeModelId`](/net/developer-reference/parameters/model-source/aspose-model-id/), then Hugging Face fields.
+- `null` or empty — skip this priority level; fall through to [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/), then Hugging Face fields.
 - A path — load the GGUF from that file. No download.
 
 The file must be accessible and readable by the process.
@@ -56,12 +56,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`AsposeModelId`](/net/developer-reference/parameters/model-source/aspose-model-id/) — priority 2; ignored when `ModelFilePath` is set.
-- [`HuggingFaceRepoId`](/net/developer-reference/parameters/model-source/hugging-face-repo-id/) + [`HuggingFaceFileName`](/net/developer-reference/parameters/model-source/hugging-face-file-name/) — priority 3; ignored when `ModelFilePath` is set.
-- [`EngineParameters.ModelCachePath`](/net/developer-reference/parameters/engine/model-cache-path/) — cache is not used when loading from an explicit `ModelFilePath`.
+- [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/) — priority 2; ignored when `ModelFilePath` is set.
+- [`HuggingFaceRepoId`](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/) + [`HuggingFaceFileName`](/llm/net/developer-reference/parameters/model-source/hugging-face-file-name/) — priority 3; ignored when `ModelFilePath` is set.
+- [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/model-cache-path/) — cache is not used when loading from an explicit `ModelFilePath`.
 
 ## What's next
 
-- [Model source hub](/net/developer-reference/parameters/model-source/) — resolution order overview.
-- [Bring your own GGUF](/net/use-cases/bring-your-own-gguf/) — full custom-model workflow.
-- [Offline deployment](/net/use-cases/offline-deployment/) — air-gapped setup.
+- [Model source hub](/llm/net/developer-reference/parameters/model-source/) — resolution order overview.
+- [Bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/) — full custom-model workflow.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/) — air-gapped setup.

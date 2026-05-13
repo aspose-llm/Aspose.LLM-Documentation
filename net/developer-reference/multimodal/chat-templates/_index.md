@@ -80,10 +80,10 @@ Enable debug logging and look for the `[MM]` tags:
 preset.EngineParameters.EnableDebugLogging = true;
 ```
 
-Lines like `[MM] selected template: Qwen3VL` appear shortly after model load. See [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) for the full log taxonomy.
+Lines like `[MM] selected template: Qwen3VL` appear shortly after model load. See [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) for the full log taxonomy.
 
 ## What's next
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — built-in presets with their matching templates.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — inspect the selected template in logs.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — the sending side.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) — built-in presets with their matching templates.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — inspect the selected template in logs.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — the sending side.

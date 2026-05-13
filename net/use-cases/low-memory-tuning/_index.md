@@ -29,8 +29,8 @@ When memory is tight — edge devices, small VMs, constrained containers, laptop
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 
 ## Pick a small model
 
@@ -163,7 +163,7 @@ The real number includes OS page cache of memory-mapped model files — it may l
 | Context size | Less room for long prompts; no long-form analysis. |
 | KV quantization to Q8_0 | Minor quality drop on long contexts. |
 | KV quantization to Q4_0 | Noticeable quality drop. |
-| `MaxTokens` | Truncated answers; bad for reasoning models (see [Chat parameters](/net/developer-reference/parameters/chat/)). |
+| `MaxTokens` | Truncated answers; bad for reasoning models (see [Chat parameters](/llm/net/developer-reference/parameters/chat/)). |
 | Small model | Lower reasoning quality. |
 | CPU-only | Slower throughput (5-15 t/s vs 40-100+ on GPU). |
 
@@ -171,6 +171,6 @@ Start by cutting context and enabling KV quantization. Only if memory is still t
 
 ## What's next
 
-- [Context parameters](/net/developer-reference/parameters/context/) — every knob that affects memory.
-- [CPU-only deployment](/net/use-cases/cpu-only-deployment/) — when GPU memory is unavailable.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — the opposite direction.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — every knob that affects memory.
+- [CPU-only deployment](/llm/net/use-cases/cpu-only-deployment/) — when GPU memory is unavailable.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/) — the opposite direction.

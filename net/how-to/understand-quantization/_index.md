@@ -75,7 +75,7 @@ For a model with N parameters:
 | IQ4_XS | 0.45 | ~3.2 GB | ~32 GB |
 | Q3_K | 0.375 | ~2.6 GB | ~26 GB |
 
-Add KV cache and intermediate buffers on top — see [Estimate memory requirements](/net/how-to/estimate-memory-requirements/).
+Add KV cache and intermediate buffers on top — see [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/).
 
 ## When to pick a smaller quantization
 
@@ -98,10 +98,10 @@ preset.ContextParameters.TypeK = GgmlType.F16;
 preset.ContextParameters.TypeV = GgmlType.Q8_0;
 ```
 
-Saves memory on long contexts with minor quality impact. See [Context parameters](/net/developer-reference/parameters/context/) for the full enum.
+Saves memory on long contexts with minor quality impact. See [Context parameters](/llm/net/developer-reference/parameters/context/) for the full enum.
 
 ## What's next
 
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — how to select a specific GGUF file.
-- [Estimate memory requirements](/net/how-to/estimate-memory-requirements/) — factor quantization into your sizing.
-- [Supported presets](/net/product-overview/supported-presets/) — built-in preset quantizations.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/) — how to select a specific GGUF file.
+- [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/) — factor quantization into your sizing.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — built-in preset quantizations.

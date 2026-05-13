@@ -141,7 +141,7 @@ Even after dozens of follow-ups, the model can still refer back to the first use
 
 ## What's next
 
-- [Chat sessions](/net/developer-reference/chat-sessions/) — session lifecycle and how cleanup interacts with automatic generation.
-- [Chat parameters](/net/developer-reference/parameters/chat/) — set the default strategy per preset.
-- [Context parameters](/net/developer-reference/parameters/context/) — `ContextSize` is the ceiling the cleanup policy serves.
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — cache management in a realistic runnable example.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle and how cleanup interacts with automatic generation.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — set the default strategy per preset.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — `ContextSize` is the ceiling the cleanup policy serves.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) — cache management in a realistic runnable example.

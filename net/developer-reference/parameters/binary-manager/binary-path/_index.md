@@ -64,11 +64,11 @@ preset.EngineParameters.ModelCachePath = "/opt/aspose-llm/models";
 
 ## Interactions
 
-- [`ReleaseTag`](/net/developer-reference/parameters/binary-manager/release-tag/) — cache is subdivided per tag.
-- [`PreferredAcceleration`](/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — cache also subdivides per acceleration.
-- [`EngineParameters.ModelCachePath`](/net/developer-reference/parameters/engine/model-cache-path/) — separate cache for model files.
+- [`ReleaseTag`](/llm/net/developer-reference/parameters/binary-manager/release-tag/) — cache is subdivided per tag.
+- [`PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — cache also subdivides per acceleration.
+- [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/model-cache-path/) — separate cache for model files.
 
 ## What's next
 
-- [Offline deployment](/net/use-cases/offline-deployment/) — pre-populating `BinaryPath`.
-- [Binary manager hub](/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/) — pre-populating `BinaryPath`.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.

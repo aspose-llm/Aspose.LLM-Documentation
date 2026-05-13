@@ -58,9 +58,9 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`NBatch`](/net/developer-reference/parameters/context/n-batch/), [`NUbatch`](/net/developer-reference/parameters/context/n-ubatch/) — batch sizes interact with sequence count in multi-sequence scenarios.
+- [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/), [`NUbatch`](/llm/net/developer-reference/parameters/context/n-ubatch/) — batch sizes interact with sequence count in multi-sequence scenarios.
 
 ## What's next
 
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
-- [NBatch](/net/developer-reference/parameters/context/n-batch/) — batch size for prompts.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [NBatch](/llm/net/developer-reference/parameters/context/n-batch/) — batch size for prompts.

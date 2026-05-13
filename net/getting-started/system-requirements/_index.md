@@ -119,6 +119,6 @@ Any IDE or editor with .NET support works:
 
 ## What's next
 
-- [Installation](/net/installation/) — add the NuGet package to your project.
-- [Licensing](/net/licensing/) — apply a license before running inference.
-- [Hello, world!](/net/hello-world/) — first runnable example.
+- [Installation](/llm/net/installation/) — add the NuGet package to your project.
+- [Licensing](/llm/net/licensing/) — apply a license before running inference.
+- [Hello, world!](/llm/net/hello-world/) — first runnable example.

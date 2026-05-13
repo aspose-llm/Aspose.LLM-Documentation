@@ -15,7 +15,7 @@ keywords:
 - offload
 ---
 
-`OpOffload` toggles offloading of host-side tensor operations to the GPU device. This is supplementary to [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) and affects specific small operations that would otherwise run on CPU even with GPU offload active.
+`OpOffload` toggles offloading of host-side tensor operations to the GPU device. This is supplementary to [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) and affects specific small operations that would otherwise run on CPU even with GPU offload active.
 
 ## Quick reference
 
@@ -52,10 +52,10 @@ preset.ContextParameters.OpOffload = true;  // ensure all operations on device
 
 ## Interactions
 
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — primary offload control.
-- [`OffloadKqv`](/net/developer-reference/parameters/context/offload-kqv/) — KV specific.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — primary offload control.
+- [`OffloadKqv`](/llm/net/developer-reference/parameters/context/offload-kqv/) — KV specific.
 
 ## What's next
 
-- [GpuLayers](/net/developer-reference/parameters/model-inference/gpu-layers/) — primary layer offload.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — primary layer offload.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

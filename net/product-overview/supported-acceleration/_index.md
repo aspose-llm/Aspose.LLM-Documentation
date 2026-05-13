@@ -27,11 +27,11 @@ This page is an at-a-glance sheet for planning deployments. For per-backend setu
 
 | Backend | Windows | Linux | macOS | Typical use |
 |---|:---:|:---:|:---:|---|
-| [**CUDA**](/net/developer-reference/acceleration/cuda/) | ✅ | ✅ | ❌ | NVIDIA GPUs. Highest throughput on modern nVidia cards. |
-| [**HIP / ROCm**](/net/developer-reference/acceleration/hip-rocm/) | ❌ | ✅ | ❌ | AMD Instinct and RDNA 3 Radeon cards. |
-| [**Metal**](/net/developer-reference/acceleration/metal/) | ❌ | ❌ | ✅ | Apple Silicon (M1/M2/M3/M4). |
-| [**Vulkan**](/net/developer-reference/acceleration/vulkan/) | ✅ | ✅ | ❌ | Cross-vendor GPU fallback. NVIDIA, AMD, Intel. Windows AMD users. |
-| [**CPU**](/net/developer-reference/acceleration/cpu/) | ✅ | ✅ | ✅ | No GPU required. AVX512/AVX2/AVX/NoAVX variants. |
+| [**CUDA**](/llm/net/developer-reference/acceleration/cuda/) | ✅ | ✅ | ❌ | NVIDIA GPUs. Highest throughput on modern nVidia cards. |
+| [**HIP / ROCm**](/llm/net/developer-reference/acceleration/hip-rocm/) | ❌ | ✅ | ❌ | AMD Instinct and RDNA 3 Radeon cards. |
+| [**Metal**](/llm/net/developer-reference/acceleration/metal/) | ❌ | ❌ | ✅ | Apple Silicon (M1/M2/M3/M4). |
+| [**Vulkan**](/llm/net/developer-reference/acceleration/vulkan/) | ✅ | ✅ | ❌ | Cross-vendor GPU fallback. NVIDIA, AMD, Intel. Windows AMD users. |
+| [**CPU**](/llm/net/developer-reference/acceleration/cpu/) | ✅ | ✅ | ✅ | No GPU required. AVX512/AVX2/AVX/NoAVX variants. |
 
 ## Auto-detection
 
@@ -43,7 +43,7 @@ When `PreferredAcceleration` is `null` (default), the SDK picks in this order:
 4. **Vulkan** — any Vulkan-capable GPU.
 5. **CPU** — highest AVX level available (`AVX512 > AVX2 > AVX > NoAVX`).
 
-Override by setting `BinaryManagerParameters.PreferredAcceleration`. See [Binary manager parameters](/net/developer-reference/parameters/binary-manager/).
+Override by setting `BinaryManagerParameters.PreferredAcceleration`. See [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/).
 
 ## First-run download sizes
 
@@ -71,7 +71,7 @@ Binaries are downloaded once per preset's `ReleaseTag` and cached locally.
 
 ## What's next
 
-- [CUDA](/net/developer-reference/acceleration/cuda/), [HIP / ROCm](/net/developer-reference/acceleration/hip-rocm/), [Metal](/net/developer-reference/acceleration/metal/), [Vulkan](/net/developer-reference/acceleration/vulkan/), [CPU](/net/developer-reference/acceleration/cpu/) — per-backend setup.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — how `PreferredAcceleration` and `BinaryPath` work.
-- [System requirements](/net/system-requirements/) — OS / driver / memory prerequisites.
-- [GPU not detected](/net/troubleshooting/gpu-not-detected/) — common pitfalls.
+- [CUDA](/llm/net/developer-reference/acceleration/cuda/), [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/), [Metal](/llm/net/developer-reference/acceleration/metal/), [Vulkan](/llm/net/developer-reference/acceleration/vulkan/), [CPU](/llm/net/developer-reference/acceleration/cpu/) — per-backend setup.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — how `PreferredAcceleration` and `BinaryPath` work.
+- [System requirements](/llm/net/system-requirements/) — OS / driver / memory prerequisites.
+- [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/) — common pitfalls.

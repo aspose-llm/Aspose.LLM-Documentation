@@ -35,7 +35,7 @@ For each token in the penalty window, compute `count × FrequencyPenalty` and su
 - `0.1` – `0.3` — moderate; common words stay usable but over-used ones get suppressed.
 - `0.5+` — aggressive; breaks repetition but risks under-generating common function words (articles, prepositions).
 
-`FrequencyPenalty` is the finest-grained of the three penalties: [`RepetitionPenalty`](/net/developer-reference/parameters/sampler/repetition-penalty/) is binary-ish on the token, [`PresencePenalty`](/net/developer-reference/parameters/sampler/presence-penalty/) fires once per token, and `FrequencyPenalty` scales with count.
+`FrequencyPenalty` is the finest-grained of the three penalties: [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) is binary-ish on the token, [`PresencePenalty`](/llm/net/developer-reference/parameters/sampler/presence-penalty/) fires once per token, and `FrequencyPenalty` scales with count.
 
 ## When to change it
 
@@ -60,12 +60,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`PenaltyContextSize`](/net/developer-reference/parameters/sampler/penalty-context-size/) — window over which the count is measured.
-- [`RepetitionPenalty`](/net/developer-reference/parameters/sampler/repetition-penalty/) — multiplicative companion.
-- [`PresencePenalty`](/net/developer-reference/parameters/sampler/presence-penalty/) — uniform additive companion.
+- [`PenaltyContextSize`](/llm/net/developer-reference/parameters/sampler/penalty-context-size/) — window over which the count is measured.
+- [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — multiplicative companion.
+- [`PresencePenalty`](/llm/net/developer-reference/parameters/sampler/presence-penalty/) — uniform additive companion.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [PresencePenalty](/net/developer-reference/parameters/sampler/presence-penalty/) — companion uniform penalty.
-- [RepetitionPenalty](/net/developer-reference/parameters/sampler/repetition-penalty/) — multiplicative penalty.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [PresencePenalty](/llm/net/developer-reference/parameters/sampler/presence-penalty/) — companion uniform penalty.
+- [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — multiplicative penalty.

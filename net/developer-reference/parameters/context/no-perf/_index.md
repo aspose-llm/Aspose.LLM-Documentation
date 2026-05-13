@@ -51,9 +51,9 @@ preset.EngineParameters.EnableDebugLogging = false;
 
 ## Interactions
 
-- [`EnableDebugLogging`](/net/developer-reference/parameters/engine/) — turning on debug logs defeats the purpose of `NoPerf = true`.
+- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/) — turning on debug logs defeats the purpose of `NoPerf = true`.
 
 ## What's next
 
-- [Performance issues troubleshooting](/net/troubleshooting/performance-issues/) — throughput-focused tuning.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [Performance issues troubleshooting](/llm/net/troubleshooting/performance-issues/) — throughput-focused tuning.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

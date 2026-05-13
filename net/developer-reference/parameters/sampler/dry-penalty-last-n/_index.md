@@ -59,11 +59,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) — gate; `DryPenaltyLastN` only matters when DRY is active.
+- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — gate; `DryPenaltyLastN` only matters when DRY is active.
 - Other DRY knobs operate within this window.
 
 ## What's next
 
-- [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
-- [DrySequenceBreakers](/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — reset tokens.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
+- [DrySequenceBreakers](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — reset tokens.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

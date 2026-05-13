@@ -71,14 +71,14 @@ preset.SamplerParameters.TopP = 0.9f;
 
 ## Interactions
 
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — applied before `TopK`.
-- [`TopP`](/net/developer-reference/parameters/sampler/top-p/) — both active filters stack; sampling happens over the intersection.
-- [`MinP`](/net/developer-reference/parameters/sampler/min-p/) — can further thin the candidate pool.
-- [`MinKeep`](/net/developer-reference/parameters/sampler/min-keep/) — floor; `TopK` never cuts below `MinKeep`.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — bypasses `TopK` when active.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — applied before `TopK`.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — both active filters stack; sampling happens over the intersection.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — can further thin the candidate pool.
+- [`MinKeep`](/llm/net/developer-reference/parameters/sampler/min-keep/) — floor; `TopK` never cuts below `MinKeep`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — bypasses `TopK` when active.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [TopP](/net/developer-reference/parameters/sampler/top-p/) — the probability-aware counterpart.
-- [MinP](/net/developer-reference/parameters/sampler/min-p/) — another truncation strategy.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
+- [TopP](/llm/net/developer-reference/parameters/sampler/top-p/) — the probability-aware counterpart.
+- [MinP](/llm/net/developer-reference/parameters/sampler/min-p/) — another truncation strategy.

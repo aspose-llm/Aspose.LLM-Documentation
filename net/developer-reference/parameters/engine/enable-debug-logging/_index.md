@@ -30,7 +30,7 @@ keywords:
 ## What it does
 
 - `false` (default) — the native layer produces no diagnostic output. Inference runs at full throughput.
-- `true` — the native layer emits tagged lines (`[MM]`, `[CTX]`, `[KV]`, etc.) via `NativeLoggerAdapter` into the `ILogger` you pass to `AsposeLLMApi.Create`. Lines are also written to the file at [`LogDirectoryPath`](/net/developer-reference/parameters/engine/log-directory-path/).
+- `true` — the native layer emits tagged lines (`[MM]`, `[CTX]`, `[KV]`, etc.) via `NativeLoggerAdapter` into the `ILogger` you pass to `AsposeLLMApi.Create`. Lines are also written to the file at [`LogDirectoryPath`](/llm/net/developer-reference/parameters/engine/log-directory-path/).
 
 Debug logging adds measurable overhead — typically 5-15 % throughput loss. Not intended for production.
 
@@ -62,12 +62,12 @@ using var api = AsposeLLMApi.Create(preset, logger);
 
 ## Interactions
 
-- [`LogDirectoryPath`](/net/developer-reference/parameters/engine/log-directory-path/) — file destination for debug output.
-- [`MultimodalContextParameters.Verbosity`](/net/developer-reference/parameters/multimodal-context/verbosity/) — mtmd-layer verbosity, independent of this flag.
+- [`LogDirectoryPath`](/llm/net/developer-reference/parameters/engine/log-directory-path/) — file destination for debug output.
+- [`MultimodalContextParameters.Verbosity`](/llm/net/developer-reference/parameters/multimodal-context/verbosity/) — mtmd-layer verbosity, independent of this flag.
 - `ILogger` passed to `AsposeLLMApi.Create` — debug lines route through it.
 
 ## What's next
 
-- [Logging and diagnostics](/net/developer-reference/logging-and-diagnostics/) — tagged log taxonomy.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnosis.
-- [Engine parameters hub](/net/developer-reference/parameters/engine/) — all engine knobs.
+- [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/) — tagged log taxonomy.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnosis.
+- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/) — all engine knobs.

@@ -30,7 +30,7 @@ keywords:
 ## What it does
 
 - `true` — KV cache tensors and attention computation live on the GPU. Benefits throughput; uses more VRAM.
-- `false` — KV cache stays on CPU even when layers are offloaded via [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/). Reduces VRAM usage; slower because GPU must read KV from host memory.
+- `false` — KV cache stays on CPU even when layers are offloaded via [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/). Reduces VRAM usage; slower because GPU must read KV from host memory.
 - `null` — native default (usually `true` on GPU builds, irrelevant on CPU builds).
 
 Disabling is useful on GPUs where the weights fit but the KV cache would push you into OOM at long contexts.
@@ -54,12 +54,12 @@ preset.ContextParameters.ContextSize = 131072;          // long context
 
 ## Interactions
 
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — with `OffloadKqv = false`, GPU layers access KV from CPU — slower but saves VRAM.
-- [`TypeK`](/net/developer-reference/parameters/context/type-k/), [`TypeV`](/net/developer-reference/parameters/context/type-v/) — quantizing KV reduces memory regardless of placement.
-- [`FlashAttentionMode`](/net/developer-reference/parameters/context/flash-attention-mode/) — FA reduces KV memory pressure.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — with `OffloadKqv = false`, GPU layers access KV from CPU — slower but saves VRAM.
+- [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/), [`TypeV`](/llm/net/developer-reference/parameters/context/type-v/) — quantizing KV reduces memory regardless of placement.
+- [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/) — FA reduces KV memory pressure.
 
 ## What's next
 
-- [TypeK](/net/developer-reference/parameters/context/type-k/), [TypeV](/net/developer-reference/parameters/context/type-v/) — KV dtype.
-- [GpuLayers](/net/developer-reference/parameters/model-inference/gpu-layers/) — weight offload.
-- [Out of memory troubleshooting](/net/troubleshooting/out-of-memory/) — memory pressure recipes.
+- [TypeK](/llm/net/developer-reference/parameters/context/type-k/), [TypeV](/llm/net/developer-reference/parameters/context/type-v/) — KV dtype.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — weight offload.
+- [Out of memory troubleshooting](/llm/net/troubleshooting/out-of-memory/) — memory pressure recipes.

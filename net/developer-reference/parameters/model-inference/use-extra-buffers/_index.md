@@ -55,4 +55,4 @@ var preset = new Qwen25Preset();
 
 ## What's next
 
-- [Model inference hub](/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/) — all inference knobs.

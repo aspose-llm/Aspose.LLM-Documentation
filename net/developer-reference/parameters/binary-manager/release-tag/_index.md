@@ -57,12 +57,12 @@ preset.BinaryManagerParameters.ReleaseTag = "b8816";  // explicit pin for reprod
 
 ## Interactions
 
-- [`Owner`](/net/developer-reference/parameters/binary-manager/owner/) and [`Repo`](/net/developer-reference/parameters/binary-manager/repo/) — together with `ReleaseTag` form the source URL.
-- [`BinaryPath`](/net/developer-reference/parameters/binary-manager/binary-path/) — cache location per tag; different tags use different subfolders.
-- [Session persistence portability](/net/developer-reference/session-persistence/portability/) — sessions assume a consistent `ReleaseTag` across save / load.
+- [`Owner`](/llm/net/developer-reference/parameters/binary-manager/owner/) and [`Repo`](/llm/net/developer-reference/parameters/binary-manager/repo/) — together with `ReleaseTag` form the source URL.
+- [`BinaryPath`](/llm/net/developer-reference/parameters/binary-manager/binary-path/) — cache location per tag; different tags use different subfolders.
+- [Session persistence portability](/llm/net/developer-reference/session-persistence/portability/) — sessions assume a consistent `ReleaseTag` across save / load.
 
 ## What's next
 
-- [Binary download fails troubleshooting](/net/troubleshooting/binary-download-fails/) — common issues.
-- [Binary manager hub](/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
-- [Offline deployment](/net/use-cases/offline-deployment/) — pre-populating binaries for a pinned tag.
+- [Binary download fails troubleshooting](/llm/net/troubleshooting/binary-download-fails/) — common issues.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/) — pre-populating binaries for a pinned tag.

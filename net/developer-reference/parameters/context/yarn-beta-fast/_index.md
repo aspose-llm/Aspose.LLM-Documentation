@@ -15,7 +15,7 @@ keywords:
 - RoPE
 ---
 
-`YarnBetaFast` is the "fast" boundary of YaRN's correction range — the position-dimension index below which no correction is applied. Relevant only when [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
+`YarnBetaFast` is the "fast" boundary of YaRN's correction range — the position-dimension index below which no correction is applied. Relevant only when [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
 
 ## Quick reference
 
@@ -29,7 +29,7 @@ keywords:
 
 ## What it does
 
-YaRN applies different treatment to different RoPE dimensions based on their frequency (wavelength). Below `YarnBetaFast`, positions are treated with raw extrapolation (no correction). Between `YarnBetaFast` and [`YarnBetaSlow`](/net/developer-reference/parameters/context/yarn-beta-slow/), YaRN blends the two regimes.
+YaRN applies different treatment to different RoPE dimensions based on their frequency (wavelength). Below `YarnBetaFast`, positions are treated with raw extrapolation (no correction). Between `YarnBetaFast` and [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/), YaRN blends the two regimes.
 
 - `null` — use model default (typical value in YaRN papers is `32`).
 - Specific float — override.
@@ -53,10 +53,10 @@ preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 
 ## Interactions
 
-- [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
-- [`YarnBetaSlow`](/net/developer-reference/parameters/context/yarn-beta-slow/) — upper boundary of the blend range.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
+- [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/) — upper boundary of the blend range.
 
 ## What's next
 
-- [YarnBetaSlow](/net/developer-reference/parameters/context/yarn-beta-slow/) — companion upper boundary.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [YarnBetaSlow](/llm/net/developer-reference/parameters/context/yarn-beta-slow/) — companion upper boundary.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

@@ -39,7 +39,7 @@ The resulting project targets the .NET version you have installed by default. Ve
 </PropertyGroup>
 ```
 
-`net8.0` and `net6.0` are also supported — see [System requirements](/net/system-requirements/) for the full list.
+`net8.0` and `net6.0` are also supported — see [System requirements](/llm/net/system-requirements/) for the full list.
 
 ## Place the license
 
@@ -53,11 +53,11 @@ Put your `Aspose.LLM.lic` file next to the executable (or at a path you pass to 
 </ItemGroup>
 ```
 
-For production, consider embedding the license as a resource or loading it from a secret store — see [Licensing](/net/licensing/).
+For production, consider embedding the license as a resource or loading it from a secret store — see [Licensing](/llm/net/licensing/).
 
 ## Run a sample
 
-Paste the sample code into `Program.cs`. For [Hello, world!](/net/hello-world/):
+Paste the sample code into `Program.cs`. For [Hello, world!](/llm/net/hello-world/):
 
 ```csharp
 using Aspose.LLM;
@@ -92,15 +92,15 @@ Subsequent runs use the local caches and complete in seconds.
 
 ## IDE usage
 
-Any IDE with .NET support works — see [System requirements](/net/system-requirements/) for recommended options. The `dotnet` CLI used above is all you need to build and run; the IDE is optional.
+Any IDE with .NET support works — see [System requirements](/llm/net/system-requirements/) for recommended options. The `dotnet` CLI used above is all you need to build and run; the IDE is optional.
 
 ## Where to find more samples
 
-- [Quick wins](/net/quick-wins/) — five compact recipes.
-- [Use cases](/net/use-cases/) — full running examples for common scenarios.
+- [Quick wins](/llm/net/quick-wins/) — five compact recipes.
+- [Use cases](/llm/net/use-cases/) — full running examples for common scenarios.
 
 ## What's next
 
-- [Hello, world!](/net/hello-world/) — the first complete example.
-- [Quick wins](/net/quick-wins/) — more compact recipes.
-- [Licensing](/net/licensing/) — full license setup options (file, stream, embedded resource).
+- [Hello, world!](/llm/net/hello-world/) — the first complete example.
+- [Quick wins](/llm/net/quick-wins/) — more compact recipes.
+- [Licensing](/llm/net/licensing/) — full license setup options (file, stream, embedded resource).

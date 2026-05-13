@@ -22,7 +22,7 @@ keywords:
 
 Implement a custom provider when you need to source models from a location the defaults do not cover — private S3 buckets, artifact repositories (Artifactory, Nexus), encrypted storage, or signed internal model catalogs.
 
-This is a narrower surface than [`IModelLoader`](/net/developer-reference/extensibility/custom-model-loader/) and usually what you actually need.
+This is a narrower surface than [`IModelLoader`](/llm/net/developer-reference/extensibility/custom-model-loader/) and usually what you actually need.
 
 ## Interface reference
 
@@ -167,6 +167,6 @@ Confirm the current wiring before committing to a custom provider — contact [A
 
 ## What's next
 
-- [Custom model loader](/net/developer-reference/extensibility/custom-model-loader/) — broader surface when you need full pipeline control.
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — what `ModelSourceParameters` carries.
-- [Dependency injection](/net/developer-reference/dependency-injection/) — standard service wiring.
+- [Custom model loader](/llm/net/developer-reference/extensibility/custom-model-loader/) — broader surface when you need full pipeline control.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/) — what `ModelSourceParameters` carries.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/) — standard service wiring.

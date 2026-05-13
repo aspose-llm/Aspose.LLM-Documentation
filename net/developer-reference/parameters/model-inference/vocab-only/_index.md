@@ -31,7 +31,7 @@ keywords:
 - `null` or `false` — load the full model (vocabulary + weights). Required for inference.
 - `true` — load only vocabulary data. The model is loaded with no weights; chat methods are not meaningful.
 
-Use `VocabOnly = true` only for tokenizer-level operations — for example, probing token IDs to populate [`LogitBias`](/net/developer-reference/parameters/sampler/logit-bias/) without paying the cost of loading weights.
+Use `VocabOnly = true` only for tokenizer-level operations — for example, probing token IDs to populate [`LogitBias`](/llm/net/developer-reference/parameters/sampler/logit-bias/) without paying the cost of loading weights.
 
 ## When to change it
 
@@ -57,5 +57,5 @@ preset.BaseModelInferenceParameters.VocabOnly = true;
 
 ## What's next
 
-- [LogitBias](/net/developer-reference/parameters/sampler/logit-bias/) — use case for token-ID probing.
-- [Model inference hub](/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [LogitBias](/llm/net/developer-reference/parameters/sampler/logit-bias/) — use case for token-ID probing.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/) — all inference knobs.

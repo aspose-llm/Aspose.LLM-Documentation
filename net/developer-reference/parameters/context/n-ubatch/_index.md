@@ -15,7 +15,7 @@ keywords:
 - kernel batch
 ---
 
-`NUbatch` is the **physical** maximum batch size — the largest chunk actually processed in a single kernel call. Normally set equal to or smaller than [`NBatch`](/net/developer-reference/parameters/context/n-batch/).
+`NUbatch` is the **physical** maximum batch size — the largest chunk actually processed in a single kernel call. Normally set equal to or smaller than [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/).
 
 ## Quick reference
 
@@ -57,11 +57,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`NBatch`](/net/developer-reference/parameters/context/n-batch/) — upper bound; `NUbatch ≤ NBatch`.
-- [`NSeqMax`](/net/developer-reference/parameters/context/n-seq-max/) — parallel sequence cap, related in multi-sequence scenarios.
+- [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/) — upper bound; `NUbatch ≤ NBatch`.
+- [`NSeqMax`](/llm/net/developer-reference/parameters/context/n-seq-max/) — parallel sequence cap, related in multi-sequence scenarios.
 
 ## What's next
 
-- [NBatch](/net/developer-reference/parameters/context/n-batch/) — logical batch cap.
-- [NSeqMax](/net/developer-reference/parameters/context/n-seq-max/) — parallel sequences.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [NBatch](/llm/net/developer-reference/parameters/context/n-batch/) — logical batch cap.
+- [NSeqMax](/llm/net/developer-reference/parameters/context/n-seq-max/) — parallel sequences.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

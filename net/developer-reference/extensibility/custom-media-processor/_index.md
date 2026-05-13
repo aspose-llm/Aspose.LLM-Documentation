@@ -181,6 +181,6 @@ The default `MediaManager` is wired into `Engine` as the `IMediaProcessor` imple
 
 ## What's next
 
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — the built-in format support `MediaProcessor` applies.
-- [Multimodal context parameters](/net/developer-reference/parameters/multimodal-context/) — projector-side knobs.
-- [Extensibility overview](/net/developer-reference/extensibility/) — other substitution points.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — the built-in format support `MediaProcessor` applies.
+- [Multimodal context parameters](/llm/net/developer-reference/parameters/multimodal-context/) — projector-side knobs.
+- [Extensibility overview](/llm/net/developer-reference/extensibility/) — other substitution points.

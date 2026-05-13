@@ -15,7 +15,7 @@ keywords:
 - entropy curve
 ---
 
-`DynatempExponent` controls the shape of the entropy-to-temperature mapping in dynamic temperature sampling. It only matters when [`DynatempRange`](/net/developer-reference/parameters/sampler/dynatemp-range/) is enabled (non-zero).
+`DynatempExponent` controls the shape of the entropy-to-temperature mapping in dynamic temperature sampling. It only matters when [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) is enabled (non-zero).
 
 ## Quick reference
 
@@ -62,11 +62,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DynatempRange`](/net/developer-reference/parameters/sampler/dynatemp-range/) — must be non-zero for `DynatempExponent` to have any effect.
-- [`Temperature`](/net/developer-reference/parameters/sampler/temperature/) — the base temperature dynatemp varies around.
+- [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) — must be non-zero for `DynatempExponent` to have any effect.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — the base temperature dynatemp varies around.
 
 ## What's next
 
-- [DynatempRange](/net/developer-reference/parameters/sampler/dynatemp-range/) — enables dynatemp.
-- [Temperature](/net/developer-reference/parameters/sampler/temperature/) — the base.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DynatempRange](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) — enables dynatemp.
+- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/) — the base.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

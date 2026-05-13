@@ -15,7 +15,7 @@ keywords:
 - CUDA_VISIBLE_DEVICES
 ---
 
-`MainGpu` selects the GPU device index used when [`SplitMode`](/net/developer-reference/parameters/model-inference/split-mode/) is `None`. On multi-GPU hosts, this picks which device holds the entire model.
+`MainGpu` selects the GPU device index used when [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/) is `None`. On multi-GPU hosts, this picks which device holds the entire model.
 
 ## Quick reference
 
@@ -63,11 +63,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`SplitMode`](/net/developer-reference/parameters/model-inference/split-mode/) — `MainGpu` only applies when mode is `None`.
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — layers go to `MainGpu` when split is `None`.
+- [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/) — `MainGpu` only applies when mode is `None`.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — layers go to `MainGpu` when split is `None`.
 
 ## What's next
 
-- [SplitMode](/net/developer-reference/parameters/model-inference/split-mode/) — multi-GPU distribution.
-- [GpuLayers](/net/developer-reference/parameters/model-inference/gpu-layers/) — primary offload control.
-- [CUDA acceleration](/net/developer-reference/acceleration/cuda/) — multi-GPU NVIDIA setup.
+- [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/) — multi-GPU distribution.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — primary offload control.
+- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/) — multi-GPU NVIDIA setup.

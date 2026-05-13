@@ -76,7 +76,7 @@ var attachment = MediaAttachment.FromBytes(File.ReadAllBytes("photo.jpg"));
 var msg = ChatMessage.CreateUserMessage("Describe this image.", attachment);
 ```
 
-See [Attaching images](/net/developer-reference/multimodal/attaching-images/) for details on `MediaAttachment`.
+See [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) for details on `MediaAttachment`.
 
 Helpers:
 
@@ -93,7 +93,7 @@ Three integer fields track how the message sits in the native KV cache. You do n
 | `KVStartPosition` | `-1` | Starting token index in the KV cache. `-1` means not yet placed. |
 | `KVStatus` | `1` | `1` = loaded; `0` = marked for cleanup; `-1` = unloaded. |
 
-The cleanup strategy in [`CacheCleanupStrategy`](/net/developer-reference/cache-management/) walks these fields to decide what to evict. A `KVStatus` of `0` on a message means "this has been flagged for removal but not yet freed"; `-1` means the tokens have been physically removed from the native cache.
+The cleanup strategy in [`CacheCleanupStrategy`](/llm/net/developer-reference/cache-management/) walks these fields to decide what to evict. A `KVStatus` of `0` on a message means "this has been flagged for removal but not yet freed"; `-1` means the tokens have been physically removed from the native cache.
 
 When you save a session via `SaveChatSession`, these values are preserved so that `LoadChatSession` can resume where the run left off without re-tokenizing the entire history.
 
@@ -138,7 +138,7 @@ The runtime history of an active session is accessible via the `IChatSession` in
 
 ## What's next
 
-- [Chat sessions](/net/developer-reference/chat-sessions/) — session lifecycle.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — `MediaAttachment` details.
-- [Cache management](/net/developer-reference/cache-management/) — how the `KV*` fields drive eviction.
-- [Session persistence](/net/developer-reference/session-persistence/) — save/load and the nuance around restored sessions.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — `MediaAttachment` details.
+- [Cache management](/llm/net/developer-reference/cache-management/) — how the `KV*` fields drive eviction.
+- [Session persistence](/llm/net/developer-reference/session-persistence/) — save/load and the nuance around restored sessions.

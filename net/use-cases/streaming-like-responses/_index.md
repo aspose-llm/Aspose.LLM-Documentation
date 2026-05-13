@@ -128,6 +128,6 @@ The main reason to use Aspose.LLM is on-premise execution with no data egress. I
 
 ## What's next
 
-- [Architecture](/net/product-overview/architecture/) — what happens during generation.
-- [Features](/net/product-overview/features/) — full capability list and limitations.
-- [Integration with ASP.NET Core](/net/use-cases/integration-with-aspnet-core/) — queue / job patterns for responsive HTTP.
+- [Architecture](/llm/net/product-overview/architecture/) — what happens during generation.
+- [Features](/llm/net/product-overview/features/) — full capability list and limitations.
+- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/) — queue / job patterns for responsive HTTP.

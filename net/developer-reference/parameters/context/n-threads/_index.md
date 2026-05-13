@@ -30,7 +30,7 @@ keywords:
 
 ## What it does
 
-During the generation phase (token-by-token decode), the engine distributes matrix multiplications across `NThreads` CPU threads. When `null`, it uses [`EngineParameters.DefaultThreads`](/net/developer-reference/parameters/engine/), which defaults to `ProcessorCount - 1`.
+During the generation phase (token-by-token decode), the engine distributes matrix multiplications across `NThreads` CPU threads. When `null`, it uses [`EngineParameters.DefaultThreads`](/llm/net/developer-reference/parameters/engine/), which defaults to `ProcessorCount - 1`.
 
 - `NThreads = 4` — decent for 4-core machines; use most cores.
 - `NThreads = 8` — common sweet spot on mainstream desktop CPUs.
@@ -48,7 +48,7 @@ Unlike prompt processing (which scales well with more threads), generation often
 | High-core server (but avoid over-allocation) | `10` – `16` |
 | Competing with other CPU workloads | Cap explicitly to half `ProcessorCount` |
 
-Set `NThreads` and [`NThreadsBatch`](/net/developer-reference/parameters/context/n-threads-batch/) separately — generation and prompt processing have different optima.
+Set `NThreads` and [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) separately — generation and prompt processing have different optima.
 
 ## Example
 
@@ -62,12 +62,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`EngineParameters.DefaultThreads`](/net/developer-reference/parameters/engine/) — fallback when `NThreads` is null.
-- [`NThreadsBatch`](/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads.
+- [`EngineParameters.DefaultThreads`](/llm/net/developer-reference/parameters/engine/) — fallback when `NThreads` is null.
+- [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads.
 - CPU acceleration — `NThreads` has no effect when GPU offload is active for every layer.
 
 ## What's next
 
-- [NThreadsBatch](/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing variant.
-- [CPU acceleration](/net/developer-reference/acceleration/cpu/) — how threading interacts with AVX variants.
-- [Performance issues](/net/troubleshooting/performance-issues/) — thread-related throughput issues.
+- [NThreadsBatch](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing variant.
+- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/) — how threading interacts with AVX variants.
+- [Performance issues](/llm/net/troubleshooting/performance-issues/) — thread-related throughput issues.

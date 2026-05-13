@@ -47,10 +47,10 @@ public enum CacheCleanupStrategy
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
 
-- [SystemPrompt](/net/developer-reference/parameters/chat/system-prompt/)
-- [History](/net/developer-reference/parameters/chat/history/)
-- [MaxTokens](/net/developer-reference/parameters/chat/max-tokens/)
-- [CacheCleanupStrategy](/net/developer-reference/parameters/chat/cache-cleanup-strategy/)
+- [SystemPrompt](/llm/net/developer-reference/parameters/chat/system-prompt/)
+- [History](/llm/net/developer-reference/parameters/chat/history/)
+- [MaxTokens](/llm/net/developer-reference/parameters/chat/max-tokens/)
+- [CacheCleanupStrategy](/llm/net/developer-reference/parameters/chat/cache-cleanup-strategy/)
 
 ## Fields
 
@@ -134,7 +134,7 @@ Policy the engine applies when the current session's KV cache would overflow `Co
 | `KeepSystemPromptAndFirstUserMessage` | System prompt + the first user turn | Recall-heavy tasks where the original ask matters (long analyses, debugging sessions). |
 | `KeepSystemPromptAndLastUserMessage` | System prompt + the most recent user turn | Focus on the current question, drop the middle. |
 
-See [Chat sessions — Manage the KV cache](/net/developer-reference/chat-sessions/#manage-the-kv-cache) for the call-site details and runtime semantics.
+See [Chat sessions — Manage the KV cache](/llm/net/developer-reference/chat-sessions/#manage-the-kv-cache) for the call-site details and runtime semantics.
 
 ## Typical recipes
 
@@ -183,6 +183,6 @@ preset.ChatParameters.History = new List<ChatMessage>
 
 ## What's next
 
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how the engine uses these parameters at runtime.
-- [Context parameters](/net/developer-reference/parameters/context/) — the `ContextSize` field that drives cache cleanup timing.
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — runnable example showing cache management in practice.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — how the engine uses these parameters at runtime.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — the `ContextSize` field that drives cache cleanup timing.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) — runnable example showing cache management in practice.

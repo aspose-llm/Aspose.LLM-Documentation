@@ -61,7 +61,7 @@ dotnet run
 
 ### 3. Pre-populate the cache
 
-If the host cannot reach GitHub at all, pre-download on a machine with internet access and copy the cache to the target. Full workflow: [Offline deployment](/net/use-cases/offline-deployment/).
+If the host cannot reach GitHub at all, pre-download on a machine with internet access and copy the cache to the target. Full workflow: [Offline deployment](/llm/net/use-cases/offline-deployment/).
 
 ### 4. Check the `ReleaseTag`
 
@@ -112,6 +112,6 @@ Do **not** disable TLS validation in production — it is a security regression.
 
 ## What's next
 
-- [Offline deployment](/net/use-cases/offline-deployment/) — full pre-population workflow.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
-- [Architecture](/net/product-overview/architecture/) — the binary deployment stage.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/) — full pre-population workflow.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
+- [Architecture](/llm/net/product-overview/architecture/) — the binary deployment stage.

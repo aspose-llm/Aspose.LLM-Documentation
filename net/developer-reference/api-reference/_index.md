@@ -96,10 +96,10 @@ The following types form the everyday public surface. The external reference has
 | `ForceCacheCleanup(strategy)` | Trim the KV cache of the current session. |
 | `Dispose()` | Release native resources and the single-instance guard. |
 
-See [Chat sessions](/net/developer-reference/chat-sessions/) and [Session persistence](/net/developer-reference/session-persistence/) for detailed semantics.
+See [Chat sessions](/llm/net/developer-reference/chat-sessions/) and [Session persistence](/llm/net/developer-reference/session-persistence/) for detailed semantics.
 
 ## What's next
 
-- [Presets](/net/developer-reference/presets/) — preset base class and parameter bags.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — session lifecycle and messaging methods.
-- [Session persistence](/net/developer-reference/session-persistence/) — save and load session state.
+- [Presets](/llm/net/developer-reference/presets/) — preset base class and parameter bags.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle and messaging methods.
+- [Session persistence](/llm/net/developer-reference/session-persistence/) — save and load session state.

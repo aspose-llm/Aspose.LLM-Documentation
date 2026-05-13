@@ -48,7 +48,7 @@ Enable debug logging and confirm the binary variant and acceleration:
 [Engine] inference on CUDA with 32/32 layers offloaded
 ```
 
-If the variant says `cpu` while you have a GPU — see [GPU not detected](/net/troubleshooting/gpu-not-detected/).
+If the variant says `cpu` while you have a GPU — see [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/).
 
 ### 2. Verify `GpuLayers`
 
@@ -79,7 +79,7 @@ preset.ContextParameters.NThreads = Environment.ProcessorCount / 2;
 preset.ContextParameters.NThreadsBatch = Environment.ProcessorCount;
 ```
 
-See [CPU acceleration](/net/developer-reference/acceleration/cpu/) for the full rationale. Benchmark on your specific host to find the sweet spot; adding threads past 8-12 on generation often hurts.
+See [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/) for the full rationale. Benchmark on your specific host to find the sweet spot; adding threads past 8-12 on generation often hurts.
 
 ### 5. Warm up sessions
 
@@ -89,7 +89,7 @@ First token on a fresh session includes prefill time (tokenizing and evaluating 
 // Reuse one session per user instead of creating fresh each request.
 ```
 
-See [Reduce first-token latency](/net/how-to/reduce-first-token-latency/).
+See [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/).
 
 ### 6. Shrink `ContextSize` if you do not use the full window
 
@@ -170,7 +170,7 @@ If your numbers are substantially below these, work through the resolution steps
 
 ## What's next
 
-- [Tune for speed vs quality](/net/how-to/tune-for-speed-vs-quality/) — speed-biased configuration.
-- [Reduce first-token latency](/net/how-to/reduce-first-token-latency/) — cut TTFT.
-- [Acceleration](/net/developer-reference/acceleration/) — backend-specific tuning.
-- [Context parameters](/net/developer-reference/parameters/context/) — batch sizes and threading.
+- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/) — speed-biased configuration.
+- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/) — cut TTFT.
+- [Acceleration](/llm/net/developer-reference/acceleration/) — backend-specific tuning.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — batch sizes and threading.

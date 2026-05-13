@@ -17,7 +17,7 @@ keywords:
 
 `IModelLoader` is the contract the engine uses to turn `ModelSourceParameters` into an `ILlamaModel`. Substituting this interface gives you full control over the model-loading pipeline — file resolution, native `llama.cpp` model creation, inference parameter application, and any diagnostics you want to inject around it.
 
-This is the broadest extensibility point. Prefer [`IModelFileProvider`](/net/developer-reference/extensibility/custom-file-provider/) if you only need to change **where** the model file comes from; `IModelLoader` is for changing **how** it is loaded.
+This is the broadest extensibility point. Prefer [`IModelFileProvider`](/llm/net/developer-reference/extensibility/custom-file-provider/) if you only need to change **where** the model file comes from; `IModelLoader` is for changing **how** it is loaded.
 
 ## Interface reference
 
@@ -144,6 +144,6 @@ If you want to decorate the default loader, keep the default registration and wr
 
 ## What's next
 
-- [Custom file provider](/net/developer-reference/extensibility/custom-file-provider/) — narrower surface, often what you actually need.
-- [Extensibility overview](/net/developer-reference/extensibility/) — when to use which interface.
-- [Dependency injection](/net/developer-reference/dependency-injection/) — how `AddLlamaServices` wires services.
+- [Custom file provider](/llm/net/developer-reference/extensibility/custom-file-provider/) — narrower surface, often what you actually need.
+- [Extensibility overview](/llm/net/developer-reference/extensibility/) — when to use which interface.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/) — how `AddLlamaServices` wires services.

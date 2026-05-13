@@ -25,15 +25,15 @@ All presets derive from `PresetCoreBase` in namespace `Aspose.LLM.Abstractions.P
 
 | Property | Type | Purpose |
 |---|---|---|
-| `BaseModelSourceParameters` | [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/) | Where to load the main model (local path, Aspose model ID, or Hugging Face repo and file name). |
-| `MmprojSourceParameters` | [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/) | Optional vision projector (mmproj). Set by vision presets; empty on text presets. |
-| `BinaryManagerParameters` | [`BinaryManagerParameters`](/net/developer-reference/parameters/binary-manager/) | Native `llama.cpp` release tag, binary cache path, and preferred acceleration backend. |
-| `EngineParameters` | [`EngineParameters`](/net/developer-reference/parameters/engine/) | Engine-wide settings: model cache path, debug logging, log directory, default threads. |
-| `ChatParameters` | [`ChatParameters`](/net/developer-reference/parameters/chat/) | System prompt, optional history, max tokens, cache cleanup strategy. |
-| `ContextParameters` | [`ContextParameters`](/net/developer-reference/parameters/context/) | `llama.cpp` context knobs: context size, batch sizes, rope scaling, flash attention, KV cache dtype. |
-| `SamplerParameters` | [`SamplerParameters`](/net/developer-reference/parameters/sampler/) | Sampler knobs: temperature, top-p, top-k, min-p, penalties, DRY, XTC, mirostat, seed, logit bias. |
-| `BaseModelInferenceParameters` | [`ModelInferenceParameters`](/net/developer-reference/parameters/model-inference/) | Model-load knobs: GPU layers, main GPU, split mode, tensor split, memory mapping, KV overrides. |
-| `MtmdContextParameters` | [`MultimodalContextParameters`](/net/developer-reference/parameters/multimodal-context/) | `mtmd` (vision) context: GPU use, timings, thread count, verbosity, media marker. Set by vision presets. |
+| `BaseModelSourceParameters` | [`ModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/) | Where to load the main model (local path, Aspose model ID, or Hugging Face repo and file name). |
+| `MmprojSourceParameters` | [`ModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/) | Optional vision projector (mmproj). Set by vision presets; empty on text presets. |
+| `BinaryManagerParameters` | [`BinaryManagerParameters`](/llm/net/developer-reference/parameters/binary-manager/) | Native `llama.cpp` release tag, binary cache path, and preferred acceleration backend. |
+| `EngineParameters` | [`EngineParameters`](/llm/net/developer-reference/parameters/engine/) | Engine-wide settings: model cache path, debug logging, log directory, default threads. |
+| `ChatParameters` | [`ChatParameters`](/llm/net/developer-reference/parameters/chat/) | System prompt, optional history, max tokens, cache cleanup strategy. |
+| `ContextParameters` | [`ContextParameters`](/llm/net/developer-reference/parameters/context/) | `llama.cpp` context knobs: context size, batch sizes, rope scaling, flash attention, KV cache dtype. |
+| `SamplerParameters` | [`SamplerParameters`](/llm/net/developer-reference/parameters/sampler/) | Sampler knobs: temperature, top-p, top-k, min-p, penalties, DRY, XTC, mirostat, seed, logit bias. |
+| `BaseModelInferenceParameters` | [`ModelInferenceParameters`](/llm/net/developer-reference/parameters/model-inference/) | Model-load knobs: GPU layers, main GPU, split mode, tensor split, memory mapping, KV overrides. |
+| `MtmdContextParameters` | [`MultimodalContextParameters`](/llm/net/developer-reference/parameters/multimodal-context/) | `mtmd` (vision) context: GPU use, timings, thread count, verbosity, media marker. Set by vision presets. |
 
 Every bag is lazy-initialized — accessing any property is safe even if you did not set it explicitly.
 
@@ -72,7 +72,7 @@ Common overrides:
 - **`ChatParameters.SystemPrompt`** — set a default system prompt for new sessions.
 - **`ChatParameters.MaxTokens`** — cap the length of a single response.
 
-See the [custom preset](/net/use-cases/custom-preset/) use case for longer examples.
+See the [custom preset](/llm/net/use-cases/custom-preset/) use case for longer examples.
 
 ## Extend a built-in preset
 
@@ -120,7 +120,7 @@ public class MyCustomPreset : PresetCoreBase
 }
 ```
 
-See the [custom preset](/net/use-cases/custom-preset/) use case for a full walkthrough including chat template selection for non-standard models.
+See the [custom preset](/llm/net/use-cases/custom-preset/) use case for a full walkthrough including chat template selection for non-standard models.
 
 ## Default preset
 
@@ -142,10 +142,10 @@ For raw parameter values without a preset, call:
 
 ## Supported presets
 
-See [Supported presets](/net/product-overview/supported-presets/) for the full list of built-in text and vision presets with their Hugging Face model sources, context sizes, and quantization levels.
+See [Supported presets](/llm/net/product-overview/supported-presets/) for the full list of built-in text and vision presets with their Hugging Face model sources, context sizes, and quantization levels.
 
 ## What's next
 
-- [Custom preset](/net/use-cases/custom-preset/) — extend or replace a built-in preset.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how the engine uses preset parameters per session.
-- [Supported presets](/net/product-overview/supported-presets/) — full catalog of built-in presets.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — extend or replace a built-in preset.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — how the engine uses preset parameters per session.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — full catalog of built-in presets.

@@ -128,6 +128,6 @@ Benchmark to find the right split — "offload until VRAM is ~1-2 GB short of fu
 
 ## What's next
 
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `SplitMode`, `TensorSplit`, `MainGpu`.
-- [Vulkan](/net/developer-reference/acceleration/vulkan/) — cross-vendor GPU alternative.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `SplitMode`, `TensorSplit`, `MainGpu`.
+- [Vulkan](/llm/net/developer-reference/acceleration/vulkan/) — cross-vendor GPU alternative.

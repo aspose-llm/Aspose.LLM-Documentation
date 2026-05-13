@@ -59,5 +59,5 @@ Independent of other sampler knobs. `EnableInfill` toggles which sampler impleme
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
-- [Custom preset](/net/use-cases/custom-preset/) — patterns for building presets around specialized models.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — patterns for building presets around specialized models.

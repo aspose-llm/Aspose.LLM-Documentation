@@ -29,7 +29,7 @@ keywords:
 ## What it does
 
 - `null` or `false` — no timing output.
-- `true` — `mtmd` emits per-stage timings through the native logger. Requires [`EnableDebugLogging`](/net/developer-reference/parameters/engine/enable-debug-logging/) or equivalent output routing to see them.
+- `true` — `mtmd` emits per-stage timings through the native logger. Requires [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) or equivalent output routing to see them.
 
 Timings are noisy. Disable in production; keep on only while debugging.
 
@@ -54,11 +54,11 @@ using var api = AsposeLLMApi.Create(preset, logger);
 
 ## Interactions
 
-- [`EnableDebugLogging`](/net/developer-reference/parameters/engine/enable-debug-logging/) — required for timing lines to reach the logger.
-- [`Verbosity`](/net/developer-reference/parameters/multimodal-context/verbosity/) — complementary verbosity knob.
+- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) — required for timing lines to reach the logger.
+- [`Verbosity`](/llm/net/developer-reference/parameters/multimodal-context/verbosity/) — complementary verbosity knob.
 
 ## What's next
 
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — full diagnostic playbook.
-- [Verbosity](/net/developer-reference/parameters/multimodal-context/verbosity/) — mtmd log-level knob.
-- [Multimodal context hub](/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — full diagnostic playbook.
+- [Verbosity](/llm/net/developer-reference/parameters/multimodal-context/verbosity/) — mtmd log-level knob.
+- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.

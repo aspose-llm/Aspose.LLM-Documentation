@@ -29,8 +29,8 @@ CPU-only deployments trade inference speed for simplicity: no GPU drivers, no CU
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 - A CPU with AVX2 support (most CPUs from 2014+).
 
 ## Pick a preset sized for CPU
@@ -177,6 +177,6 @@ For real-time chat UIs, aim for 8+ t/s. Below that, users notice visible lag per
 
 ## What's next
 
-- [CPU acceleration](/net/developer-reference/acceleration/cpu/) — AVX variants and threading detail.
-- [Context parameters](/net/developer-reference/parameters/context/) — `NThreads`, `NThreadsBatch`, KV dtype.
-- [Low-memory tuning](/net/use-cases/low-memory-tuning/) — further memory optimization.
+- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/) — AVX variants and threading detail.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — `NThreads`, `NThreadsBatch`, KV dtype.
+- [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/) — further memory optimization.

@@ -15,7 +15,7 @@ keywords:
 - sampler
 ---
 
-`MirostatEta` is the learning rate of Mirostat's adaptive loop. It controls how quickly Mirostat reacts to divergence between observed entropy and the target entropy [`MirostatTau`](/net/developer-reference/parameters/sampler/mirostat-tau/).
+`MirostatEta` is the learning rate of Mirostat's adaptive loop. It controls how quickly Mirostat reacts to divergence between observed entropy and the target entropy [`MirostatTau`](/llm/net/developer-reference/parameters/sampler/mirostat-tau/).
 
 ## Quick reference
 
@@ -35,7 +35,7 @@ After each token, Mirostat computes the difference between the observed entropy 
 - `MirostatEta = 0.1` (default) — balanced.
 - `MirostatEta = 0.3` — fast adaptation. Tighter tracking of `Tau` but noisier.
 
-`MirostatEta` only matters when [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) is enabled.
+`MirostatEta` only matters when [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) is enabled.
 
 ## When to change it
 
@@ -60,11 +60,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — must be `1` or `2`.
-- [`MirostatTau`](/net/developer-reference/parameters/sampler/mirostat-tau/) — the target `MirostatEta` adapts toward.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — must be `1` or `2`.
+- [`MirostatTau`](/llm/net/developer-reference/parameters/sampler/mirostat-tau/) — the target `MirostatEta` adapts toward.
 
 ## What's next
 
-- [Mirostat](/net/developer-reference/parameters/sampler/mirostat/) — mode selector.
-- [MirostatTau](/net/developer-reference/parameters/sampler/mirostat-tau/) — entropy target.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [Mirostat](/llm/net/developer-reference/parameters/sampler/mirostat/) — mode selector.
+- [MirostatTau](/llm/net/developer-reference/parameters/sampler/mirostat-tau/) — entropy target.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

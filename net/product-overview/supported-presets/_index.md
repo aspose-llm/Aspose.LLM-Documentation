@@ -24,7 +24,7 @@ keywords:
 
 Aspose.LLM for .NET bundles ready-to-use presets for several popular open-weight model families. Each preset specifies the model source (Hugging Face repository and file name), context size, chat template, and sampler defaults. Pass a preset to `AsposeLLMApi.Create(preset)` and the engine downloads the model and any vision projector on first use.
 
-All presets derive from [`PresetCoreBase`](/net/developer-reference/presets/) (namespace `Aspose.LLM.Abstractions.Parameters.Presets`). You can use a preset as-is, override any parameter before calling `Create`, or extend `PresetCoreBase` for a fully custom model.
+All presets derive from [`PresetCoreBase`](/llm/net/developer-reference/presets/) (namespace `Aspose.LLM.Abstractions.Parameters.Presets`). You can use a preset as-is, override any parameter before calling `Create`, or extend `PresetCoreBase` for a fully custom model.
 
 ## Text presets
 
@@ -43,7 +43,7 @@ All presets derive from [`PresetCoreBase`](/net/developer-reference/presets/) (n
 Notes:
 
 - `UnifiedDefaultLlmParameters` is a conservative CPU-safe template. It sets only context, threads, and sampler defaults; you must set a model source yourself before calling `Create`.
-- Memory requirements scale with context size and quantization. A 7B Q4_K_M model at 32K context needs roughly 6-8 GB of RAM (or GPU memory) for the weights plus KV cache. Longer contexts and larger models need more — see [Features](/net/product-overview/features/) for memory guidance.
+- Memory requirements scale with context size and quantization. A 7B Q4_K_M model at 32K context needs roughly 6-8 GB of RAM (or GPU memory) for the weights plus KV cache. Longer contexts and larger models need more — see [Features](/llm/net/product-overview/features/) for memory guidance.
 - All presets ship with preset-specific sampler tuning (temperature, repetition penalty, penalty context size, etc.). Override any field on `preset.SamplerParameters` before calling `Create` to change behavior.
 
 ## Vision presets
@@ -77,7 +77,7 @@ Supported image formats across all vision presets: JPEG, PNG, BMP, GIF, WebP. Ma
 
 ## What's next
 
-- [Presets](/net/developer-reference/presets/) — preset base class, parameter bags, and override patterns.
-- [Custom preset](/net/use-cases/custom-preset/) — extend or replace a built-in preset.
-- [Features](/net/product-overview/features/) — full list of capabilities and limits.
-- [Hello, world!](/net/hello-world/) — a minimal runnable example using `Qwen25Preset`.
+- [Presets](/llm/net/developer-reference/presets/) — preset base class, parameter bags, and override patterns.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — extend or replace a built-in preset.
+- [Features](/llm/net/product-overview/features/) — full list of capabilities and limits.
+- [Hello, world!](/llm/net/hello-world/) — a minimal runnable example using `Qwen25Preset`.

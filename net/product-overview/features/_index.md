@@ -34,7 +34,7 @@ Each preset bundles the model source, chat template, context size, sampler setti
 - **Text presets**: `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llama32Preset`, `Phi4Preset`, `DeepSeekCoder2Preset`, `DeepseekR1Qwen3Preset`, `Oss20Preset`, `UnifiedDefaultLlmParameters`.
 - **Vision presets**: `Qwen25VL3BPreset`, `Qwen3VL2BPreset`, `Gemma3VisionPreset`, `Ministral3VisionPreset`.
 
-See [Supported presets](/net/product-overview/supported-presets/) for a full list with model sources.
+See [Supported presets](/llm/net/product-overview/supported-presets/) for a full list with model sources.
 
 ### Custom presets
 
@@ -158,6 +158,6 @@ Out of scope. Use a dedicated audio library for STT / TTS and pass the resulting
 
 ## What's next
 
-- [Architecture](/net/product-overview/architecture/) — layers, runtime flow, and memory footprint.
-- [Supported presets](/net/product-overview/supported-presets/) — full preset list with model sources.
-- [Hello, world!](/net/hello-world/) — minimal runnable example.
+- [Architecture](/llm/net/product-overview/architecture/) — layers, runtime flow, and memory footprint.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — full preset list with model sources.
+- [Hello, world!](/llm/net/hello-world/) — minimal runnable example.

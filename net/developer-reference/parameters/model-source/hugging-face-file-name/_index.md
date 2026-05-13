@@ -15,7 +15,7 @@ keywords:
 - quantization selection
 ---
 
-`HuggingFaceFileName` names the specific file within [`HuggingFaceRepoId`](/net/developer-reference/parameters/model-source/hugging-face-repo-id/) to download. Many Hugging Face repos host several GGUF variants (different quantizations) — this field picks one.
+`HuggingFaceFileName` names the specific file within [`HuggingFaceRepoId`](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/) to download. Many Hugging Face repos host several GGUF variants (different quantizations) — this field picks one.
 
 ## Quick reference
 
@@ -41,7 +41,7 @@ For `Qwen25Preset`, the default is `"Qwen2.5-7B-Instruct-Q4_K_M.gguf"`. Common a
 | Lower memory, lower quality | `Q4_0`, `IQ3_M`, `IQ2_XXS` |
 | Testing a specific quant | Full file name from Hugging Face listing |
 
-See [Understand quantization](/net/how-to/understand-quantization/) for a primer on which variant to pick.
+See [Understand quantization](/llm/net/how-to/understand-quantization/) for a primer on which variant to pick.
 
 ## Example
 
@@ -59,11 +59,11 @@ preset.BaseModelSourceParameters.HuggingFaceFileName = "Qwen2.5-7B-Instruct-IQ3_
 
 ## Interactions
 
-- [`HuggingFaceRepoId`](/net/developer-reference/parameters/model-source/hugging-face-repo-id/) — the repo containing the file.
-- [`ModelFilePath`](/net/developer-reference/parameters/model-source/model-file-path/) — higher priority; overrides Hugging Face download.
+- [`HuggingFaceRepoId`](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/) — the repo containing the file.
+- [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) — higher priority; overrides Hugging Face download.
 
 ## What's next
 
-- [Understand quantization](/net/how-to/understand-quantization/) — Q4 vs Q5 vs Q8 primer.
-- [HuggingFaceRepoId](/net/developer-reference/parameters/model-source/hugging-face-repo-id/) — companion repo selector.
-- [Model source hub](/net/developer-reference/parameters/model-source/) — resolution order.
+- [Understand quantization](/llm/net/how-to/understand-quantization/) — Q4 vs Q5 vs Q8 primer.
+- [HuggingFaceRepoId](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/) — companion repo selector.
+- [Model source hub](/llm/net/developer-reference/parameters/model-source/) — resolution order.

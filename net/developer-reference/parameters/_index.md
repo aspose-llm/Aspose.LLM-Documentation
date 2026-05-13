@@ -24,16 +24,16 @@ This section covers each bag in detail: the public fields, their types and defau
 
 | Bag | What it controls | Frequently changed for |
 |---|---|---|
-| [Model source](/net/developer-reference/parameters/model-source/) | Where the model file comes from | Local files, Hugging Face repos, custom caches |
-| [Model inference](/net/developer-reference/parameters/model-inference/) | How the model loads into memory | GPU offload, tensor split, memory mapping |
-| [Context](/net/developer-reference/parameters/context/) | Runtime context and batch sizes | Context length, flash attention, KV cache quantization |
-| [Chat](/net/developer-reference/parameters/chat/) | Session-level conversation settings | System prompt, max tokens, cache cleanup |
-| [Sampler](/net/developer-reference/parameters/sampler/) | Token sampling behavior | Temperature, penalties, DRY, Mirostat |
-| [Engine](/net/developer-reference/parameters/engine/) | Engine-wide defaults | Cache path, debug logging, default threads |
-| [Binary manager](/net/developer-reference/parameters/binary-manager/) | Native binary deployment | Release tag, preferred acceleration backend |
-| [Multimodal context](/net/developer-reference/parameters/multimodal-context/) | mtmd (vision) context | GPU offload for projector, verbosity |
+| [Model source](/llm/net/developer-reference/parameters/model-source/) | Where the model file comes from | Local files, Hugging Face repos, custom caches |
+| [Model inference](/llm/net/developer-reference/parameters/model-inference/) | How the model loads into memory | GPU offload, tensor split, memory mapping |
+| [Context](/llm/net/developer-reference/parameters/context/) | Runtime context and batch sizes | Context length, flash attention, KV cache quantization |
+| [Chat](/llm/net/developer-reference/parameters/chat/) | Session-level conversation settings | System prompt, max tokens, cache cleanup |
+| [Sampler](/llm/net/developer-reference/parameters/sampler/) | Token sampling behavior | Temperature, penalties, DRY, Mirostat |
+| [Engine](/llm/net/developer-reference/parameters/engine/) | Engine-wide defaults | Cache path, debug logging, default threads |
+| [Binary manager](/llm/net/developer-reference/parameters/binary-manager/) | Native binary deployment | Release tag, preferred acceleration backend |
+| [Multimodal context](/llm/net/developer-reference/parameters/multimodal-context/) | mtmd (vision) context | GPU offload for projector, verbosity |
 
-`PresetCoreBase` exposes **nine** properties, but only **eight** parameter class types — the `MmprojSourceParameters` property for the vision projector uses the same `ModelSourceParameters` type as `BaseModelSourceParameters`. Both are covered on the [Model source](/net/developer-reference/parameters/model-source/) page.
+`PresetCoreBase` exposes **nine** properties, but only **eight** parameter class types — the `MmprojSourceParameters` property for the vision projector uses the same `ModelSourceParameters` type as `BaseModelSourceParameters`. Both are covered on the [Model source](/llm/net/developer-reference/parameters/model-source/) page.
 
 ## General guidance
 
@@ -44,17 +44,17 @@ This section covers each bag in detail: the public fields, their types and defau
 
 ## Sections
 
-- [Model source](/net/developer-reference/parameters/model-source/) — model file resolution order and cache layout.
-- [Model inference](/net/developer-reference/parameters/model-inference/) — model-load knobs (GPU, memory, tensor split).
-- [Context](/net/developer-reference/parameters/context/) — `llama.cpp` context parameters.
-- [Chat](/net/developer-reference/parameters/chat/) — session-level conversation settings.
-- [Sampler](/net/developer-reference/parameters/sampler/) — sampler knobs.
-- [Engine](/net/developer-reference/parameters/engine/) — engine-wide defaults.
-- [Binary manager](/net/developer-reference/parameters/binary-manager/) — native binary deployment.
-- [Multimodal context](/net/developer-reference/parameters/multimodal-context/) — `mtmd` context for vision.
+- [Model source](/llm/net/developer-reference/parameters/model-source/) — model file resolution order and cache layout.
+- [Model inference](/llm/net/developer-reference/parameters/model-inference/) — model-load knobs (GPU, memory, tensor split).
+- [Context](/llm/net/developer-reference/parameters/context/) — `llama.cpp` context parameters.
+- [Chat](/llm/net/developer-reference/parameters/chat/) — session-level conversation settings.
+- [Sampler](/llm/net/developer-reference/parameters/sampler/) — sampler knobs.
+- [Engine](/llm/net/developer-reference/parameters/engine/) — engine-wide defaults.
+- [Binary manager](/llm/net/developer-reference/parameters/binary-manager/) — native binary deployment.
+- [Multimodal context](/llm/net/developer-reference/parameters/multimodal-context/) — `mtmd` context for vision.
 
 ## What's next
 
-- [Presets](/net/developer-reference/presets/) — how `PresetCoreBase` composes the eight bags.
-- [Custom preset](/net/use-cases/custom-preset/) — override patterns for the most common scenarios.
-- [Supported presets](/net/product-overview/supported-presets/) — built-in presets with their default parameter values.
+- [Presets](/llm/net/developer-reference/presets/) — how `PresetCoreBase` composes the eight bags.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — override patterns for the most common scenarios.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — built-in presets with their default parameter values.

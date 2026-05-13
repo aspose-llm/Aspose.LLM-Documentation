@@ -143,6 +143,6 @@ services.AddSingleton<IPromptFormatter, MyCustomFormatter>();
 
 ## What's next
 
-- [Chat templates (multimodal)](/net/developer-reference/multimodal/chat-templates/) — vision template auto-selection.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how the formatter is invoked per turn.
-- [Extensibility overview](/net/developer-reference/extensibility/) — other substitution points.
+- [Chat templates (multimodal)](/llm/net/developer-reference/multimodal/chat-templates/) — vision template auto-selection.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — how the formatter is invoked per turn.
+- [Extensibility overview](/llm/net/developer-reference/extensibility/) — other substitution points.

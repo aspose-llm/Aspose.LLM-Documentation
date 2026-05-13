@@ -23,7 +23,7 @@ CPU is the fallback backend for Aspose.LLM for .NET when no supported GPU is ava
 ## Requirements
 
 - **CPU**: any x64 CPU. ARM64 is supported on Linux and macOS (Apple Silicon). The SDK picks the optimal CPU variant automatically based on detected instruction sets.
-- **OS**: Windows 10+, Linux (glibc 2.28+), macOS 11+. Intel Macs use CPU; Apple Silicon Macs prefer [Metal](/net/developer-reference/acceleration/metal/).
+- **OS**: Windows 10+, Linux (glibc 2.28+), macOS 11+. Intel Macs use CPU; Apple Silicon Macs prefer [Metal](/llm/net/developer-reference/acceleration/metal/).
 
 ## CPU variants
 
@@ -85,7 +85,7 @@ For sustained CPU inference, expect 5-15 t/s on mainstream desktop CPUs. That is
 
 ## Memory
 
-Model weights plus KV cache live in system RAM. Typical memory for a 7B Q4_K_M model with 32K context: 8-12 GB. See [System requirements](/net/system-requirements/#memory) for per-preset estimates.
+Model weights plus KV cache live in system RAM. Typical memory for a 7B Q4_K_M model with 32K context: 8-12 GB. See [System requirements](/llm/net/system-requirements/#memory) for per-preset estimates.
 
 ## Performance tips
 
@@ -106,6 +106,6 @@ Model weights plus KV cache live in system RAM. Typical memory for a 7B Q4_K_M m
 
 ## What's next
 
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — `GpuLayers = 0` pattern for CPU-only.
-- [Context parameters](/net/developer-reference/parameters/context/) — `NThreads` and `NThreadsBatch`.
-- [Metal](/net/developer-reference/acceleration/metal/) — macOS-preferred alternative on Apple Silicon.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers = 0` pattern for CPU-only.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — `NThreads` and `NThreadsBatch`.
+- [Metal](/llm/net/developer-reference/acceleration/metal/) — macOS-preferred alternative on Apple Silicon.

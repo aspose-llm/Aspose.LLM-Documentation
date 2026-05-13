@@ -64,12 +64,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) — must be positive for DRY to be active.
-- [`DryBase`](/net/developer-reference/parameters/sampler/dry-base/) — sets how fast penalty grows beyond this length.
-- [`DrySequenceBreakers`](/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — tokens that reset the match counter.
+- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — must be positive for DRY to be active.
+- [`DryBase`](/llm/net/developer-reference/parameters/sampler/dry-base/) — sets how fast penalty grows beyond this length.
+- [`DrySequenceBreakers`](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — tokens that reset the match counter.
 
 ## What's next
 
-- [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
-- [DryBase](/net/developer-reference/parameters/sampler/dry-base/) — growth rate past this length.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
+- [DryBase](/llm/net/developer-reference/parameters/sampler/dry-base/) — growth rate past this length.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.

@@ -50,7 +50,7 @@ Partial offload is useful when the model doesn't fit entirely in VRAM. The trans
 | 70B model on 24 GB GPU | Partial; pair with quantization |
 | Apple Silicon Metal | `999` (unified memory — no separate budget) |
 
-Pair with a GPU-capable binary via [`BinaryManagerParameters.PreferredAcceleration`](/net/developer-reference/parameters/binary-manager/).
+Pair with a GPU-capable binary via [`BinaryManagerParameters.PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/).
 
 ## Example
 
@@ -73,15 +73,15 @@ preset.ContextParameters.OffloadKqv = false;  // keep KV on CPU to save more VRA
 
 ## Interactions
 
-- [`BinaryManagerParameters.PreferredAcceleration`](/net/developer-reference/parameters/binary-manager/) — must point at a GPU-capable backend.
-- [`MainGpu`](/net/developer-reference/parameters/model-inference/main-gpu/) — which GPU (for single-GPU mode).
-- [`SplitMode`](/net/developer-reference/parameters/model-inference/split-mode/) — how to split across multiple GPUs.
-- [`TensorSplit`](/net/developer-reference/parameters/model-inference/tensor-split/) — per-GPU allocation ratios.
-- [`OffloadKqv`](/net/developer-reference/parameters/context/offload-kqv/) — related, but for KV cache not weights.
+- [`BinaryManagerParameters.PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/) — must point at a GPU-capable backend.
+- [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/) — which GPU (for single-GPU mode).
+- [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/) — how to split across multiple GPUs.
+- [`TensorSplit`](/llm/net/developer-reference/parameters/model-inference/tensor-split/) — per-GPU allocation ratios.
+- [`OffloadKqv`](/llm/net/developer-reference/parameters/context/offload-kqv/) — related, but for KV cache not weights.
 
 ## What's next
 
-- [MainGpu](/net/developer-reference/parameters/model-inference/main-gpu/) — single-GPU selector.
-- [SplitMode](/net/developer-reference/parameters/model-inference/split-mode/) — multi-GPU.
-- [Acceleration overview](/net/developer-reference/acceleration/) — backend-specific setup.
-- [GPU deployment use case](/net/use-cases/gpu-deployment-cuda/) — runnable example.
+- [MainGpu](/llm/net/developer-reference/parameters/model-inference/main-gpu/) — single-GPU selector.
+- [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/) — multi-GPU.
+- [Acceleration overview](/llm/net/developer-reference/acceleration/) — backend-specific setup.
+- [GPU deployment use case](/llm/net/use-cases/gpu-deployment-cuda/) — runnable example.

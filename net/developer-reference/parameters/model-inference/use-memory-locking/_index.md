@@ -62,10 +62,10 @@ dotnet run
 
 ## Interactions
 
-- [`UseMemoryMapping`](/net/developer-reference/parameters/model-inference/use-memory-mapping/) — with mmap on, `mlock` locks the mapped pages as they fault in.
+- [`UseMemoryMapping`](/llm/net/developer-reference/parameters/model-inference/use-memory-mapping/) — with mmap on, `mlock` locks the mapped pages as they fault in.
 - System-level configuration — `mlock` availability depends on OS limits.
 
 ## What's next
 
-- [UseMemoryMapping](/net/developer-reference/parameters/model-inference/use-memory-mapping/) — companion load-time knob.
-- [Model inference hub](/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [UseMemoryMapping](/llm/net/developer-reference/parameters/model-inference/use-memory-mapping/) — companion load-time knob.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/) — all inference knobs.

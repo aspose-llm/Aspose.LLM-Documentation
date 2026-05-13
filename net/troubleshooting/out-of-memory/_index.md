@@ -72,7 +72,7 @@ preset.ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled;
 preset.BaseModelInferenceParameters.GpuLayers = 20;
 ```
 
-See [Low memory tuning](/net/use-cases/low-memory-tuning/) for the full recipe.
+See [Low memory tuning](/llm/net/use-cases/low-memory-tuning/) for the full recipe.
 
 ### 3. Switch to a smaller preset
 
@@ -92,7 +92,7 @@ In multi-user hosts, cap the active session count. A back-of-envelope budget:
 max_sessions = (available_memory - model_weights - overhead) / per_session_kv_budget
 ```
 
-Use [Estimate memory requirements](/net/how-to/estimate-memory-requirements/) for concrete numbers.
+Use [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/) for concrete numbers.
 
 Evict idle sessions by periodically disposing `AsposeLLMApi` and recreating it. The current SDK does not provide an explicit per-session evict API.
 
@@ -118,6 +118,6 @@ There is no separate VRAM to optimize — everything is RAM. Apply system-RAM re
 
 ## What's next
 
-- [Low memory tuning](/net/use-cases/low-memory-tuning/) — recipes for memory-constrained hosts.
-- [Estimate memory requirements](/net/how-to/estimate-memory-requirements/) — predictive sizing.
-- [Context parameters](/net/developer-reference/parameters/context/) — KV cache dtype and flash attention.
+- [Low memory tuning](/llm/net/use-cases/low-memory-tuning/) — recipes for memory-constrained hosts.
+- [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/) — predictive sizing.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — KV cache dtype and flash attention.

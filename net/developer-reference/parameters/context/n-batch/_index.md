@@ -59,12 +59,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`NUbatch`](/net/developer-reference/parameters/context/n-ubatch/) — physical batch size; typically set equal to or less than `NBatch`.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — `NBatch` should not exceed `ContextSize`.
-- [`NThreadsBatch`](/net/developer-reference/parameters/context/n-threads-batch/) — threads that process the batch.
+- [`NUbatch`](/llm/net/developer-reference/parameters/context/n-ubatch/) — physical batch size; typically set equal to or less than `NBatch`.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — `NBatch` should not exceed `ContextSize`.
+- [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) — threads that process the batch.
 
 ## What's next
 
-- [NUbatch](/net/developer-reference/parameters/context/n-ubatch/) — physical batch size.
-- [NThreadsBatch](/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads.
-- [Reduce first-token latency](/net/how-to/reduce-first-token-latency/) — batch size's role in TTFT.
+- [NUbatch](/llm/net/developer-reference/parameters/context/n-ubatch/) — physical batch size.
+- [NThreadsBatch](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads.
+- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/) — batch size's role in TTFT.

@@ -118,6 +118,6 @@ Saved JSON is plain text — user prompts, assistant replies, and media metadata
 
 ## What's next
 
-- [Session persistence](/net/developer-reference/session-persistence/) — save / load semantics.
-- [Save and restore session use case](/net/use-cases/save-and-restore-session/) — runnable example.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — pin `ReleaseTag` for deterministic restores.
+- [Session persistence](/llm/net/developer-reference/session-persistence/) — save / load semantics.
+- [Save and restore session use case](/llm/net/use-cases/save-and-restore-session/) — runnable example.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — pin `ReleaseTag` for deterministic restores.

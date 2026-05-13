@@ -24,10 +24,10 @@ This section covers what the SDK does, how it is built, and what it supports.
 
 ## Sections
 
-- [Architecture](/net/product-overview/architecture/) — four-layer design (facade, engine, P/Invoke, native), runtime flow on first `Create`, memory footprint, and lifecycle.
-- [Features](/net/product-overview/features/) — capabilities in detail, plus explicit scope limits (no streaming, no function calling, no fine-tuning, no audio).
-- [Supported presets](/net/product-overview/supported-presets/) — built-in text and vision presets with their Hugging Face model sources and default parameters.
-- [Supported acceleration](/net/product-overview/supported-acceleration/) — CUDA, HIP, Metal, Vulkan, CPU backends with platform × backend matrix and first-run download sizes.
+- [Architecture](/llm/net/product-overview/architecture/) — four-layer design (facade, engine, P/Invoke, native), runtime flow on first `Create`, memory footprint, and lifecycle.
+- [Features](/llm/net/product-overview/features/) — capabilities in detail, plus explicit scope limits (no streaming, no function calling, no fine-tuning, no audio).
+- [Supported presets](/llm/net/product-overview/supported-presets/) — built-in text and vision presets with their Hugging Face model sources and default parameters.
+- [Supported acceleration](/llm/net/product-overview/supported-acceleration/) — CUDA, HIP, Metal, Vulkan, CPU backends with platform × backend matrix and first-run download sizes.
 
 ## At a glance
 
@@ -41,8 +41,8 @@ This section covers what the SDK does, how it is built, and what it supports.
 
 ## What's next
 
-- [Architecture](/net/product-overview/architecture/) — layered design and runtime flow.
-- [Features](/net/product-overview/features/) — full capability list and scope limits.
-- [Supported presets](/net/product-overview/supported-presets/) — pick a preset for your model and hardware.
-- [Supported acceleration](/net/product-overview/supported-acceleration/) — platform / backend matrix.
-- [Getting started](/net/getting-started/) — install, license, and run the first example.
+- [Architecture](/llm/net/product-overview/architecture/) — layered design and runtime flow.
+- [Features](/llm/net/product-overview/features/) — full capability list and scope limits.
+- [Supported presets](/llm/net/product-overview/supported-presets/) — pick a preset for your model and hardware.
+- [Supported acceleration](/llm/net/product-overview/supported-acceleration/) — platform / backend matrix.
+- [Getting started](/llm/net/getting-started/) — install, license, and run the first example.

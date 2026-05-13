@@ -65,11 +65,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — pair a GPU acceleration with a non-zero `GpuLayers` to actually use the GPU.
-- [`SystemSpecification`](/net/developer-reference/parameters/binary-manager/system-specification/) — lower-level override; `PreferredAcceleration` is the recommended path.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — pair a GPU acceleration with a non-zero `GpuLayers` to actually use the GPU.
+- [`SystemSpecification`](/llm/net/developer-reference/parameters/binary-manager/system-specification/) — lower-level override; `PreferredAcceleration` is the recommended path.
 
 ## What's next
 
-- [Acceleration overview](/net/developer-reference/acceleration/) — per-backend setup.
-- [Supported acceleration](/net/product-overview/supported-acceleration/) — platform × backend matrix.
-- [GPU not detected troubleshooting](/net/troubleshooting/gpu-not-detected/) — when auto-detection falls back to CPU.
+- [Acceleration overview](/llm/net/developer-reference/acceleration/) — per-backend setup.
+- [Supported acceleration](/llm/net/product-overview/supported-acceleration/) — platform × backend matrix.
+- [GPU not detected troubleshooting](/llm/net/troubleshooting/gpu-not-detected/) — when auto-detection falls back to CPU.

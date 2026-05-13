@@ -126,7 +126,7 @@ general chit-chat), reply: "That's outside my domain — I can help with AWS."
 
 ## Tool-use stand-in
 
-The SDK does not support built-in function calling (see [Features](/net/product-overview/features/)), but you can instruct the model to emit structured tool-call requests that your application parses:
+The SDK does not support built-in function calling (see [Features](/llm/net/product-overview/features/)), but you can instruct the model to emit structured tool-call requests that your application parses:
 
 ```
 You are a helpful assistant with access to these tools:
@@ -183,7 +183,7 @@ English. Only output the French translation.
 
 ## Few-shot priming via ChatParameters.History
 
-For tasks where the system prompt is not enough, pre-fill the history with worked examples. See [Chat parameters — History](/net/developer-reference/parameters/chat/#history).
+For tasks where the system prompt is not enough, pre-fill the history with worked examples. See [Chat parameters — History](/llm/net/developer-reference/parameters/chat/#history).
 
 ```csharp
 using Aspose.LLM.Abstractions.Models;
@@ -202,12 +202,12 @@ Every new session starts after these examples. The model follows the pattern dem
 
 ## Model-specific notes
 
-- **Qwen3** — emits `<think>…</think>` blocks before answers. Raise `MaxTokens`; consider stripping think blocks in a custom `IPromptFormatter` (see [Custom prompt formatter](/net/developer-reference/extensibility/custom-prompt-formatter/)).
+- **Qwen3** — emits `<think>…</think>` blocks before answers. Raise `MaxTokens`; consider stripping think blocks in a custom `IPromptFormatter` (see [Custom prompt formatter](/llm/net/developer-reference/extensibility/custom-prompt-formatter/)).
 - **Gemma 3** — sometimes prefers an empty system prompt; test with `ChatParameters.SystemPrompt = ""`.
 - **DeepSeek-R1** — reasoning model. Same budget considerations as Qwen3.
 
 ## What's next
 
-- [Chat parameters](/net/developer-reference/parameters/chat/) — `SystemPrompt`, `MaxTokens`, `CacheCleanupStrategy`.
-- [Sampler parameters](/net/developer-reference/parameters/sampler/) — temperature and sampling knobs that interact with the system prompt.
-- [Custom preset](/net/use-cases/custom-preset/) — build a reusable subclass with your favorite system prompt baked in.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — `SystemPrompt`, `MaxTokens`, `CacheCleanupStrategy`.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) — temperature and sampling knobs that interact with the system prompt.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — build a reusable subclass with your favorite system prompt baked in.

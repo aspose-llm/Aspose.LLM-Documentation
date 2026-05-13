@@ -28,11 +28,11 @@ You do not configure backends at compile time — the choice is made at runtime 
 
 | Backend | Platforms | GPU vendor | Typical priority |
 |---|---|---|---|
-| [CUDA](/net/developer-reference/acceleration/cuda/) | Windows, Linux | NVIDIA | Highest on NVIDIA hosts |
-| [HIP / ROCm](/net/developer-reference/acceleration/hip-rocm/) | Linux | AMD | High on AMD hosts |
-| [Metal](/net/developer-reference/acceleration/metal/) | macOS (Apple Silicon) | Apple | Highest on Apple Silicon |
-| [Vulkan](/net/developer-reference/acceleration/vulkan/) | Windows, Linux | Any Vulkan-capable GPU | Fallback GPU; cross-vendor |
-| [CPU](/net/developer-reference/acceleration/cpu/) | All | — | Fallback when no GPU is available |
+| [CUDA](/llm/net/developer-reference/acceleration/cuda/) | Windows, Linux | NVIDIA | Highest on NVIDIA hosts |
+| [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/) | Linux | AMD | High on AMD hosts |
+| [Metal](/llm/net/developer-reference/acceleration/metal/) | macOS (Apple Silicon) | Apple | Highest on Apple Silicon |
+| [Vulkan](/llm/net/developer-reference/acceleration/vulkan/) | Windows, Linux | Any Vulkan-capable GPU | Fallback GPU; cross-vendor |
+| [CPU](/llm/net/developer-reference/acceleration/cpu/) | All | — | Fallback when no GPU is available |
 
 ## Auto-detection
 
@@ -106,7 +106,7 @@ GPU inference needs VRAM for model weights (proportional to `GpuLayers`), plus t
 | Vulkan | VRAM on chosen GPU | GPU memory |
 | CPU | System RAM | System RAM |
 
-See [System requirements](/net/system-requirements/#memory) for per-preset memory ranges.
+See [System requirements](/llm/net/system-requirements/#memory) for per-preset memory ranges.
 
 ## First-run download size
 
@@ -124,9 +124,9 @@ Once downloaded, the variant is cached at `BinaryManagerParameters.BinaryPath`. 
 
 ## What's next
 
-- [CUDA](/net/developer-reference/acceleration/cuda/) — NVIDIA GPUs.
-- [HIP / ROCm](/net/developer-reference/acceleration/hip-rocm/) — AMD GPUs.
-- [Metal](/net/developer-reference/acceleration/metal/) — Apple Silicon.
-- [Vulkan](/net/developer-reference/acceleration/vulkan/) — cross-platform GPU.
-- [CPU](/net/developer-reference/acceleration/cpu/) — when no GPU is available.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration` and friends.
+- [CUDA](/llm/net/developer-reference/acceleration/cuda/) — NVIDIA GPUs.
+- [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/) — AMD GPUs.
+- [Metal](/llm/net/developer-reference/acceleration/metal/) — Apple Silicon.
+- [Vulkan](/llm/net/developer-reference/acceleration/vulkan/) — cross-platform GPU.
+- [CPU](/llm/net/developer-reference/acceleration/cpu/) — when no GPU is available.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration` and friends.

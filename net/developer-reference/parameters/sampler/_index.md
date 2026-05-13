@@ -84,23 +84,23 @@ public class SamplerParameters
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions. The rest of this page is an inline overview of the same content; follow the links for the deeper treatment.
 
-**Core sampling**: [Temperature](/net/developer-reference/parameters/sampler/temperature/), [TopP](/net/developer-reference/parameters/sampler/top-p/), [TopK](/net/developer-reference/parameters/sampler/top-k/), [MinP](/net/developer-reference/parameters/sampler/min-p/).
+**Core sampling**: [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/), [TopP](/llm/net/developer-reference/parameters/sampler/top-p/), [TopK](/llm/net/developer-reference/parameters/sampler/top-k/), [MinP](/llm/net/developer-reference/parameters/sampler/min-p/).
 
-**Reproducibility**: [Seed](/net/developer-reference/parameters/sampler/seed/), [MinKeep](/net/developer-reference/parameters/sampler/min-keep/).
+**Reproducibility**: [Seed](/llm/net/developer-reference/parameters/sampler/seed/), [MinKeep](/llm/net/developer-reference/parameters/sampler/min-keep/).
 
-**Repetition controls**: [PenaltyContextSize](/net/developer-reference/parameters/sampler/penalty-context-size/), [RepetitionPenalty](/net/developer-reference/parameters/sampler/repetition-penalty/), [PresencePenalty](/net/developer-reference/parameters/sampler/presence-penalty/), [FrequencyPenalty](/net/developer-reference/parameters/sampler/frequency-penalty/).
+**Repetition controls**: [PenaltyContextSize](/llm/net/developer-reference/parameters/sampler/penalty-context-size/), [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/), [PresencePenalty](/llm/net/developer-reference/parameters/sampler/presence-penalty/), [FrequencyPenalty](/llm/net/developer-reference/parameters/sampler/frequency-penalty/).
 
-**Advanced filters**: [TypicalP](/net/developer-reference/parameters/sampler/typical-p/), [TopNSigma](/net/developer-reference/parameters/sampler/top-n-sigma/).
+**Advanced filters**: [TypicalP](/llm/net/developer-reference/parameters/sampler/typical-p/), [TopNSigma](/llm/net/developer-reference/parameters/sampler/top-n-sigma/).
 
-**Dynamic temperature**: [DynatempRange](/net/developer-reference/parameters/sampler/dynatemp-range/), [DynatempExponent](/net/developer-reference/parameters/sampler/dynatemp-exponent/).
+**Dynamic temperature**: [DynatempRange](/llm/net/developer-reference/parameters/sampler/dynatemp-range/), [DynatempExponent](/llm/net/developer-reference/parameters/sampler/dynatemp-exponent/).
 
-**XTC (Exclude Top Choices)**: [XtcProbability](/net/developer-reference/parameters/sampler/xtc-probability/), [XtcThreshold](/net/developer-reference/parameters/sampler/xtc-threshold/).
+**XTC (Exclude Top Choices)**: [XtcProbability](/llm/net/developer-reference/parameters/sampler/xtc-probability/), [XtcThreshold](/llm/net/developer-reference/parameters/sampler/xtc-threshold/).
 
-**DRY (Don't Repeat Yourself)**: [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/), [DryBase](/net/developer-reference/parameters/sampler/dry-base/), [DryAllowedLength](/net/developer-reference/parameters/sampler/dry-allowed-length/), [DryPenaltyLastN](/net/developer-reference/parameters/sampler/dry-penalty-last-n/), [DrySequenceBreakers](/net/developer-reference/parameters/sampler/dry-sequence-breakers/).
+**DRY (Don't Repeat Yourself)**: [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/), [DryBase](/llm/net/developer-reference/parameters/sampler/dry-base/), [DryAllowedLength](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/), [DryPenaltyLastN](/llm/net/developer-reference/parameters/sampler/dry-penalty-last-n/), [DrySequenceBreakers](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/).
 
-**Mirostat**: [Mirostat](/net/developer-reference/parameters/sampler/mirostat/), [MirostatTau](/net/developer-reference/parameters/sampler/mirostat-tau/), [MirostatEta](/net/developer-reference/parameters/sampler/mirostat-eta/).
+**Mirostat**: [Mirostat](/llm/net/developer-reference/parameters/sampler/mirostat/), [MirostatTau](/llm/net/developer-reference/parameters/sampler/mirostat-tau/), [MirostatEta](/llm/net/developer-reference/parameters/sampler/mirostat-eta/).
 
-**Fine-grained controls**: [LogitBias](/net/developer-reference/parameters/sampler/logit-bias/), [EnableInfill](/net/developer-reference/parameters/sampler/enable-infill/).
+**Fine-grained controls**: [LogitBias](/llm/net/developer-reference/parameters/sampler/logit-bias/), [EnableInfill](/llm/net/developer-reference/parameters/sampler/enable-infill/).
 
 ## Core sampling
 
@@ -335,6 +335,6 @@ preset.SamplerParameters.MirostatEta = 0.1f;
 
 ## What's next
 
-- [Chat parameters](/net/developer-reference/parameters/chat/) — max tokens and system prompt shape what the sampler generates into.
-- [Context parameters](/net/developer-reference/parameters/context/) — the context window the sampler reads penalties from.
-- [Custom preset](/net/use-cases/custom-preset/) — full customization patterns.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — max tokens and system prompt shape what the sampler generates into.
+- [Context parameters](/llm/net/developer-reference/parameters/context/) — the context window the sampler reads penalties from.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — full customization patterns.

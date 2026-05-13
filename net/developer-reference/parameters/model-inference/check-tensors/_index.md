@@ -54,10 +54,10 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`UseMemoryMapping`](/net/developer-reference/parameters/model-inference/use-memory-mapping/) — validation walks mapped or read-in data; either mode works.
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — validation happens on host memory before offload.
+- [`UseMemoryMapping`](/llm/net/developer-reference/parameters/model-inference/use-memory-mapping/) — validation walks mapped or read-in data; either mode works.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — validation happens on host memory before offload.
 
 ## What's next
 
-- [Model not loading troubleshooting](/net/troubleshooting/model-not-loading/) — when `CheckTensors` helps.
-- [Model inference hub](/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [Model not loading troubleshooting](/llm/net/troubleshooting/model-not-loading/) — when `CheckTensors` helps.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/) — all inference knobs.

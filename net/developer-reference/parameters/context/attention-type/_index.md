@@ -59,11 +59,11 @@ preset.ContextParameters.PoolingType = PoolingType.Mean;
 
 ## Interactions
 
-- [`Embeddings`](/net/developer-reference/parameters/context/embeddings/) — embedding extraction usually pairs with `NonCausal`.
-- [`PoolingType`](/net/developer-reference/parameters/context/pooling-type/) — how embeddings are pooled.
+- [`Embeddings`](/llm/net/developer-reference/parameters/context/embeddings/) — embedding extraction usually pairs with `NonCausal`.
+- [`PoolingType`](/llm/net/developer-reference/parameters/context/pooling-type/) — how embeddings are pooled.
 
 ## What's next
 
-- [Embeddings](/net/developer-reference/parameters/context/embeddings/) — extraction mode flag.
-- [PoolingType](/net/developer-reference/parameters/context/pooling-type/) — embedding pooling.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [Embeddings](/llm/net/developer-reference/parameters/context/embeddings/) — extraction mode flag.
+- [PoolingType](/llm/net/developer-reference/parameters/context/pooling-type/) — embedding pooling.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.

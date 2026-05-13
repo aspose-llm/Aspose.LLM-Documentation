@@ -28,8 +28,8 @@ Aspose.LLM for .NET can save a chat session to disk and restore it later. This l
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 - A working `AsposeLLMApi` instance.
 
 ## Save a session
@@ -154,6 +154,6 @@ The saved file is plain JSON. It contains every user and assistant message verba
 
 ## What's next
 
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — manage sessions at runtime.
-- [Custom preset](/net/use-cases/custom-preset/) — configure the preset used when the session is first created.
-- [Session persistence reference](/net/developer-reference/session-persistence/) — full semantics of save and load.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) — manage sessions at runtime.
+- [Custom preset](/llm/net/use-cases/custom-preset/) — configure the preset used when the session is first created.
+- [Session persistence reference](/llm/net/developer-reference/session-persistence/) — full semantics of save and load.
