@@ -43,10 +43,13 @@ Every preset follows the same pattern — swap the class name to change the mode
 
 | Goal | Preset | Notes |
 |---|---|---|
-| Balanced general assistant | `Qwen25Preset` or `Qwen3Preset` | 7-8B, good at most tasks. |
-| Smallest footprint | `Llama32Preset` (3B) or `Phi4Preset` (mini) | Run on modest hardware. |
+| Balanced general assistant | `Qwen25Preset`, `Qwen3Preset`, `Llama31_8BPreset`, or `Mistral7Preset` | 7-8B, good at most tasks. |
+| Smallest footprint | `Llama32Preset` (3B), `Qwen25_3BPreset` (3B), or `Phi4Preset` (mini) | Run on modest hardware. |
+| Smallest possible (CPU-only) | `SmallModelPreset` (0.5B), `TinyLlamaPreset` (1.1B), or `Llama32_1BPreset` (1B) | Tutorials, smoke tests, edge boxes. |
 | Very long context | `Llama32Preset` (131K), `Oss20Preset` (131K), `DeepSeekCoder2Preset` (163K) | For long documents. |
-| Coding | `DeepSeekCoder2Preset` | Specialized training on code. |
+| Coding | `DeepSeekCoder2Preset`, `Qwen25Coder7BPreset`, or `StableCode3BPreset` | Specialized training on code. |
+| Multilingual coverage | `AyaExpanse8BPreset` (23 languages) or `Oss20Preset` | Trained on broad language mixes. |
+| Enterprise-tuned | `Granite3_8BPreset` | IBM Granite 3.1, safety-aligned. |
 | Step-by-step reasoning | `DeepseekR1Qwen3Preset` or `Oss20Preset` (multilingual-reasoner) | Chain-of-thought style output. Budget 1024-2048 MaxTokens. |
 | No built-in preset — use your own GGUF | Extend `PresetCoreBase` | See [Creating from scratch](/llm/net/developer-reference/presets/creating-from-scratch/). |
 
