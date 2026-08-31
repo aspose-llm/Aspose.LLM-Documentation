@@ -24,6 +24,12 @@ keywords:
 
 Plan the .NET runtime, operating system, and hardware for your Aspose.LLM for .NET deployment. Requirements depend on the preset you pick: small models run on modest hardware, while 20B-parameter models need substantial RAM and preferably GPU acceleration.
 
+{{% alert color="warning" %}}
+**No built-in LLM is included in Aspose.LLM, so you choose and install your favorite LLM on your own.** The library is a local inference runtime: the model file is obtained separately and stored on your own machine, and it is covered by the license of the model publisher, not by your license agreement with Aspose Pty Ltd.
+
+Aspose.LLM supports open source LLMs from every major family, Llama included. See [Supported LLMs](/llm/net/product-overview/supported-llms/) for the full list and the license of each.
+{{% /alert %}}
+
 ## Supported .NET runtimes
 
 Aspose.LLM targets **.NET Standard 2.0**. It runs on any .NET runtime that supports .NET Standard 2.0, including:
@@ -49,9 +55,9 @@ New projects should use **.NET 8 LTS** or **.NET 10**. All examples in this docu
 
 A modern x64 CPU with AVX2 support runs any preset in CPU-only mode. `BinaryManager` selects an AVX-level-specific native binary at runtime:
 
-- **AVX512** — fastest; requires a recent Intel / AMD CPU.
-- **AVX2** — the default fallback on most modern CPUs.
-- **No-AVX** — available for older CPUs and compatibility scenarios; inference is slow.
+- **AVX512**: fastest; requires a recent Intel / AMD CPU.
+- **AVX2**: the default fallback on most modern CPUs.
+- **No-AVX**: available for older CPUs and compatibility scenarios; inference is slow.
 
 ARM64 CPUs are supported on Linux and macOS via native ARM binaries.
 
@@ -106,19 +112,25 @@ Internet access is required on **first** use:
 - `BinaryManager` fetches native binaries from `github.com/ggml-org/llama.cpp/releases`.
 - `ModelManager` downloads model files (and `mmproj` for vision presets) from `huggingface.co`.
 
-Subsequent runs use the local caches. For offline or firewalled environments, pre-download both caches and point the preset's `BinaryPath` and `ModelCachePath` at them — details will be covered in the offline deployment use case.
+Subsequent runs use the local caches. For offline or firewalled environments, pre-download both caches and point the preset's `BinaryPath` and `ModelCachePath` at them: details will be covered in the offline deployment use case.
 
 ## Development
 
 Any IDE or editor with .NET support works:
 
-- **Visual Studio** 2022 (v17.8+) — full experience on Windows.
-- **JetBrains Rider** — full experience cross-platform.
-- **VS Code** with the C# Dev Kit — light-weight cross-platform option.
-- **`dotnet` CLI** alone — works for build, run, publish.
+- **Visual Studio** 2022 (v17.8+): full experience on Windows.
+- **JetBrains Rider**: full experience cross-platform.
+- **VS Code** with the C# Dev Kit: light-weight cross-platform option.
+- **`dotnet` CLI** alone: works for build, run, publish.
+
+## Before you ship
+
+{{% alert color="warning" %}}
+**Check the license of the model you selected.** Aspose.LLM supplies the runtime, not the model. Whichever model you load, its terms come from the party that published it and they apply to your product. They are not part of, and are not covered by, your license agreement with Aspose Pty Ltd. Some open source models allow commercial use with no strings attached, others attach conditions such as attribution or an acceptable use policy, and a few exclude commercial use or withdraw it above a revenue threshold. [Supported LLMs](/llm/net/product-overview/supported-llms/) lists the license of every family the SDK ships a preset for.
+{{% /alert %}}
 
 ## What's next
 
-- [Installation](/llm/net/installation/) — add the NuGet package to your project.
-- [Licensing](/llm/net/licensing/) — apply a license before running inference.
-- [Hello, world!](/llm/net/hello-world/) — first runnable example.
+- [Installation](/llm/net/installation/): add the NuGet package to your project.
+- [Licensing](/llm/net/licensing/): apply a license before running inference.
+- [Hello, world!](/llm/net/hello-world/): first runnable example.
