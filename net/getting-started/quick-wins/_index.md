@@ -7,7 +7,7 @@ url: /net/quick-wins/
 feedback: LLMNET
 version: 26.5.0
 title: Quick wins
-description: Five compact recipes for common Aspose.LLM for .NET tasks — first message, image input, session save/restore, CPU-only run, and CUDA GPU run.
+description: Five compact recipes for common Aspose.LLM for .NET tasks, first message, image input, session save/restore, CPU-only run, and CUDA GPU run.
 keywords:
 - quick wins
 - recipes
@@ -81,7 +81,7 @@ Console.WriteLine(reply);
 
 Supported image formats: JPEG, PNG, BMP, GIF, WebP. Per-attachment limit: 50 MB.
 
-→ Full example: [Use cases](/llm/net/use-cases/) (vision-qa — in preparation).
+→ Full example: [Use cases](/llm/net/use-cases/) (vision-qa: in preparation).
 
 ## 3. Save and resume a chat session
 
@@ -108,22 +108,28 @@ The saved file contains the message history and the KV cache positions. The form
 
 ## 4. Run on CPU only
 
-Force all computation to the CPU by setting `GpuLayers = 0` on the preset before creating the API.
+The quickest way is to pick a `*PresetCpu` twin: they ship CPU-friendly defaults out of the box (`GpuLayers = 0`, context capped at 4 K, batches shrunk, FlashAttention and KV offload disabled). 27 presets have one; see [CPU-tuned variants](/llm/net/product-overview/supported-presets/#cpu-tuned-variants-presetcpu) for the list.
 
 ```csharp
-// Between creating the preset and creating the API:
-var preset = new Qwen25Preset();
-preset.BaseModelInferenceParameters.GpuLayers = 0;
-
+var preset = new Llama31_8BPresetCpu();   // or Mistral7PresetCpu, Qwen25_3BPresetCpu, etc.
 using var api = AsposeLLMApi.Create(preset);
 
 string reply = await api.SendMessageAsync("Summarize CPU inference in one sentence.");
 Console.WriteLine(reply);
 ```
 
+If your preset does not have a twin, drive the GPU preset directly and set `GpuLayers = 0`:
+
+```csharp
+var preset = new Qwen25Preset();
+preset.BaseModelInferenceParameters.GpuLayers = 0;
+
+using var api = AsposeLLMApi.Create(preset);
+```
+
 On first use, `BinaryManager` still selects the best CPU variant available (AVX2, AVX512, or a no-AVX fallback). Expect lower throughput than GPU inference; a 7B Q4 model typically produces 5-15 tokens/second on a modern CPU.
 
-→ Related: [Use cases](/llm/net/use-cases/) (cpu-only-deployment — in preparation).
+→ Related: [Use cases](/llm/net/use-cases/) (cpu-only-deployment: in preparation).
 
 ## 5. Run on a CUDA GPU
 
@@ -144,13 +150,13 @@ Console.WriteLine(reply);
 
 `GpuLayers = 999` is an idiomatic way to request full offload. The engine caps the value at the model's actual layer count.
 
-On first use, `BinaryManager` downloads the CUDA variant of the native binaries — larger than the CPU variant (typically 400-800 MB). Subsequent runs use the local cache.
+On first use, `BinaryManager` downloads the CUDA variant of the native binaries: larger than the CPU variant (typically 400-800 MB). Subsequent runs use the local cache.
 
-→ Related: [Use cases](/llm/net/use-cases/) (gpu-deployment-cuda — in preparation).
+→ Related: [Use cases](/llm/net/use-cases/) (gpu-deployment-cuda: in preparation).
 
 ## What's next
 
-- [Hello, world!](/llm/net/hello-world/) — the minimum-possible example, explained step by step.
-- [Use cases](/llm/net/use-cases/) — full running examples for every scenario.
-- [Supported presets](/llm/net/product-overview/supported-presets/) — pick a preset that fits your model and hardware.
-- [Architecture](/llm/net/product-overview/architecture/) — what happens behind the scenes on first `Create`.
+- [Hello, world!](/llm/net/hello-world/): the minimum-possible example, explained step by step.
+- [Use cases](/llm/net/use-cases/): full running examples for every scenario.
+- [Supported presets](/llm/net/product-overview/supported-presets/): pick a preset that fits your model and hardware.
+- [Architecture](/llm/net/product-overview/architecture/): what happens behind the scenes on first `Create`.

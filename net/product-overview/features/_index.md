@@ -7,7 +7,7 @@ url: /net/product-overview/features/
 feedback: LLMNET
 version: 26.5.0
 title: Features
-description: Capabilities of Aspose.LLM for .NET — local inference, chat sessions, vision input, acceleration, session persistence, and what the SDK does not do.
+description: Capabilities of Aspose.LLM for .NET, local inference, chat sessions, vision input, acceleration, session persistence, and what the SDK does not do.
 keywords:
 - features
 - capabilities
@@ -29,12 +29,12 @@ Run models on your CPU or GPU. Input, prompts, and model weights do not leave yo
 
 ### Preset-based model configuration
 
-Each preset bundles the model source, chat template, context size, sampler settings, and inference parameters for a specific model family:
+Each preset bundles the model source, chat template, context size, sampler settings, and inference parameters for a specific model family. The catalogue covers all the major open-weight families:
 
-- **Text presets**: `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llama32Preset`, `Phi4Preset`, `DeepSeekCoder2Preset`, `DeepseekR1Qwen3Preset`, `Oss20Preset`, `UnifiedDefaultLlmParameters`.
-- **Vision presets**: `Qwen25VL3BPreset`, `Qwen3VL2BPreset`, `Gemma3VisionPreset`, `Ministral3VisionPreset`.
+- **Text presets**: Qwen 2.5 / 3 / 3.5 / 3.6, Llama 3.1 / 3.2 / 3.3, Mistral 7B and Small 3, Phi 3.5 / 4 / 4-14B, Gemma 3 / 3n, Granite 3, DeepSeek-Coder V2, DeepSeek-R1, gpt-oss 20B / 120B, Hermes 3, OLMo 2, Aya Expanse, OpenChat 3.5, LFM2, MiniCPM3, Yi 1.5, SmolLM2, TinyLlama, GLM 4.7 Flash, ERNIE 4.5, Seed-OSS 36B, Devstral Small 2, Qwen Coder, Stable Code, and the `UnifiedDefaultLlmParameters` baseline. 27 of the text presets ship a `*PresetCpu` twin for CPU-only inference.
+- **Vision presets**: `Qwen25VL3BPreset`, `Qwen3VL2BPreset`, `Gemma3VisionPreset`, `Ministral3VisionPreset`, `Glm4_6VFlashPreset`, `NemotronOmniPreset` (multimodal MoE).
 
-See [Supported presets](/llm/net/product-overview/supported-presets/) for a full list with model sources.
+See [Supported presets](/llm/net/product-overview/supported-presets/) for the full catalogue with Hugging Face sources, default context sizes, and quantization.
 
 ### Custom presets
 
@@ -108,7 +108,7 @@ Set `ContextParameters.Embeddings = true` to configure the context for embedding
 
 ### Extensibility via DI
 
-Core services are registered in Microsoft.Extensions.DependencyInjection through `AddLlamaServices(preset)`. You can swap implementations of `IModelLoader`, `IModelFileProvider`, `IPromptFormatter`, and `IMediaProcessor` — useful for custom model stores, alternative prompt formats, or bespoke media pre-processing.
+Core services are registered in Microsoft.Extensions.DependencyInjection through `AddLlamaServices(preset)`. You can swap implementations of `IModelLoader`, `IModelFileProvider`, `IPromptFormatter`, and `IMediaProcessor`: useful for custom model stores, alternative prompt formats, or bespoke media pre-processing.
 
 ### Logging and diagnostics
 
@@ -158,6 +158,6 @@ Out of scope. Use a dedicated audio library for STT / TTS and pass the resulting
 
 ## What's next
 
-- [Architecture](/llm/net/product-overview/architecture/) — layers, runtime flow, and memory footprint.
-- [Supported presets](/llm/net/product-overview/supported-presets/) — full preset list with model sources.
-- [Hello, world!](/llm/net/hello-world/) — minimal runnable example.
+- [Architecture](/llm/net/product-overview/architecture/): layers, runtime flow, and memory footprint.
+- [Supported presets](/llm/net/product-overview/supported-presets/): full preset list with model sources.
+- [Hello, world!](/llm/net/hello-world/): minimal runnable example.
