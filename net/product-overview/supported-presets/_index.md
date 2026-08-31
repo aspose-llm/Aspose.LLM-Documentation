@@ -35,6 +35,8 @@ Aspose.LLM for .NET ships ready-to-use presets for several popular open-weight m
 **No built-in LLM is included in Aspose.LLM, so you choose and install your favorite LLM on your own.** A preset is configuration, not a model: a ready-made set of values for one open source model, namely context size, sampling parameters, chat template, and which model file to load. No model weights ship inside the package.
 
 Aspose.LLM supports open source LLMs from every major family, Llama included. See [Supported LLMs](/llm/net/product-overview/supported-llms/) for the full list and the license of each. Any other compatible open source model can be used instead, by pointing the API at it. You are responsible for complying with the license of the model you choose.
+
+This design is what the [AI Governance and Risk Management](https://trust.aspose.com/app-security/ai-governance-and-risk-management/) policy at the Aspose Trust Center relies on: the product integrates AI models, it does not include or provide them.
 {{% /alert %}}
 
 All presets derive from [`PresetCoreBase`](/llm/net/developer-reference/presets/) (namespace `Aspose.LLM.Abstractions.Parameters.Presets`). You can use a preset as-is, override any parameter before calling `Create`, or extend `PresetCoreBase` for a fully custom model.

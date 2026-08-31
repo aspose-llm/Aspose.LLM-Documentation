@@ -28,6 +28,8 @@ Plan the .NET runtime, operating system, and hardware for your Aspose.LLM for .N
 **No built-in LLM is included in Aspose.LLM, so you choose and install your favorite LLM on your own.** The library is a local inference runtime: the model file is obtained separately and stored on your own machine, and it is covered by the license of the model publisher, not by your license agreement with Aspose Pty Ltd.
 
 Aspose.LLM supports open source LLMs from every major family, Llama included. See [Supported LLMs](/llm/net/product-overview/supported-llms/) for the full list and the license of each.
+
+This design is what the [AI Governance and Risk Management](https://trust.aspose.com/app-security/ai-governance-and-risk-management/) policy at the Aspose Trust Center relies on: the product integrates AI models, it does not include or provide them.
 {{% /alert %}}
 
 ## Supported .NET runtimes
