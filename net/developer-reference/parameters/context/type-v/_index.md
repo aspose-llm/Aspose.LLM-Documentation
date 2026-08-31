@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/type-v/
 feedback: LLMNET
 version: 26.5.0
 title: TypeV
-description: KV cache dtype for the V (values) tensor in Aspose.LLM for .NET — tolerates more aggressive quantization than TypeK; Q8_0 is a safe default for tight memory.
+description: KV cache dtype for the V (values) tensor in Aspose.LLM for .NET, tolerates more aggressive quantization than TypeK; Q8_0 is a safe default for tight memory.
 keywords:
 - TypeV
 - KV cache
@@ -16,7 +16,7 @@ keywords:
 - memory
 ---
 
-`TypeV` is the data type for the **V (values)** tensor of the KV cache. V tolerates more aggressive quantization than K — `Q8_0` is often a safe default when memory is tight.
+`TypeV` is the data type for the **V (values)** tensor of the KV cache. V tolerates more aggressive quantization than K: `Q8_0` is often a safe default when memory is tight.
 
 ## Quick reference
 
@@ -30,7 +30,7 @@ keywords:
 
 ## What it does
 
-Identical mechanics to [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/) — stored shape, memory scaling, and options are the same. The difference is sensitivity: attention output depends on V through a weighted sum, which averages over many tokens, so quantization error averages out. Attention scores depend on K through a dot product where individual errors survive more.
+Identical mechanics to [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/): stored shape, memory scaling, and options are the same. The difference is sensitivity: attention output depends on V through a weighted sum, which averages over many tokens, so quantization error averages out. Attention scores depend on K through a dot product where individual errors survive more.
 
 **Rule of thumb**: Quantize V one step more aggressively than K.
 
@@ -67,12 +67,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/) — companion K-cache dtype.
-- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — memory savings scale with context.
-- [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/) — compatible with quantized V.
+- [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/): companion K-cache dtype.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): memory savings scale with context.
+- [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/): compatible with quantized V.
 
 ## What's next
 
-- [TypeK](/llm/net/developer-reference/parameters/context/type-k/) — companion.
-- [Low memory tuning](/llm/net/use-cases/low-memory-tuning/) — recipes for tight-memory deployments.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [TypeK](/llm/net/developer-reference/parameters/context/type-k/): companion.
+- [Low memory tuning](/llm/net/use-cases/low-memory-tuning/): recipes for tight-memory deployments.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

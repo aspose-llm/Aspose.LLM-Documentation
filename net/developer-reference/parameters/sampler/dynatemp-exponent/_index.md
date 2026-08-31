@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/dynatemp-exponent/
 feedback: LLMNET
 version: 26.5.0
 title: DynatempExponent
-description: Dynatemp curve exponent in Aspose.LLM for .NET — shapes how entropy maps to temperature; linear at 1.0, more aggressive at higher values.
+description: Dynatemp curve exponent in Aspose.LLM for .NET, shapes how entropy maps to temperature; linear at 1.0, more aggressive at higher values.
 keywords:
 - DynatempExponent
 - dynamic temperature
@@ -31,9 +31,9 @@ keywords:
 
 Dynatemp maps the normalized entropy `e ∈ [0, 1]` at each step to an offset within `DynatempRange`. `DynatempExponent` reshapes the mapping:
 
-- `DynatempExponent = 1.0` — linear mapping. Temperature scales proportionally with entropy.
-- `DynatempExponent > 1.0` — convex. Only very high entropy triggers significant temperature increases; medium entropy stays near the base.
-- `DynatempExponent < 1.0` — concave. Small entropy changes trigger larger temperature swings.
+- `DynatempExponent = 1.0`: linear mapping. Temperature scales proportionally with entropy.
+- `DynatempExponent > 1.0`: convex. Only very high entropy triggers significant temperature increases; medium entropy stays near the base.
+- `DynatempExponent < 1.0`: concave. Small entropy changes trigger larger temperature swings.
 
 The exact formula from `llama.cpp`: the step's temperature is the base `Temperature` adjusted by an offset proportional to `entropy^DynatempExponent` over `DynatempRange`.
 
@@ -42,8 +42,8 @@ The exact formula from `llama.cpp`: the step's temperature is the base `Temperat
 | Scenario | Value |
 |---|---|
 | Default linear mapping | `1.0` |
-| Only react to very uncertain steps | `1.5` – `2.0` |
-| React to mild uncertainty | `0.7` – `0.9` |
+| Only react to very uncertain steps | `1.5` to `2.0` |
+| React to mild uncertainty | `0.7` to `0.9` |
 
 Most users leave `DynatempExponent = 1.0`. Change only after experimenting with `DynatempRange` alone and finding the linear mapping unsuitable for your workload.
 
@@ -62,11 +62,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) — must be non-zero for `DynatempExponent` to have any effect.
-- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — the base temperature dynatemp varies around.
+- [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/): must be non-zero for `DynatempExponent` to have any effect.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/): the base temperature dynatemp varies around.
 
 ## What's next
 
-- [DynatempRange](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) — enables dynatemp.
-- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/) — the base.
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DynatempRange](/llm/net/developer-reference/parameters/sampler/dynatemp-range/): enables dynatemp.
+- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/): the base.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

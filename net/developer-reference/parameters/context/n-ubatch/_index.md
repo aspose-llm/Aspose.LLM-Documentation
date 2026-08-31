@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/n-ubatch/
 feedback: LLMNET
 version: 26.5.0
 title: NUbatch
-description: Physical maximum batch size in Aspose.LLM for .NET — the largest chunk actually processed per kernel call, typically ≤ NBatch.
+description: Physical maximum batch size in Aspose.LLM for .NET, the largest chunk actually processed per kernel call, typically ≤ NBatch.
 keywords:
 - NUbatch
 - physical batch
@@ -15,7 +15,7 @@ keywords:
 - kernel batch
 ---
 
-`NUbatch` is the **physical** maximum batch size — the largest chunk actually processed in a single kernel call. Normally set equal to or smaller than [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/).
+`NUbatch` is the **physical** maximum batch size: the largest chunk actually processed in a single kernel call. Normally set equal to or smaller than [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/).
 
 ## Quick reference
 
@@ -29,10 +29,10 @@ keywords:
 
 ## What it does
 
-`NBatch` defines the logical batch — the largest number of tokens submitted at once. `NUbatch` defines the largest chunk the engine processes in a single kernel invocation. When `NUbatch < NBatch`, the engine splits one logical batch into multiple kernel calls.
+`NBatch` defines the logical batch: the largest number of tokens submitted at once. `NUbatch` defines the largest chunk the engine processes in a single kernel invocation. When `NUbatch < NBatch`, the engine splits one logical batch into multiple kernel calls.
 
-- `NUbatch = NBatch` (simplest case) — one logical batch = one kernel call.
-- `NUbatch < NBatch` — one logical batch dispatched as several smaller kernel invocations.
+- `NUbatch = NBatch` (simplest case): one logical batch = one kernel call.
+- `NUbatch < NBatch`: one logical batch dispatched as several smaller kernel invocations.
 
 The split matters mainly in specific multi-sequence scenarios where sequential processing of sub-batches is required. For single-sequence chat, `NUbatch = NBatch` is typical.
 
@@ -40,7 +40,7 @@ The split matters mainly in specific multi-sequence scenarios where sequential p
 
 | Scenario | Value |
 |---|---|
-| Default — match `NBatch` | same as `NBatch` |
+| Default: match `NBatch` | same as `NBatch` |
 | Advanced multi-sequence workflows | Smaller than `NBatch` |
 
 Most deployments set `NUbatch = NBatch` and never touch this field.
@@ -57,11 +57,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/) — upper bound; `NUbatch ≤ NBatch`.
-- [`NSeqMax`](/llm/net/developer-reference/parameters/context/n-seq-max/) — parallel sequence cap, related in multi-sequence scenarios.
+- [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/): upper bound; `NUbatch ≤ NBatch`.
+- [`NSeqMax`](/llm/net/developer-reference/parameters/context/n-seq-max/): parallel sequence cap, related in multi-sequence scenarios.
 
 ## What's next
 
-- [NBatch](/llm/net/developer-reference/parameters/context/n-batch/) — logical batch cap.
-- [NSeqMax](/llm/net/developer-reference/parameters/context/n-seq-max/) — parallel sequences.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [NBatch](/llm/net/developer-reference/parameters/context/n-batch/): logical batch cap.
+- [NSeqMax](/llm/net/developer-reference/parameters/context/n-seq-max/): parallel sequences.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

@@ -7,7 +7,7 @@ url: /net/how-to/reduce-first-token-latency/
 feedback: LLMNET
 version: 26.5.0
 title: Reduce first-token latency
-description: Cut the time to first response in Aspose.LLM for .NET — warm up the engine, shorten system prompts, size batches correctly, and avoid cold starts.
+description: Cut the time to first response in Aspose.LLM for .NET, warm up the engine, shorten system prompts, size batches correctly, and avoid cold starts.
 keywords:
 - first-token latency
 - cold start
@@ -18,8 +18,8 @@ keywords:
 
 "First-token latency" is the time between sending a message and starting to see output. It has two components:
 
-1. **Cold-start** — binary download, model load, session creation. Happens once per `AsposeLLMApi` instance.
-2. **Per-message** — prompt tokenization, KV cache prefill, first-token generation.
+1. **Cold-start**: binary download, model load, session creation. Happens once per `AsposeLLMApi` instance.
+2. **Per-message**: prompt tokenization, KV cache prefill, first-token generation.
 
 Both can be reduced.
 
@@ -69,14 +69,14 @@ await api.SendMessageToSessionAsync(warmupSessionId, "ping");
 Every new session tokenizes and evaluates the system prompt before the first user turn. A 500-token system prompt costs hundreds of milliseconds on CPU, tens on GPU. Keep system prompts short.
 
 ```csharp
-// 50 tokens — fast first-turn.
+// 50 tokens: fast first-turn.
 preset.ChatParameters.SystemPrompt = "You are a concise assistant. Answer briefly.";
 
-// 500 tokens of preamble — slow.
+// 500 tokens of preamble: slow.
 // preset.ChatParameters.SystemPrompt = "<long preamble with many instructions and examples>";
 ```
 
-If you need extensive priming, use `ChatParameters.History` with a few-shot example set — the examples are tokenized once per session creation and cached across turns.
+If you need extensive priming, use `ChatParameters.History` with a few-shot example set: the examples are tokenized once per session creation and cached across turns.
 
 ## Size `NBatch` correctly
 
@@ -104,7 +104,7 @@ Always enable when supported.
 
 Reuse sessions across requests instead of creating a fresh one each time. Session creation costs prefill time; reusing amortizes it across turns.
 
-In HTTP hosts, map user IDs to session IDs — see [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/).
+In HTTP hosts, map user IDs to session IDs: see [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/).
 
 ## Pre-populate binary and model caches
 
@@ -128,7 +128,7 @@ string reply2 = await api.SendMessageAsync("Say hello again.");
 Console.WriteLine($"Second message: {secondSw.Elapsed}");
 ```
 
-The second message is noticeably faster than the first — session is already warm.
+The second message is noticeably faster than the first: session is already warm.
 
 ## Typical numbers (modern GPU)
 
@@ -144,6 +144,6 @@ CPU numbers are roughly 5-10× higher for each stage.
 
 ## What's next
 
-- [Architecture](/llm/net/product-overview/architecture/) — what happens during `Create`.
-- [Context parameters](/llm/net/developer-reference/parameters/context/) — `NBatch`, flash attention.
-- [Offline deployment](/llm/net/use-cases/offline-deployment/) — skip the initial download at runtime.
+- [Architecture](/llm/net/product-overview/architecture/): what happens during `Create`.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): `NBatch`, flash attention.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/): skip the initial download at runtime.

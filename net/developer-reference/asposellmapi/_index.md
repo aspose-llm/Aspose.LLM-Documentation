@@ -7,7 +7,7 @@ url: /net/developer-reference/asposellmapi/
 feedback: LLMNET
 version: 26.5.0
 title: AsposeLLMApi facade
-description: Detailed reference for AsposeLLMApi — the single-instance facade class of Aspose.LLM for .NET. Covers construction, every public method, exception semantics, and lifecycle.
+description: Detailed reference for AsposeLLMApi, the single-instance facade class of Aspose.LLM for .NET. Covers construction, every public method, exception semantics, and lifecycle.
 keywords:
 - AsposeLLMApi
 - facade
@@ -19,7 +19,7 @@ keywords:
 - single instance
 ---
 
-`AsposeLLMApi` is the single public facade class of Aspose.LLM for .NET. Every chat operation in your application goes through it — model loading, session creation, message exchange, cache management, session persistence, and disposal.
+`AsposeLLMApi` is the single public facade class of Aspose.LLM for .NET. Every chat operation in your application goes through it: model loading, session creation, message exchange, cache management, session persistence, and disposal.
 
 This page covers the class surface in depth. For the short API-card summary, see [API reference](/llm/net/developer-reference/api-reference/). For a compact hello-world, see [Hello, world!](/llm/net/hello-world/).
 
@@ -94,13 +94,13 @@ Both accept the same arguments:
 | `preset` | `PresetCoreBase` | yes | Default preset for chat operations. Throws `ArgumentNullException` on null. |
 | `logger` | `ILogger?` | no | Optional logger for engine + native debug output. |
 
-The preset is applied once at construction. Later mutations to the preset have no effect — the engine has already read it. See [Presets](/llm/net/developer-reference/presets/) for the override-before-Create pattern.
+The preset is applied once at construction. Later mutations to the preset have no effect: the engine has already read it. See [Presets](/llm/net/developer-reference/presets/) for the override-before-Create pattern.
 
 Construction **synchronously blocks** on three stages:
 
 1. Single-instance guard.
-2. Native binary deployment (downloads from GitHub on first run — 100-500 MB).
-3. Model load (downloads from Hugging Face on first run — 2-15 GB).
+2. Native binary deployment (downloads from GitHub on first run: 100-500 MB).
+3. Model load (downloads from Hugging Face on first run: 2-15 GB).
 
 On a cold machine, `Create` can take several minutes. Subsequent runs use the local caches. See [Architecture](/llm/net/product-overview/architecture/#what-happens-when-you-create-the-api) for the full flow.
 
@@ -115,7 +115,7 @@ PresetCoreBase current = api.DefaultPreset;
 int contextSize = current.ContextParameters.ContextSize ?? 0;
 ```
 
-Read-only — set via constructor.
+Read-only: set via constructor.
 
 ### `GetDefaultPreset()`
 
@@ -127,7 +127,7 @@ PresetCoreBase fallback = api.GetDefaultPreset(); // new Qwen25Preset()
 
 ### `GetDefaultParametersAsync()`
 
-Returns the engine's default parameter values as a tuple — inference, context, chat, sampler.
+Returns the engine's default parameter values as a tuple: inference, context, chat, sampler.
 
 ```csharp
 var (inference, context, chat, sampler) = await api.GetDefaultParametersAsync();
@@ -147,8 +147,8 @@ public Task<string> StartNewChatAsync(PresetCoreBase? preset = null, string? ses
 
 Arguments:
 
-- `preset` (optional) — override the preset for this session. When `null`, the API uses `DefaultPreset`.
-- `sessionId` (optional) — your own identifier. When `null`, the engine generates one.
+- `preset` (optional): override the preset for this session. When `null`, the API uses `DefaultPreset`.
+- `sessionId` (optional): your own identifier. When `null`, the engine generates one.
 
 Returns the session identifier. The new session becomes the **current session** for subsequent `SendMessageAsync` calls that do not specify a session ID.
 
@@ -173,12 +173,12 @@ public Task<string> SendMessageAsync(
 
 Arguments:
 
-- `message` — the prompt text.
-- `media` (optional) — image byte arrays for vision presets. Formats detected by magic bytes.
-- `preset` (optional) — override the preset for this single call. Affects sampling, cache strategy, and max tokens for this message only.
-- `cancellationToken` — cancel in-flight generation. The partial output is discarded; the session remains intact.
+- `message`: the prompt text.
+- `media` (optional): image byte arrays for vision presets. Formats detected by magic bytes.
+- `preset` (optional): override the preset for this single call. Affects sampling, cache strategy, and max tokens for this message only.
+- `cancellationToken`: cancel in-flight generation. The partial output is discarded; the session remains intact.
 
-Returns the full assistant response as a single string — no streaming.
+Returns the full assistant response as a single string, no streaming.
 
 ```csharp
 string reply = await api.SendMessageAsync("Describe this image.", new[] { imageBytes });
@@ -208,8 +208,8 @@ public void SaveChatSession(string sessionId, string? filePath = null);
 
 Serializes the session to disk as JSON. Synchronous.
 
-- `sessionId` — must be an active session on this instance. Throws `KeyNotFoundException` otherwise.
-- `filePath` (optional) — destination path. When `null`, uses the session ID as the file name in the current working directory.
+- `sessionId`: must be an active session on this instance. Throws `KeyNotFoundException` otherwise.
+- `filePath` (optional): destination path. When `null`, uses the session ID as the file name in the current working directory.
 
 ### `LoadChatSession`
 
@@ -221,11 +221,11 @@ Restores a session from a JSON file and returns its ID. The restored session bec
 
 Throws:
 
-- `FileNotFoundException` — path does not exist.
-- `InvalidOperationException` — file is corrupt or from an incompatible SDK version.
+- `FileNotFoundException`: path does not exist.
+- `InvalidOperationException`: file is corrupt or from an incompatible SDK version.
 
 {{% alert color="primary" %}}
-`LoadChatSession` restores the session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters` — not the preset's values or the values in effect when the session was saved. See [Session persistence](/llm/net/developer-reference/session-persistence/) for the full nuance.
+`LoadChatSession` restores the session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters`, not the preset's values or the values in effect when the session was saved. See [Session persistence](/llm/net/developer-reference/session-persistence/) for the full nuance.
 {{% /alert %}}
 
 ## Cache management
@@ -241,7 +241,7 @@ public void ForceCacheCleanup(
 
 Throws `InvalidOperationException` when no current session exists.
 
-Five strategies — see [Cache management](/llm/net/developer-reference/cache-management/) for the trade-offs.
+Five strategies: see [Cache management](/llm/net/developer-reference/cache-management/) for the trade-offs.
 
 ## Disposal
 
@@ -274,8 +274,8 @@ Calling methods after `Dispose` throws `ObjectDisposedException`.
 
 ## What's next
 
-- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle and messaging semantics.
-- [Session persistence](/llm/net/developer-reference/session-persistence/) — save / load details.
-- [Cache management](/llm/net/developer-reference/cache-management/) — trimming strategies.
-- [Presets](/llm/net/developer-reference/presets/) — the preset passed at construction.
-- [Dependency injection](/llm/net/developer-reference/dependency-injection/) — the alternative `AddLlamaServices` path.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): session lifecycle and messaging semantics.
+- [Session persistence](/llm/net/developer-reference/session-persistence/): save / load details.
+- [Cache management](/llm/net/developer-reference/cache-management/): trimming strategies.
+- [Presets](/llm/net/developer-reference/presets/): the preset passed at construction.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): the alternative `AddLlamaServices` path.

@@ -7,7 +7,7 @@ url: /net/product-overview/supported-acceleration/
 feedback: LLMNET
 version: 26.5.0
 title: Supported acceleration
-description: Hardware acceleration backends supported by Aspose.LLM for .NET — CUDA, HIP, Metal, Vulkan, and CPU — with a platform × backend matrix.
+description: Hardware acceleration backends supported by Aspose.LLM for .NET, CUDA, HIP, Metal, Vulkan, and CPU, with a platform × backend matrix.
 keywords:
 - acceleration
 - CUDA
@@ -37,11 +37,11 @@ This page is an at-a-glance sheet for planning deployments. For per-backend setu
 
 When `PreferredAcceleration` is `null` (default), the SDK picks in this order:
 
-1. **CUDA** — if an NVIDIA GPU with driver 525+ is present.
-2. **HIP** — if a ROCm-capable AMD GPU is present (Linux only).
-3. **Metal** — on Apple Silicon.
-4. **Vulkan** — any Vulkan-capable GPU.
-5. **CPU** — highest AVX level available (`AVX512 > AVX2 > AVX > NoAVX`).
+1. **CUDA**: if an NVIDIA GPU with driver 525+ is present.
+2. **HIP**: if a ROCm-capable AMD GPU is present (Linux only).
+3. **Metal**: on Apple Silicon.
+4. **Vulkan**: any Vulkan-capable GPU.
+5. **CPU**: highest AVX level available (`AVX512 > AVX2 > AVX > NoAVX`).
 
 Override by setting `BinaryManagerParameters.PreferredAcceleration`. See [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/).
 
@@ -71,7 +71,7 @@ Binaries are downloaded once per preset's `ReleaseTag` and cached locally.
 
 ## What's next
 
-- [CUDA](/llm/net/developer-reference/acceleration/cuda/), [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/), [Metal](/llm/net/developer-reference/acceleration/metal/), [Vulkan](/llm/net/developer-reference/acceleration/vulkan/), [CPU](/llm/net/developer-reference/acceleration/cpu/) — per-backend setup.
-- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — how `PreferredAcceleration` and `BinaryPath` work.
-- [System requirements](/llm/net/system-requirements/) — OS / driver / memory prerequisites.
-- [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/) — common pitfalls.
+- [CUDA](/llm/net/developer-reference/acceleration/cuda/), [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/), [Metal](/llm/net/developer-reference/acceleration/metal/), [Vulkan](/llm/net/developer-reference/acceleration/vulkan/), [CPU](/llm/net/developer-reference/acceleration/cpu/): per-backend setup.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): how `PreferredAcceleration` and `BinaryPath` work.
+- [System requirements](/llm/net/system-requirements/): OS / driver / memory prerequisites.
+- [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/): common pitfalls.

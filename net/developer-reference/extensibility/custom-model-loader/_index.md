@@ -15,7 +15,7 @@ keywords:
 - model loading
 ---
 
-`IModelLoader` is the contract the engine uses to turn `ModelSourceParameters` into an `ILlamaModel`. Substituting this interface gives you full control over the model-loading pipeline — file resolution, native `llama.cpp` model creation, inference parameter application, and any diagnostics you want to inject around it.
+`IModelLoader` is the contract the engine uses to turn `ModelSourceParameters` into an `ILlamaModel`. Substituting this interface gives you full control over the model-loading pipeline: file resolution, native `llama.cpp` model creation, inference parameter application, and any diagnostics you want to inject around it.
 
 This is the broadest extensibility point. Prefer [`IModelFileProvider`](/llm/net/developer-reference/extensibility/custom-file-provider/) if you only need to change **where** the model file comes from; `IModelLoader` is for changing **how** it is loaded.
 
@@ -36,9 +36,9 @@ public interface IModelLoader
 
 The method:
 
-- Takes `ModelSourceParameters` (where to find the model) and `ModelInferenceParameters` (how to load it — `GpuLayers`, `SplitMode`, etc.).
+- Takes `ModelSourceParameters` (where to find the model) and `ModelInferenceParameters` (how to load it: `GpuLayers`, `SplitMode`, etc.).
 - Reports progress via `IProgress<double>` (0.0 to 1.0) during long operations.
-- Returns an `ILlamaModel` — the loaded model ready for inference.
+- Returns an `ILlamaModel`: the loaded model ready for inference.
 - Throws `ArgumentNullException` on null `modelParameters`.
 - Throws `InvalidOperationException` when the model cannot be loaded.
 
@@ -82,7 +82,7 @@ public class MyModelLoader : IModelLoader
 }
 ```
 
-Implementing `LoadIntoNativeMemoryAsync` from scratch means wrapping the SDK's P/Invoke layer (`Aspose.LLM.Interop`). That is advanced work — you are essentially recreating `ModelManager` with custom behavior. In most cases, the simpler path is:
+Implementing `LoadIntoNativeMemoryAsync` from scratch means wrapping the SDK's P/Invoke layer (`Aspose.LLM.Interop`). That is advanced work: you are essentially recreating `ModelManager` with custom behavior. In most cases, the simpler path is:
 
 1. Use the default model loading via `ModelManager`.
 2. Wrap it in a decorator that adds instrumentation, caching, or retries.
@@ -140,10 +140,10 @@ services.AddLlamaServices(new Qwen25Preset());
 services.AddSingleton<IModelLoader, MyModelLoader>();
 ```
 
-If you want to decorate the default loader, keep the default registration and wrap it — but the default `ModelManager` is registered as a concrete type (`ModelManager`), not as `IModelLoader`. You may need to adapt your decorator accordingly, or contact [Aspose support](https://forum.aspose.com/) for guidance on the current wiring.
+If you want to decorate the default loader, keep the default registration and wrap it, but the default `ModelManager` is registered as a concrete type (`ModelManager`), not as `IModelLoader`. You may need to adapt your decorator accordingly, or contact [Aspose support](https://forum.aspose.com/) for guidance on the current wiring.
 
 ## What's next
 
-- [Custom file provider](/llm/net/developer-reference/extensibility/custom-file-provider/) — narrower surface, often what you actually need.
-- [Extensibility overview](/llm/net/developer-reference/extensibility/) — when to use which interface.
-- [Dependency injection](/llm/net/developer-reference/dependency-injection/) — how `AddLlamaServices` wires services.
+- [Custom file provider](/llm/net/developer-reference/extensibility/custom-file-provider/): narrower surface, often what you actually need.
+- [Extensibility overview](/llm/net/developer-reference/extensibility/): when to use which interface.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): how `AddLlamaServices` wires services.

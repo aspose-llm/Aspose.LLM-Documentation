@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/n-seq-max/
 feedback: LLMNET
 version: 26.5.0
 title: NSeqMax
-description: Maximum parallel sequences in Aspose.LLM for .NET — matters for recurrent models; leave at default for standard transformers.
+description: Maximum parallel sequences in Aspose.LLM for .NET, matters for recurrent models; leave at default for standard transformers.
 keywords:
 - NSeqMax
 - parallel sequences
@@ -32,8 +32,8 @@ keywords:
 
 For recurrent or state-space models (Mamba, RWKV, hybrid architectures), each independent sequence carries its own recurrent state. `NSeqMax` caps how many such states the engine maintains simultaneously.
 
-- `NSeqMax = 1` (default for standard transformers) — no parallel state tracking needed.
-- `NSeqMax = 4+` — enables parallel recurrent-model sequences.
+- `NSeqMax = 1` (default for standard transformers): no parallel state tracking needed.
+- `NSeqMax = 4+`: enables parallel recurrent-model sequences.
 
 Transformer models (Qwen, Llama, Gemma, Phi, etc.) do not maintain per-sequence hidden state in this sense. `NSeqMax = 1` is correct for them.
 
@@ -49,7 +49,7 @@ If you are not building against a recurrent-model-specific preset, leave `NSeqMa
 ## Example
 
 ```csharp
-// Standard transformer use case — no change needed.
+// Standard transformer use case, no change needed.
 var preset = new Qwen25Preset();
 // preset.ContextParameters.NSeqMax = null; // (default)
 
@@ -58,9 +58,9 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/), [`NUbatch`](/llm/net/developer-reference/parameters/context/n-ubatch/) — batch sizes interact with sequence count in multi-sequence scenarios.
+- [`NBatch`](/llm/net/developer-reference/parameters/context/n-batch/), [`NUbatch`](/llm/net/developer-reference/parameters/context/n-ubatch/): batch sizes interact with sequence count in multi-sequence scenarios.
 
 ## What's next
 
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
-- [NBatch](/llm/net/developer-reference/parameters/context/n-batch/) — batch size for prompts.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.
+- [NBatch](/llm/net/developer-reference/parameters/context/n-batch/): batch size for prompts.

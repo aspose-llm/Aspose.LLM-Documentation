@@ -7,7 +7,7 @@ url: /net/developer-reference/cache-management/
 feedback: LLMNET
 version: 26.5.0
 title: Cache management
-description: Manage the KV cache in long chat sessions with Aspose.LLM for .NET — automatic trimming, manual cleanup, and five strategies for deciding what to keep.
+description: Manage the KV cache in long chat sessions with Aspose.LLM for .NET, automatic trimming, manual cleanup, and five strategies for deciding what to keep.
 keywords:
 - KV cache
 - cache cleanup
@@ -17,14 +17,14 @@ keywords:
 - context overflow
 ---
 
-Every chat session holds a slice of the KV cache — the per-token state the model uses to condition each next token on prior turns. The cache grows with every message and is bounded by `ContextParameters.ContextSize`. When a new message would overflow, the engine trims the cache according to the session's `CacheCleanupStrategy`.
+Every chat session holds a slice of the KV cache: the per-token state the model uses to condition each next token on prior turns. The cache grows with every message and is bounded by `ContextParameters.ContextSize`. When a new message would overflow, the engine trims the cache according to the session's `CacheCleanupStrategy`.
 
 You can rely on automatic trimming or call `ForceCacheCleanup` at natural boundaries in your application.
 
 ## When trimming happens
 
-- **Automatically** — the engine checks the projected context usage before each generation step. When it would exceed `ContextParameters.ContextSize`, the engine trims the cache using the session's `ChatParameters.CacheCleanupStrategy`.
-- **Manually** — your code calls `AsposeLLMApi.ForceCacheCleanup(strategy)` at a point that makes sense for your application (topic switch, user-initiated reset, pre-emptive cleanup before a long prompt).
+- **Automatically**: the engine checks the projected context usage before each generation step. When it would exceed `ContextParameters.ContextSize`, the engine trims the cache using the session's `ChatParameters.CacheCleanupStrategy`.
+- **Manually**: your code calls `AsposeLLMApi.ForceCacheCleanup(strategy)` at a point that makes sense for your application (topic switch, user-initiated reset, pre-emptive cleanup before a long prompt).
 
 ## Strategies
 
@@ -62,7 +62,7 @@ Best for: sessions where gradual eviction is preferable to full clears. Retains 
 
 Keeps the system prompt and the very first user turn. Everything between is evicted.
 
-Best for: tasks where the original user ask is load-bearing — long debugging sessions, document analyses, iterative refinement on a single input. The model always sees the starting problem statement, even after many follow-ups.
+Best for: tasks where the original user ask is load-bearing: long debugging sessions, document analyses, iterative refinement on a single input. The model always sees the starting problem statement, even after many follow-ups.
 
 ### `KeepSystemPromptAndLastUserMessage`
 
@@ -102,7 +102,7 @@ The strategy is applied at session creation time. New sessions created from this
 api.ForceCacheCleanup(CacheCleanupStrategy.KeepSystemPromptOnly);
 ```
 
-Operates on the **current session**. The strategy argument is independent of the session's default strategy — you can call `ForceCacheCleanup` with any strategy when you want a one-off reset or a stronger trim.
+Operates on the **current session**. The strategy argument is independent of the session's default strategy: you can call `ForceCacheCleanup` with any strategy when you want a one-off reset or a stronger trim.
 
 Throws `InvalidOperationException` when no current session exists.
 
@@ -141,7 +141,7 @@ Even after dozens of follow-ups, the model can still refer back to the first use
 
 ## What's next
 
-- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle and how cleanup interacts with automatic generation.
-- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — set the default strategy per preset.
-- [Context parameters](/llm/net/developer-reference/parameters/context/) — `ContextSize` is the ceiling the cleanup policy serves.
-- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) — cache management in a realistic runnable example.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): session lifecycle and how cleanup interacts with automatic generation.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/): set the default strategy per preset.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): `ContextSize` is the ceiling the cleanup policy serves.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/): cache management in a realistic runnable example.

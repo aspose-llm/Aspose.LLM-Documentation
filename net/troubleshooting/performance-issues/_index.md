@@ -24,7 +24,7 @@ The SDK loads and runs, but throughput is below expectations or first-token late
 
 - Fewer tokens per second than expected for your hardware.
 - First-token latency of several seconds even after warm-up.
-- Performance spikes — fast for a while, then slow.
+- Performance spikes: fast for a while, then slow.
 - Occasional stalls mid-response.
 
 ## Cause
@@ -48,7 +48,7 @@ Enable debug logging and confirm the binary variant and acceleration:
 [Engine] inference on CUDA with 32/32 layers offloaded
 ```
 
-If the variant says `cpu` while you have a GPU — see [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/).
+If the variant says `cpu` while you have a GPU: see [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/).
 
 ### 2. Verify `GpuLayers`
 
@@ -58,7 +58,7 @@ Make sure `GpuLayers` is high enough to offload the model:
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 ```
 
-Partial offload (e.g., `GpuLayers = 20`) on an 8B model keeps half on CPU — the GPU cannot accelerate what is not on it.
+Partial offload (e.g., `GpuLayers = 20`) on an 8B model keeps half on CPU: the GPU cannot accelerate what is not on it.
 
 ### 3. Enable flash attention
 
@@ -93,7 +93,7 @@ See [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/).
 
 ### 6. Shrink `ContextSize` if you do not use the full window
 
-Longer contexts are slower per token even when mostly empty — KV scans scale with position count. Drop `ContextSize` to the actual max you need:
+Longer contexts are slower per token even when mostly empty: KV scans scale with position count. Drop `ContextSize` to the actual max you need:
 
 ```csharp
 preset.ContextParameters.ContextSize = 8192;
@@ -124,7 +124,7 @@ If the host is swapping, reduce memory footprint (smaller model, shorter context
 Sustained high load heats the CPU and GPU; thermal throttling drops clocks and cuts throughput.
 
 - On laptops, plug into AC power.
-- Verify cooling — clean dust, check fan RPM.
+- Verify cooling: clean dust, check fan RPM.
 - On CPU: `watch -n 1 'cat /proc/cpuinfo | grep MHz'` (Linux).
 - On NVIDIA GPU: `nvidia-smi -q -d CLOCK` (look for `Current`-vs-`Base` clock).
 
@@ -170,7 +170,7 @@ If your numbers are substantially below these, work through the resolution steps
 
 ## What's next
 
-- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/) — speed-biased configuration.
-- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/) — cut TTFT.
-- [Acceleration](/llm/net/developer-reference/acceleration/) — backend-specific tuning.
-- [Context parameters](/llm/net/developer-reference/parameters/context/) — batch sizes and threading.
+- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/): speed-biased configuration.
+- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/): cut TTFT.
+- [Acceleration](/llm/net/developer-reference/acceleration/): backend-specific tuning.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): batch sizes and threading.

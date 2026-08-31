@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/dry-allowed-length/
 feedback: LLMNET
 version: 26.5.0
 title: DryAllowedLength
-description: Minimum repeat length before DRY engages in Aspose.LLM for .NET — matches shorter than this are allowed without penalty.
+description: Minimum repeat length before DRY engages in Aspose.LLM for .NET, matches shorter than this are allowed without penalty.
 keywords:
 - DryAllowedLength
 - DRY
@@ -36,21 +36,21 @@ DRY scans recent generation for consecutive-token sequences that match earlier c
 penalty_factor = DryMultiplier × DryBase^(match_length - DryAllowedLength)
 ```
 
-- `DryAllowedLength = 2` (default) — any 3+ token repeat gets penalized. Catches most phrase repeats while allowing natural short patterns.
-- `DryAllowedLength = 3` — allows short 3-token patterns to repeat unpenalized. Safer for code / formatted output.
-- `DryAllowedLength = 5` — only long repeats are penalized. Use when the default causes awkward word choices.
-- `DryAllowedLength = 1` — very aggressive; any 2-token match penalized.
+- `DryAllowedLength = 2` (default): any 3+ token repeat gets penalized. Catches most phrase repeats while allowing natural short patterns.
+- `DryAllowedLength = 3`: allows short 3-token patterns to repeat unpenalized. Safer for code / formatted output.
+- `DryAllowedLength = 5`: only long repeats are penalized. Use when the default causes awkward word choices.
+- `DryAllowedLength = 1`: very aggressive; any 2-token match penalized.
 
 ## When to change it
 
 | Scenario | Value |
 |---|---|
 | Default | `2` |
-| Code or formatted output with natural repeats | `4` – `6` |
-| Model loops even on short phrases | `1` – `2` |
+| Code or formatted output with natural repeats | `4` to `6` |
+| Model loops even on short phrases | `1` to `2` |
 | Balanced creative writing | `3` |
 
-`DryAllowedLength` is the best knob to tune when DRY starts producing strange word choices — raise it so DRY leaves short natural patterns alone.
+`DryAllowedLength` is the best knob to tune when DRY starts producing strange word choices: raise it so DRY leaves short natural patterns alone.
 
 ## Example
 
@@ -64,12 +64,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — must be positive for DRY to be active.
-- [`DryBase`](/llm/net/developer-reference/parameters/sampler/dry-base/) — sets how fast penalty grows beyond this length.
-- [`DrySequenceBreakers`](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — tokens that reset the match counter.
+- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/): must be positive for DRY to be active.
+- [`DryBase`](/llm/net/developer-reference/parameters/sampler/dry-base/): sets how fast penalty grows beyond this length.
+- [`DrySequenceBreakers`](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/): tokens that reset the match counter.
 
 ## What's next
 
-- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
-- [DryBase](/llm/net/developer-reference/parameters/sampler/dry-base/) — growth rate past this length.
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/): enables DRY.
+- [DryBase](/llm/net/developer-reference/parameters/sampler/dry-base/): growth rate past this length.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

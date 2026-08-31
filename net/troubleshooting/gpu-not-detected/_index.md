@@ -7,7 +7,7 @@ url: /net/troubleshooting/gpu-not-detected/
 feedback: LLMNET
 version: 26.5.0
 title: GPU not detected
-description: Aspose.LLM for .NET runs on CPU when you expected GPU — diagnose driver, acceleration selection, binary mismatch, GpuLayers setting.
+description: Aspose.LLM for .NET runs on CPU when you expected GPU, diagnose driver, acceleration selection, binary mismatch, GpuLayers setting.
 keywords:
 - GPU not detected
 - CPU fallback
@@ -32,7 +32,7 @@ You wanted the SDK to use the GPU, but inference is slow and `nvidia-smi` (or eq
 The SDK picks a backend in two stages:
 
 1. **`BinaryManager`** downloads a native binary matching `BinaryManagerParameters.PreferredAcceleration` (or auto-detection). The binary dictates what GPU APIs are available.
-2. **`Engine`** respects `BaseModelInferenceParameters.GpuLayers` — if `0`, the model stays on CPU even if the binary supports GPU.
+2. **`Engine`** respects `BaseModelInferenceParameters.GpuLayers`: if `0`, the model stays on CPU even if the binary supports GPU.
 
 Either stage can silently fall back to CPU.
 
@@ -114,7 +114,7 @@ For HIP: `ROCR_VISIBLE_DEVICES` and `HIP_VISIBLE_DEVICES` play the same role.
 
 **Docker**: you must start containers with `--gpus all` (NVIDIA) or `--device=/dev/kfd --device=/dev/dri` (AMD ROCm). Without these flags, the container has no GPU access.
 
-**WSL2** on Windows: install NVIDIA driver on the Windows side; install CUDA inside WSL following NVIDIA's WSL2 guide. Older Windows + WSL combinations do not support CUDA in WSL — upgrade Windows 11 and WSL.
+**WSL2** on Windows: install NVIDIA driver on the Windows side; install CUDA inside WSL following NVIDIA's WSL2 guide. Older Windows + WSL combinations do not support CUDA in WSL: upgrade Windows 11 and WSL.
 
 ### 6. Fall back to Vulkan
 
@@ -127,7 +127,7 @@ preset.BaseModelInferenceParameters.GpuLayers = 999;
 
 Vulkan runs on NVIDIA, AMD, and Intel GPUs with standard drivers. Performance is 20-40 % below CUDA but better than CPU.
 
-### 7. Windows users with AMD — use Vulkan
+### 7. Windows users with AMD: use Vulkan
 
 Aspose.LLM does not ship HIP binaries for Windows. On Windows with AMD, Vulkan is the only GPU path.
 
@@ -149,6 +149,6 @@ Aspose.LLM does not ship HIP binaries for Windows. On Windows with AMD, Vulkan i
 
 ## What's next
 
-- [Acceleration](/llm/net/developer-reference/acceleration/) — detailed per-backend setup.
-- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
-- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `SplitMode`, `MainGpu`.
+- [Acceleration](/llm/net/developer-reference/acceleration/): detailed per-backend setup.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): `PreferredAcceleration`.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): `GpuLayers`, `SplitMode`, `MainGpu`.

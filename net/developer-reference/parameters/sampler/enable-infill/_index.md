@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/enable-infill/
 feedback: LLMNET
 version: 26.5.0
 title: EnableInfill
-description: Fill-in-the-middle infill sampler in Aspose.LLM for .NET — specialized mode for code completion models that support it.
+description: Fill-in-the-middle infill sampler in Aspose.LLM for .NET, specialized mode for code completion models that support it.
 keywords:
 - EnableInfill
 - infill
@@ -31,8 +31,8 @@ keywords:
 
 When `true`, the engine uses a specialized sampler variant tuned for completing a gap between a prefix and a suffix. This is the FIM (Fill-in-the-Middle) pattern used by code models trained with FIM tokens (for example, some DeepSeek-Coder or StarCoder derivatives).
 
-- `false` (default) — standard chat sampler. Correct for all text presets and vision presets.
-- `true` — INFILL sampler. Only enables when the model supports FIM.
+- `false` (default): standard chat sampler. Correct for all text presets and vision presets.
+- `true`: INFILL sampler. Only enables when the model supports FIM.
 
 ## When to change it
 
@@ -59,5 +59,5 @@ Independent of other sampler knobs. `EnableInfill` toggles which sampler impleme
 
 ## What's next
 
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.
-- [Custom preset](/llm/net/use-cases/custom-preset/) — patterns for building presets around specialized models.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.
+- [Custom preset](/llm/net/use-cases/custom-preset/): patterns for building presets around specialized models.

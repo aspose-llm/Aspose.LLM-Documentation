@@ -7,7 +7,7 @@ url: /net/how-to/handle-cancellation/
 feedback: LLMNET
 version: 26.5.0
 title: Handle cancellation
-description: Cancel in-flight Aspose.LLM for .NET generation cleanly — CancellationToken on message methods, session state after cancel, typical UX patterns.
+description: Cancel in-flight Aspose.LLM for .NET generation cleanly, CancellationToken on message methods, session state after cancel, typical UX patterns.
 keywords:
 - cancellation
 - CancellationToken
@@ -16,7 +16,7 @@ keywords:
 - timeout
 ---
 
-Both `SendMessageAsync` and `SendMessageToSessionAsync` accept a `CancellationToken`. Firing it stops token generation promptly. The session state remains intact — you can continue the conversation with the next call.
+Both `SendMessageAsync` and `SendMessageToSessionAsync` accept a `CancellationToken`. Firing it stops token generation promptly. The session state remains intact: you can continue the conversation with the next call.
 
 ## Cancel on timeout
 
@@ -81,7 +81,7 @@ When the client disconnects, `ct` fires; the SDK stops generating.
 
 ## Session state after cancellation
 
-- The partial output is **discarded** — the user's message goes into the history, but no assistant message is recorded.
+- The partial output is **discarded**: the user's message goes into the history, but no assistant message is recorded.
 - The session remains alive and can accept a new message immediately.
 
 ```csharp
@@ -125,13 +125,13 @@ catch (OperationCanceledException)
 
 ## What cancellation does not cover
 
-- **Model load** — the synchronous model-load inside `AsposeLLMApi.Create` is not interruptible via `CancellationToken`. Budget for the cold start; do not try to cancel it.
-- **Binary download** — same. The first-run binary deployment runs during `Create` and is synchronous.
+- **Model load**: the synchronous model-load inside `AsposeLLMApi.Create` is not interruptible via `CancellationToken`. Budget for the cold start; do not try to cancel it.
+- **Binary download**: same. The first-run binary deployment runs during `Create` and is synchronous.
 
-For application-level time limits on startup, wrap `Create` in a `Task.Run` with an external watchdog — but be aware that even if you stop waiting on the task, the background work continues until it completes or the process terminates.
+For application-level time limits on startup, wrap `Create` in a `Task.Run` with an external watchdog, but be aware that even if you stop waiting on the task, the background work continues until it completes or the process terminates.
 
 ## What's next
 
-- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/) — method signatures including `CancellationToken`.
-- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/) — cancellation in HTTP hosts.
-- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle around cancellation.
+- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/): method signatures including `CancellationToken`.
+- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/): cancellation in HTTP hosts.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): session lifecycle around cancellation.

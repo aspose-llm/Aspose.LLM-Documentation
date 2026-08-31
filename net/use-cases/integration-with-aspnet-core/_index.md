@@ -7,7 +7,7 @@ url: /net/use-cases/integration-with-aspnet-core/
 feedback: LLMNET
 version: 26.5.0
 title: Integration with ASP.NET Core
-description: Host Aspose.LLM for .NET behind ASP.NET Core — DI registration, routing, per-user sessions, and graceful shutdown.
+description: Host Aspose.LLM for .NET behind ASP.NET Core, DI registration, routing, per-user sessions, and graceful shutdown.
 keywords:
 - ASP.NET Core
 - Minimal API
@@ -32,7 +32,7 @@ ASP.NET Core is the idiomatic way to put Aspose.LLM for .NET behind HTTP. The SD
 - [Apply a license](/llm/net/licensing/).
 - Familiarity with [Dependency injection](/llm/net/developer-reference/dependency-injection/).
 
-## Minimal API — single-user demo
+## Minimal API: single-user demo
 
 ```csharp
 using Aspose.LLM;
@@ -242,7 +242,7 @@ public class InferenceWorker : BackgroundService
 
 - **Single `AsposeLLMApi` / `Engine` per process.** Stick to the DI path; do not construct `AsposeLLMApi` manually on the side.
 - **Model on disk, not RAM.** Model files live in the cache; first load takes time. Budget cold-start seconds.
-- **No streaming.** `GetChatSessionResponse` returns the full text. For user-perceived responsiveness, return HTTP 200 after the full generation — typical 1-5 seconds.
+- **No streaming.** `GetChatSessionResponse` returns the full text. For user-perceived responsiveness, return HTTP 200 after the full generation: typical 1-5 seconds.
 - **Serialize inference.** Do not hit `Engine.GetChatSessionResponse` concurrently; the channel pattern handles this.
 
 ## Full project structure
@@ -264,6 +264,6 @@ MyLlmService/
 
 ## What's next
 
-- [Dependency injection](/llm/net/developer-reference/dependency-injection/) — full DI reference.
-- [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/) — the session-routing pattern.
-- [Cache management](/llm/net/developer-reference/cache-management/) — keep session memory under control in long-running hosts.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): full DI reference.
+- [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/): the session-routing pattern.
+- [Cache management](/llm/net/developer-reference/cache-management/): keep session memory under control in long-running hosts.

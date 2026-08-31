@@ -7,7 +7,7 @@ url: /net/developer-reference/extensibility/custom-media-processor/
 feedback: LLMNET
 version: 26.5.0
 title: Custom media processor
-description: Replace IMediaProcessor in Aspose.LLM for .NET to customize image preprocessing — format handling, validation, color conversion, and ProcessedMedia output.
+description: Replace IMediaProcessor in Aspose.LLM for .NET to customize image preprocessing, format handling, validation, color conversion, and ProcessedMedia output.
 keywords:
 - IMediaProcessor
 - media processing
@@ -20,7 +20,7 @@ keywords:
 
 `IMediaProcessor` controls how raw image bytes become a `ProcessedMedia` structure the vision pipeline can evaluate. Implementing a custom processor lets you handle formats the default processor does not support, apply specific preprocessing (color spaces, DICOM extraction, sensor calibration), or add validation beyond size and format.
 
-For everyday vision use, the default `MediaManager` implementation is enough — it handles JPEG, PNG, BMP, GIF, WebP with magic-byte detection and 50 MB size limits. Consider custom only when you have specific needs the default does not cover.
+For everyday vision use, the default `MediaManager` implementation is enough: it handles JPEG, PNG, BMP, GIF, WebP with magic-byte detection and 50 MB size limits. Consider custom only when you have specific needs the default does not cover.
 
 ## Interface reference
 
@@ -53,7 +53,7 @@ public interface IMediaProcessor
 | `ValidateMedia` | Returns `true` when input is acceptable; populates `errorMessage` on failure. |
 | `CreateProcessedMedia` | Synchronous variant for cases where format is already known. |
 
-`IMediaProcessor` lives in `Aspose.LLM.Core.Services`. It is public, but in the Core assembly rather than Abstractions — usable after ILRepack merges, but not part of the minimal `Aspose.LLM.Abstractions` API surface.
+`IMediaProcessor` lives in `Aspose.LLM.Core.Services`. It is public, but in the Core assembly rather than Abstractions: usable after ILRepack merges, but not part of the minimal `Aspose.LLM.Abstractions` API surface.
 
 ## `ProcessedMedia` structure
 
@@ -67,9 +67,9 @@ public class ProcessedMedia
 }
 ```
 
-Full field list varies by SDK version — reference the API documentation at `reference.aspose.com/llm/net/` for the current shape.
+Full field list varies by SDK version: reference the API documentation at `reference.aspose.com/llm/net/` for the current shape.
 
-## Example — support a custom format
+## Example: support a custom format
 
 The default processor rejects anything outside JPEG/PNG/BMP/GIF/WebP. If your source is TIFF, DICOM, or raw pixel buffers, you convert early in a custom processor:
 
@@ -126,7 +126,7 @@ public class TiffAwareProcessor : IMediaProcessor
 }
 ```
 
-## Example — stricter validation
+## Example: stricter validation
 
 Add size or content-based validation on top of the defaults:
 
@@ -177,10 +177,10 @@ services.AddLlamaServices(new Qwen3VL2BPreset());
 services.AddSingleton<IMediaProcessor, StricterMediaProcessor>();
 ```
 
-The default `MediaManager` is wired into `Engine` as the `IMediaProcessor` implementation. Substituting via DI should replace it, but verify on your specific SDK version — the wiring can evolve between releases.
+The default `MediaManager` is wired into `Engine` as the `IMediaProcessor` implementation. Substituting via DI should replace it, but verify on your specific SDK version: the wiring can evolve between releases.
 
 ## What's next
 
-- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — the built-in format support `MediaProcessor` applies.
-- [Multimodal context parameters](/llm/net/developer-reference/parameters/multimodal-context/) — projector-side knobs.
-- [Extensibility overview](/llm/net/developer-reference/extensibility/) — other substitution points.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/): the built-in format support `MediaProcessor` applies.
+- [Multimodal context parameters](/llm/net/developer-reference/parameters/multimodal-context/): projector-side knobs.
+- [Extensibility overview](/llm/net/developer-reference/extensibility/): other substitution points.

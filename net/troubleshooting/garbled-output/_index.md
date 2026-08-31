@@ -7,7 +7,7 @@ url: /net/troubleshooting/garbled-output/
 feedback: LLMNET
 version: 26.5.0
 title: Garbled output
-description: Fix nonsense, repetitive, or truncated replies from Aspose.LLM for .NET — chat template mismatches, KV alignment, repetition loops, max-tokens cutoffs.
+description: Fix nonsense, repetitive, or truncated replies from Aspose.LLM for .NET, chat template mismatches, KV alignment, repetition loops, max-tokens cutoffs.
 keywords:
 - garbled output
 - nonsense
@@ -29,12 +29,12 @@ The model loaded successfully, but its replies are nonsensical, repetitive, or b
 
 ## Cause
 
-- **Chat template mismatch** — the engine picked the wrong template for the model.
-- **Repetition penalty too low** (or zero) — the model loops.
-- **`MaxTokens` too low** for a reasoning model — truncation mid-reasoning.
-- **KV cache cleanup dropped important context** — middle of a long session.
-- **Wrong preset for the model** — a custom GGUF paired with a preset that does not match its architecture.
-- **Aggressive KV quantization** — on long contexts, Q4 K/V can degrade quality.
+- **Chat template mismatch**: the engine picked the wrong template for the model.
+- **Repetition penalty too low** (or zero): the model loops.
+- **`MaxTokens` too low** for a reasoning model: truncation mid-reasoning.
+- **KV cache cleanup dropped important context**: middle of a long session.
+- **Wrong preset for the model**: a custom GGUF paired with a preset that does not match its architecture.
+- **Aggressive KV quantization**: on long contexts, Q4 K/V can degrade quality.
 
 ## Resolution
 
@@ -119,7 +119,7 @@ F16 is the safe default; drop to Q8_0 only with memory pressure.
 **Diagnosis**: the image was not delivered correctly to the model.
 
 - Enable `MtmdContextParameters.PrintTimings = true` to verify the image was processed.
-- Enable debug logging and look for `[MM]` lines — confirm image chunks are tokenized.
+- Enable debug logging and look for `[MM]` lines: confirm image chunks are tokenized.
 - See [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/).
 
 ## Prevention
@@ -130,7 +130,7 @@ F16 is the safe default; drop to Q8_0 only with memory pressure.
 
 ## What's next
 
-- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) — repetition penalties, DRY.
-- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — `MaxTokens`, `CacheCleanupStrategy`.
-- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) — vision template selection.
-- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnosis.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/): repetition penalties, DRY.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/): `MaxTokens`, `CacheCleanupStrategy`.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/): vision template selection.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): multimodal-specific diagnosis.

@@ -7,7 +7,7 @@ url: /net/use-cases/multi-turn-chat/
 feedback: LLMNET
 version: 26.5.0
 title: Multi-turn chat
-description: Run an explicit multi-turn conversation in Aspose.LLM for .NET — manage sessions, handle multiple concurrent conversations, and trim the KV cache when it grows.
+description: Run an explicit multi-turn conversation in Aspose.LLM for .NET, manage sessions, handle multiple concurrent conversations, and trim the KV cache when it grows.
 keywords:
 - multi-turn
 - chat
@@ -18,7 +18,7 @@ keywords:
 - cache cleanup
 ---
 
-When you need a sustained conversation and want explicit control over it — for example, one session per user, per request, or per workflow stage — start sessions explicitly with `StartNewChatAsync` and address them by ID.
+When you need a sustained conversation and want explicit control over it: for example, one session per user, per request, or per workflow stage: start sessions explicitly with `StartNewChatAsync` and address them by ID.
 
 ## When to use this pattern
 
@@ -59,7 +59,7 @@ string reply3 = await api.SendMessageToSessionAsync(sessionId, "Which one is clo
 
 Every message adds to the session's KV cache. The third reply can reference the first two turns because the earlier context is preserved.
 
-## Full example — single session
+## Full example: single session
 
 ```csharp
 using Aspose.LLM;
@@ -113,17 +113,17 @@ Console.WriteLine($"A: {replyA}");
 Console.WriteLine($"B: {replyB}");
 ```
 
-The topics do not mix — `sessionA` sees only the Rome thread, `sessionB` only the cooking thread.
+The topics do not mix: `sessionA` sees only the Rome thread, `sessionB` only the cooking thread.
 
 {{% alert color="primary" %}}
-Do not call `SendMessageToSessionAsync` concurrently on the **same** session ID. Serialize your calls per session. Across sessions, serialize at the application level — the native model and KV pool are shared and a single inference call holds native resources.
+Do not call `SendMessageToSessionAsync` concurrently on the **same** session ID. Serialize your calls per session. Across sessions, serialize at the application level: the native model and KV pool are shared and a single inference call holds native resources.
 {{% /alert %}}
 
 ## Manage KV cache in long sessions
 
 As a session grows, its KV cache approaches the preset's `ContextParameters.ContextSize`. When the next message would overflow, the engine trims automatically according to `ChatParameters.CacheCleanupStrategy` (default `RemoveOldestMessages`).
 
-You can also trim explicitly — for example, at a natural topic boundary in your application:
+You can also trim explicitly: for example, at a natural topic boundary in your application:
 
 ```csharp
 api.ForceCacheCleanup(CacheCleanupStrategy.KeepSystemPromptOnly);
@@ -131,21 +131,21 @@ api.ForceCacheCleanup(CacheCleanupStrategy.KeepSystemPromptOnly);
 
 This operates on the **current session**. To trim a different session, set it as current first (e.g., by calling `SendMessageToSessionAsync` once on that session, which does not change `ChatParameters` but keeps the session warm), or use the default strategy and let the engine trim when needed.
 
-See [Chat sessions — Manage the KV cache](/llm/net/developer-reference/chat-sessions/#manage-the-kv-cache) for all five strategies and how to pick one.
+See [Chat sessions: Manage the KV cache](/llm/net/developer-reference/chat-sessions/#manage-the-kv-cache) for all five strategies and how to pick one.
 
 ## Pick a session ID strategy
 
-- **Generated IDs** — let the engine choose (`StartNewChatAsync()` with no `sessionId`). Safe for single-process scenarios where you store the returned ID in your code or database.
-- **Your own IDs** — pass a meaningful ID like `"user-42-conv-1"`. Makes logs and persisted session files easier to inspect. You are responsible for uniqueness within the process.
+- **Generated IDs**: let the engine choose (`StartNewChatAsync()` with no `sessionId`). Safe for single-process scenarios where you store the returned ID in your code or database.
+- **Your own IDs**: pass a meaningful ID like `"user-42-conv-1"`. Makes logs and persisted session files easier to inspect. You are responsible for uniqueness within the process.
 
 ## Common errors
 
-- **`Not licensed for this method`** — apply a license before starting sessions.
-- **Context overflow before trim** — if you see nonsensical output in a long session, the model may have lost track of the system prompt. Force an explicit `ForceCacheCleanup(KeepSystemPromptAndFirstUserMessage)` at topic boundaries.
-- **Mixing sessions** — double-check you pass the right `sessionId` to `SendMessageToSessionAsync`. Using `SendMessageAsync` in a multi-session app sends to the current session, which may not be the one you expect.
+- **`Not licensed for this method`**: apply a license before starting sessions.
+- **Context overflow before trim**: if you see nonsensical output in a long session, the model may have lost track of the system prompt. Force an explicit `ForceCacheCleanup(KeepSystemPromptAndFirstUserMessage)` at topic boundaries.
+- **Mixing sessions**: double-check you pass the right `sessionId` to `SendMessageToSessionAsync`. Using `SendMessageAsync` in a multi-session app sends to the current session, which may not be the one you expect.
 
 ## What's next
 
-- [Save and restore session](/llm/net/use-cases/save-and-restore-session/) — persist a long conversation across runs.
-- [Custom preset](/llm/net/use-cases/custom-preset/) — tune the preset for your scenario (system prompt, sampler, context size).
-- [Chat sessions reference](/llm/net/developer-reference/chat-sessions/) — full semantics of session creation, messaging, and cache management.
+- [Save and restore session](/llm/net/use-cases/save-and-restore-session/): persist a long conversation across runs.
+- [Custom preset](/llm/net/use-cases/custom-preset/): tune the preset for your scenario (system prompt, sampler, context size).
+- [Chat sessions reference](/llm/net/developer-reference/chat-sessions/): full semantics of session creation, messaging, and cache management.

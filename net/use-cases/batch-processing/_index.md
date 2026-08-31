@@ -7,7 +7,7 @@ url: /net/use-cases/batch-processing/
 feedback: LLMNET
 version: 26.5.0
 title: Batch processing
-description: Run many prompts through one loaded Aspose.LLM model — amortize the load cost, pick session-per-prompt vs shared-session patterns.
+description: Run many prompts through one loaded Aspose.LLM model, amortize the load cost, pick session-per-prompt vs shared-session patterns.
 keywords:
 - batch processing
 - bulk
@@ -32,7 +32,7 @@ Batch processing runs many prompts through the same `AsposeLLMApi` instance with
 
 ## Two patterns
 
-### Pattern A — fresh session per prompt
+### Pattern A: fresh session per prompt
 
 Each prompt starts in isolation, no history from earlier prompts. Good for **independent** tasks like classification or per-item summarization.
 
@@ -56,14 +56,14 @@ var results = new List<(string Email, string Label)>();
 
 foreach (string email in emails)
 {
-    // Fresh session per prompt — no history carryover.
+    // Fresh session per prompt, no history carryover.
     string sessionId = await api.StartNewChatAsync();
     string label = await api.SendMessageToSessionAsync(sessionId, email);
     results.Add((email, label.Trim()));
 }
 ```
 
-### Pattern B — reuse one session with forced cleanup
+### Pattern B: reuse one session with forced cleanup
 
 Process many prompts through a single session, clearing its KV cache between prompts. Avoids the session-creation overhead; useful when you have very many short prompts.
 
@@ -78,7 +78,7 @@ foreach (string email in emails)
     string label = await api.SendMessageToSessionAsync(sessionId, email);
     results.Add((email, label.Trim()));
 
-    // Reset cache — each prompt sees only the system prompt.
+    // Reset cache: each prompt sees only the system prompt.
     api.ForceCacheCleanup(CacheCleanupStrategy.KeepSystemPromptOnly);
 }
 ```
@@ -141,7 +141,7 @@ foreach (string email in emails)
 }
 ```
 
-Or restart the `AsposeLLMApi` every N prompts for aggressive cleanup — dispose and recreate inside a loop, but budget 5-15 seconds for the restart.
+Or restart the `AsposeLLMApi` every N prompts for aggressive cleanup: dispose and recreate inside a loop, but budget 5-15 seconds for the restart.
 
 ## Parallelism caveats
 
@@ -150,7 +150,7 @@ Or restart the `AsposeLLMApi` every N prompts for aggressive cleanup — dispose
 - **Multi-process**: split the batch across processes, one `AsposeLLMApi` per process. Each process loads the model once and works on its slice.
 - **Pipeline queue**: one worker thread for inference, multiple producers feeding prompts. The worker serves prompts sequentially.
 
-Native `llama.cpp` can internally batch multiple sequences in one forward pass, but Aspose.LLM's public chat API dispatches serialized requests — the gain from manual parallelism is mostly in host-side work (I/O, post-processing), not in inference itself.
+Native `llama.cpp` can internally batch multiple sequences in one forward pass, but Aspose.LLM's public chat API dispatches serialized requests: the gain from manual parallelism is mostly in host-side work (I/O, post-processing), not in inference itself.
 
 ## Full example
 
@@ -205,13 +205,13 @@ internal class BatchDemo
 
 ## Tuning for throughput
 
-- **Small, task-specific system prompts** — long system prompts multiply the per-call fixed cost.
-- **Low `MaxTokens`** for short outputs — faster and cheaper.
-- **Deterministic sampling** (`Temperature = 0.0` or low, fixed `Seed`) — useful for eval runs.
-- **GPU offload** — batch jobs benefit the most from GPU; a 20× speed-up is common versus CPU.
+- **Small, task-specific system prompts**: long system prompts multiply the per-call fixed cost.
+- **Low `MaxTokens`** for short outputs: faster and cheaper.
+- **Deterministic sampling** (`Temperature = 0.0` or low, fixed `Seed`): useful for eval runs.
+- **GPU offload**: batch jobs benefit the most from GPU; a 20× speed-up is common versus CPU.
 
 ## What's next
 
-- [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/) — when sessions represent separate users.
-- [Cache management](/llm/net/developer-reference/cache-management/) — strategy details.
-- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — `MaxTokens` and `CacheCleanupStrategy`.
+- [Multiple concurrent sessions](/llm/net/use-cases/multiple-concurrent-sessions/): when sessions represent separate users.
+- [Cache management](/llm/net/developer-reference/cache-management/): strategy details.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/): `MaxTokens` and `CacheCleanupStrategy`.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-source/aspose-model-id/
 feedback: LLMNET
 version: 26.5.0
 title: AsposeModelId
-description: Second-priority model source in Aspose.LLM for .NET — identifier into Aspose's internal model catalog; used when ModelFilePath is unset.
+description: Second-priority model source in Aspose.LLM for .NET, identifier into Aspose's internal model catalog; used when ModelFilePath is unset.
 keywords:
 - AsposeModelId
 - Aspose catalog
@@ -15,7 +15,7 @@ keywords:
 - priority
 ---
 
-`AsposeModelId` is the second-priority source — an identifier into Aspose's internal model catalog hosted at `releases.aspose.com`. The engine downloads by ID when no [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) is set.
+`AsposeModelId` is the second-priority source: an identifier into Aspose's internal model catalog hosted at `releases.aspose.com`. The engine downloads by ID when no [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) is set.
 
 ## Quick reference
 
@@ -31,10 +31,10 @@ keywords:
 
 When set, the engine resolves the ID against the Aspose model catalog and downloads the named file into [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/model-cache-path/). Subsequent runs use the cache.
 
-- `null` — skip this priority; fall through to Hugging Face fields.
-- An ID — resolve against the Aspose catalog.
+- `null`: skip this priority; fall through to Hugging Face fields.
+- An ID: resolve against the Aspose catalog.
 
-Built-in presets do not set `AsposeModelId` — they use Hugging Face. Use this field when Aspose ships a specific model optimized or licensed for SDK consumers.
+Built-in presets do not set `AsposeModelId`: they use Hugging Face. Use this field when Aspose ships a specific model optimized or licensed for SDK consumers.
 
 ## When to change it
 
@@ -53,10 +53,10 @@ preset.BaseModelSourceParameters.HuggingFaceRepoId = null; // clear the default 
 
 ## Interactions
 
-- [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) — if set, overrides `AsposeModelId`.
-- Hugging Face fields — only used when both `ModelFilePath` and `AsposeModelId` are null.
+- [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/): if set, overrides `AsposeModelId`.
+- Hugging Face fields: only used when both `ModelFilePath` and `AsposeModelId` are null.
 
 ## What's next
 
-- [Model source hub](/llm/net/developer-reference/parameters/model-source/) — resolution order.
-- [HuggingFaceRepoId](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/) — priority-3 source.
+- [Model source hub](/llm/net/developer-reference/parameters/model-source/): resolution order.
+- [HuggingFaceRepoId](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/): priority-3 source.

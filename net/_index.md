@@ -24,11 +24,11 @@ keywords:
 
 ![Aspose.LLM for .NET](aspose-llm-net.png)
 
-**Aspose.LLM for .NET** lets you integrate large language models into your .NET applications and run them locally — on CPU or GPU, without calling a hosted inference service. Create an API instance from a preset (Qwen 2.5, Qwen 3, Gemma 3, Llama 3.2, Phi 4, DeepSeek, and others), start chat sessions, send messages with optional image input, and save or load conversation state.
+**Aspose.LLM for .NET** lets you integrate large language models into your .NET applications and run them locally: on CPU or GPU, without calling a hosted inference service. Create an API instance from a preset (Qwen 2.5, Qwen 3, Gemma 3, Llama 3.2, Phi 4, DeepSeek, and others), start chat sessions, send messages with optional image input, and save or load conversation state.
 
-The library targets .NET Standard 2.0 and ships native `llama.cpp` runtimes for CPU, CUDA, HIP, Metal, and Vulkan — downloaded automatically on first use. A single NuGet package (`Aspose.LLM`) adds everything you need to one project.
+The library targets .NET Standard 2.0 and ships native `llama.cpp` runtimes for CPU, CUDA, HIP, Metal, and Vulkan: downloaded automatically on first use. A single NuGet package (`Aspose.LLM`) adds everything you need to one project.
 
-Start with [system requirements](/llm/net/system-requirements/), [installation](/llm/net/installation/), and the [Hello, world! example](/llm/net/hello-world/) — or jump straight into the [quick-win recipes](/llm/net/quick-wins/).
+Start with [system requirements](/llm/net/system-requirements/), [installation](/llm/net/installation/), and the [Hello, world! example](/llm/net/hello-world/), or jump straight into the [quick-win recipes](/llm/net/quick-wins/).
 
 ## Product overview
 
@@ -56,7 +56,7 @@ Install, license, and run your first example.
 Conceptual reference for every public type and pattern.
 
 - [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/), [presets](/llm/net/developer-reference/presets/), [chat sessions](/llm/net/developer-reference/chat-sessions/), [session persistence](/llm/net/developer-reference/session-persistence/)
-- [Parameters](/llm/net/developer-reference/parameters/) — 8 bags: model source, inference, context, chat, sampler, engine, binary manager, multimodal context
+- [Parameters](/llm/net/developer-reference/parameters/): 8 bags: model source, inference, context, chat, sampler, engine, binary manager, multimodal context
 - [Cache management](/llm/net/developer-reference/cache-management/), [multimodal](/llm/net/developer-reference/multimodal/), [acceleration](/llm/net/developer-reference/acceleration/)
 - [Dependency injection](/llm/net/developer-reference/dependency-injection/), [extensibility](/llm/net/developer-reference/extensibility/), [logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/)
 - [License](/llm/net/developer-reference/license/), [API reference](https://reference.aspose.com/llm/net/)
@@ -65,7 +65,7 @@ See the full [Developer's reference](/llm/net/developer-reference/) hub.
 
 ## Use cases
 
-Build common scenarios with Aspose.LLM for .NET — full runnable code for each.
+Build common scenarios with Aspose.LLM for .NET: full runnable code for each.
 
 - [Simple chat](/llm/net/use-cases/simple-chat/), [multi-turn chat](/llm/net/use-cases/multi-turn-chat/), [save and restore session](/llm/net/use-cases/save-and-restore-session/)
 - [Custom preset](/llm/net/use-cases/custom-preset/), [bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/), [system prompt recipes](/llm/net/use-cases/system-prompt-recipes/)

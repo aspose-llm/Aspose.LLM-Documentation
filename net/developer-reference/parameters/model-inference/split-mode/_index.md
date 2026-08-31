@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/split-mode/
 feedback: LLMNET
 version: 26.5.0
 title: SplitMode
-description: Multi-GPU model distribution in Aspose.LLM for .NET — None for single GPU, Layer for layer-wise split, Row for tensor parallelism.
+description: Multi-GPU model distribution in Aspose.LLM for .NET, None for single GPU, Layer for layer-wise split, Row for tensor parallelism.
 keywords:
 - SplitMode
 - multi-GPU
@@ -63,13 +63,13 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/) — only applies when `SplitMode = None`.
-- [`TensorSplit`](/llm/net/developer-reference/parameters/model-inference/tensor-split/) — per-device allocation; applies to `LAYER` / `ROW`.
-- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — total layers on GPUs; distributed per split mode.
-- HIP / Vulkan — support both split modes with varying driver maturity; test your specific setup.
+- [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/): only applies when `SplitMode = None`.
+- [`TensorSplit`](/llm/net/developer-reference/parameters/model-inference/tensor-split/): per-device allocation; applies to `LAYER` / `ROW`.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): total layers on GPUs; distributed per split mode.
+- HIP / Vulkan: support both split modes with varying driver maturity; test your specific setup.
 
 ## What's next
 
-- [TensorSplit](/llm/net/developer-reference/parameters/model-inference/tensor-split/) — fine-grained per-GPU ratios.
-- [MainGpu](/llm/net/developer-reference/parameters/model-inference/main-gpu/) — single-GPU device index.
-- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/) — multi-GPU NVIDIA setup.
+- [TensorSplit](/llm/net/developer-reference/parameters/model-inference/tensor-split/): fine-grained per-GPU ratios.
+- [MainGpu](/llm/net/developer-reference/parameters/model-inference/main-gpu/): single-GPU device index.
+- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/): multi-GPU NVIDIA setup.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/top-p/
 feedback: LLMNET
 version: 26.5.0
 title: TopP
-description: Nucleus sampling threshold in Aspose.LLM for .NET — keeps only the smallest set of tokens whose cumulative probability exceeds TopP.
+description: Nucleus sampling threshold in Aspose.LLM for .NET, keeps only the smallest set of tokens whose cumulative probability exceeds TopP.
 keywords:
 - TopP
 - nucleus sampling
@@ -24,7 +24,7 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `0.9` |
-| **Range** | `0.0` – `1.0` (values ≥ `1.0` disable the filter) |
+| **Range** | `0.0` to `1.0` (values ≥ `1.0` disable the filter) |
 | **Category** | Core sampling |
 | **Field on** | `SamplerParameters.TopP` |
 
@@ -32,9 +32,9 @@ keywords:
 
 After `Temperature` scales the distribution, sort tokens by probability descending. Walk the sorted list accumulating probability. Stop when the running sum reaches `TopP`. Every token past that cutoff is removed; the remaining tokens are renormalized and sampled from.
 
-- At `TopP = 1.0`, no tokens are removed — the filter is effectively off.
+- At `TopP = 1.0`, no tokens are removed: the filter is effectively off.
 - At `TopP = 0.9` (default), the engine keeps ~90 % of the probability mass. On a peaked distribution this is 2-5 tokens; on a flat distribution it can be 50+.
-- At `TopP = 0.5`, only the dominant half of the mass survives — tighter, more deterministic output.
+- At `TopP = 0.5`, only the dominant half of the mass survives: tighter, more deterministic output.
 
 `TopP` is probability-aware: on a confident step (one token at 0.95 probability) it keeps only that one token; on an uncertain step (many comparable tokens) it keeps a larger set.
 
@@ -45,10 +45,10 @@ After `Temperature` scales the distribution, sort tokens by probability descendi
 | Disabled (rely on `TopK` + `MinP`) | `1.0` |
 | Creative output with some variety | `0.95` |
 | Balanced general-purpose chat (default) | `0.9` |
-| Conservative, precise output | `0.7` – `0.8` |
-| Very tight, near-greedy | `0.5` – `0.6` |
+| Conservative, precise output | `0.7` to `0.8` |
+| Very tight, near-greedy | `0.5` to `0.6` |
 
-Lower `TopP` excludes more of the tail — output is more predictable but less varied. The default `0.9` is a broadly accepted balance.
+Lower `TopP` excludes more of the tail: output is more predictable but less varied. The default `0.9` is a broadly accepted balance.
 
 ## Example
 
@@ -66,20 +66,20 @@ For precision work:
 ```csharp
 preset.SamplerParameters.Temperature = 0.2f;
 preset.SamplerParameters.TopP = 0.8f;
-// Narrow both dimensions — precise and deterministic.
+// Narrow both dimensions: precise and deterministic.
 ```
 
 ## Interactions
 
-- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — applied before `TopP`. Very low `Temperature` + loose `TopP` still produces near-greedy output.
-- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — stacks with `TopP`. The final candidate set is the intersection.
-- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — complements `TopP` on the tail; both can be active.
-- [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/) — alternative to `TopP` based on local typicality.
-- [`MinKeep`](/llm/net/developer-reference/parameters/sampler/min-keep/) — floor on candidate count; `TopP` never cuts below `MinKeep`.
-- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — bypasses `TopP` when active.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/): applied before `TopP`. Very low `Temperature` + loose `TopP` still produces near-greedy output.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/): stacks with `TopP`. The final candidate set is the intersection.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/): complements `TopP` on the tail; both can be active.
+- [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/): alternative to `TopP` based on local typicality.
+- [`MinKeep`](/llm/net/developer-reference/parameters/sampler/min-keep/): floor on candidate count; `TopP` never cuts below `MinKeep`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/): bypasses `TopP` when active.
 
 ## What's next
 
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/) — the partner knob that runs before `TopP`.
-- [MinP](/llm/net/developer-reference/parameters/sampler/min-p/) — another probability-relative cutoff.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs at a glance.
+- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/): the partner knob that runs before `TopP`.
+- [MinP](/llm/net/developer-reference/parameters/sampler/min-p/): another probability-relative cutoff.

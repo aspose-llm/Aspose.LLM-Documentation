@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/xtc-probability/
 feedback: LLMNET
 version: 26.5.0
 title: XtcProbability
-description: XTC sampler activation probability in Aspose.LLM for .NET — chance that the eXclude Top Choices filter runs at each step to inject diversity.
+description: XTC sampler activation probability in Aspose.LLM for .NET, chance that the eXclude Top Choices filter runs at each step to inject diversity.
 keywords:
 - XtcProbability
 - XTC
@@ -24,7 +24,7 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `-1.0` (disabled) |
-| **Range** | `0.0` – `1.0`, or `-1.0` to disable |
+| **Range** | `0.0` to `1.0`, or `-1.0` to disable |
 | **Category** | Advanced / diversity |
 | **Field on** | `SamplerParameters.XtcProbability` |
 
@@ -32,20 +32,20 @@ keywords:
 
 At each generation step, with probability `XtcProbability`, XTC fires: the engine excludes all tokens whose probability is above [`XtcThreshold`](/llm/net/developer-reference/parameters/sampler/xtc-threshold/), and samples from whatever remains. This nudges the model into less-obvious paths without changing temperature.
 
-- `-1.0` (default) — disabled.
-- `0.1` – `0.3` — XTC fires on 10–30 % of steps. Mild diversity boost.
-- `0.5` – `0.8` — XTC fires often. Strong variety; risk of incoherence.
+- `-1.0` (default): disabled.
+- `0.1` to `0.3`: XTC fires on 10-30 % of steps. Mild diversity boost.
+- `0.5` to `0.8`: XTC fires often. Strong variety; risk of incoherence.
 
 ## When to change it
 
 | Scenario | Value |
 |---|---|
 | Default (disabled) | `-1.0` |
-| Light creativity boost | `0.1` – `0.2` |
-| Alternative to high temperature | `0.3` – `0.5` |
+| Light creativity boost | `0.1` to `0.2` |
+| Alternative to high temperature | `0.3` to `0.5` |
 | Experimental variety push | `0.5+` |
 
-XTC is a recent addition. Prefer conventional [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) + [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) tuning first. Reach for XTC when you want variety specifically when the model is confident — standard sampling tightens those steps; XTC breaks them.
+XTC is a recent addition. Prefer conventional [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) + [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) tuning first. Reach for XTC when you want variety specifically when the model is confident: standard sampling tightens those steps; XTC breaks them.
 
 ## Example
 
@@ -62,12 +62,12 @@ Console.WriteLine(reply);
 
 ## Interactions
 
-- [`XtcThreshold`](/llm/net/developer-reference/parameters/sampler/xtc-threshold/) — minimum probability a token must have to be considered for exclusion.
-- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/) — orthogonal. XTC works at any temperature.
-- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — still applied; XTC runs within what `TopP` keeps.
+- [`XtcThreshold`](/llm/net/developer-reference/parameters/sampler/xtc-threshold/): minimum probability a token must have to be considered for exclusion.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/): orthogonal. XTC works at any temperature.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/): still applied; XTC runs within what `TopP` keeps.
 
 ## What's next
 
-- [XtcThreshold](/llm/net/developer-reference/parameters/sampler/xtc-threshold/) — the probability cutoff companion.
-- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/) — conventional randomness knob.
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [XtcThreshold](/llm/net/developer-reference/parameters/sampler/xtc-threshold/): the probability cutoff companion.
+- [Temperature](/llm/net/developer-reference/parameters/sampler/temperature/): conventional randomness knob.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

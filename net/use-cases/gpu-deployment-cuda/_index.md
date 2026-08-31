@@ -7,7 +7,7 @@ url: /net/use-cases/gpu-deployment-cuda/
 feedback: LLMNET
 version: 26.5.0
 title: GPU deployment with CUDA
-description: Deploy Aspose.LLM for .NET on NVIDIA GPUs — select CUDA, offload all layers, configure multi-GPU split, and size VRAM for model + KV cache.
+description: Deploy Aspose.LLM for .NET on NVIDIA GPUs, select CUDA, offload all layers, configure multi-GPU split, and size VRAM for model + KV cache.
 keywords:
 - CUDA
 - NVIDIA
@@ -18,7 +18,7 @@ keywords:
 - VRAM
 ---
 
-CUDA is the fastest backend for Aspose.LLM for .NET on NVIDIA hardware. This use case walks through a production GPU deployment — single GPU, multi-GPU, and VRAM sizing.
+CUDA is the fastest backend for Aspose.LLM for .NET on NVIDIA hardware. This use case walks through a production GPU deployment: single GPU, multi-GPU, and VRAM sizing.
 
 ## When to use this pattern
 
@@ -84,12 +84,12 @@ The KV cache also consumes VRAM proportional to GPU-resident layers. Leave ~1-2 
 
 ## Multi-GPU split
 
-Two or more NVIDIA GPUs — distribute the model across them.
+Two or more NVIDIA GPUs: distribute the model across them.
 
 ```csharp
 using Aspose.LLM.Abstractions.Parameters;
 
-var preset = new Oss20Preset(); // 20B — typically needs 16-24 GB
+var preset = new Oss20Preset(); // 20B: typically needs 16-24 GB
 
 preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.CUDA;
 preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
@@ -117,7 +117,7 @@ If the cards differ (e.g., 24 GB RTX 4090 + 12 GB RTX 3080), bias the split towa
 ```csharp
 preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
-// 2:1 proportion — values normalized.
+// 2:1 proportion: values normalized.
 ```
 
 ## Select a specific GPU
@@ -229,13 +229,13 @@ Ensure the image ships with NVIDIA driver 525+ and CUDA runtime. Most GPU AMIs a
 
 ## Common issues
 
-- **CUDA binary downloaded, inference runs on CPU** — `GpuLayers = 0` or not set. Set to `999`.
-- **`cudaErrorInsufficientDriver`** — upgrade driver to 525+.
-- **Out-of-memory at load** — partial offload or smaller preset.
-- **Slower multi-GPU than expected** — switch from `LAYER` to `ROW` if GPUs have NVLink; otherwise `LAYER` is usually best.
+- **CUDA binary downloaded, inference runs on CPU**: `GpuLayers = 0` or not set. Set to `999`.
+- **`cudaErrorInsufficientDriver`**: upgrade driver to 525+.
+- **Out-of-memory at load**: partial offload or smaller preset.
+- **Slower multi-GPU than expected**: switch from `LAYER` to `ROW` if GPUs have NVLink; otherwise `LAYER` is usually best.
 
 ## What's next
 
-- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/) — full CUDA reference.
-- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `TensorSplit`, `SplitMode`, `MainGpu`.
-- [Context parameters](/llm/net/developer-reference/parameters/context/) — flash attention and KV dtype.
+- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/): full CUDA reference.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): `GpuLayers`, `TensorSplit`, `SplitMode`, `MainGpu`.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): flash attention and KV dtype.

@@ -7,7 +7,7 @@ url: /net/use-cases/system-prompt-recipes/
 feedback: LLMNET
 version: 26.5.0
 title: System prompt recipes
-description: Effective system prompts for Aspose.LLM for .NET chat sessions — concise assistant, structured output, role-play, tool-use stand-ins, and format enforcement.
+description: Effective system prompts for Aspose.LLM for .NET chat sessions, concise assistant, structured output, role-play, tool-use stand-ins, and format enforcement.
 keywords:
 - system prompt
 - prompt engineering
@@ -50,7 +50,7 @@ Cite the part of the question you are addressing in your first sentence.
 
 For reasoning-tuned models (DeepSeek-R1, Qwen3 with chain-of-thought), raise `MaxTokens` to 1024-2048.
 
-## Structured output — JSON
+## Structured output: JSON
 
 Ask for machine-readable output. Works best with low temperature.
 
@@ -73,7 +73,7 @@ preset.SamplerParameters.Temperature = 0.1f;
 preset.SamplerParameters.TopP = 0.9f;
 ```
 
-Validate the output on the caller side — the model can still misbehave and produce narrative text. Use a JSON parser with a fallback:
+Validate the output on the caller side: the model can still misbehave and produce narrative text. Use a JSON parser with a fallback:
 
 ```csharp
 string reply = await api.SendMessageAsync(userMessage);
@@ -88,7 +88,7 @@ catch (JsonException)
 }
 ```
 
-## Structured output — tagged lists
+## Structured output: tagged lists
 
 For simpler cases where JSON is overkill, use tags:
 
@@ -106,7 +106,7 @@ Easier to parse with regex; more forgiving of model mistakes.
 
 ```
 You are Ada Lovelace, a 19th-century mathematician. Speak in the register of
-that era — polite, precise, with occasional reference to analytical engines.
+that era: polite, precise, with occasional reference to analytical engines.
 Never break character.
 ```
 
@@ -121,7 +121,7 @@ You are a senior cloud architect specialized in AWS. Answer questions about
 AWS services, cost optimization, and security best practices.
 
 If a question is outside your domain (e.g., non-AWS topics, personal advice,
-general chit-chat), reply: "That's outside my domain — I can help with AWS."
+general chit-chat), reply: "That's outside my domain: I can help with AWS."
 ```
 
 ## Tool-use stand-in
@@ -164,14 +164,14 @@ Pair with low temperature and explicit rejection of malformed outputs on the cal
 You are a cautious assistant.
 
 If the user asks for:
-- Personal medical, legal, or financial advice — refuse and suggest consulting
+- Personal medical, legal, or financial advice: refuse and suggest consulting
   a qualified professional.
-- Instructions for harmful or illegal activities — refuse politely.
+- Instructions for harmful or illegal activities: refuse politely.
 
 For all other questions, be helpful and direct.
 ```
 
-This is a simple filter at the system level. It does not replace a proper moderation layer in production — it is a line of defense, not the only one.
+This is a simple filter at the system level. It does not replace a proper moderation layer in production: it is a line of defense, not the only one.
 
 ## Language enforcement
 
@@ -183,7 +183,7 @@ English. Only output the French translation.
 
 ## Few-shot priming via ChatParameters.History
 
-For tasks where the system prompt is not enough, pre-fill the history with worked examples. See [Chat parameters — History](/llm/net/developer-reference/parameters/chat/#history).
+For tasks where the system prompt is not enough, pre-fill the history with worked examples. See [Chat parameters: History](/llm/net/developer-reference/parameters/chat/#history).
 
 ```csharp
 using Aspose.LLM.Abstractions.Models;
@@ -202,12 +202,12 @@ Every new session starts after these examples. The model follows the pattern dem
 
 ## Model-specific notes
 
-- **Qwen3** — emits `<think>…</think>` blocks before answers. Raise `MaxTokens`; consider stripping think blocks in a custom `IPromptFormatter` (see [Custom prompt formatter](/llm/net/developer-reference/extensibility/custom-prompt-formatter/)).
-- **Gemma 3** — sometimes prefers an empty system prompt; test with `ChatParameters.SystemPrompt = ""`.
-- **DeepSeek-R1** — reasoning model. Same budget considerations as Qwen3.
+- **Qwen3**: emits `<think>…</think>` blocks before answers. Raise `MaxTokens`; consider stripping think blocks in a custom `IPromptFormatter` (see [Custom prompt formatter](/llm/net/developer-reference/extensibility/custom-prompt-formatter/)).
+- **Gemma 3**: sometimes prefers an empty system prompt; test with `ChatParameters.SystemPrompt = ""`.
+- **DeepSeek-R1**: reasoning model. Same budget considerations as Qwen3.
 
 ## What's next
 
-- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — `SystemPrompt`, `MaxTokens`, `CacheCleanupStrategy`.
-- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) — temperature and sampling knobs that interact with the system prompt.
-- [Custom preset](/llm/net/use-cases/custom-preset/) — build a reusable subclass with your favorite system prompt baked in.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/): `SystemPrompt`, `MaxTokens`, `CacheCleanupStrategy`.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/): temperature and sampling knobs that interact with the system prompt.
+- [Custom preset](/llm/net/use-cases/custom-preset/): build a reusable subclass with your favorite system prompt baked in.

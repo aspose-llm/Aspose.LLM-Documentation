@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/min-keep/
 feedback: LLMNET
 version: 26.5.0
 title: MinKeep
-description: Minimum candidate-count floor in Aspose.LLM for .NET — guarantees the sampler always has at least MinKeep tokens after all filters run.
+description: Minimum candidate-count floor in Aspose.LLM for .NET, guarantees the sampler always has at least MinKeep tokens after all filters run.
 keywords:
 - MinKeep
 - sampler
@@ -29,10 +29,10 @@ keywords:
 
 ## What it does
 
-After all filters run, count the surviving candidates. If the count is below `MinKeep`, the engine relaxes the filters to bring it back up to `MinKeep` — typically by reverting the last applied filter or by keeping the top-`MinKeep` candidates regardless of probability.
+After all filters run, count the surviving candidates. If the count is below `MinKeep`, the engine relaxes the filters to bring it back up to `MinKeep`: typically by reverting the last applied filter or by keeping the top-`MinKeep` candidates regardless of probability.
 
-- `MinKeep = 1` (default) — guarantees at least one token survives. Safe default; prevents the pathological case where every filter combines to produce zero candidates.
-- `MinKeep = 5` — always keep at least five candidates. Adds variety floor at the cost of filter tightness.
+- `MinKeep = 1` (default): guarantees at least one token survives. Safe default; prevents the pathological case where every filter combines to produce zero candidates.
+- `MinKeep = 5`: always keep at least five candidates. Adds variety floor at the cost of filter tightness.
 
 `MinKeep` is a backstop rather than a primary tuning knob. Most users leave it at the default.
 
@@ -41,10 +41,10 @@ After all filters run, count the surviving candidates. If the count is below `Mi
 | Scenario | Value |
 |---|---|
 | Default safe floor | `1` |
-| Guarantee variety even under strict filters | `3` – `5` |
+| Guarantee variety even under strict filters | `3` to `5` |
 | Very aggressive tightness with unusual filter combos | Keep at `1` or lower |
 
-Raising `MinKeep` effectively weakens the other filters in corner cases where they combine too tightly. Lowering is not useful — `1` is already the minimum meaningful value.
+Raising `MinKeep` effectively weakens the other filters in corner cases where they combine too tightly. Lowering is not useful: `1` is already the minimum meaningful value.
 
 ## Example
 
@@ -60,14 +60,14 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — `MinKeep` floors the candidate count regardless.
-- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/) — same — nucleus can't cut below `MinKeep`.
-- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/) — same.
-- [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/) — same.
-- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) — uses its own candidate-management algorithm; `MinKeep` is not relevant when Mirostat is active.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/): `MinKeep` floors the candidate count regardless.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/): same: nucleus can't cut below `MinKeep`.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/): same.
+- [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/): same.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/): uses its own candidate-management algorithm; `MinKeep` is not relevant when Mirostat is active.
 
 ## What's next
 
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [TopK](/llm/net/developer-reference/parameters/sampler/top-k/) — count-based filter that respects `MinKeep`.
-- [TopP](/llm/net/developer-reference/parameters/sampler/top-p/) — cumulative-mass filter that respects `MinKeep`.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs at a glance.
+- [TopK](/llm/net/developer-reference/parameters/sampler/top-k/): count-based filter that respects `MinKeep`.
+- [TopP](/llm/net/developer-reference/parameters/sampler/top-p/): cumulative-mass filter that respects `MinKeep`.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/binary-manager/binary-path/
 feedback: LLMNET
 version: 26.5.0
 title: BinaryPath
-description: Cache folder for native llama.cpp binaries in Aspose.LLM for .NET — defaults to a per-user cache; override for shared or pre-populated deployments.
+description: Cache folder for native llama.cpp binaries in Aspose.LLM for .NET, defaults to a per-user cache; override for shared or pre-populated deployments.
 keywords:
 - BinaryPath
 - native binary cache
@@ -64,11 +64,11 @@ preset.EngineParameters.ModelCachePath = "/opt/aspose-llm/models";
 
 ## Interactions
 
-- [`ReleaseTag`](/llm/net/developer-reference/parameters/binary-manager/release-tag/) — cache is subdivided per tag.
-- [`PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — cache also subdivides per acceleration.
-- [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/model-cache-path/) — separate cache for model files.
+- [`ReleaseTag`](/llm/net/developer-reference/parameters/binary-manager/release-tag/): cache is subdivided per tag.
+- [`PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/): cache also subdivides per acceleration.
+- [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/model-cache-path/): separate cache for model files.
 
 ## What's next
 
-- [Offline deployment](/llm/net/use-cases/offline-deployment/) — pre-populating `BinaryPath`.
-- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/): pre-populating `BinaryPath`.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/): all binary-manager knobs.

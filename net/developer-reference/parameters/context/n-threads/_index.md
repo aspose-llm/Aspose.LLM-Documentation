@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/n-threads/
 feedback: LLMNET
 version: 26.5.0
 title: NThreads
-description: CPU thread count for per-token generation in Aspose.LLM for .NET — affects throughput during sequential decoding.
+description: CPU thread count for per-token generation in Aspose.LLM for .NET, affects throughput during sequential decoding.
 keywords:
 - NThreads
 - CPU threads
@@ -16,7 +16,7 @@ keywords:
 - throughput
 ---
 
-`NThreads` is the number of CPU threads the engine uses during **generation** — when producing each output token sequentially. Generation is bandwidth-bound and often does not benefit from all available cores.
+`NThreads` is the number of CPU threads the engine uses during **generation**: when producing each output token sequentially. Generation is bandwidth-bound and often does not benefit from all available cores.
 
 ## Quick reference
 
@@ -32,9 +32,9 @@ keywords:
 
 During the generation phase (token-by-token decode), the engine distributes matrix multiplications across `NThreads` CPU threads. When `null`, it uses [`EngineParameters.DefaultThreads`](/llm/net/developer-reference/parameters/engine/), which defaults to `ProcessorCount - 1`.
 
-- `NThreads = 4` — decent for 4-core machines; use most cores.
-- `NThreads = 8` — common sweet spot on mainstream desktop CPUs.
-- `NThreads = 16+` — diminishing returns; sometimes slower due to cache contention and memory-bandwidth saturation.
+- `NThreads = 4`: decent for 4-core machines; use most cores.
+- `NThreads = 8`: common sweet spot on mainstream desktop CPUs.
+- `NThreads = 16+`: diminishing returns; sometimes slower due to cache contention and memory-bandwidth saturation.
 
 Unlike prompt processing (which scales well with more threads), generation often peaks at 8-12 threads and degrades with more. Benchmark on your hardware.
 
@@ -43,12 +43,12 @@ Unlike prompt processing (which scales well with more threads), generation often
 | Scenario | Value |
 |---|---|
 | Default | `null` (use `DefaultThreads`) |
-| Laptop / 4-8 core | `4` – `6` |
-| Mainstream desktop | `8` – `10` |
-| High-core server (but avoid over-allocation) | `10` – `16` |
+| Laptop / 4-8 core | `4` to `6` |
+| Mainstream desktop | `8` to `10` |
+| High-core server (but avoid over-allocation) | `10` to `16` |
 | Competing with other CPU workloads | Cap explicitly to half `ProcessorCount` |
 
-Set `NThreads` and [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) separately — generation and prompt processing have different optima.
+Set `NThreads` and [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) separately: generation and prompt processing have different optima.
 
 ## Example
 
@@ -62,12 +62,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`EngineParameters.DefaultThreads`](/llm/net/developer-reference/parameters/engine/) — fallback when `NThreads` is null.
-- [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads.
-- CPU acceleration — `NThreads` has no effect when GPU offload is active for every layer.
+- [`EngineParameters.DefaultThreads`](/llm/net/developer-reference/parameters/engine/): fallback when `NThreads` is null.
+- [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/): prompt-processing threads.
+- CPU acceleration: `NThreads` has no effect when GPU offload is active for every layer.
 
 ## What's next
 
-- [NThreadsBatch](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing variant.
-- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/) — how threading interacts with AVX variants.
-- [Performance issues](/llm/net/troubleshooting/performance-issues/) — thread-related throughput issues.
+- [NThreadsBatch](/llm/net/developer-reference/parameters/context/n-threads-batch/): prompt-processing variant.
+- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/): how threading interacts with AVX variants.
+- [Performance issues](/llm/net/troubleshooting/performance-issues/): thread-related throughput issues.

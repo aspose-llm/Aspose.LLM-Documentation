@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/embeddings/
 feedback: LLMNET
 version: 26.5.0
 title: Embeddings
-description: Enable embedding extraction in Aspose.LLM for .NET — switches the model into embedding-output mode alongside or instead of logits.
+description: Enable embedding extraction in Aspose.LLM for .NET, switches the model into embedding-output mode alongside or instead of logits.
 keywords:
 - Embeddings
 - embedding extraction
@@ -28,8 +28,8 @@ keywords:
 
 ## What it does
 
-- `null` or `false` — standard generation mode. Only logits are produced; no embedding extraction.
-- `true` — the engine configures the pipeline to output embeddings per input.
+- `null` or `false`: standard generation mode. Only logits are produced; no embedding extraction.
+- `true`: the engine configures the pipeline to output embeddings per input.
 
 Embeddings are typically used for semantic search, clustering, classification, or as retrieval keys in RAG systems. The SDK's current chat API (`SendMessageAsync`) focuses on text generation; embedding workflows require reaching into the `Engine` and `ChatSession` APIs directly.
 
@@ -58,11 +58,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`PoolingType`](/llm/net/developer-reference/parameters/context/pooling-type/) — reducer for token-level embeddings.
-- [`AttentionType`](/llm/net/developer-reference/parameters/context/attention-type/) — usually `NonCausal` for embedding-only models.
+- [`PoolingType`](/llm/net/developer-reference/parameters/context/pooling-type/): reducer for token-level embeddings.
+- [`AttentionType`](/llm/net/developer-reference/parameters/context/attention-type/): usually `NonCausal` for embedding-only models.
 
 ## What's next
 
-- [PoolingType](/llm/net/developer-reference/parameters/context/pooling-type/) — pooling strategy.
-- [AttentionType](/llm/net/developer-reference/parameters/context/attention-type/) — attention direction.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [PoolingType](/llm/net/developer-reference/parameters/context/pooling-type/): pooling strategy.
+- [AttentionType](/llm/net/developer-reference/parameters/context/attention-type/): attention direction.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

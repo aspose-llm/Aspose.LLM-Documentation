@@ -7,7 +7,7 @@ url: /net/use-cases/long-context-tuning/
 feedback: LLMNET
 version: 26.5.0
 title: Long context tuning
-description: Configure Aspose.LLM for .NET for 128K-262K contexts — pick the right preset, enable flash attention, quantize the KV cache, and manage memory.
+description: Configure Aspose.LLM for .NET for 128K-262K contexts, pick the right preset, enable flash attention, quantize the KV cache, and manage memory.
 keywords:
 - long context
 - 128K
@@ -18,7 +18,7 @@ keywords:
 - rope scaling
 ---
 
-Several built-in presets support very long contexts: `Llama32Preset` (131K), `Oss20Preset` (131K), `DeepSeekCoder2Preset` (163K), `Qwen3VL2BPreset` (262K), `Ministral3VisionPreset` (262K). Running them at full context takes specific tuning — flash attention, KV dtype, sometimes YaRN.
+Several built-in presets support very long contexts: `Llama32Preset` (131K), `Oss20Preset` (131K), `DeepSeekCoder2Preset` (163K), `Qwen3VL2BPreset` (262K), `Ministral3VisionPreset` (262K). Running them at full context takes specific tuning: flash attention, KV dtype, sometimes YaRN.
 
 ## When to use this pattern
 
@@ -54,7 +54,7 @@ using Aspose.LLM.Abstractions.Models;
 preset.ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled;
 ```
 
-Without flash attention, KV reads scale quadratically with context size — it is effectively unworkable past ~32K tokens.
+Without flash attention, KV reads scale quadratically with context size: it is effectively unworkable past ~32K tokens.
 
 ## Quantize the KV cache
 
@@ -65,7 +65,7 @@ preset.ContextParameters.TypeK = GgmlType.F16;   // keep K precise
 preset.ContextParameters.TypeV = GgmlType.Q8_0;  // quantize V aggressively
 ```
 
-V is less sensitive than K — quantizing V to Q8_0 has minor quality impact; quantizing K to Q8 has a visible impact. Start with `TypeV = Q8_0` and leave `TypeK = F16` unless memory demands more.
+V is less sensitive than K: quantizing V to Q8_0 has minor quality impact; quantizing K to Q8 has a visible impact. Start with `TypeV = Q8_0` and leave `TypeK = F16` unless memory demands more.
 
 ## Use the full context window
 
@@ -93,7 +93,7 @@ Rough table for a 7B model (32 layers, 32 heads × 128 dim) at 131K context:
 
 That number is misleading because `llama.cpp` implements grouped-query attention and compressed layouts; real-world KV cache for a 7B at 131K is more like **8-16 GB F16**. Benchmark on your hardware rather than computing from first principles.
 
-## Full example — document summarization
+## Full example: document summarization
 
 ```csharp
 using Aspose.LLM;
@@ -108,7 +108,7 @@ preset.ChatParameters.SystemPrompt =
     "You summarize long documents. Produce a concise 5-bullet summary of the key points.";
 preset.ChatParameters.MaxTokens = 512;
 
-// Enable flash attention — essential at long contexts.
+// Enable flash attention: essential at long contexts.
 preset.ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled;
 
 // Quantize V cache to save VRAM.
@@ -150,7 +150,7 @@ preset.ContextParameters.YarnOrigCtx = 32768; // the model's original training l
 preset.ContextParameters.ContextSize = 131072; // where you want to go
 ```
 
-Built-in presets with long contexts do not need this — they are trained on or calibrated for their declared `ContextSize`.
+Built-in presets with long contexts do not need this: they are trained on or calibrated for their declared `ContextSize`.
 
 ## Performance at long contexts
 
@@ -160,10 +160,10 @@ Throughput drops as context grows. A typical pattern:
 - At 32K: 40-60 t/s.
 - At 131K: 10-25 t/s.
 
-Budget time for the **first** response — filling a 131K context takes tens of seconds to minutes even on fast GPUs. Subsequent turns in the same session reuse the KV cache and are much faster.
+Budget time for the **first** response: filling a 131K context takes tens of seconds to minutes even on fast GPUs. Subsequent turns in the same session reuse the KV cache and are much faster.
 
 ## What's next
 
-- [Context parameters](/llm/net/developer-reference/parameters/context/) — full list of context knobs.
-- [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/) — when long context is not worth the memory cost.
-- [Cache management](/llm/net/developer-reference/cache-management/) — keep sessions fresh over time.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): full list of context knobs.
+- [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/): when long context is not worth the memory cost.
+- [Cache management](/llm/net/developer-reference/cache-management/): keep sessions fresh over time.

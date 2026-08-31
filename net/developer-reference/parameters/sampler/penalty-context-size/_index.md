@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/penalty-context-size/
 feedback: LLMNET
 version: 26.5.0
 title: PenaltyContextSize
-description: Window size in Aspose.LLM for .NET over which repetition, presence, and frequency penalties are computed — how many recent tokens count.
+description: Window size in Aspose.LLM for .NET over which repetition, presence, and frequency penalties are computed, how many recent tokens count.
 keywords:
 - PenaltyContextSize
 - penalty window
@@ -32,9 +32,9 @@ keywords:
 
 Before each sampling step, the three penalty knobs ([`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/), [`PresencePenalty`](/llm/net/developer-reference/parameters/sampler/presence-penalty/), [`FrequencyPenalty`](/llm/net/developer-reference/parameters/sampler/frequency-penalty/)) need to know which prior tokens to examine. `PenaltyContextSize` defines that window.
 
-- `PenaltyContextSize = -1` — use the full context (equivalent to `ContextParameters.ContextSize`). Maximum recall; penalties apply across the entire conversation.
-- `PenaltyContextSize = 256` — only the last 256 tokens contribute. Penalties are local; the model can freely reuse words that appeared earlier than that.
-- `PenaltyContextSize = 64` — very local window; penalties essentially prevent immediate repetition only.
+- `PenaltyContextSize = -1`: use the full context (equivalent to `ContextParameters.ContextSize`). Maximum recall; penalties apply across the entire conversation.
+- `PenaltyContextSize = 256`: only the last 256 tokens contribute. Penalties are local; the model can freely reuse words that appeared earlier than that.
+- `PenaltyContextSize = 64`: very local window; penalties essentially prevent immediate repetition only.
 
 Narrow windows make penalties local (avoid recent verbatim repeats); wide windows make them global (avoid any mention of a token anywhere in history).
 
@@ -42,8 +42,8 @@ Narrow windows make penalties local (avoid recent verbatim repeats); wide window
 
 | Scenario | Value |
 |---|---|
-| Default — penalize repetition across full context | `-1` |
-| Fresh-style writing that can revisit topics | `256` – `512` |
+| Default: penalize repetition across full context | `-1` |
+| Fresh-style writing that can revisit topics | `256` to `512` |
 | Strict anti-repetition for short outputs | `128` |
 | Very local penalty (only consecutive repeats) | `64` |
 
@@ -62,13 +62,13 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — applied within this window.
-- [`PresencePenalty`](/llm/net/developer-reference/parameters/sampler/presence-penalty/) — same window.
-- [`FrequencyPenalty`](/llm/net/developer-reference/parameters/sampler/frequency-penalty/) — same window.
-- [`ContextParameters.ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — upper bound; at `-1`, `PenaltyContextSize` equals this.
+- [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/): applied within this window.
+- [`PresencePenalty`](/llm/net/developer-reference/parameters/sampler/presence-penalty/): same window.
+- [`FrequencyPenalty`](/llm/net/developer-reference/parameters/sampler/frequency-penalty/): same window.
+- [`ContextParameters.ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): upper bound; at `-1`, `PenaltyContextSize` equals this.
 
 ## What's next
 
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — the main penalty that uses this window.
-- [Garbled output — repetition loops](/llm/net/troubleshooting/garbled-output/) — when penalty tuning helps.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs at a glance.
+- [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/): the main penalty that uses this window.
+- [Garbled output: repetition loops](/llm/net/troubleshooting/garbled-output/): when penalty tuning helps.

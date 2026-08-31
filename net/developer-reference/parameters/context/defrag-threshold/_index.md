@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/defrag-threshold/
 feedback: LLMNET
 version: 26.5.0
 title: DefragThreshold
-description: KV cache defragmentation trigger in Aspose.LLM for .NET — fraction of holes above which the engine compacts the cache. Negative disables.
+description: KV cache defragmentation trigger in Aspose.LLM for .NET, fraction of holes above which the engine compacts the cache. Negative disables.
 keywords:
 - DefragThreshold
 - defragmentation
@@ -22,8 +22,8 @@ keywords:
 | | |
 |---|---|
 | **Type** | `float?` |
-| **Default** | `null` (disabled — same as negative value) |
-| **Range** | `< 0` = disabled; `0.0` – `1.0` enables |
+| **Default** | `null` (disabled: same as negative value) |
+| **Range** | `< 0` = disabled; `0.0` to `1.0` enables |
 | **Category** | KV cache maintenance |
 | **Field on** | `ContextParameters.DefragThreshold` |
 
@@ -31,10 +31,10 @@ keywords:
 
 When messages are evicted from the KV cache (by [`CacheCleanupStrategy`](/llm/net/developer-reference/parameters/chat/)), their slots become holes. Over many cycles, the cache may hold scattered used slots interspersed with holes, wasting capacity.
 
-If `DefragThreshold` is set, the engine monitors the hole fraction. When it crosses the threshold, the engine compacts the cache — moves live tokens together and frees the tail.
+If `DefragThreshold` is set, the engine monitors the hole fraction. When it crosses the threshold, the engine compacts the cache: moves live tokens together and frees the tail.
 
-- `null` or negative — disabled. Cache is never compacted.
-- `0.1` – `0.5` — typical active values. Compact when 10-50 % of the cache is holes.
+- `null` or negative: disabled. Cache is never compacted.
+- `0.1` to `0.5`: typical active values. Compact when 10-50 % of the cache is holes.
 
 ## When to change it
 
@@ -56,10 +56,10 @@ preset.ContextParameters.DefragThreshold = 0.3f;
 
 ## Interactions
 
-- [`CacheCleanupStrategy`](/llm/net/developer-reference/parameters/chat/) — the policy that creates the holes defrag compacts.
-- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — larger caches benefit more from defrag.
+- [`CacheCleanupStrategy`](/llm/net/developer-reference/parameters/chat/): the policy that creates the holes defrag compacts.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): larger caches benefit more from defrag.
 
 ## What's next
 
-- [Cache management](/llm/net/developer-reference/cache-management/) — cleanup strategies and compaction together.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [Cache management](/llm/net/developer-reference/cache-management/): cleanup strategies and compaction together.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

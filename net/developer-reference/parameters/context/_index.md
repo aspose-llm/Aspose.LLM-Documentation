@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/
 feedback: LLMNET
 version: 26.5.0
 title: Context parameters
-description: Reference for Aspose.LLM for .NET context parameters — context size, batch, threading, rope/YaRN scaling, flash attention, KV cache types.
+description: Reference for Aspose.LLM for .NET context parameters, context size, batch, threading, rope/YaRN scaling, flash attention, KV cache types.
 keywords:
 - ContextParameters
 - ContextSize
@@ -23,7 +23,7 @@ keywords:
 - pooling
 ---
 
-`ContextParameters` mirrors `llama_context_params` in `llama.cpp`. It controls the shape of the runtime context — how many tokens the model can attend to, how batching is sized, how threads are split, how RoPE scaling stretches the context window, how flash attention is used, and how the KV cache is stored.
+`ContextParameters` mirrors `llama_context_params` in `llama.cpp`. It controls the shape of the runtime context: how many tokens the model can attend to, how batching is sized, how threads are split, how RoPE scaling stretches the context window, how flash attention is used, and how the KV cache is stored.
 
 This is the largest parameter bag. Most fields are nullable; `null` means "use the native default" or "derive from the model". Touch these values only when you know what you are changing.
 
@@ -101,7 +101,7 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 
 ### `ContextSize`
 
-Length of the context window in tokens — the maximum number of tokens the model sees at once. Set to `null` (or `0`) to use the model's maximum from its GGUF metadata.
+Length of the context window in tokens: the maximum number of tokens the model sees at once. Set to `null` (or `0`) to use the model's maximum from its GGUF metadata.
 
 Built-in presets pre-set this: `Qwen25Preset` uses 32 768, `Llama32Preset` uses 131 072, `Oss20Preset` uses 131 072. See [Supported presets](/llm/net/product-overview/supported-presets/) for each default.
 
@@ -113,7 +113,7 @@ preset.ContextParameters.ContextSize = 8192; // save memory for short conversati
 
 ### `NBatch`
 
-Logical maximum batch size — the largest number of tokens submitted in one `llama_decode` call. Affects prompt-processing throughput.
+Logical maximum batch size: the largest number of tokens submitted in one `llama_decode` call. Affects prompt-processing throughput.
 
 Typical values: 512 - 4096. Larger `NBatch` speeds up prompt processing but needs more temporary memory.
 
@@ -121,7 +121,7 @@ Built-in presets use `NBatch` between 2 048 and 4 096 depending on model and con
 
 ### `NUbatch`
 
-Physical maximum batch size — the largest chunk actually processed per kernel call. Normally `NUbatch ≤ NBatch`. `NUbatch` ≈ `NBatch` for simplicity on most deployments; different values apply only to specific multi-sequence scenarios.
+Physical maximum batch size: the largest chunk actually processed per kernel call. Normally `NUbatch ≤ NBatch`. `NUbatch` ≈ `NBatch` for simplicity on most deployments; different values apply only to specific multi-sequence scenarios.
 
 ### `NSeqMax`
 
@@ -159,7 +159,7 @@ Scaling algorithm.
 | `Unspecified` (`-1`) | Use the model default (usually what you want). |
 | `None` | Disable RoPE scaling. |
 | `Linear` | Linear interpolation scaling. |
-| `Yarn` | YaRN scaling — better quality at long contexts. |
+| `Yarn` | YaRN scaling: better quality at long contexts. |
 | `LongRope` | LongRoPE scaling for very extended contexts. |
 
 ### `RopeFreqBase` and `RopeFreqScale`
@@ -253,7 +253,7 @@ Common values (full enum has 30+ entries; see the [API reference](/llm/net/devel
 | `Q5_1` | 5 | ~0.16× | More compact; quality drop noticeable on long contexts. |
 | `Q4_0` | 4 | ~0.125× | Aggressive quantization; only for memory-tight deployments. |
 
-Rule of thumb: **quantize V more aggressively than K** — V is less sensitive to precision.
+Rule of thumb: **quantize V more aggressively than K**: V is less sensitive to precision.
 
 ```csharp
 preset.ContextParameters.TypeK = GgmlType.F16;
@@ -270,7 +270,7 @@ Disable only when you are fighting for a sliver of VRAM and willing to trade thr
 
 Threshold (fraction of holes) above which the engine defragments the KV cache. Negative = disabled (default).
 
-Set to `0.1` - `0.5` for long-running services that churn sessions — keeps KV memory compact over time.
+Set to `0.1` - `0.5` for long-running services that churn sessions: keeps KV memory compact over time.
 
 ### `SwaFull`
 
@@ -288,7 +288,7 @@ Offload host tensor operations to the device. Supplementary to `GpuLayers` in [`
 
 ### `NoPerf`
 
-When `true`, the engine stops collecting performance timings. A micro-optimization for high-throughput production — shaves a small amount of overhead.
+When `true`, the engine stops collecting performance timings. A micro-optimization for high-throughput production: shaves a small amount of overhead.
 
 ## Typical recipes
 
@@ -346,10 +346,10 @@ preset.ContextParameters.PoolingType = PoolingType.Mean;
 preset.ContextParameters.AttentionType = AttentionType.NonCausal;
 ```
 
-Chat APIs are not the right surface for embedding workflows — this recipe is preparation for a dedicated embeddings API that will be covered in a future release.
+Chat APIs are not the right surface for embedding workflows: this recipe is preparation for a dedicated embeddings API that will be covered in a future release.
 
 ## What's next
 
-- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — GPU layers and tensor split that complement context KV settings.
-- [Chat parameters](/llm/net/developer-reference/parameters/chat/) — per-session max tokens and cache cleanup strategy.
-- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/) — how the engine picks tokens within the context.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): GPU layers and tensor split that complement context KV settings.
+- [Chat parameters](/llm/net/developer-reference/parameters/chat/): per-session max tokens and cache cleanup strategy.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/): how the engine picks tokens within the context.

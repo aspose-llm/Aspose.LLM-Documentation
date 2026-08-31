@@ -7,7 +7,7 @@ url: /net/troubleshooting/
 feedback: LLMNET
 version: 26.5.0
 title: Troubleshooting
-description: Diagnose and fix common Aspose.LLM for .NET problems — binary download failures, out-of-memory, GPU detection, model load, garbled output, license, performance.
+description: Diagnose and fix common Aspose.LLM for .NET problems, binary download failures, out-of-memory, GPU detection, model load, garbled output, license, performance.
 keywords:
 - troubleshooting
 - errors
@@ -24,7 +24,7 @@ Pick the page that matches your symptom from the [topics list](#topics). If none
 
 Before diving into a specific page, confirm the basics. The majority of tickets sent to support turn out to be one of these:
 
-- **License applied**: `Aspose.LLM.License.IsLicensed` returns `true` before any chat method is called. The SDK does not run inference in evaluation mode — see [License errors](/llm/net/troubleshooting/license-errors/).
+- **License applied**: `Aspose.LLM.License.IsLicensed` returns `true` before any chat method is called. The SDK does not run inference in evaluation mode: see [License errors](/llm/net/troubleshooting/license-errors/).
 - **Debug logging on**: set `EngineParameters.EnableDebugLogging = true` and pass an `ILogger` to `AsposeLLMApi.Create(preset, logger)`. Native tagged lines (`[MM]`, `[CTX]`, `[KV]`) reveal where a failure happens. See [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/).
 - **Known good preset**: reproduce with a built-in preset like `Qwen25Preset` before suspecting the SDK. Custom presets or manual overrides are the most common source of garbled output.
 - **Minimal repro**: strip down to the smallest possible snippet that fails. If the minimal snippet passes, the problem is in your integration, not the SDK.
@@ -51,7 +51,7 @@ Walk this decision tree when the symptom is not obvious.
    - Truncated mid-sentence → raise `ChatParameters.MaxTokens`; see [Chat parameters](/llm/net/developer-reference/parameters/chat/).
 
 5. **Does memory grow across long sessions?**
-   - Yes → tune cache cleanup — see [Cache management](/llm/net/developer-reference/cache-management/) and [Out of memory](/llm/net/troubleshooting/out-of-memory/).
+   - Yes → tune cache cleanup: see [Cache management](/llm/net/developer-reference/cache-management/) and [Out of memory](/llm/net/troubleshooting/out-of-memory/).
 
 ## Symptom → page shortcut
 
@@ -69,13 +69,13 @@ Walk this decision tree when the symptom is not obvious.
 
 ## Topics
 
-- [Binary download fails](/llm/net/troubleshooting/binary-download-fails/) — `BinaryManager` cannot reach GitHub, TLS interception, disk space.
-- [Out of memory](/llm/net/troubleshooting/out-of-memory/) — GPU VRAM, system RAM, KV cache growth.
-- [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/) — driver, CUDA version, `PreferredAcceleration`, container flags.
-- [Model not loading](/llm/net/troubleshooting/model-not-loading/) — corrupt GGUF, unsupported architecture, wrong file name.
-- [Garbled output](/llm/net/troubleshooting/garbled-output/) — template mismatch, repetition loops, truncation, vision misalignment.
-- [License errors](/llm/net/troubleshooting/license-errors/) — missing `SetLicense`, expired temporary license, embedded resource mis-naming.
-- [Performance issues](/llm/net/troubleshooting/performance-issues/) — low throughput, latency spikes, thread contention, thermal throttling.
+- [Binary download fails](/llm/net/troubleshooting/binary-download-fails/): `BinaryManager` cannot reach GitHub, TLS interception, disk space.
+- [Out of memory](/llm/net/troubleshooting/out-of-memory/): GPU VRAM, system RAM, KV cache growth.
+- [GPU not detected](/llm/net/troubleshooting/gpu-not-detected/): driver, CUDA version, `PreferredAcceleration`, container flags.
+- [Model not loading](/llm/net/troubleshooting/model-not-loading/): corrupt GGUF, unsupported architecture, wrong file name.
+- [Garbled output](/llm/net/troubleshooting/garbled-output/): template mismatch, repetition loops, truncation, vision misalignment.
+- [License errors](/llm/net/troubleshooting/license-errors/): missing `SetLicense`, expired temporary license, embedded resource mis-naming.
+- [Performance issues](/llm/net/troubleshooting/performance-issues/): low throughput, latency spikes, thread contention, thermal throttling.
 
 ## Asking for help
 
@@ -93,6 +93,6 @@ For paid support, use the [Aspose Helpdesk](https://helpdesk.aspose.com/).
 
 ## What's next
 
-- [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/) — tagged log taxonomy and `parse_mm_logs.zsh` helper.
-- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnosis.
-- [How-to recipes](/llm/net/how-to/) — related task-focused guides.
+- [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/): tagged log taxonomy and `parse_mm_logs.zsh` helper.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): multimodal-specific diagnosis.
+- [How-to recipes](/llm/net/how-to/): related task-focused guides.

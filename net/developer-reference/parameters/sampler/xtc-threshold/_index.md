@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/xtc-threshold/
 feedback: LLMNET
 version: 26.5.0
 title: XtcThreshold
-description: Probability threshold for the XTC sampler in Aspose.LLM for .NET — tokens above this probability can be excluded when XTC fires.
+description: Probability threshold for the XTC sampler in Aspose.LLM for .NET, tokens above this probability can be excluded when XTC fires.
 keywords:
 - XtcThreshold
 - XTC
@@ -24,7 +24,7 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `0.0` |
-| **Range** | `0.0` – `1.0` |
+| **Range** | `0.0` to `1.0` |
 | **Category** | Advanced / diversity |
 | **Field on** | `SamplerParameters.XtcThreshold` |
 
@@ -32,10 +32,10 @@ keywords:
 
 When XTC fires at a step, the engine excludes every token whose probability exceeds `XtcThreshold`:
 
-- `XtcThreshold = 0.0` — any token with non-zero probability can be excluded. Very aggressive.
-- `XtcThreshold = 0.1` — only tokens above 10 % probability are exclusion candidates. Mild.
-- `XtcThreshold = 0.3` — only dominant tokens (>30 % probability) get excluded. Very selective.
-- `XtcThreshold = 1.0` — nothing can be excluded; XTC effectively does nothing.
+- `XtcThreshold = 0.0`: any token with non-zero probability can be excluded. Very aggressive.
+- `XtcThreshold = 0.1`: only tokens above 10 % probability are exclusion candidates. Mild.
+- `XtcThreshold = 0.3`: only dominant tokens (>30 % probability) get excluded. Very selective.
+- `XtcThreshold = 1.0`: nothing can be excluded; XTC effectively does nothing.
 
 Raise `XtcThreshold` when XTC is producing too much noise (excluding too many tokens); lower it for stronger diversity injection.
 
@@ -44,8 +44,8 @@ Raise `XtcThreshold` when XTC is producing too much noise (excluding too many to
 | Scenario | Value |
 |---|---|
 | Default | `0.0` |
-| Target only dominant tokens | `0.1` – `0.2` |
-| Target only near-certain tokens | `0.3` – `0.5` |
+| Target only dominant tokens | `0.1` to `0.2` |
+| Target only near-certain tokens | `0.3` to `0.5` |
 | Effectively disable (keep `XtcProbability` for logging) | `1.0` |
 
 `XtcThreshold` tunes "which tokens XTC may touch". `XtcProbability` tunes "how often XTC runs at all".
@@ -63,10 +63,10 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`XtcProbability`](/llm/net/developer-reference/parameters/sampler/xtc-probability/) — gate; `XtcThreshold` only matters when XTC fires.
-- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/), [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/), [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/) — apply before XTC.
+- [`XtcProbability`](/llm/net/developer-reference/parameters/sampler/xtc-probability/): gate; `XtcThreshold` only matters when XTC fires.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/), [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/), [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/): apply before XTC.
 
 ## What's next
 
-- [XtcProbability](/llm/net/developer-reference/parameters/sampler/xtc-probability/) — enables XTC.
-- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [XtcProbability](/llm/net/developer-reference/parameters/sampler/xtc-probability/): enables XTC.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

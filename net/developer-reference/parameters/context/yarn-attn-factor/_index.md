@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/yarn-attn-factor/
 feedback: LLMNET
 version: 26.5.0
 title: YarnAttnFactor
-description: YaRN magnitude scaling factor in Aspose.LLM for .NET — scales attention magnitudes at long positions; leave null to use the model default.
+description: YaRN magnitude scaling factor in Aspose.LLM for .NET, scales attention magnitudes at long positions; leave null to use the model default.
 keywords:
 - YarnAttnFactor
 - YaRN
@@ -23,7 +23,7 @@ keywords:
 |---|---|
 | **Type** | `float?` |
 | **Default** | `null` (use model default) |
-| **Range** | Typical `1.0` – `1.5` |
+| **Range** | Typical `1.0` to `1.5` |
 | **Category** | YaRN position encoding |
 | **Field on** | `ContextParameters.YarnAttnFactor` |
 
@@ -31,8 +31,8 @@ keywords:
 
 As positions grow beyond the training window, YaRN mathematically applies a scaling to attention magnitudes. `YarnAttnFactor` controls this. The YaRN paper derives a value like `0.1 × log(scale) + 1.0` as a reasonable choice; the model's metadata usually carries the correct value.
 
-- `null` — use model default (recommended).
-- Specific float — override.
+- `null`: use model default (recommended).
+- Specific float: override.
 
 ## When to change it
 
@@ -48,15 +48,15 @@ Rarely touched in production.
 ```csharp
 var preset = new Llama32Preset();
 preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
-// preset.ContextParameters.YarnAttnFactor = null; // default — from model
+// preset.ContextParameters.YarnAttnFactor = null; // default: from model
 ```
 
 ## Interactions
 
-- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/): must be `Yarn`.
 - Other YaRN knobs operate together.
 
 ## What's next
 
-- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/) — the primary YaRN field you might touch.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/): the primary YaRN field you might touch.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

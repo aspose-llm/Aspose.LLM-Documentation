@@ -7,7 +7,7 @@ url: /net/developer-reference/chat-sessions/chat-history/
 feedback: LLMNET
 version: 26.5.0
 title: Chat history structure
-description: ChatMessage type reference in Aspose.LLM for .NET — roles, media attachments, and KV cache tracking fields used to locate and evict messages from the native KV region.
+description: ChatMessage type reference in Aspose.LLM for .NET, roles, media attachments, and KV cache tracking fields used to locate and evict messages from the native KV region.
 keywords:
 - ChatMessage
 - chat history
@@ -65,7 +65,7 @@ public class ChatMessage
 | `"user"` | `CreateUserMessage` | The human side of the dialogue. |
 | `"assistant"` | `CreateAssistantMessage` | The model's previous replies. |
 
-Use the factory methods rather than constructing `ChatMessage` manually — they set `Role` correctly and accept media as params.
+Use the factory methods rather than constructing `ChatMessage` manually: they set `Role` correctly and accept media as params.
 
 ## Media attachments
 
@@ -80,12 +80,12 @@ See [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/
 
 Helpers:
 
-- `HasMedia` — `true` when the list has at least one attachment.
-- `TotalMediaSize` — sum of attachment byte lengths.
+- `HasMedia`: `true` when the list has at least one attachment.
+- `TotalMediaSize`: sum of attachment byte lengths.
 
 ## KV cache tracking fields
 
-Three integer fields track how the message sits in the native KV cache. You do not set these yourself — the engine manages them. They are visible because session persistence serializes them, and the cache-cleanup policy uses them to decide what to evict.
+Three integer fields track how the message sits in the native KV cache. You do not set these yourself: the engine manages them. They are visible because session persistence serializes them, and the cache-cleanup policy uses them to decide what to evict.
 
 | Field | Default | Meaning |
 |---|---:|---|
@@ -108,7 +108,7 @@ Throws `InvalidOperationException` on failure. The engine calls `Validate` autom
 
 ## Text-only copies
 
-`ToTextOnly` returns a copy without media — useful for logging or display where you need the text but want to discard image bytes.
+`ToTextOnly` returns a copy without media: useful for logging or display where you need the text but want to discard image bytes.
 
 ```csharp
 var textCopy = message.ToTextOnly();
@@ -134,11 +134,11 @@ Every new session created from this preset starts with these three turns. This i
 
 ## Inspecting a live session's history
 
-The runtime history of an active session is accessible via the `IChatSession` interface when you reach the engine directly through DI. From the facade (`AsposeLLMApi`), history inspection is not exposed in the current version — use session persistence (`SaveChatSession`) to snapshot a session when you need to examine it.
+The runtime history of an active session is accessible via the `IChatSession` interface when you reach the engine directly through DI. From the facade (`AsposeLLMApi`), history inspection is not exposed in the current version: use session persistence (`SaveChatSession`) to snapshot a session when you need to examine it.
 
 ## What's next
 
-- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle.
-- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — `MediaAttachment` details.
-- [Cache management](/llm/net/developer-reference/cache-management/) — how the `KV*` fields drive eviction.
-- [Session persistence](/llm/net/developer-reference/session-persistence/) — save/load and the nuance around restored sessions.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): session lifecycle.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/): `MediaAttachment` details.
+- [Cache management](/llm/net/developer-reference/cache-management/): how the `KV*` fields drive eviction.
+- [Session persistence](/llm/net/developer-reference/session-persistence/): save/load and the nuance around restored sessions.

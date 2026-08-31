@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/mirostat/
 feedback: LLMNET
 version: 26.5.0
 title: Mirostat
-description: Adaptive entropy-targeting sampler in Aspose.LLM for .NET — mode 0 disables, 1 = Mirostat 1.0, 2 = Mirostat 2.0 (usually preferred).
+description: Adaptive entropy-targeting sampler in Aspose.LLM for .NET, mode 0 disables, 1 = Mirostat 1.0, 2 = Mirostat 2.0 (usually preferred).
 keywords:
 - Mirostat
 - adaptive sampler
@@ -32,17 +32,17 @@ keywords:
 
 Mirostat monitors the entropy of the output distribution and adjusts the sampling process to match a target entropy (`MirostatTau`). Higher measured entropy → Mirostat tightens. Lower → Mirostat relaxes.
 
-- `Mirostat = 0` (default) — disabled. Standard `Temperature` + `TopP` + `TopK` + `MinP` pipeline is used.
-- `Mirostat = 1` — Mirostat 1.0. Original algorithm from the paper.
-- `Mirostat = 2` — Mirostat 2.0. Simplified and usually preferred; faster convergence.
+- `Mirostat = 0` (default): disabled. Standard `Temperature` + `TopP` + `TopK` + `MinP` pipeline is used.
+- `Mirostat = 1`: Mirostat 1.0. Original algorithm from the paper.
+- `Mirostat = 2`: Mirostat 2.0. Simplified and usually preferred; faster convergence.
 
-When Mirostat is enabled, the standard filters (`TopP`, `TopK`, `MinP`, `TypicalP`, `TopNSigma`) are effectively bypassed. `Temperature` tuning is ignored — Mirostat manages its own temperature-like adjustments internally.
+When Mirostat is enabled, the standard filters (`TopP`, `TopK`, `MinP`, `TypicalP`, `TopNSigma`) are effectively bypassed. `Temperature` tuning is ignored: Mirostat manages its own temperature-like adjustments internally.
 
 ## When to change it
 
 | Scenario | Value |
 |---|---|
-| Default — use standard filters | `0` |
+| Default: use standard filters | `0` |
 | Adaptive perplexity-targeting (preferred) | `2` |
 | Older Mirostat 1.0 (rarely preferred) | `1` |
 
@@ -64,14 +64,14 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`MirostatTau`](/llm/net/developer-reference/parameters/sampler/mirostat-tau/) — target entropy.
-- [`MirostatEta`](/llm/net/developer-reference/parameters/sampler/mirostat-eta/) — learning rate.
-- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/), [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/), [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/), [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/), [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/), [`TopNSigma`](/llm/net/developer-reference/parameters/sampler/top-n-sigma/) — all bypassed when Mirostat is active.
-- [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) — alternative entropy-aware sampler; do not combine.
-- [`Seed`](/llm/net/developer-reference/parameters/sampler/seed/) — still affects the RNG; reproducibility works with Mirostat.
+- [`MirostatTau`](/llm/net/developer-reference/parameters/sampler/mirostat-tau/): target entropy.
+- [`MirostatEta`](/llm/net/developer-reference/parameters/sampler/mirostat-eta/): learning rate.
+- [`Temperature`](/llm/net/developer-reference/parameters/sampler/temperature/), [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/), [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/), [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/), [`TypicalP`](/llm/net/developer-reference/parameters/sampler/typical-p/), [`TopNSigma`](/llm/net/developer-reference/parameters/sampler/top-n-sigma/): all bypassed when Mirostat is active.
+- [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/): alternative entropy-aware sampler; do not combine.
+- [`Seed`](/llm/net/developer-reference/parameters/sampler/seed/): still affects the RNG; reproducibility works with Mirostat.
 
 ## What's next
 
-- [MirostatTau](/llm/net/developer-reference/parameters/sampler/mirostat-tau/) — entropy target.
-- [MirostatEta](/llm/net/developer-reference/parameters/sampler/mirostat-eta/) — learning rate.
-- [DynatempRange](/llm/net/developer-reference/parameters/sampler/dynatemp-range/) — alternative adaptive approach.
+- [MirostatTau](/llm/net/developer-reference/parameters/sampler/mirostat-tau/): entropy target.
+- [MirostatEta](/llm/net/developer-reference/parameters/sampler/mirostat-eta/): learning rate.
+- [DynatempRange](/llm/net/developer-reference/parameters/sampler/dynatemp-range/): alternative adaptive approach.

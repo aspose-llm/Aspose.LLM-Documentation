@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/dry-multiplier/
 feedback: LLMNET
 version: 26.5.0
 title: DryMultiplier
-description: DRY sampler strength in Aspose.LLM for .NET — enables the Don't Repeat Yourself filter that penalizes verbatim phrase repetition.
+description: DRY sampler strength in Aspose.LLM for .NET, enables the Don't Repeat Yourself filter that penalizes verbatim phrase repetition.
 keywords:
 - DryMultiplier
 - DRY
@@ -24,7 +24,7 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `-1.0` (disabled) |
-| **Range** | `> 0` enables; typical `0.5` – `1.5` |
+| **Range** | `> 0` enables; typical `0.5` to `1.5` |
 | **Category** | Phrase-level repetition penalty |
 | **Field on** | `SamplerParameters.DryMultiplier` |
 
@@ -32,11 +32,11 @@ keywords:
 
 DRY scans the generation window and detects consecutive-token sequences that match what the model generated earlier. When a match extends beyond [`DryAllowedLength`](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/), it applies a penalty that grows as `DryMultiplier × DryBase^(match_length - DryAllowedLength)`.
 
-- `DryMultiplier = -1` (default) — disabled.
-- `DryMultiplier = 0.8` — classic strength recommended by the DRY paper.
-- `DryMultiplier = 1.5+` — aggressive; risks distorting natural common phrases.
+- `DryMultiplier = -1` (default): disabled.
+- `DryMultiplier = 0.8`: classic strength recommended by the DRY paper.
+- `DryMultiplier = 1.5+`: aggressive; risks distorting natural common phrases.
 
-DRY is phrase-level, complementary to token-level [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/). Use it when output has entire paragraphs or sentences echoing earlier text — token-level penalties cannot catch that.
+DRY is phrase-level, complementary to token-level [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/). Use it when output has entire paragraphs or sentences echoing earlier text: token-level penalties cannot catch that.
 
 ## When to change it
 
@@ -64,14 +64,14 @@ Console.WriteLine(reply);
 
 ## Interactions
 
-- [`DryBase`](/llm/net/developer-reference/parameters/sampler/dry-base/) — exponent base for growing penalty.
-- [`DryAllowedLength`](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/) — minimum match length before penalty fires.
-- [`DryPenaltyLastN`](/llm/net/developer-reference/parameters/sampler/dry-penalty-last-n/) — how far back to look.
-- [`DrySequenceBreakers`](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — tokens that reset the match detector.
-- [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — token-level companion; both can be active.
+- [`DryBase`](/llm/net/developer-reference/parameters/sampler/dry-base/): exponent base for growing penalty.
+- [`DryAllowedLength`](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/): minimum match length before penalty fires.
+- [`DryPenaltyLastN`](/llm/net/developer-reference/parameters/sampler/dry-penalty-last-n/): how far back to look.
+- [`DrySequenceBreakers`](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/): tokens that reset the match detector.
+- [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/): token-level companion; both can be active.
 
 ## What's next
 
-- [DryBase](/llm/net/developer-reference/parameters/sampler/dry-base/), [DryAllowedLength](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/) — the other DRY knobs.
-- [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) — token-level alternative.
-- [Garbled output troubleshooting](/llm/net/troubleshooting/garbled-output/) — when to reach for DRY.
+- [DryBase](/llm/net/developer-reference/parameters/sampler/dry-base/), [DryAllowedLength](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/): the other DRY knobs.
+- [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/): token-level alternative.
+- [Garbled output troubleshooting](/llm/net/troubleshooting/garbled-output/): when to reach for DRY.

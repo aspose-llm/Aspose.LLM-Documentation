@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/binary-manager/system-specification/
 feedback: LLMNET
 version: 26.5.0
 title: SystemSpecification
-description: Override auto-detected system info in Aspose.LLM for .NET — null defaults to runtime detection; rarely needed.
+description: Override auto-detected system info in Aspose.LLM for .NET, null defaults to runtime detection; rarely needed.
 keywords:
 - SystemSpecification
 - SystemSpec
@@ -30,8 +30,8 @@ keywords:
 
 At construction, the engine inspects the host OS, CPU architecture, and available accelerations (GPU, AVX levels). The result is a `SystemSpec` that drives the asset-selection logic in `BinaryManager`.
 
-- `null` (default) — auto-detect. Correct for almost every deployment.
-- Explicit `SystemSpec` — override for specific testing / cross-platform preparation scenarios.
+- `null` (default): auto-detect. Correct for almost every deployment.
+- Explicit `SystemSpec`: override for specific testing / cross-platform preparation scenarios.
 
 ## When to change it
 
@@ -51,9 +51,9 @@ var preset = new Qwen25Preset();
 
 ## Interactions
 
-- [`PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — higher-level acceleration selector; usually preferred over raw `SystemSpec` overrides.
+- [`PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/): higher-level acceleration selector; usually preferred over raw `SystemSpec` overrides.
 
 ## What's next
 
-- [PreferredAcceleration](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/) — acceleration control.
-- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [PreferredAcceleration](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/): acceleration control.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/): all binary-manager knobs.

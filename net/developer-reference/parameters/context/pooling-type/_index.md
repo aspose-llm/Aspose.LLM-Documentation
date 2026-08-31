@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/pooling-type/
 feedback: LLMNET
 version: 26.5.0
 title: PoolingType
-description: Embedding pooling strategy in Aspose.LLM for .NET — how per-token embeddings are reduced to a single vector.
+description: Embedding pooling strategy in Aspose.LLM for .NET, how per-token embeddings are reduced to a single vector.
 keywords:
 - PoolingType
 - embeddings
@@ -45,7 +45,7 @@ Pick the pooling strategy the model was trained with. Mismatched pooling produce
 
 | Scenario | Value |
 |---|---|
-| Default chat — not used | `null` |
+| Default chat, not used | `null` |
 | Causal-LM embeddings | `Last` |
 | BERT-style embedder | `Cls` |
 | Sentence-transformer-style | `Mean` |
@@ -66,11 +66,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Embeddings`](/llm/net/developer-reference/parameters/context/embeddings/) — must be `true` for `PoolingType` to take effect.
-- [`AttentionType`](/llm/net/developer-reference/parameters/context/attention-type/) — usually `NonCausal` with embedding-specific pooling.
+- [`Embeddings`](/llm/net/developer-reference/parameters/context/embeddings/): must be `true` for `PoolingType` to take effect.
+- [`AttentionType`](/llm/net/developer-reference/parameters/context/attention-type/): usually `NonCausal` with embedding-specific pooling.
 
 ## What's next
 
-- [Embeddings](/llm/net/developer-reference/parameters/context/embeddings/) — flag that enables this pipeline.
-- [AttentionType](/llm/net/developer-reference/parameters/context/attention-type/) — companion choice.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [Embeddings](/llm/net/developer-reference/parameters/context/embeddings/): flag that enables this pipeline.
+- [AttentionType](/llm/net/developer-reference/parameters/context/attention-type/): companion choice.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

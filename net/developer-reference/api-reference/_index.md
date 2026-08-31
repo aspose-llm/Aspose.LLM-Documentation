@@ -19,7 +19,7 @@ keywords:
 
 The complete class-level API reference for Aspose.LLM for .NET is published separately with every class, method, property, and XML documentation comment.
 
-- **[Aspose.LLM for .NET API Reference](https://reference.aspose.com/llm/net/)** — full reference, auto-generated from the shipped XML docs.
+- **[Aspose.LLM for .NET API Reference](https://reference.aspose.com/llm/net/)**: full reference, auto-generated from the shipped XML docs.
 
 ## Key types at a glance
 
@@ -77,7 +77,7 @@ The following types form the everyday public surface. The external reference has
 |---|---|
 | `ILlamaModel` | Loaded text model contract. |
 | `IMultimodalModel` | Vision-capable extension of `ILlamaModel`. |
-| `IChatSession` | Session contract — history, media, KV tracking, response generation. |
+| `IChatSession` | Session contract: history, media, KV tracking, response generation. |
 | `IModelLoader`, `IModelFileProvider`, `IPromptFormatter` | Extensibility interfaces for custom implementations via DI. |
 
 ## `AsposeLLMApi` method summary
@@ -100,6 +100,6 @@ See [Chat sessions](/llm/net/developer-reference/chat-sessions/) and [Session pe
 
 ## What's next
 
-- [Presets](/llm/net/developer-reference/presets/) — preset base class and parameter bags.
-- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — session lifecycle and messaging methods.
-- [Session persistence](/llm/net/developer-reference/session-persistence/) — save and load session state.
+- [Presets](/llm/net/developer-reference/presets/): preset base class and parameter bags.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): session lifecycle and messaging methods.
+- [Session persistence](/llm/net/developer-reference/session-persistence/): save and load session state.

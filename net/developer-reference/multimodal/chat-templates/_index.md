@@ -7,7 +7,7 @@ url: /net/developer-reference/multimodal/chat-templates/
 feedback: LLMNET
 version: 26.5.0
 title: Chat templates
-description: Eight vision chat templates Aspose.LLM for .NET recognizes and selects automatically — LLaVA, Qwen2VL, Qwen3VL, Pixtral, InternVL, Gemma3, Llama4, MiniCPMV.
+description: Eight vision chat templates Aspose.LLM for .NET recognizes and selects automatically, LLaVA, Qwen2VL, Qwen3VL, Pixtral, InternVL, Gemma3, Llama4, MiniCPMV.
 keywords:
 - chat template
 - vision template
@@ -21,7 +21,7 @@ keywords:
 - MiniCPMV
 ---
 
-Every vision model family has its own prompt format — a specific way to mark where images are inserted and how text turns are wrapped. Aspose.LLM for .NET ships eight templates and selects the right one automatically from the model's GGUF metadata at load time.
+Every vision model family has its own prompt format: a specific way to mark where images are inserted and how text turns are wrapped. Aspose.LLM for .NET ships eight templates and selects the right one automatically from the model's GGUF metadata at load time.
 
 You do **not** configure templates yourself in the current release. The selection is automatic and internal. This page exists so you can identify which templates are supported and recognize the model families behind them.
 
@@ -46,7 +46,7 @@ When the engine loads a vision model, it:
 2. Matches those values against the template dispatch table in `Aspose.LLM.Interop.Multimodal.VisualModelChatTemplates`.
 3. Picks the template whose marker tokens and turn format match the detected model family.
 
-If no template matches, the engine falls back to the default text template. Vision turns then emit a generic marker that the model may or may not recognize — output quality degrades.
+If no template matches, the engine falls back to the default text template. Vision turns then emit a generic marker that the model may or may not recognize: output quality degrades.
 
 ## Built-in preset → template mapping
 
@@ -63,9 +63,9 @@ If you extend one of these presets or use a custom GGUF from the same family, te
 
 ## Custom vision models
 
-If you build a custom preset pointing at a non-Aspose GGUF from one of the eight supported families, template auto-selection should work out of the box — the engine relies on metadata keys that most upstream GGUF conversions preserve.
+If you build a custom preset pointing at a non-Aspose GGUF from one of the eight supported families, template auto-selection should work out of the box: the engine relies on metadata keys that most upstream GGUF conversions preserve.
 
-If selection fails — the response is garbled or includes literal marker tokens like `<image>` in the output — the model's metadata is missing the expected keys. Options:
+If selection fails: the response is garbled or includes literal marker tokens like `<image>` in the output: the model's metadata is missing the expected keys. Options:
 
 - Pick a different GGUF export of the same model with richer metadata.
 - File a support request via the [Aspose Support Forum](https://forum.aspose.com/) with the model's Hugging Face URL so the team can add detection for that specific export.
@@ -84,6 +84,6 @@ Lines like `[MM] selected template: Qwen3VL` appear shortly after model load. Se
 
 ## What's next
 
-- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) — built-in presets with their matching templates.
-- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — inspect the selected template in logs.
-- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/) — the sending side.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/): built-in presets with their matching templates.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): inspect the selected template in logs.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/): the sending side.

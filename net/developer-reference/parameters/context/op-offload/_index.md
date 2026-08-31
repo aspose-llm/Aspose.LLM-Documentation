@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/op-offload/
 feedback: LLMNET
 version: 26.5.0
 title: OpOffload
-description: Offload host tensor operations to device in Aspose.LLM for .NET — supplementary to GpuLayers; leave at default unless instructed.
+description: Offload host tensor operations to device in Aspose.LLM for .NET, supplementary to GpuLayers; leave at default unless instructed.
 keywords:
 - OpOffload
 - tensor operations
@@ -30,9 +30,9 @@ keywords:
 
 Some tensor operations (embedding lookups, small reductions) are relatively cheap and traditionally run on the host. `OpOffload` lets the engine offload them to the device too, in exchange for minimal host-device overhead.
 
-- `null` — native default. Modern GPU backends usually benefit from `true`.
-- `true` — offload.
-- `false` — keep on host.
+- `null`: native default. Modern GPU backends usually benefit from `true`.
+- `true`: offload.
+- `false`: keep on host.
 
 ## When to change it
 
@@ -52,10 +52,10 @@ preset.ContextParameters.OpOffload = true;  // ensure all operations on device
 
 ## Interactions
 
-- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — primary offload control.
-- [`OffloadKqv`](/llm/net/developer-reference/parameters/context/offload-kqv/) — KV specific.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): primary offload control.
+- [`OffloadKqv`](/llm/net/developer-reference/parameters/context/offload-kqv/): KV specific.
 
 ## What's next
 
-- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — primary layer offload.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): primary layer offload.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

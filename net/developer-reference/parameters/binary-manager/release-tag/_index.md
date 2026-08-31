@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/binary-manager/release-tag/
 feedback: LLMNET
 version: 26.5.0
 title: ReleaseTag
-description: Specific llama.cpp release tag for native binaries in Aspose.LLM for .NET — defaults to b8816 on SDK v26.5.0; pin explicitly in production.
+description: Specific llama.cpp release tag for native binaries in Aspose.LLM for .NET, defaults to b8816 on SDK v26.5.0; pin explicitly in production.
 keywords:
 - ReleaseTag
 - llama.cpp
@@ -31,8 +31,8 @@ keywords:
 
 Identifies a GitHub release under `<Owner>/<Repo>`. The engine downloads the asset whose name matches your platform and acceleration from that release.
 
-- `"b8816"` (default on v26.5.0) — the upstream release validated against this SDK version.
-- Older / newer tag — only when you control a matching validation story.
+- `"b8816"` (default on v26.5.0): the upstream release validated against this SDK version.
+- Older / newer tag: only when you control a matching validation story.
 
 The Aspose team tracks upstream llama.cpp releases and bumps the default `ReleaseTag` in each SDK minor version. The `llama-cpp-migration` skill automates the per-release validation and updates.
 
@@ -57,12 +57,12 @@ preset.BinaryManagerParameters.ReleaseTag = "b8816";  // explicit pin for reprod
 
 ## Interactions
 
-- [`Owner`](/llm/net/developer-reference/parameters/binary-manager/owner/) and [`Repo`](/llm/net/developer-reference/parameters/binary-manager/repo/) — together with `ReleaseTag` form the source URL.
-- [`BinaryPath`](/llm/net/developer-reference/parameters/binary-manager/binary-path/) — cache location per tag; different tags use different subfolders.
-- [Session persistence portability](/llm/net/developer-reference/session-persistence/portability/) — sessions assume a consistent `ReleaseTag` across save / load.
+- [`Owner`](/llm/net/developer-reference/parameters/binary-manager/owner/) and [`Repo`](/llm/net/developer-reference/parameters/binary-manager/repo/): together with `ReleaseTag` form the source URL.
+- [`BinaryPath`](/llm/net/developer-reference/parameters/binary-manager/binary-path/): cache location per tag; different tags use different subfolders.
+- [Session persistence portability](/llm/net/developer-reference/session-persistence/portability/): sessions assume a consistent `ReleaseTag` across save / load.
 
 ## What's next
 
-- [Binary download fails troubleshooting](/llm/net/troubleshooting/binary-download-fails/) — common issues.
-- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
-- [Offline deployment](/llm/net/use-cases/offline-deployment/) — pre-populating binaries for a pinned tag.
+- [Binary download fails troubleshooting](/llm/net/troubleshooting/binary-download-fails/): common issues.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/): all binary-manager knobs.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/): pre-populating binaries for a pinned tag.

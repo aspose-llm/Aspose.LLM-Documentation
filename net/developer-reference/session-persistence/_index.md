@@ -7,7 +7,7 @@ url: /net/developer-reference/session-persistence/
 feedback: LLMNET
 version: 26.5.0
 title: Session persistence
-description: Save and load chat sessions with Aspose.LLM for .NET — file format, what is preserved, and parameter behavior on load.
+description: Save and load chat sessions with Aspose.LLM for .NET, file format, what is preserved, and parameter behavior on load.
 keywords:
 - save
 - load
@@ -41,7 +41,7 @@ If you omit `filePath`, the library uses the session ID as the file name in the 
 api.SaveChatSession(sessionId, @"C:\chat-backups\user-42-conv-1.json");
 ```
 
-The call is **synchronous** — it blocks until the file is written.
+The call is **synchronous**: it blocks until the file is written.
 
 Throws `KeyNotFoundException` when the `sessionId` is not an active session on the instance.
 
@@ -72,7 +72,7 @@ If a session with the same ID already lives on the instance, it is disposed and 
 
 ### Parameter behavior on load
 
-`LoadChatSession` creates the new session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters` — not with the values from the preset or from the original session's parameters.
+`LoadChatSession` creates the new session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters`, not with the values from the preset or from the original session's parameters.
 
 If you need the restored session to use the same parameters as the preset you use in the rest of your code, start a new session explicitly instead of loading, and re-play the history from the saved file against that session. A helper for preset-aware loading is on the roadmap.
 
@@ -127,10 +127,10 @@ For long-term archives, store the `.json` file together with a small manifest re
 - No incremental save. Each call writes the whole session.
 - No built-in encryption. Wrap the file in your own encryption layer for sensitive dialogues.
 - No automatic cleanup of old files. Your application is responsible for retention.
-- Loading on a different SDK version or with a different model produces undefined behavior — often garbled output or a deserialization exception.
+- Loading on a different SDK version or with a different model produces undefined behavior: often garbled output or a deserialization exception.
 
 ## What's next
 
-- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — create and use sessions at runtime.
-- [Save and restore session](/llm/net/use-cases/save-and-restore-session/) — a complete runnable example.
-- [Presets](/llm/net/developer-reference/presets/) — configure the parameters that apply to new sessions.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): create and use sessions at runtime.
+- [Save and restore session](/llm/net/use-cases/save-and-restore-session/): a complete runnable example.
+- [Presets](/llm/net/developer-reference/presets/): configure the parameters that apply to new sessions.

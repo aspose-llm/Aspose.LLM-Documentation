@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/no-perf/
 feedback: LLMNET
 version: 26.5.0
 title: NoPerf
-description: Disable performance timing collection in Aspose.LLM for .NET — micro-optimization for high-throughput production; off by default.
+description: Disable performance timing collection in Aspose.LLM for .NET, micro-optimization for high-throughput production; off by default.
 keywords:
 - NoPerf
 - performance timing
@@ -28,8 +28,8 @@ keywords:
 
 ## What it does
 
-- `null` or `false` — timings collected. Minor overhead per call but you can inspect them via native logging.
-- `true` — timings disabled. Slightly faster; nothing to inspect.
+- `null` or `false`: timings collected. Minor overhead per call but you can inspect them via native logging.
+- `true`: timings disabled. Slightly faster; nothing to inspect.
 
 This is a micro-optimization. The savings are usually below measurement noise on a single request. On a high-throughput server processing many requests per second, the savings add up.
 
@@ -51,9 +51,9 @@ preset.EngineParameters.EnableDebugLogging = false;
 
 ## Interactions
 
-- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/) — turning on debug logs defeats the purpose of `NoPerf = true`.
+- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/): turning on debug logs defeats the purpose of `NoPerf = true`.
 
 ## What's next
 
-- [Performance issues troubleshooting](/llm/net/troubleshooting/performance-issues/) — throughput-focused tuning.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [Performance issues troubleshooting](/llm/net/troubleshooting/performance-issues/): throughput-focused tuning.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

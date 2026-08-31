@@ -7,7 +7,7 @@ url: /net/use-cases/custom-preset/
 feedback: LLMNET
 version: 26.5.0
 title: Custom preset
-description: Customize a built-in Aspose.LLM for .NET preset or build one from scratch — three patterns for bringing your own parameters or your own GGUF model.
+description: Customize a built-in Aspose.LLM for .NET preset or build one from scratch, three patterns for bringing your own parameters or your own GGUF model.
 keywords:
 - custom
 - preset
@@ -18,7 +18,7 @@ keywords:
 - parameters
 ---
 
-Presets bundle the settings needed to run a model. When a built-in preset does not quite fit — different sampler, different context size, a specific system prompt, or a completely different model — you customize it. This page shows three patterns, from simplest to most involved.
+Presets bundle the settings needed to run a model. When a built-in preset does not quite fit: different sampler, different context size, a specific system prompt, or a completely different model: you customize it. This page shows three patterns, from simplest to most involved.
 
 ## When to customize
 
@@ -64,7 +64,7 @@ string reply = await api.SendMessageAsync("Summarize in one sentence: the theory
 Console.WriteLine(reply);
 ```
 
-The engine reads the preset during `Create`. Mutations after `Create` do not affect the alive engine — override everything you need first.
+The engine reads the preset during `Create`. Mutations after `Create` do not affect the alive engine: override everything you need first.
 
 ## Pattern 2. Subclass a built-in preset
 
@@ -172,7 +172,7 @@ Pass image bytes to `SendMessageAsync` or `SendMessageToSessionAsync` via the `m
 
 Aspose.LLM selects the chat template from the model's metadata when it loads the GGUF. For a model built against a widely-used template (ChatML, Llama 3, Qwen, Gemma, Phi, DeepSeek, Mistral), template detection works automatically.
 
-For a model with a non-standard template, generations may be garbled — the wrong special tokens end up in the prompt. The current release does not expose a public chat-template override, so your options are:
+For a model with a non-standard template, generations may be garbled: the wrong special tokens end up in the prompt. The current release does not expose a public chat-template override, so your options are:
 
 - Pick a GGUF export that uses a standard template.
 - Add a system prompt that steers the model toward a known format.
@@ -230,6 +230,6 @@ internal class CustomPresetDemo
 
 ## What's next
 
-- [Presets reference](/llm/net/developer-reference/presets/) — every bag on `PresetCoreBase` and its role.
-- [Supported presets](/llm/net/product-overview/supported-presets/) — built-in presets you can start from.
-- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) — use your custom preset across many sessions.
+- [Presets reference](/llm/net/developer-reference/presets/): every bag on `PresetCoreBase` and its role.
+- [Supported presets](/llm/net/product-overview/supported-presets/): built-in presets you can start from.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/): use your custom preset across many sessions.

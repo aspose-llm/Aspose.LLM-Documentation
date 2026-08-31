@@ -7,7 +7,7 @@ url: /net/developer-reference/acceleration/cuda/
 feedback: LLMNET
 version: 26.5.0
 title: CUDA
-description: Run Aspose.LLM for .NET on NVIDIA GPUs with CUDA acceleration — driver requirements, compute capability, single and multi-GPU setup.
+description: Run Aspose.LLM for .NET on NVIDIA GPUs with CUDA acceleration, driver requirements, compute capability, single and multi-GPU setup.
 keywords:
 - CUDA
 - NVIDIA
@@ -24,7 +24,7 @@ CUDA is the fastest backend for Aspose.LLM for .NET on NVIDIA GPUs. It supports 
 
 - **GPU**: NVIDIA with compute capability 5.0 or higher.
 - **Driver**: version 525 or later.
-- **CUDA runtime**: the one bundled with the downloaded native binary (typically CUDA 11.7 or 12.x). You do **not** install CUDA separately — the SDK's binary ships with the runtime.
+- **CUDA runtime**: the one bundled with the downloaded native binary (typically CUDA 11.7 or 12.x). You do **not** install CUDA separately: the SDK's binary ships with the runtime.
 - **OS**: Windows 10+ or Linux (glibc 2.28+). Not supported on macOS.
 
 Verify driver and GPU with `nvidia-smi`:
@@ -71,7 +71,7 @@ preset.BaseModelInferenceParameters.MainGpu = 1;    // use GPU index 1
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 ```
 
-Use `CUDA_VISIBLE_DEVICES` environment variable to constrain which GPUs the process sees — standard NVIDIA tooling.
+Use `CUDA_VISIBLE_DEVICES` environment variable to constrain which GPUs the process sees: standard NVIDIA tooling.
 
 ## Multi-GPU split
 
@@ -89,7 +89,7 @@ Split modes:
 |---|---|
 | `LLAMA_SPLIT_MODE_NONE` | Single GPU only. Whole model on `MainGpu`. |
 | `LLAMA_SPLIT_MODE_LAYER` | Split layers across GPUs. Good default for multi-GPU. |
-| `LLAMA_SPLIT_MODE_ROW` | Split rows — enables tensor parallelism where supported. Fastest on setups with high-bandwidth GPU interconnects (NVLink). |
+| `LLAMA_SPLIT_MODE_ROW` | Split rows: enables tensor parallelism where supported. Fastest on setups with high-bandwidth GPU interconnects (NVLink). |
 
 For unequal GPU memory sizes, set `TensorSplit` to balance the load:
 
@@ -109,13 +109,13 @@ preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.CUDA;
 preset.BaseModelInferenceParameters.GpuLayers = 28;  // first 28 layers on GPU
 ```
 
-Benchmark to find the right split — "offload until VRAM is ~1-2 GB short of full" — because the KV cache also claims VRAM proportional to GPU layer count.
+Benchmark to find the right split: "offload until VRAM is ~1-2 GB short of full", because the KV cache also claims VRAM proportional to GPU layer count.
 
 ## Memory tips
 
-- **KV cache quantization** — set `ContextParameters.TypeV = GgmlType.Q8_0` to halve V-cache memory with minor quality impact.
-- **Flash Attention** — `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled` reduces memory at long contexts.
-- **Shorter context** — drop `ContextParameters.ContextSize` if you do not need the preset's default length.
+- **KV cache quantization**: set `ContextParameters.TypeV = GgmlType.Q8_0` to halve V-cache memory with minor quality impact.
+- **Flash Attention**: `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled` reduces memory at long contexts.
+- **Shorter context**: drop `ContextParameters.ContextSize` if you do not need the preset's default length.
 
 ## Common issues
 
@@ -128,6 +128,6 @@ Benchmark to find the right split — "offload until VRAM is ~1-2 GB short of fu
 
 ## What's next
 
-- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
-- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers`, `SplitMode`, `TensorSplit`, `MainGpu`.
-- [Vulkan](/llm/net/developer-reference/acceleration/vulkan/) — cross-vendor GPU alternative.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): `PreferredAcceleration`.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): `GpuLayers`, `SplitMode`, `TensorSplit`, `MainGpu`.
+- [Vulkan](/llm/net/developer-reference/acceleration/vulkan/): cross-vendor GPU alternative.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/multimodal-context/print-timings/
 feedback: LLMNET
 version: 26.5.0
 title: PrintTimings
-description: Enable mtmd per-step timing diagnostics in Aspose.LLM for .NET — useful for diagnosing slow vision first-token latency; off in production.
+description: Enable mtmd per-step timing diagnostics in Aspose.LLM for .NET, useful for diagnosing slow vision first-token latency; off in production.
 keywords:
 - PrintTimings
 - mtmd timings
@@ -15,7 +15,7 @@ keywords:
 - vision
 ---
 
-`PrintTimings` turns on `mtmd`'s built-in per-step timing output — time spent tokenizing, running the projector, and evaluating chunks. Useful when a vision query is slow and you need to localize the bottleneck.
+`PrintTimings` turns on `mtmd`'s built-in per-step timing output: time spent tokenizing, running the projector, and evaluating chunks. Useful when a vision query is slow and you need to localize the bottleneck.
 
 ## Quick reference
 
@@ -28,8 +28,8 @@ keywords:
 
 ## What it does
 
-- `null` or `false` — no timing output.
-- `true` — `mtmd` emits per-stage timings through the native logger. Requires [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) or equivalent output routing to see them.
+- `null` or `false`: no timing output.
+- `true`: `mtmd` emits per-stage timings through the native logger. Requires [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) or equivalent output routing to see them.
 
 Timings are noisy. Disable in production; keep on only while debugging.
 
@@ -54,11 +54,11 @@ using var api = AsposeLLMApi.Create(preset, logger);
 
 ## Interactions
 
-- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) — required for timing lines to reach the logger.
-- [`Verbosity`](/llm/net/developer-reference/parameters/multimodal-context/verbosity/) — complementary verbosity knob.
+- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/): required for timing lines to reach the logger.
+- [`Verbosity`](/llm/net/developer-reference/parameters/multimodal-context/verbosity/): complementary verbosity knob.
 
 ## What's next
 
-- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — full diagnostic playbook.
-- [Verbosity](/llm/net/developer-reference/parameters/multimodal-context/verbosity/) — mtmd log-level knob.
-- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): full diagnostic playbook.
+- [Verbosity](/llm/net/developer-reference/parameters/multimodal-context/verbosity/): mtmd log-level knob.
+- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/): all mtmd knobs.

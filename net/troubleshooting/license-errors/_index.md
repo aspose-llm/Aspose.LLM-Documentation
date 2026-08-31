@@ -7,7 +7,7 @@ url: /net/troubleshooting/license-errors/
 feedback: LLMNET
 version: 26.5.0
 title: License errors
-description: Fix license-related failures in Aspose.LLM for .NET — Not licensed for this method, expired temporary license, wrong file path, embedded resource not found.
+description: Fix license-related failures in Aspose.LLM for .NET, Not licensed for this method, expired temporary license, wrong file path, embedded resource not found.
 keywords:
 - license error
 - Not licensed
@@ -17,7 +17,7 @@ keywords:
 - SetLicense
 ---
 
-License errors appear when a chat method is called without a valid license. Aspose.LLM does not have an evaluation fallback for inference — every chat operation requires a license.
+License errors appear when a chat method is called without a valid license. Aspose.LLM does not have an evaluation fallback for inference: every chat operation requires a license.
 
 ## Symptom
 
@@ -92,7 +92,7 @@ Confirm the file is copied to the process working directory or bin folder during
 </ItemGroup>
 ```
 
-### 4. Embedded resource — check the name
+### 4. Embedded resource: check the name
 
 For embedded licenses, the resource name must match the file name exactly:
 
@@ -117,7 +117,7 @@ Options:
 - Request a new temporary license.
 - Purchase a commercial license.
 
-The application code does not change — swap the `.lic` file.
+The application code does not change: swap the `.lic` file.
 
 ### 6. Corrupt license file
 
@@ -138,12 +138,12 @@ Ensure the stream is at position 0 before `SetLicense`. If an earlier read consu
 
 - Apply the license at application startup, once, with explicit exception handling.
 - Log `License.IsLicensed` immediately after `SetLicense` to confirm.
-- Monitor temporary license expiry dates — have a calendar reminder 7 days before expiry.
+- Monitor temporary license expiry dates: have a calendar reminder 7 days before expiry.
 - In CI/CD, use an embedded license or pull from a secret store rather than bundling files.
 - For air-gapped deployments, copy the license with the rest of the deployment artifacts.
 
 ## What's next
 
-- [Licensing](/llm/net/licensing/) — full license setup (file, stream, embedded resource, temporary).
-- [License class reference](/llm/net/developer-reference/license/) — API surface of `License`.
-- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/) — where license checks sit in the chat API surface.
+- [Licensing](/llm/net/licensing/): full license setup (file, stream, embedded resource, temporary).
+- [License class reference](/llm/net/developer-reference/license/): API surface of `License`.
+- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/): where license checks sit in the chat API surface.

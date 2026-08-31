@@ -7,7 +7,7 @@ url: /net/developer-reference/acceleration/
 feedback: LLMNET
 version: 26.5.0
 title: Acceleration
-description: Hardware acceleration backends supported by Aspose.LLM for .NET — CUDA, HIP (ROCm), Metal, Vulkan, and CPU variants. How auto-detection works and how to force a specific backend.
+description: Hardware acceleration backends supported by Aspose.LLM for .NET, CUDA, HIP (ROCm), Metal, Vulkan, and CPU variants. How auto-detection works and how to force a specific backend.
 keywords:
 - acceleration
 - CUDA
@@ -20,9 +20,9 @@ keywords:
 - AVX
 ---
 
-Aspose.LLM for .NET wraps `llama.cpp` and uses its native binaries for every inference. Those binaries ship per-platform, per-acceleration variants — one for each GPU backend, plus CPU variants at different AVX levels. The SDK downloads the matching variant on first use and caches it locally.
+Aspose.LLM for .NET wraps `llama.cpp` and uses its native binaries for every inference. Those binaries ship per-platform, per-acceleration variants: one for each GPU backend, plus CPU variants at different AVX levels. The SDK downloads the matching variant on first use and caches it locally.
 
-You do not configure backends at compile time — the choice is made at runtime by `BinaryManager`. You can let the SDK auto-detect the best option for your host, or force a specific backend via `BinaryManagerParameters.PreferredAcceleration`.
+You do not configure backends at compile time: the choice is made at runtime by `BinaryManager`. You can let the SDK auto-detect the best option for your host, or force a specific backend via `BinaryManagerParameters.PreferredAcceleration`.
 
 ## Supported backends
 
@@ -32,17 +32,17 @@ You do not configure backends at compile time — the choice is made at runtime 
 | [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/) | Linux | AMD | High on AMD hosts |
 | [Metal](/llm/net/developer-reference/acceleration/metal/) | macOS (Apple Silicon) | Apple | Highest on Apple Silicon |
 | [Vulkan](/llm/net/developer-reference/acceleration/vulkan/) | Windows, Linux | Any Vulkan-capable GPU | Fallback GPU; cross-vendor |
-| [CPU](/llm/net/developer-reference/acceleration/cpu/) | All | — | Fallback when no GPU is available |
+| [CPU](/llm/net/developer-reference/acceleration/cpu/) | All | - | Fallback when no GPU is available |
 
 ## Auto-detection
 
 When `BinaryManagerParameters.PreferredAcceleration` is `null` (the default), the SDK picks the best available backend for your host in this priority order:
 
-1. **CUDA** — if an NVIDIA GPU with a recent driver is present.
-2. **HIP** — if a ROCm-capable AMD GPU is present.
-3. **Metal** — on Apple Silicon.
-4. **Vulkan** — if a Vulkan-capable GPU is present.
-5. **CPU** — with the highest AVX level available (`AVX512 > AVX2 > AVX > NoAVX`).
+1. **CUDA**: if an NVIDIA GPU with a recent driver is present.
+2. **HIP**: if a ROCm-capable AMD GPU is present.
+3. **Metal**: on Apple Silicon.
+4. **Vulkan**: if a Vulkan-capable GPU is present.
+5. **CPU**: with the highest AVX level available (`AVX512 > AVX2 > AVX > NoAVX`).
 
 The detection runs during `AsposeLLMApi.Create`, before the native binary download. The result is reflected in the downloaded asset's name.
 
@@ -81,7 +81,7 @@ public enum AccelerationType
 }
 ```
 
-`Kompute`, `OpenCL`, `SYCL`, and `OpenBLAS` are included for completeness — verify availability for your target; they are less common.
+`Kompute`, `OpenCL`, `SYCL`, and `OpenBLAS` are included for completeness: verify availability for your target; they are less common.
 
 ## Matching GPU offload
 
@@ -92,7 +92,7 @@ public enum AccelerationType
 | CUDA, HIP, Metal, Vulkan | `999` (full offload) or a partial count fitting VRAM |
 | AVX512, AVX2, AVX, NoAVX | `0` (CPU only) |
 
-Setting a GPU binary with `GpuLayers = 0` works but wastes the GPU — the model runs on CPU anyway. Setting a CPU binary with `GpuLayers = 999` silently keeps the model on CPU since there is no GPU runtime available.
+Setting a GPU binary with `GpuLayers = 0` works but wastes the GPU: the model runs on CPU anyway. Setting a CPU binary with `GpuLayers = 999` silently keeps the model on CPU since there is no GPU runtime available.
 
 ## Memory by backend
 
@@ -124,9 +124,9 @@ Once downloaded, the variant is cached at `BinaryManagerParameters.BinaryPath`. 
 
 ## What's next
 
-- [CUDA](/llm/net/developer-reference/acceleration/cuda/) — NVIDIA GPUs.
-- [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/) — AMD GPUs.
-- [Metal](/llm/net/developer-reference/acceleration/metal/) — Apple Silicon.
-- [Vulkan](/llm/net/developer-reference/acceleration/vulkan/) — cross-platform GPU.
-- [CPU](/llm/net/developer-reference/acceleration/cpu/) — when no GPU is available.
-- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration` and friends.
+- [CUDA](/llm/net/developer-reference/acceleration/cuda/): NVIDIA GPUs.
+- [HIP / ROCm](/llm/net/developer-reference/acceleration/hip-rocm/): AMD GPUs.
+- [Metal](/llm/net/developer-reference/acceleration/metal/): Apple Silicon.
+- [Vulkan](/llm/net/developer-reference/acceleration/vulkan/): cross-platform GPU.
+- [CPU](/llm/net/developer-reference/acceleration/cpu/): when no GPU is available.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): `PreferredAcceleration` and friends.

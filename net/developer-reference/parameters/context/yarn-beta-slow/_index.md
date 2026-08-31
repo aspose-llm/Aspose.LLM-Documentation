@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/yarn-beta-slow/
 feedback: LLMNET
 version: 26.5.0
 title: YarnBetaSlow
-description: YaRN high correction dim in Aspose.LLM for .NET — the "slow" wavelength corner where YaRN transitions between interpolation modes.
+description: YaRN high correction dim in Aspose.LLM for .NET, the "slow" wavelength corner where YaRN transitions between interpolation modes.
 keywords:
 - YarnBetaSlow
 - YaRN
@@ -15,7 +15,7 @@ keywords:
 - RoPE
 ---
 
-`YarnBetaSlow` is the "slow" boundary of YaRN's correction range — the dimension index above which interpolation is fully applied. Relevant only when [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
+`YarnBetaSlow` is the "slow" boundary of YaRN's correction range: the dimension index above which interpolation is fully applied. Relevant only when [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) is `Yarn`.
 
 ## Quick reference
 
@@ -54,10 +54,10 @@ preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 
 ## Interactions
 
-- [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/) — lower boundary.
-- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
+- [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/): lower boundary.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/): must be `Yarn`.
 
 ## What's next
 
-- [YarnBetaFast](/llm/net/developer-reference/parameters/context/yarn-beta-fast/) — companion lower boundary.
-- [Context parameters hub](/llm/net/developer-reference/parameters/context/) — all context knobs.
+- [YarnBetaFast](/llm/net/developer-reference/parameters/context/yarn-beta-fast/): companion lower boundary.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

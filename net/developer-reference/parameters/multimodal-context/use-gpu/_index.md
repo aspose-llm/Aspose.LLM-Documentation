@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/multimodal-context/use-gpu/
 feedback: LLMNET
 version: 26.5.0
 title: UseGpu
-description: Offload the vision projector to GPU in Aspose.LLM for .NET — null defers to mtmd's auto-detection; explicit true/false forces a choice.
+description: Offload the vision projector to GPU in Aspose.LLM for .NET, null defers to mtmd's auto-detection; explicit true/false forces a choice.
 keywords:
 - UseGpu
 - vision projector
@@ -23,17 +23,17 @@ keywords:
 | | |
 |---|---|
 | **Type** | `bool?` |
-| **Default** | `null` (use native default — typically true if a GPU is present) |
+| **Default** | `null` (use native default: typically true if a GPU is present) |
 | **Category** | Multimodal context |
 | **Field on** | `MultimodalContextParameters.UseGpu` |
 
 ## What it does
 
-- `null` — delegate to `mtmd`'s auto-detection. Usually correct.
-- `true` — force GPU. Requires a supported GPU.
-- `false` — force CPU. Keeps VRAM for the base model on memory-tight GPUs.
+- `null`: delegate to `mtmd`'s auto-detection. Usually correct.
+- `true`: force GPU. Requires a supported GPU.
+- `false`: force CPU. Keeps VRAM for the base model on memory-tight GPUs.
 
-The projector is typically small (200 MB – 2 GB). GPU offload is fast on modest hardware; the main reason to keep it on CPU is freeing VRAM for the base model's KV cache.
+The projector is typically small (200 MB to 2 GB). GPU offload is fast on modest hardware; the main reason to keep it on CPU is freeing VRAM for the base model's KV cache.
 
 ## When to change it
 
@@ -53,11 +53,11 @@ preset.BaseModelInferenceParameters.GpuLayers = 999;   // base model fully on GP
 
 ## Interactions
 
-- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — base model offload; projector placement is independent.
-- [`PrintTimings`](/llm/net/developer-reference/parameters/multimodal-context/print-timings/) — diagnose projector performance.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): base model offload; projector placement is independent.
+- [`PrintTimings`](/llm/net/developer-reference/parameters/multimodal-context/print-timings/): diagnose projector performance.
 
 ## What's next
 
-- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) — projector diagnostics.
-- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) — built-in presets.
-- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/) — all mtmd knobs.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): projector diagnostics.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/): built-in presets.
+- [Multimodal context hub](/llm/net/developer-reference/parameters/multimodal-context/): all mtmd knobs.

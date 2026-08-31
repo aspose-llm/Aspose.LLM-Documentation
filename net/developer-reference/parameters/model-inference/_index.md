@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/
 feedback: LLMNET
 version: 26.5.0
 title: Model inference parameters
-description: Configure how a model loads into memory in Aspose.LLM for .NET — GPU layer offload, tensor split across GPUs, memory mapping, memory locking, tensor validation, and metadata overrides.
+description: Configure how a model loads into memory in Aspose.LLM for .NET, GPU layer offload, tensor split across GPUs, memory mapping, memory locking, tensor validation, and metadata overrides.
 keywords:
 - ModelInferenceParameters
 - GpuLayers
@@ -21,7 +21,7 @@ keywords:
 
 `ModelInferenceParameters` controls how the engine loads a model into memory: how many layers to offload to GPU, how to split across multiple GPUs, whether to use memory mapping, and how to override GGUF metadata at runtime.
 
-Most fields are nullable — a `null` value means "use the native default". Set an explicit value only when you need to override.
+Most fields are nullable: a `null` value means "use the native default". Set an explicit value only when you need to override.
 
 ## Class reference
 
@@ -77,7 +77,7 @@ Controls GPU offload. Each transformer layer lives either in system RAM (CPU inf
 | `999` (or any value ≥ the model's layer count) | Full GPU offload. Idiomatic way to request "put everything on the GPU". |
 | `null` | Use the native default. |
 
-Pair with a GPU-capable `BinaryManagerParameters.PreferredAcceleration` — setting `GpuLayers = 999` on a CPU-only binary silently keeps the model on the CPU.
+Pair with a GPU-capable `BinaryManagerParameters.PreferredAcceleration`: setting `GpuLayers = 999` on a CPU-only binary silently keeps the model on the CPU.
 
 ```csharp
 preset.BaseModelInferenceParameters.GpuLayers = 999;
@@ -88,7 +88,7 @@ preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.CUDA;
 
 When `true` (default on most platforms), the engine memory-maps the GGUF file so the OS streams it in on demand. This reduces startup time and avoids copying the full model into RAM before inference.
 
-Set to `false` only for rare scenarios — network file systems that do not support `mmap`, or environments where you want the file fully loaded before the first token. Disabling `mmap` doubles peak memory during load (the read buffer plus the mapped copy).
+Set to `false` only for rare scenarios: network file systems that do not support `mmap`, or environments where you want the file fully loaded before the first token. Disabling `mmap` doubles peak memory during load (the read buffer plus the mapped copy).
 
 ### `UseMemoryLocking`
 
@@ -122,8 +122,8 @@ preset.BaseModelInferenceParameters.TensorSplit = null; // equal distribution
 
 Proportion of the model placed on each GPU. The array length should match the number of available GPUs.
 
-- `null` — equal distribution.
-- Explicit array — values are normalized to sum to 1. For example, `[2, 1]` on two GPUs places 67 % on GPU 0 and 33 % on GPU 1.
+- `null`: equal distribution.
+- Explicit array: values are normalized to sum to 1. For example, `[2, 1]` on two GPUs places 67 % on GPU 0 and 33 % on GPU 1.
 
 Useful when GPUs have different memory sizes (for example, a 24 GB card paired with a 12 GB card):
 
@@ -134,7 +134,7 @@ preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
 
 ### `VocabOnly`
 
-When `true`, the engine loads only the model's vocabulary, skipping the weights. The model is not usable for generation in this state — it is a tokenizer-only configuration for rare tooling scenarios.
+When `true`, the engine loads only the model's vocabulary, skipping the weights. The model is not usable for generation in this state: it is a tokenizer-only configuration for rare tooling scenarios.
 
 Leave `null` (or `false`) for any normal inference use.
 
@@ -177,7 +177,7 @@ The `ModelKeyValueOverride` class carries one of four typed values depending on 
 | `Bool` | `BoolValue` | Model-specific boolean flags |
 | `String` | `StringValue` | `general.architecture`, `llama.rope.scaling.type` |
 
-Use overrides with care — wrong metadata makes the model load incorrectly or silently produce garbage.
+Use overrides with care: wrong metadata makes the model load incorrectly or silently produce garbage.
 
 ## Typical recipes
 
@@ -206,7 +206,7 @@ preset.BaseModelInferenceParameters.GpuLayers = 28;
 preset.BaseModelInferenceParameters.UseMemoryMapping = true;
 ```
 
-Benchmark to find the right split for your hardware — "offload until VRAM is ~1-2 GB short of full".
+Benchmark to find the right split for your hardware: "offload until VRAM is ~1-2 GB short of full".
 
 ### Two unequal GPUs
 
@@ -227,6 +227,6 @@ preset.BaseModelInferenceParameters.CheckTensors = true;
 
 ## What's next
 
-- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/) — pair with `PreferredAcceleration` to select the right native binary.
-- [Context parameters](/llm/net/developer-reference/parameters/context/) — KV cache configuration and batch sizes that interact with GPU offload.
-- [System requirements](/llm/net/system-requirements/) — GPU backends and their driver / runtime requirements.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): pair with `PreferredAcceleration` to select the right native binary.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): KV cache configuration and batch sizes that interact with GPU offload.
+- [System requirements](/llm/net/system-requirements/): GPU backends and their driver / runtime requirements.

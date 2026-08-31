@@ -7,7 +7,7 @@ url: /net/use-cases/multiple-concurrent-sessions/
 feedback: LLMNET
 version: 26.5.0
 title: Multiple concurrent sessions
-description: Serve many users or workflows from a single Aspose.LLM for .NET instance — per-user sessions, serialized inference, request routing patterns.
+description: Serve many users or workflows from a single Aspose.LLM for .NET instance, per-user sessions, serialized inference, request routing patterns.
 keywords:
 - concurrent sessions
 - multi-user
@@ -17,7 +17,7 @@ keywords:
 - chat server
 ---
 
-A single `AsposeLLMApi` instance hosts many chat sessions. Each session has its own history and KV region — conversations do not cross-contaminate. This is the foundation for chat servers, multi-user tools, and background-job dispatchers.
+A single `AsposeLLMApi` instance hosts many chat sessions. Each session has its own history and KV region: conversations do not cross-contaminate. This is the foundation for chat servers, multi-user tools, and background-job dispatchers.
 
 Inference itself is serialized: the native layer does not run multiple inference calls in parallel on one instance. You route requests through a queue or single worker.
 
@@ -147,7 +147,7 @@ peak KV memory = max_concurrent_sessions × avg_history_tokens × per_token_kv_b
 
 For 100 concurrent sessions averaging 4K tokens of history, with 32-layer model and F16 KV cache, peak KV is ~6-8 GB on top of model weights.
 
-Keep session count bounded — evict idle sessions explicitly when your memory budget is tight:
+Keep session count bounded: evict idle sessions explicitly when your memory budget is tight:
 
 ```csharp
 // Example: evict sessions idle for more than 30 minutes.
@@ -156,7 +156,7 @@ Keep session count bounded — evict idle sessions explicitly when your memory b
 
 The SDK does not expose an explicit "delete session" API in the current release. To fully reclaim a session's memory, dispose and recreate the `AsposeLLMApi` periodically in long-running services.
 
-## Full example — minimal chat server
+## Full example: minimal chat server
 
 ```csharp
 using Aspose.LLM;
@@ -227,6 +227,6 @@ internal class ChatServer
 
 ## What's next
 
-- [Chat sessions](/llm/net/developer-reference/chat-sessions/) — full session reference.
-- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/) — putting this pattern behind HTTP.
-- [Cache management](/llm/net/developer-reference/cache-management/) — control session memory over time.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): full session reference.
+- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/): putting this pattern behind HTTP.
+- [Cache management](/llm/net/developer-reference/cache-management/): control session memory over time.

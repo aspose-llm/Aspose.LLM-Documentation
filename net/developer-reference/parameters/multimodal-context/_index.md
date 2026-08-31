@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/multimodal-context/
 feedback: LLMNET
 version: 26.5.0
 title: Multimodal context parameters
-description: Configure the mtmd (multimodal) context in Aspose.LLM for .NET — GPU offload for the vision projector, timing diagnostics, thread count, verbosity, and media marker.
+description: Configure the mtmd (multimodal) context in Aspose.LLM for .NET, GPU offload for the vision projector, timing diagnostics, thread count, verbosity, and media marker.
 keywords:
 - MultimodalContextParameters
 - MtmdContextParameters
@@ -18,7 +18,7 @@ keywords:
 - media marker
 ---
 
-`MultimodalContextParameters` — exposed on the preset as `MtmdContextParameters` — configures the `mtmd` context used by vision presets to evaluate image tokens. The base text model is configured by [`ContextParameters`](/llm/net/developer-reference/parameters/context/); this bag covers only the multimodal layer.
+`MultimodalContextParameters`: exposed on the preset as `MtmdContextParameters`: configures the `mtmd` context used by vision presets to evaluate image tokens. The base text model is configured by [`ContextParameters`](/llm/net/developer-reference/parameters/context/); this bag covers only the multimodal layer.
 
 Only vision presets use these settings. On text-only presets the bag is instantiated but has no effect.
 
@@ -37,7 +37,7 @@ public class MultimodalContextParameters
 }
 ```
 
-Every field is nullable. A `null` value means "use the native `mtmd` default" — override only when you have a specific reason.
+Every field is nullable. A `null` value means "use the native `mtmd` default": override only when you have a specific reason.
 
 ## Detailed field reference
 
@@ -63,9 +63,9 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 
 Controls whether the vision projector (`mmproj`) runs on the GPU alongside the base model. The `mmproj` is typically small (200 MB - 2 GB), so GPU offload is fast even on modest hardware.
 
-- `null` — delegate to `mtmd`'s auto-detection (currently: GPU if available).
-- `true` — force GPU.
-- `false` — force CPU. Use when you have limited GPU memory and want to spend it entirely on the base model.
+- `null`: delegate to `mtmd`'s auto-detection (currently: GPU if available).
+- `true`: force GPU.
+- `false`: force CPU. Use when you have limited GPU memory and want to spend it entirely on the base model.
 
 ```csharp
 preset.MtmdContextParameters.UseGpu = false; // keep GPU memory for the base model
@@ -73,7 +73,7 @@ preset.MtmdContextParameters.UseGpu = false; // keep GPU memory for the base mod
 
 ### `PrintTimings`
 
-Enables `mtmd`'s built-in per-step timing logs — the time spent tokenizing images, running the projector, and evaluating chunks. Useful for diagnosing slow first-response latency on vision queries.
+Enables `mtmd`'s built-in per-step timing logs: the time spent tokenizing images, running the projector, and evaluating chunks. Useful for diagnosing slow first-response latency on vision queries.
 
 ```csharp
 preset.MtmdContextParameters.PrintTimings = true;
@@ -83,7 +83,7 @@ Leave this `null` (off) in production. Timing logs add overhead and flood the ou
 
 ### `ThreadCount`
 
-Threads used for CPU-side `mtmd` work (image preprocessing, CPU portions of the projector). When `null`, `mtmd` follows its own heuristic — usually half the logical cores.
+Threads used for CPU-side `mtmd` work (image preprocessing, CPU portions of the projector). When `null`, `mtmd` follows its own heuristic: usually half the logical cores.
 
 Override when:
 
@@ -106,14 +106,14 @@ Log verbosity for the `mtmd` layer. The native layer accepts an integer; the typ
 | `3` | Debug |
 
 ```csharp
-preset.MtmdContextParameters.Verbosity = 3; // debug — useful when images are tokenized unexpectedly
+preset.MtmdContextParameters.Verbosity = 3; // debug: useful when images are tokenized unexpectedly
 ```
 
-Keep verbosity low in production (`0` or `1`). Higher levels emit tagged lines that need post-processing to be useful — see the `parse_mm_logs.zsh` helper script in the Aspose.LLM SDK repository.
+Keep verbosity low in production (`0` or `1`). Higher levels emit tagged lines that need post-processing to be useful: see the `parse_mm_logs.zsh` helper script in the Aspose.LLM SDK repository.
 
 ### `MediaMarker`
 
-Placeholder text used in the chat template to mark where images are inserted. The default is the chat-template-specific marker (different per model family — LLaVA, Qwen-VL, Gemma-Vision, and others have different tokens). Override only if you understand the model's prompt format and need a non-standard marker.
+Placeholder text used in the chat template to mark where images are inserted. The default is the chat-template-specific marker (different per model family: LLaVA, Qwen-VL, Gemma-Vision, and others have different tokens). Override only if you understand the model's prompt format and need a non-standard marker.
 
 ```csharp
 preset.MtmdContextParameters.MediaMarker = "<|image|>";
@@ -127,7 +127,7 @@ In nearly all cases, leave this `null`. The correct marker is selected automatic
 
 ```csharp
 var preset = new Qwen3VL2BPreset();
-// MtmdContextParameters stays at defaults — all fields null.
+// MtmdContextParameters stays at defaults: all fields null.
 
 using var api = AsposeLLMApi.Create(preset);
 ```
@@ -155,6 +155,6 @@ On a GPU tight for memory, keeping the projector on CPU trades some first-token 
 
 ## What's next
 
-- [Supported presets — vision](/llm/net/product-overview/supported-presets/#vision-presets) — built-in vision presets and their `mmproj` sources.
-- [Model source parameters](/llm/net/developer-reference/parameters/model-source/) — configure the vision projector's download source.
-- [Attaching images](/llm/net/use-cases/) — vision use case (planned in a future release).
+- [Supported presets: vision](/llm/net/product-overview/supported-presets/#vision-presets): built-in vision presets and their `mmproj` sources.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/): configure the vision projector's download source.
+- [Attaching images](/llm/net/use-cases/): vision use case (planned in a future release).

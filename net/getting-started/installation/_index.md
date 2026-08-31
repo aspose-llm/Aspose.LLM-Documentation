@@ -19,7 +19,7 @@ keywords:
 - .NET 10
 ---
 
-Install Aspose.LLM for .NET from NuGet and add it to your project. A single package contains the full SDK — no additional references are needed.
+Install Aspose.LLM for .NET from NuGet and add it to your project. A single package contains the full SDK, no additional references are needed.
 
 ## Prerequisites
 
@@ -61,8 +61,8 @@ The NuGet package contains a single managed assembly: **`Aspose.LLM.dll`**. The 
 
 Direct NuGet dependencies:
 
-- `System.Text.Json` 8.0.0 — session serialization.
-- `Microsoft.Extensions.Logging.Abstractions` 2.1.1 — optional `ILogger` integration.
+- `System.Text.Json` 8.0.0: session serialization.
+- `Microsoft.Extensions.Logging.Abstractions` 2.1.1: optional `ILogger` integration.
 
 Additional internal package references are merged into the main assembly and do not show up as separate references in your project.
 
@@ -109,6 +109,6 @@ Between minor versions, the API is generally stable. Between major versions, rev
 
 ## What's next
 
-- [Licensing](/llm/net/licensing/) — apply a license; required for inference.
-- [Hello, world!](/llm/net/hello-world/) — run the first example.
-- [Architecture](/llm/net/product-overview/architecture/) — understand the layers and what happens on first `Create`.
+- [Licensing](/llm/net/licensing/): apply a license; required for inference.
+- [Hello, world!](/llm/net/hello-world/): run the first example.
+- [Architecture](/llm/net/product-overview/architecture/): understand the layers and what happens on first `Create`.

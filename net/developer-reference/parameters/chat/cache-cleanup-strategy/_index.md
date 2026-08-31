@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/chat/cache-cleanup-strategy/
 feedback: LLMNET
 version: 26.5.0
 title: CacheCleanupStrategy
-description: Policy for KV cache trimming when context fills up in Aspose.LLM for .NET — five strategies ranging from full reset to preserving the first user turn.
+description: Policy for KV cache trimming when context fills up in Aspose.LLM for .NET, five strategies ranging from full reset to preserving the first user turn.
 keywords:
 - CacheCleanupStrategy
 - KV cache
@@ -24,7 +24,7 @@ keywords:
 |---|---|
 | **Type** | `CacheCleanupStrategy` enum |
 | **Default** | `RemoveOldestMessages` |
-| **Values** | 5 — see table below |
+| **Values** | 5: see table below |
 | **Category** | Chat session |
 | **Field on** | `ChatParameters.CacheCleanupStrategy` |
 
@@ -73,13 +73,13 @@ api.ForceCacheCleanup(CacheCleanupStrategy.KeepSystemPromptOnly);
 
 ## Interactions
 
-- [`SystemPrompt`](/llm/net/developer-reference/parameters/chat/system-prompt/) — all strategies preserve it.
-- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — the ceiling this strategy serves.
-- [`DefragThreshold`](/llm/net/developer-reference/parameters/context/defrag-threshold/) — compacts holes left behind by cleanup.
-- `AsposeLLMApi.ForceCacheCleanup(strategy)` — manual trigger with an override strategy.
+- [`SystemPrompt`](/llm/net/developer-reference/parameters/chat/system-prompt/): all strategies preserve it.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): the ceiling this strategy serves.
+- [`DefragThreshold`](/llm/net/developer-reference/parameters/context/defrag-threshold/): compacts holes left behind by cleanup.
+- `AsposeLLMApi.ForceCacheCleanup(strategy)`: manual trigger with an override strategy.
 
 ## What's next
 
-- [Cache management](/llm/net/developer-reference/cache-management/) — full guide with practical patterns.
-- [Multi-turn chat use case](/llm/net/use-cases/multi-turn-chat/) — cache management in practice.
-- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/) — all chat knobs.
+- [Cache management](/llm/net/developer-reference/cache-management/): full guide with practical patterns.
+- [Multi-turn chat use case](/llm/net/use-cases/multi-turn-chat/): cache management in practice.
+- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/): all chat knobs.

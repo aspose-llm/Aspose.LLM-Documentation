@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/gpu-layers/
 feedback: LLMNET
 version: 26.5.0
 title: GpuLayers
-description: Number of model layers to offload to GPU in Aspose.LLM for .NET — 0 for CPU-only, 999 for full offload, partial for memory-tight GPUs.
+description: Number of model layers to offload to GPU in Aspose.LLM for .NET, 0 for CPU-only, 999 for full offload, partial for memory-tight GPUs.
 keywords:
 - GpuLayers
 - GPU offload
@@ -46,9 +46,9 @@ Partial offload is useful when the model doesn't fit entirely in VRAM. The trans
 |---|---|
 | CPU-only inference | `0` |
 | Full GPU offload (idiomatic) | `999` |
-| 8B model on 12 GB GPU | Typically `24` – `32` (verify per model) |
+| 8B model on 12 GB GPU | Typically `24` to `32` (verify per model) |
 | 70B model on 24 GB GPU | Partial; pair with quantization |
-| Apple Silicon Metal | `999` (unified memory — no separate budget) |
+| Apple Silicon Metal | `999` (unified memory, no separate budget) |
 
 Pair with a GPU-capable binary via [`BinaryManagerParameters.PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/).
 
@@ -73,15 +73,15 @@ preset.ContextParameters.OffloadKqv = false;  // keep KV on CPU to save more VRA
 
 ## Interactions
 
-- [`BinaryManagerParameters.PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/) — must point at a GPU-capable backend.
-- [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/) — which GPU (for single-GPU mode).
-- [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/) — how to split across multiple GPUs.
-- [`TensorSplit`](/llm/net/developer-reference/parameters/model-inference/tensor-split/) — per-GPU allocation ratios.
-- [`OffloadKqv`](/llm/net/developer-reference/parameters/context/offload-kqv/) — related, but for KV cache not weights.
+- [`BinaryManagerParameters.PreferredAcceleration`](/llm/net/developer-reference/parameters/binary-manager/): must point at a GPU-capable backend.
+- [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/): which GPU (for single-GPU mode).
+- [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/): how to split across multiple GPUs.
+- [`TensorSplit`](/llm/net/developer-reference/parameters/model-inference/tensor-split/): per-GPU allocation ratios.
+- [`OffloadKqv`](/llm/net/developer-reference/parameters/context/offload-kqv/): related, but for KV cache not weights.
 
 ## What's next
 
-- [MainGpu](/llm/net/developer-reference/parameters/model-inference/main-gpu/) — single-GPU selector.
-- [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/) — multi-GPU.
-- [Acceleration overview](/llm/net/developer-reference/acceleration/) — backend-specific setup.
-- [GPU deployment use case](/llm/net/use-cases/gpu-deployment-cuda/) — runnable example.
+- [MainGpu](/llm/net/developer-reference/parameters/model-inference/main-gpu/): single-GPU selector.
+- [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/): multi-GPU.
+- [Acceleration overview](/llm/net/developer-reference/acceleration/): backend-specific setup.
+- [GPU deployment use case](/llm/net/use-cases/gpu-deployment-cuda/): runnable example.

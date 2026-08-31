@@ -20,7 +20,7 @@ Aspose.LLM for .NET does **not** expose token-by-token streaming in the current 
 
 ## The limitation
 
-Method signatures return `Task<string>` — a single result, not an async sequence:
+Method signatures return `Task<string>`: a single result, not an async sequence:
 
 ```csharp
 public Task<string> SendMessageAsync(...);
@@ -33,14 +33,14 @@ Neither `IAsyncEnumerable<string>` nor a streaming callback is available. The na
 
 For typical chat UIs, the user sees the reply **after** the model finishes generating. On a modern GPU:
 
-- Short replies (64 tokens) — ~0.5-1 second.
-- Medium replies (256 tokens) — ~2-3 seconds.
-- Long replies (1024 tokens) — ~8-15 seconds.
+- Short replies (64 tokens): ~0.5-1 second.
+- Medium replies (256 tokens): ~2-3 seconds.
+- Long replies (1024 tokens): ~8-15 seconds.
 
 On CPU:
 
-- Short replies — 3-10 seconds.
-- Long replies — 1-3 minutes.
+- Short replies: 3-10 seconds.
+- Long replies: 1-3 minutes.
 
 If your UX requires tokens to appear as they are generated (typical chat-window feel), the SDK in its current form does not provide that directly.
 
@@ -97,9 +97,9 @@ Only possible with two processes because of the single-instance constraint.
 For tasks that would take minutes (document summarization, batch analysis), respond immediately with a job ID and deliver the result via polling or webhook:
 
 ```csharp
-// POST /jobs — enqueue, return job ID.
-// GET  /jobs/{id} — poll status and result.
-// POST /webhooks/llm — deliver when ready.
+// POST /jobs: enqueue, return job ID.
+// GET  /jobs/{id}: poll status and result.
+// POST /webhooks/llm: deliver when ready.
 ```
 
 The user is not blocked on a single HTTP request. This is the standard long-running-job pattern for HTTP services.
@@ -128,6 +128,6 @@ The main reason to use Aspose.LLM is on-premise execution with no data egress. I
 
 ## What's next
 
-- [Architecture](/llm/net/product-overview/architecture/) — what happens during generation.
-- [Features](/llm/net/product-overview/features/) — full capability list and limitations.
-- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/) — queue / job patterns for responsive HTTP.
+- [Architecture](/llm/net/product-overview/architecture/): what happens during generation.
+- [Features](/llm/net/product-overview/features/): full capability list and limitations.
+- [Integration with ASP.NET Core](/llm/net/use-cases/integration-with-aspnet-core/): queue / job patterns for responsive HTTP.

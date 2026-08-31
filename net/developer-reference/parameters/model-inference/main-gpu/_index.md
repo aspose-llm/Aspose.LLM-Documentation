@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/main-gpu/
 feedback: LLMNET
 version: 26.5.0
 title: MainGpu
-description: GPU device index in Aspose.LLM for .NET — selects which GPU holds the model when SplitMode is None.
+description: GPU device index in Aspose.LLM for .NET, selects which GPU holds the model when SplitMode is None.
 keywords:
 - MainGpu
 - GPU index
@@ -29,10 +29,10 @@ keywords:
 
 ## What it does
 
-- `null` or `0` — use GPU 0.
-- `1`, `2`, etc. — use that GPU.
+- `null` or `0`: use GPU 0.
+- `1`, `2`, etc.: use that GPU.
 
-`MainGpu` is ignored when `SplitMode` is `LAYER` or `ROW` — those modes distribute the model across multiple GPUs without a single "main" device.
+`MainGpu` is ignored when `SplitMode` is `LAYER` or `ROW`: those modes distribute the model across multiple GPUs without a single "main" device.
 
 On single-GPU hosts, the field is effectively always 0.
 
@@ -63,11 +63,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/) — `MainGpu` only applies when mode is `None`.
-- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — layers go to `MainGpu` when split is `None`.
+- [`SplitMode`](/llm/net/developer-reference/parameters/model-inference/split-mode/): `MainGpu` only applies when mode is `None`.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): layers go to `MainGpu` when split is `None`.
 
 ## What's next
 
-- [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/) — multi-GPU distribution.
-- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — primary offload control.
-- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/) — multi-GPU NVIDIA setup.
+- [SplitMode](/llm/net/developer-reference/parameters/model-inference/split-mode/): multi-GPU distribution.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): primary offload control.
+- [CUDA acceleration](/llm/net/developer-reference/acceleration/cuda/): multi-GPU NVIDIA setup.

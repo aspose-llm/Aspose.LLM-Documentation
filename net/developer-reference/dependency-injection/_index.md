@@ -22,8 +22,8 @@ Aspose.LLM for .NET provides an extension method for `IServiceCollection` that r
 
 The [`AsposeLLMApi`](/llm/net/developer-reference/asposellmapi/) facade and the DI path are **two ways to reach the same engine**. Use whichever suits your application shape:
 
-- **Facade** — simple console apps, CLI tools, scripts. One object to instantiate and dispose.
-- **DI** — ASP.NET Core, hosted services, Workers. Engine and its dependencies become DI-resolvable singletons.
+- **Facade**: simple console apps, CLI tools, scripts. One object to instantiate and dispose.
+- **DI**: ASP.NET Core, hosted services, Workers. Engine and its dependencies become DI-resolvable singletons.
 
 ## Method signature
 
@@ -41,9 +41,9 @@ public static class Configuration
 
 Arguments:
 
-- `services` — the DI container's service collection.
-- `preset` — the preset that supplies engine, model, context, sampler, and binary settings.
-- `configure` — optional callback to tweak the preset programmatically before registration.
+- `services`: the DI container's service collection.
+- `preset`: the preset that supplies engine, model, context, sampler, and binary settings.
+- `configure`: optional callback to tweak the preset programmatically before registration.
 
 ## What gets registered
 
@@ -62,7 +62,7 @@ Arguments:
 | `NativeLoggerAdapter` | Bridges `llama.cpp` native logs to `ILogger`. |
 | `ILoggerFactory` & friends | Console + file logging, level controlled by `EnableDebugLogging`. |
 
-`Engine` is constructed with `presetToLoad: preset`, which means **the model is loaded synchronously the first time `Engine` is resolved** — same as the facade's `Create`.
+`Engine` is constructed with `presetToLoad: preset`, which means **the model is loaded synchronously the first time `Engine` is resolved**: same as the facade's `Create`.
 
 Logging is automatically configured:
 
@@ -99,7 +99,7 @@ app.MapPost("/chat", async (string message, Engine engine, CancellationToken ct)
 app.Run();
 ```
 
-Resolve `Engine` — or any registered service — via constructor injection or `app.Services.GetRequiredService<T>()`.
+Resolve `Engine`, or any registered service: via constructor injection or `app.Services.GetRequiredService<T>()`.
 
 ## Customizing the preset at registration
 
@@ -171,7 +171,7 @@ public class ChatWorker : BackgroundService
 
 - **Single instance per process.** The underlying `Engine` shares the single-instance guard with `AsposeLLMApi`. Registering `AddLlamaServices` in a web host and also creating an `AsposeLLMApi` on the side throws. Pick one entry point.
 - **License is still required** before chat methods. Apply the license before any request handler calls `Engine` methods.
-- **Model loads on first resolve** — the first request hitting `Engine` can take minutes on a cold machine. Consider eager resolution at startup:
+- **Model loads on first resolve**: the first request hitting `Engine` can take minutes on a cold machine. Consider eager resolution at startup:
 
   ```csharp
   app.Services.GetRequiredService<Engine>(); // trigger first-time model load
@@ -181,6 +181,6 @@ public class ChatWorker : BackgroundService
 
 ## What's next
 
-- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/) — the simpler non-DI entry point.
-- [Engine parameters](/llm/net/developer-reference/parameters/engine/) — logging and threading defaults applied via `AddLlamaServices`.
-- [Licensing](/llm/net/licensing/) — license application in host startup.
+- [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/): the simpler non-DI entry point.
+- [Engine parameters](/llm/net/developer-reference/parameters/engine/): logging and threading defaults applied via `AddLlamaServices`.
+- [Licensing](/llm/net/licensing/): license application in host startup.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/yarn-orig-ctx/
 feedback: LLMNET
 version: 26.5.0
 title: YarnOrigCtx
-description: Original trained context length for YaRN scaling in Aspose.LLM for .NET — set this to the model's native context when extending beyond it.
+description: Original trained context length for YaRN scaling in Aspose.LLM for .NET, set this to the model's native context when extending beyond it.
 keywords:
 - YarnOrigCtx
 - YaRN
@@ -31,8 +31,8 @@ keywords:
 
 YaRN extends context by a factor `ContextSize / YarnOrigCtx`. If the model was trained at 8K and you target 32K, the scale factor is `32768 / 8192 = 4`. YaRN's quality depends on knowing both values accurately.
 
-- `null` (default) — YaRN reads the value from the GGUF metadata. This is what most presets use.
-- Specific integer — override. Set to the model's actual training context length when the metadata is missing or wrong.
+- `null` (default): YaRN reads the value from the GGUF metadata. This is what most presets use.
+- Specific integer: override. Set to the model's actual training context length when the metadata is missing or wrong.
 
 ## When to change it
 
@@ -65,12 +65,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — target; scale = `ContextSize / YarnOrigCtx`.
-- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — must be `Yarn`.
-- Other YaRN knobs ([`YarnExtFactor`](/llm/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/llm/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/)) — usually null; model defaults work.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): target; scale = `ContextSize / YarnOrigCtx`.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/): must be `Yarn`.
+- Other YaRN knobs ([`YarnExtFactor`](/llm/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/llm/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/)): usually null; model defaults work.
 
 ## What's next
 
-- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/) — enables YaRN.
-- [ContextSize](/llm/net/developer-reference/parameters/context/context-size/) — the extended target.
-- [Long context tuning](/llm/net/use-cases/long-context-tuning/) — full recipe.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/): enables YaRN.
+- [ContextSize](/llm/net/developer-reference/parameters/context/context-size/): the extended target.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/): full recipe.

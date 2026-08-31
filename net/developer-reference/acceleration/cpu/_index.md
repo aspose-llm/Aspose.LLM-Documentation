@@ -7,7 +7,7 @@ url: /net/developer-reference/acceleration/cpu/
 feedback: LLMNET
 version: 26.5.0
 title: CPU
-description: Run Aspose.LLM for .NET on CPU only — AVX512, AVX2, and NoAVX variants, threading, and performance expectations.
+description: Run Aspose.LLM for .NET on CPU only, AVX512, AVX2, and NoAVX variants, threading, and performance expectations.
 keywords:
 - CPU
 - AVX2
@@ -51,8 +51,8 @@ CPU download size: typically 80-150 MB.
 
 On CPU, threading is the primary lever for throughput. Two settings:
 
-- **`ContextParameters.NThreads`** — threads for generation (token-by-token decode). Typically `half of ProcessorCount`.
-- **`ContextParameters.NThreadsBatch`** — threads for prompt processing (initial tokenization and context fill). Typically `all ProcessorCount`.
+- **`ContextParameters.NThreads`**: threads for generation (token-by-token decode). Typically `half of ProcessorCount`.
+- **`ContextParameters.NThreadsBatch`**: threads for prompt processing (initial tokenization and context fill). Typically `all ProcessorCount`.
 
 ```csharp
 preset.ContextParameters.NThreads = 8;
@@ -63,7 +63,7 @@ When `NThreads` is `null`, the engine falls back to `EngineParameters.DefaultThr
 
 ### Why different thread counts
 
-- **Prompt processing** is embarrassingly parallel — more threads help.
+- **Prompt processing** is embarrassingly parallel: more threads help.
 - **Generation** is sequential at the token level and bound by memory bandwidth. Beyond a certain point (often around 8-12 threads), adding threads does not help and sometimes slows generation due to NUMA or cache contention.
 
 Benchmark on your specific hardware for the best numbers. Start with `NThreads = ProcessorCount / 2` and `NThreadsBatch = ProcessorCount`, then tune.
@@ -89,10 +89,10 @@ Model weights plus KV cache live in system RAM. Typical memory for a 7B Q4_K_M m
 
 ## Performance tips
 
-- **Use AVX512 when available** — on Zen 4 or recent Xeon, AVX512 is 20-40 % faster than AVX2 for the same model.
-- **Flash Attention** — `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled` helps on long contexts even on CPU.
-- **Quantize the KV cache** — `TypeV = GgmlType.Q8_0` halves V-cache memory with minimal quality impact.
-- **Smaller models first** — 3B models (Llama 3.2, Phi 4 mini) run 2-3× faster than 7B models on the same CPU.
+- **Use AVX512 when available**: on Zen 4 or recent Xeon, AVX512 is 20-40 % faster than AVX2 for the same model.
+- **Flash Attention**: `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled` helps on long contexts even on CPU.
+- **Quantize the KV cache**: `TypeV = GgmlType.Q8_0` halves V-cache memory with minimal quality impact.
+- **Smaller models first**: 3B models (Llama 3.2, Phi 4 mini) run 2-3× faster than 7B models on the same CPU.
 - **Disable other CPU-heavy work** during inference. CPU throughput is sensitive to contention.
 
 ## Common issues
@@ -100,12 +100,12 @@ Model weights plus KV cache live in system RAM. Typical memory for a 7B Q4_K_M m
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Very slow inference | Using `NoAVX` or `AVX` variant on a modern CPU. | Verify `PreferredAcceleration` auto-detection; force `AVX2` or `AVX512` explicitly. |
-| High CPU usage, low throughput | Too many threads — contention. | Reduce `NThreads`; try `NThreads = ProcessorCount / 2`. |
+| High CPU usage, low throughput | Too many threads: contention. | Reduce `NThreads`; try `NThreads = ProcessorCount / 2`. |
 | Stalls between tokens | Memory pressure or page thrashing. | Check memory; enable `UseMemoryMapping = true`. |
 | Crashes on `AVX512` variant | CPU reports AVX-512 but has a bug in legacy modes. | Drop to `AVX2`. |
 
 ## What's next
 
-- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/) — `GpuLayers = 0` pattern for CPU-only.
-- [Context parameters](/llm/net/developer-reference/parameters/context/) — `NThreads` and `NThreadsBatch`.
-- [Metal](/llm/net/developer-reference/acceleration/metal/) — macOS-preferred alternative on Apple Silicon.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): `GpuLayers = 0` pattern for CPU-only.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): `NThreads` and `NThreadsBatch`.
+- [Metal](/llm/net/developer-reference/acceleration/metal/): macOS-preferred alternative on Apple Silicon.

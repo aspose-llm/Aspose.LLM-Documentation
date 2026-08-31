@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/engine/default-threads/
 feedback: LLMNET
 version: 26.5.0
 title: DefaultThreads
-description: Default thread count for Aspose.LLM for .NET operations when per-bag thread fields are unset — defaults to ProcessorCount minus 1.
+description: Default thread count for Aspose.LLM for .NET operations when per-bag thread fields are unset, defaults to ProcessorCount minus 1.
 keywords:
 - DefaultThreads
 - CPU threads
@@ -41,7 +41,7 @@ The default leaves one logical core free for the rest of your application. On an
 | CPU-quota-limited container | Fixed smaller number matching quota |
 | Shared host with other heavy work | Half `ProcessorCount` |
 
-For per-phase control (generation vs prompt processing), set [`NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) and [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) directly — they override `DefaultThreads`.
+For per-phase control (generation vs prompt processing), set [`NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) and [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) directly: they override `DefaultThreads`.
 
 ## Example
 
@@ -55,11 +55,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/n-threads/) — generation threads; overrides default when set.
-- [`ContextParameters.NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads; overrides default when set.
+- [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/n-threads/): generation threads; overrides default when set.
+- [`ContextParameters.NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/): prompt-processing threads; overrides default when set.
 
 ## What's next
 
-- [NThreads](/llm/net/developer-reference/parameters/context/n-threads/) — per-phase override.
-- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/) — threading strategy.
-- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/) — all engine knobs.
+- [NThreads](/llm/net/developer-reference/parameters/context/n-threads/): per-phase override.
+- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/): threading strategy.
+- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/): all engine knobs.

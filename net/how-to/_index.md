@@ -7,7 +7,7 @@ url: /net/how-to/
 feedback: LLMNET
 version: 26.5.0
 title: How-to recipes
-description: Short focused recipes for Aspose.LLM for .NET — model picking, quantization primer, speed-vs-quality tuning, cancellation, first-token latency, memory estimation.
+description: Short focused recipes for Aspose.LLM for .NET, model picking, quantization primer, speed-vs-quality tuning, cancellation, first-token latency, memory estimation.
 keywords:
 - how-to
 - recipe
@@ -19,7 +19,7 @@ keywords:
 - memory
 ---
 
-Task-oriented recipes. Each page answers one specific question with a concise, actionable solution — a lookup, a short formula, or a two-to-three step procedure. Recipes avoid full runnable projects; for that level of detail, see [Use cases](/llm/net/use-cases/).
+Task-oriented recipes. Each page answers one specific question with a concise, actionable solution: a lookup, a short formula, or a two-to-three step procedure. Recipes avoid full runnable projects; for that level of detail, see [Use cases](/llm/net/use-cases/).
 
 ## How this section is organized
 
@@ -36,18 +36,18 @@ How-tos are deliberately short. If a recipe grows past ~200 lines, it is promote
 
 ### Choosing your setup
 
-- [Select a model by task](/llm/net/how-to/select-model-by-task/) — decision table over the nine built-in text presets and four vision presets.
-- [Understand quantization](/llm/net/how-to/understand-quantization/) — Q4 vs Q5 vs Q8 vs F16 primer; what each letter means; when to pick which.
-- [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/) — simple formula for RAM / VRAM given model size, quantization, and context length.
+- [Select a model by task](/llm/net/how-to/select-model-by-task/): decision table over the nine built-in text presets and four vision presets.
+- [Understand quantization](/llm/net/how-to/understand-quantization/): Q4 vs Q5 vs Q8 vs F16 primer; what each letter means; when to pick which.
+- [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/): simple formula for RAM / VRAM given model size, quantization, and context length.
 
 ### Tuning behavior
 
-- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/) — concrete sampler / context / model-size dials for the speed-quality trade-off.
-- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/) — why the first token is slow and the five patterns that cut the time.
+- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/): concrete sampler / context / model-size dials for the speed-quality trade-off.
+- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/): why the first token is slow and the five patterns that cut the time.
 
 ### Runtime control
 
-- [Handle cancellation](/llm/net/how-to/handle-cancellation/) — cancel an in-flight generation cleanly; session state after cancel; common pitfalls with `CancellationToken`.
+- [Handle cancellation](/llm/net/how-to/handle-cancellation/): cancel an in-flight generation cleanly; session state after cancel; common pitfalls with `CancellationToken`.
 
 ## When a recipe does not match
 
@@ -57,7 +57,7 @@ For deeper questions, the [Aspose Support Forum](https://forum.aspose.com/) is t
 
 ## What's next
 
-- [Use cases](/llm/net/use-cases/) — full running projects organized by scenario.
-- [Quick wins](/llm/net/quick-wins/) — compact copy-paste snippets for common first-time tasks.
-- [Developer's reference](/llm/net/developer-reference/) — conceptual reference for presets, parameters, sessions, and APIs.
-- [Troubleshooting](/llm/net/troubleshooting/) — diagnose and fix known problems.
+- [Use cases](/llm/net/use-cases/): full running projects organized by scenario.
+- [Quick wins](/llm/net/quick-wins/): compact copy-paste snippets for common first-time tasks.
+- [Developer's reference](/llm/net/developer-reference/): conceptual reference for presets, parameters, sessions, and APIs.
+- [Troubleshooting](/llm/net/troubleshooting/): diagnose and fix known problems.

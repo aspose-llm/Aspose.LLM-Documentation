@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/n-batch/
 feedback: LLMNET
 version: 26.5.0
 title: NBatch
-description: Logical maximum batch size in Aspose.LLM for .NET — the largest number of tokens submitted in one llama_decode call; affects prompt throughput.
+description: Logical maximum batch size in Aspose.LLM for .NET, the largest number of tokens submitted in one llama_decode call; affects prompt throughput.
 keywords:
 - NBatch
 - batch size
@@ -15,7 +15,7 @@ keywords:
 - throughput
 ---
 
-`NBatch` is the logical maximum batch size — the upper bound on the number of tokens submitted in one call to the native `llama_decode` function. Larger batch sizes speed up prompt processing at the cost of more temporary memory.
+`NBatch` is the logical maximum batch size: the upper bound on the number of tokens submitted in one call to the native `llama_decode` function. Larger batch sizes speed up prompt processing at the cost of more temporary memory.
 
 ## Quick reference
 
@@ -23,7 +23,7 @@ keywords:
 |---|---|
 | **Type** | `uint?` |
 | **Default** | `null` (native default, typically 2048) |
-| **Range** | `512` – `8192` typical; power-of-two values recommended |
+| **Range** | `512` to `8192` typical; power-of-two values recommended |
 | **Category** | Context size and batching |
 | **Field on** | `ContextParameters.NBatch` |
 
@@ -31,8 +31,8 @@ keywords:
 
 When the engine processes a prompt (system message + conversation history + new user turn), it feeds tokens to the model in batches. `NBatch` caps the largest batch sent in one call.
 
-- Smaller `NBatch` (512) — lower memory footprint, slower prompt processing.
-- Larger `NBatch` (4096, 8192) — faster prompt processing, more temporary memory.
+- Smaller `NBatch` (512): lower memory footprint, slower prompt processing.
+- Larger `NBatch` (4096, 8192): faster prompt processing, more temporary memory.
 
 `NBatch` affects prompt processing time, not generation throughput. Once the first output token is produced, subsequent tokens come one at a time regardless of batch size.
 
@@ -43,9 +43,9 @@ When the engine processes a prompt (system message + conversation history + new 
 | Default | `null` (use native default) |
 | Fast prompt processing, ample memory | `4096` |
 | Memory-constrained | `512` or `1024` |
-| Very long prompts (summarization, long context) | `4096` – `8192` |
+| Very long prompts (summarization, long context) | `4096` to `8192` |
 
-Built-in presets set `NBatch` based on the model's needs — `Qwen25Preset` uses 3072, `Llama32Preset` uses 2048, vision presets often use 4096.
+Built-in presets set `NBatch` based on the model's needs: `Qwen25Preset` uses 3072, `Llama32Preset` uses 2048, vision presets often use 4096.
 
 ## Example
 
@@ -59,12 +59,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`NUbatch`](/llm/net/developer-reference/parameters/context/n-ubatch/) — physical batch size; typically set equal to or less than `NBatch`.
-- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — `NBatch` should not exceed `ContextSize`.
-- [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/) — threads that process the batch.
+- [`NUbatch`](/llm/net/developer-reference/parameters/context/n-ubatch/): physical batch size; typically set equal to or less than `NBatch`.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): `NBatch` should not exceed `ContextSize`.
+- [`NThreadsBatch`](/llm/net/developer-reference/parameters/context/n-threads-batch/): threads that process the batch.
 
 ## What's next
 
-- [NUbatch](/llm/net/developer-reference/parameters/context/n-ubatch/) — physical batch size.
-- [NThreadsBatch](/llm/net/developer-reference/parameters/context/n-threads-batch/) — prompt-processing threads.
-- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/) — batch size's role in TTFT.
+- [NUbatch](/llm/net/developer-reference/parameters/context/n-ubatch/): physical batch size.
+- [NThreadsBatch](/llm/net/developer-reference/parameters/context/n-threads-batch/): prompt-processing threads.
+- [Reduce first-token latency](/llm/net/how-to/reduce-first-token-latency/): batch size's role in TTFT.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/chat/history/
 feedback: LLMNET
 version: 26.5.0
 title: History
-description: Pre-seeded conversation history for new chat sessions in Aspose.LLM for .NET — inject user/assistant turns for few-shot priming.
+description: Pre-seeded conversation history for new chat sessions in Aspose.LLM for .NET, inject user/assistant turns for few-shot priming.
 keywords:
 - History
 - chat history
@@ -31,8 +31,8 @@ keywords:
 
 When a new session is created, the engine appends each entry of `History` after the system prompt, before any user message in the current turn. The model sees these turns as if they had been exchanged earlier.
 
-- `null` (default) — fresh session with only the system prompt.
-- Explicit list — every new session starts with these turns already in the KV cache.
+- `null` (default): fresh session with only the system prompt.
+- Explicit list: every new session starts with these turns already in the KV cache.
 
 `History` is applied at session creation; changing the list after `Create` has no effect on already-running sessions.
 
@@ -40,9 +40,9 @@ When a new session is created, the engine appends each entry of `History` after 
 
 | Scenario | Value |
 |---|---|
-| Default — blank session | `null` |
+| Default: blank session | `null` |
 | Few-shot priming for consistent output | 2-4 example turns |
-| Long-running personality — reinforce tone with examples | 3-5 stylistic turns |
+| Long-running personality: reinforce tone with examples | 3-5 stylistic turns |
 | Seed from stored transcript | Application-specific |
 
 ## Example
@@ -65,12 +65,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`SystemPrompt`](/llm/net/developer-reference/parameters/chat/system-prompt/) — applied before `History`.
-- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/) — pre-seeded turns consume tokens from the window.
-- `ChatMessage.CreateUserMessage` / `CreateAssistantMessage` / `CreateSystemMessage` — factories for building entries.
+- [`SystemPrompt`](/llm/net/developer-reference/parameters/chat/system-prompt/): applied before `History`.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): pre-seeded turns consume tokens from the window.
+- `ChatMessage.CreateUserMessage` / `CreateAssistantMessage` / `CreateSystemMessage`: factories for building entries.
 
 ## What's next
 
-- [Chat history reference](/llm/net/developer-reference/chat-sessions/chat-history/) — `ChatMessage` structure in detail.
-- [System prompt recipes](/llm/net/use-cases/system-prompt-recipes/) — priming patterns.
-- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/) — all chat knobs.
+- [Chat history reference](/llm/net/developer-reference/chat-sessions/chat-history/): `ChatMessage` structure in detail.
+- [System prompt recipes](/llm/net/use-cases/system-prompt-recipes/): priming patterns.
+- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/): all chat knobs.

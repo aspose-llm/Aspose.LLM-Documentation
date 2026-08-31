@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/use-memory-mapping/
 feedback: LLMNET
 version: 26.5.0
 title: UseMemoryMapping
-description: Toggle mmap-based model loading in Aspose.LLM for .NET — default true; disable only for network filesystems or specific memory layouts.
+description: Toggle mmap-based model loading in Aspose.LLM for .NET, default true; disable only for network filesystems or specific memory layouts.
 keywords:
 - UseMemoryMapping
 - mmap
@@ -23,15 +23,15 @@ keywords:
 | | |
 |---|---|
 | **Type** | `bool?` |
-| **Default** | `null` (native default — usually `true`) |
+| **Default** | `null` (native default: usually `true`) |
 | **Category** | Model loading |
 | **Field on** | `ModelInferenceParameters.UseMemoryMapping` |
 
 ## What it does
 
-- `true` (default) — the OS maps the GGUF file into address space. Pages are brought into memory on first access. Startup time is fast; peak memory is bounded by the working set.
-- `false` — the engine reads the full file into RAM before model init. Startup is slower; peak memory doubles during load (read buffer + allocation).
-- `null` — native default; behaves as `true` on most platforms.
+- `true` (default): the OS maps the GGUF file into address space. Pages are brought into memory on first access. Startup time is fast; peak memory is bounded by the working set.
+- `false`: the engine reads the full file into RAM before model init. Startup is slower; peak memory doubles during load (read buffer + allocation).
+- `null`: native default; behaves as `true` on most platforms.
 
 Memory mapping is preferred unless your filesystem does not support `mmap` (some network filesystems, container volume drivers).
 
@@ -60,11 +60,11 @@ preset.BaseModelInferenceParameters.UseMemoryMapping = false;
 
 ## Interactions
 
-- [`UseMemoryLocking`](/llm/net/developer-reference/parameters/model-inference/use-memory-locking/) — lock working set to prevent paging.
-- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — offloaded layers are copied from the mapped file to GPU memory.
+- [`UseMemoryLocking`](/llm/net/developer-reference/parameters/model-inference/use-memory-locking/): lock working set to prevent paging.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): offloaded layers are copied from the mapped file to GPU memory.
 
 ## What's next
 
-- [UseMemoryLocking](/llm/net/developer-reference/parameters/model-inference/use-memory-locking/) — prevent paging.
-- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/) — GPU offload.
-- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [UseMemoryLocking](/llm/net/developer-reference/parameters/model-inference/use-memory-locking/): prevent paging.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): GPU offload.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/): all inference knobs.
