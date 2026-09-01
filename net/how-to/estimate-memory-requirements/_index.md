@@ -7,7 +7,7 @@ url: /net/how-to/estimate-memory-requirements/
 feedback: LLMNET
 version: 26.5.0
 title: Estimate memory requirements
-description: Predict RAM and VRAM use for Aspose.LLM for .NET — model weights, KV cache, projector, intermediate buffers. Worked examples for common presets.
+description: Predict RAM and VRAM use for Aspose.LLM for .NET, model weights, KV cache, projector, intermediate buffers. Worked examples for common presets.
 keywords:
 - memory
 - RAM
@@ -32,12 +32,12 @@ This how-to helps you predict the total before deployment.
 |---|---|
 | Model weights | `parameters × bytes_per_parameter`. For a 7B Q4_K_M model, ~3.5 GB. |
 | KV cache | `layers × heads × head_dim × context × 2 × bytes_per_kv`. Actual numbers below. |
-| Vision projector | 200 MB – 2 GB. |
-| Intermediate buffers | 50 MB – 500 MB. |
+| Vision projector | 200 MB to 2 GB. |
+| Intermediate buffers | 50 MB to 500 MB. |
 
 ## Step 1. Weights from quantization
 
-See [Understand quantization](/net/how-to/understand-quantization/) for the per-parameter bytes table.
+See [Understand quantization](/llm/net/how-to/understand-quantization/) for the per-parameter bytes table.
 
 Rough: `weights_bytes ≈ parameters × bytes_per_param`.
 
@@ -69,15 +69,15 @@ Scales roughly linearly with actual session length. A 32K-capable preset at only
 
 | Projector quantization | Typical size |
 |---|---|
-| F16 | 800 MB – 2 GB |
-| Q8_0 | 500 MB – 1 GB |
-| Q4_K_M | 250 MB – 500 MB |
+| F16 | 800 MB to 2 GB |
+| Q8_0 | 500 MB to 1 GB |
+| Q4_K_M | 250 MB to 500 MB |
 
-Each vision preset declares its `mmproj` file in `MmprojSourceParameters` — see [Supported presets](/net/product-overview/supported-presets/#vision-presets).
+Each vision preset declares its `mmproj` file in `MmprojSourceParameters`: see [Supported presets](/llm/net/product-overview/supported-presets/#vision-presets).
 
 ## Step 4. Add overhead
 
-Sampler state, tokenizer, scratch buffers: 50 MB – 500 MB. Depends on batch size and context length.
+Sampler state, tokenizer, scratch buffers: 50 MB to 500 MB. Depends on batch size and context length.
 
 For a conservative budget, add **500 MB** on top of weights + KV + projector.
 
@@ -129,11 +129,11 @@ In order of quality impact (least to most):
 
 1. **Shorten `ContextSize`** to what you actually use.
 2. **Quantize V cache** (`TypeV = Q8_0`).
-3. **Enable flash attention** — reduces KV memory at long contexts.
-4. **Quantize K cache** (`TypeK = Q8_0`) — larger quality impact than V.
-5. **Use a smaller preset** — last resort when the model itself is too large.
+3. **Enable flash attention**: reduces KV memory at long contexts.
+4. **Quantize K cache** (`TypeK = Q8_0`): larger quality impact than V.
+5. **Use a smaller preset**: last resort when the model itself is too large.
 
-See [Low-memory tuning](/net/use-cases/low-memory-tuning/) for the full recipe.
+See [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/) for the full recipe.
 
 ## Measuring actual usage
 
@@ -148,10 +148,10 @@ top / htop      # system RAM
 # Task Manager → Performance → GPU / Memory
 ```
 
-The number you read includes OS page cache of memory-mapped files — some of it is reclaimable under pressure. Still, treat the reading as a ceiling estimate.
+The number you read includes OS page cache of memory-mapped files: some of it is reclaimable under pressure. Still, treat the reading as a ceiling estimate.
 
 ## What's next
 
-- [Understand quantization](/net/how-to/understand-quantization/) — precision impact on weights.
-- [System requirements](/net/system-requirements/) — per-preset memory ranges.
-- [Low-memory tuning](/net/use-cases/low-memory-tuning/) — when the numbers do not fit your budget.
+- [Understand quantization](/llm/net/how-to/understand-quantization/): precision impact on weights.
+- [System requirements](/llm/net/system-requirements/): per-preset memory ranges.
+- [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/): when the numbers do not fit your budget.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/mirostat-tau/
 feedback: LLMNET
 version: 26.5.0
 title: MirostatTau
-description: Mirostat target entropy in Aspose.LLM for .NET — the entropy (in nats) Mirostat tries to maintain; lower values produce more deterministic output.
+description: Mirostat target entropy in Aspose.LLM for .NET, the entropy (in nats) Mirostat tries to maintain; lower values produce more deterministic output.
 keywords:
 - MirostatTau
 - Mirostat
@@ -23,7 +23,7 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `5.0` |
-| **Range** | `> 0`; typical `3.0` – `8.0` |
+| **Range** | `> 0`; typical `3.0` to `8.0` |
 | **Category** | Adaptive sampler |
 | **Field on** | `SamplerParameters.MirostatTau` |
 
@@ -31,19 +31,19 @@ keywords:
 
 Entropy is measured in nats (natural-log units) over the per-step token distribution. Lower target entropy → tighter, more deterministic output. Higher target → more variety.
 
-- `MirostatTau = 3.0` — tight. Output is focused, often close to greedy.
-- `MirostatTau = 5.0` (default) — balanced. Good match for general chat.
-- `MirostatTau = 7.0+` — looser. Output has more variety, higher perplexity.
+- `MirostatTau = 3.0`: tight. Output is focused, often close to greedy.
+- `MirostatTau = 5.0` (default): balanced. Good match for general chat.
+- `MirostatTau = 7.0+`: looser. Output has more variety, higher perplexity.
 
-`MirostatTau` only matters when [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) is enabled (`1` or `2`). Otherwise the field is ignored.
+`MirostatTau` only matters when [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) is enabled (`1` or `2`). Otherwise the field is ignored.
 
 ## When to change it
 
 | Scenario | Value |
 |---|---|
 | Default | `5.0` |
-| Precise / code / factual output | `3.0` – `4.0` |
-| Creative writing | `6.0` – `8.0` |
+| Precise / code / factual output | `3.0` to `4.0` |
+| Creative writing | `6.0` to `8.0` |
 
 ## Example
 
@@ -58,11 +58,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — must be `1` or `2` for `MirostatTau` to take effect.
-- [`MirostatEta`](/net/developer-reference/parameters/sampler/mirostat-eta/) — how fast Mirostat adapts toward `Tau`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/): must be `1` or `2` for `MirostatTau` to take effect.
+- [`MirostatEta`](/llm/net/developer-reference/parameters/sampler/mirostat-eta/): how fast Mirostat adapts toward `Tau`.
 
 ## What's next
 
-- [Mirostat](/net/developer-reference/parameters/sampler/mirostat/) — main mode selector.
-- [MirostatEta](/net/developer-reference/parameters/sampler/mirostat-eta/) — learning rate.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [Mirostat](/llm/net/developer-reference/parameters/sampler/mirostat/): main mode selector.
+- [MirostatEta](/llm/net/developer-reference/parameters/sampler/mirostat-eta/): learning rate.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

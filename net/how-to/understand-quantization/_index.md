@@ -7,7 +7,7 @@ url: /net/how-to/understand-quantization/
 feedback: LLMNET
 version: 26.5.0
 title: Understand quantization
-description: Primer on GGUF quantization levels — Q4, Q5, Q8, F16, BF16, IQ variants. What to pick for your memory budget and quality target.
+description: Primer on GGUF quantization levels, Q4, Q5, Q8, F16, BF16, IQ variants. What to pick for your memory budget and quality target.
 keywords:
 - quantization
 - GGUF
@@ -20,7 +20,7 @@ keywords:
 - size
 ---
 
-Quantization reduces the precision of model weights from the full-precision training format (usually F16 or BF16) to fewer bits per value. Smaller weights mean smaller files, less memory, and faster inference — at some cost in output quality.
+Quantization reduces the precision of model weights from the full-precision training format (usually F16 or BF16) to fewer bits per value. Smaller weights mean smaller files, less memory, and faster inference: at some cost in output quality.
 
 ## The basic trade-off
 
@@ -43,11 +43,11 @@ Values are approximate; actual size depends on model architecture and specific q
 
 ## Popular picks
 
-- **Q4_K_M** — the default for most community-uploaded GGUFs. Good balance for 7B+ models.
-- **Q5_K_M** — slightly bigger, slightly better quality. Worth it when you have memory headroom.
-- **Q8_0** — near-lossless. Use when you want the best quality that is not F16 and have 2× the memory.
-- **IQ4_XS** — aggressive importance quantization; often better quality-per-byte than Q4_0 for the same size.
-- **F16** — full precision. Useful for reproducibility or benchmarks; rarely worth the memory otherwise.
+- **Q4_K_M**: the default for most community-uploaded GGUFs. Good balance for 7B+ models.
+- **Q5_K_M**: slightly bigger, slightly better quality. Worth it when you have memory headroom.
+- **Q8_0**: near-lossless. Use when you want the best quality that is not F16 and have 2× the memory.
+- **IQ4_XS**: aggressive importance quantization; often better quality-per-byte than Q4_0 for the same size.
+- **F16**: full precision. Useful for reproducibility or benchmarks; rarely worth the memory otherwise.
 
 ## How to pick for your preset
 
@@ -75,19 +75,19 @@ For a model with N parameters:
 | IQ4_XS | 0.45 | ~3.2 GB | ~32 GB |
 | Q3_K | 0.375 | ~2.6 GB | ~26 GB |
 
-Add KV cache and intermediate buffers on top — see [Estimate memory requirements](/net/how-to/estimate-memory-requirements/).
+Add KV cache and intermediate buffers on top: see [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/).
 
 ## When to pick a smaller quantization
 
 - Memory is the binding constraint. The model does not fit at higher quantization, but fits at lower.
 - You are running many models and want to pack several into one machine.
-- You accept some quality loss for speed — smaller quantizations run slightly faster due to reduced memory bandwidth pressure.
+- You accept some quality loss for speed: smaller quantizations run slightly faster due to reduced memory bandwidth pressure.
 
 ## When to avoid aggressive quantization
 
 - Tasks sensitive to precise output (code generation, math, legal/medical reasoning).
 - Long reasoning chains where errors compound.
-- When you have the memory — use Q5_K_M or Q8_0 when you can.
+- When you have the memory: use Q5_K_M or Q8_0 when you can.
 
 ## KV cache quantization
 
@@ -98,10 +98,10 @@ preset.ContextParameters.TypeK = GgmlType.F16;
 preset.ContextParameters.TypeV = GgmlType.Q8_0;
 ```
 
-Saves memory on long contexts with minor quality impact. See [Context parameters](/net/developer-reference/parameters/context/) for the full enum.
+Saves memory on long contexts with minor quality impact. See [Context parameters](/llm/net/developer-reference/parameters/context/) for the full enum.
 
 ## What's next
 
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — how to select a specific GGUF file.
-- [Estimate memory requirements](/net/how-to/estimate-memory-requirements/) — factor quantization into your sizing.
-- [Supported presets](/net/product-overview/supported-presets/) — built-in preset quantizations.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/): how to select a specific GGUF file.
+- [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/): factor quantization into your sizing.
+- [Supported presets](/llm/net/product-overview/supported-presets/): built-in preset quantizations.

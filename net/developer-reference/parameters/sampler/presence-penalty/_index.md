@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/presence-penalty/
 feedback: LLMNET
 version: 26.5.0
 title: PresencePenalty
-description: Additive penalty in Aspose.LLM for .NET applied once to any token seen in the penalty window — biases toward fresh vocabulary.
+description: Additive penalty in Aspose.LLM for .NET applied once to any token seen in the penalty window, biases toward fresh vocabulary.
 keywords:
 - PresencePenalty
 - sampler
@@ -15,7 +15,7 @@ keywords:
 - vocabulary diversity
 ---
 
-`PresencePenalty` is an additive penalty applied once to any token that appeared at least once in the penalty window. Unlike [`RepetitionPenalty`](/net/developer-reference/parameters/sampler/repetition-penalty/) (multiplicative) or [`FrequencyPenalty`](/net/developer-reference/parameters/sampler/frequency-penalty/) (scales with count), `PresencePenalty` fires uniformly on first appearance.
+`PresencePenalty` is an additive penalty applied once to any token that appeared at least once in the penalty window. Unlike [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/) (multiplicative) or [`FrequencyPenalty`](/llm/net/developer-reference/parameters/sampler/frequency-penalty/) (scales with count), `PresencePenalty` fires uniformly on first appearance.
 
 ## Quick reference
 
@@ -23,7 +23,7 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `0.0` (disabled) |
-| **Range** | `0.0` = disabled, typical `0.0` – `1.0` |
+| **Range** | `0.0` = disabled, typical `0.0` to `1.0` |
 | **Category** | Repetition penalty |
 | **Field on** | `SamplerParameters.PresencePenalty` |
 
@@ -31,9 +31,9 @@ keywords:
 
 For each token in the penalty window, subtract `PresencePenalty` from its logit before sampling. The penalty is applied **once per token** regardless of how often the token appeared.
 
-- `0.0` (default) — disabled.
-- `0.3` – `0.6` — moderate push toward fresh tokens.
-- `0.8` – `1.0` — strong push; output lean heavily on new vocabulary.
+- `0.0` (default): disabled.
+- `0.3` to `0.6`: moderate push toward fresh tokens.
+- `0.8` to `1.0`: strong push; output lean heavily on new vocabulary.
 
 `PresencePenalty` encourages broader vocabulary without caring about repetition frequency. It pairs well with topical content that should stay within a subject but use varied terms.
 
@@ -46,7 +46,7 @@ For each token in the penalty window, subtract `PresencePenalty` from its logit 
 | Strongly encourage new words | `0.6` |
 | Push model to avoid any previously-seen vocabulary | `1.0` |
 
-Unlike `RepetitionPenalty`, `PresencePenalty` does not care how many times a token has been used — only whether it has appeared. For volume-sensitive control, combine with `FrequencyPenalty`.
+Unlike `RepetitionPenalty`, `PresencePenalty` does not care how many times a token has been used: only whether it has appeared. For volume-sensitive control, combine with `FrequencyPenalty`.
 
 ## Example
 
@@ -61,12 +61,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`PenaltyContextSize`](/net/developer-reference/parameters/sampler/penalty-context-size/) — window over which this penalty applies.
-- [`RepetitionPenalty`](/net/developer-reference/parameters/sampler/repetition-penalty/) — multiplicative alternative.
-- [`FrequencyPenalty`](/net/developer-reference/parameters/sampler/frequency-penalty/) — scales with frequency; stacks with `PresencePenalty`.
+- [`PenaltyContextSize`](/llm/net/developer-reference/parameters/sampler/penalty-context-size/): window over which this penalty applies.
+- [`RepetitionPenalty`](/llm/net/developer-reference/parameters/sampler/repetition-penalty/): multiplicative alternative.
+- [`FrequencyPenalty`](/llm/net/developer-reference/parameters/sampler/frequency-penalty/): scales with frequency; stacks with `PresencePenalty`.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [FrequencyPenalty](/net/developer-reference/parameters/sampler/frequency-penalty/) — companion count-based penalty.
-- [RepetitionPenalty](/net/developer-reference/parameters/sampler/repetition-penalty/) — the multiplicative variant.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs at a glance.
+- [FrequencyPenalty](/llm/net/developer-reference/parameters/sampler/frequency-penalty/): companion count-based penalty.
+- [RepetitionPenalty](/llm/net/developer-reference/parameters/sampler/repetition-penalty/): the multiplicative variant.

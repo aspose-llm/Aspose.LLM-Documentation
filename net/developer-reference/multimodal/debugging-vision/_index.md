@@ -7,7 +7,7 @@ url: /net/developer-reference/multimodal/debugging-vision/
 feedback: LLMNET
 version: 26.5.0
 title: Debugging vision
-description: Diagnose multimodal issues in Aspose.LLM for .NET — tagged log taxonomy, common misalignments, and the parse_mm_logs.zsh helper.
+description: Diagnose multimodal issues in Aspose.LLM for .NET, tagged log taxonomy, common misalignments, and the parse_mm_logs.zsh helper.
 keywords:
 - vision debugging
 - multimodal logs
@@ -18,7 +18,7 @@ keywords:
 - misalignment
 ---
 
-Vision flows involve several extra stages compared to plain text: image preprocessing, projector evaluation, marker tokenization, KV alignment, and generation. When something goes wrong, the failure is rarely a clean exception — instead you see garbled, repetitive, or off-topic output. This page shows how to diagnose those failures.
+Vision flows involve several extra stages compared to plain text: image preprocessing, projector evaluation, marker tokenization, KV alignment, and generation. When something goes wrong, the failure is rarely a clean exception, instead you see garbled, repetitive, or off-topic output. This page shows how to diagnose those failures.
 
 ## Turn on debug logging
 
@@ -65,18 +65,18 @@ Typical line shapes:
 
 The Aspose.LLM SDK repository includes a helper at `parse_mm_logs.zsh` that filters a raw log file into digestible sections. It groups output by concern:
 
-- **Pairing** — base model + projector match.
-- **Projector load** — file path and size.
-- **Template choice** — which of the eight templates was selected.
-- **Marker tokenization** — how the image marker tokens were emitted in the prompt.
-- **Chunks** — text/image chunk counts and their positions.
-- **Alignment** — whether the image chunks line up with the prompt markers.
-- **Eval** — projector evaluation timings.
-- **Context adoption** — which KV positions hold image embeddings.
-- **Conditioning** — tokens produced in the first decode step.
-- **KV state** — reservation and eviction.
-- **Token stream** — every generated token.
-- **Final answer** — the trimmed response text.
+- **Pairing**: base model + projector match.
+- **Projector load**: file path and size.
+- **Template choice**: which of the eight templates was selected.
+- **Marker tokenization**: how the image marker tokens were emitted in the prompt.
+- **Chunks**: text/image chunk counts and their positions.
+- **Alignment**: whether the image chunks line up with the prompt markers.
+- **Eval**: projector evaluation timings.
+- **Context adoption**: which KV positions hold image embeddings.
+- **Conditioning**: tokens produced in the first decode step.
+- **KV state**: reservation and eviction.
+- **Token stream**: every generated token.
+- **Final answer**: the trimmed response text.
 
 Usage:
 
@@ -84,7 +84,7 @@ Usage:
 ./parse_mm_logs.zsh < raw-run.log > sectioned-run.txt
 ```
 
-The sectioned output makes misalignments obvious — the "Alignment" section is usually where the problem sits when output is garbled.
+The sectioned output makes misalignments obvious: the "Alignment" section is usually where the problem sits when output is garbled.
 
 ## Common vision failures
 
@@ -96,9 +96,9 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Fix**:
 
-- Verify you are using a supported preset family (Qwen VL, Gemma 3 Vision, Ministral, LLaVA, Pixtral, InternVL, Llama 4, MiniCPMV). See [Chat templates](/net/developer-reference/multimodal/chat-templates/).
+- Verify you are using a supported preset family (Qwen VL, Gemma 3 Vision, Ministral, LLaVA, Pixtral, InternVL, Llama 4, MiniCPMV). See [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/).
 - If using a custom GGUF, try a different export from Hugging Face with richer metadata.
-- Inspect `[MM] selected template: ...` in logs — if it says "fallback", detection failed.
+- Inspect `[MM] selected template: ...` in logs: if it says "fallback", detection failed.
 
 ### Repeated first token or truncated reply
 
@@ -108,8 +108,8 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Fix**:
 
-- Raise [`ChatParameters.MaxTokens`](/net/developer-reference/parameters/chat/) to 1024 or 2048.
-- Change [`CacheCleanupStrategy`](/net/developer-reference/cache-management/) to `KeepSystemPromptAndFirstUserMessage` if the model loses the image reference during generation.
+- Raise [`ChatParameters.MaxTokens`](/llm/net/developer-reference/parameters/chat/) to 1024 or 2048.
+- Change [`CacheCleanupStrategy`](/llm/net/developer-reference/cache-management/) to `KeepSystemPromptAndFirstUserMessage` if the model loses the image reference during generation.
 
 ### Slow first response
 
@@ -119,7 +119,7 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Fix**:
 
-- Set [`MtmdContextParameters.UseGpu = true`](/net/developer-reference/parameters/multimodal-context/).
+- Set [`MtmdContextParameters.UseGpu = true`](/llm/net/developer-reference/parameters/multimodal-context/).
 - Downscale large images before attaching.
 - Enable `MtmdContextParameters.PrintTimings` to see per-stage time.
 
@@ -127,13 +127,13 @@ The sectioned output makes misalignments obvious — the "Alignment" section is 
 
 **Symptom**: `InvalidOperationException: Unknown or unsupported image format.`
 
-**Fix**: convert to JPEG, PNG, BMP, GIF, or WebP. See [Attaching images](/net/developer-reference/multimodal/attaching-images/#supported-formats).
+**Fix**: convert to JPEG, PNG, BMP, GIF, or WebP. See [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/#supported-formats).
 
 ### Image too large
 
 **Symptom**: `InvalidOperationException: Image size exceeds maximum allowed (50MB).`
 
-**Fix**: downscale or recompress. The projector processes images at 336-448 pixels regardless — oversized source is wasted work.
+**Fix**: downscale or recompress. The projector processes images at 336-448 pixels regardless: oversized source is wasted work.
 
 ## Collecting a bug report
 
@@ -153,6 +153,6 @@ Submit via the [Aspose Support Forum](https://forum.aspose.com/) or a paid suppo
 
 ## What's next
 
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — the eight supported template families.
-- [Multimodal context parameters](/net/developer-reference/parameters/multimodal-context/) — GPU offload and verbosity for the projector.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — correct image input.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/): the eight supported template families.
+- [Multimodal context parameters](/llm/net/developer-reference/parameters/multimodal-context/): GPU offload and verbosity for the projector.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/): correct image input.

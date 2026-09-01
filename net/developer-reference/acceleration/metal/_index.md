@@ -7,7 +7,7 @@ url: /net/developer-reference/acceleration/metal/
 feedback: LLMNET
 version: 26.5.0
 title: Metal
-description: Run Aspose.LLM for .NET on Apple Silicon with Metal acceleration — unified memory, GPU offload, and Apple M-series performance notes.
+description: Run Aspose.LLM for .NET on Apple Silicon with Metal acceleration, unified memory, GPU offload, and Apple M-series performance notes.
 keywords:
 - Metal
 - Apple Silicon
@@ -19,7 +19,7 @@ keywords:
 - macOS
 ---
 
-Metal is Aspose.LLM for .NET's preferred backend on Apple Silicon Macs (M1, M2, M3, M4). It uses the unified memory architecture — the CPU and GPU share the same physical RAM — so there is no separate VRAM budget to worry about.
+Metal is Aspose.LLM for .NET's preferred backend on Apple Silicon Macs (M1, M2, M3, M4). It uses the unified memory architecture: the CPU and GPU share the same physical RAM, so there is no separate VRAM budget to worry about.
 
 ## Requirements
 
@@ -41,11 +41,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 On first run, the SDK downloads the Metal variant of `llama.cpp` binaries (typically 100-200 MB). Subsequent runs use the cache.
 
-On Apple Silicon with `PreferredAcceleration = null`, auto-detection picks Metal by default — the explicit setting is redundant but harmless.
+On Apple Silicon with `PreferredAcceleration = null`, auto-detection picks Metal by default: the explicit setting is redundant but harmless.
 
 ## Unified memory
 
-Because RAM and GPU memory are the same physical chip, `GpuLayers = 999` does not create a separate VRAM claim — it tells the Metal backend to run the layers on the GPU compute units. The total memory footprint is the same whether you run on CPU or Metal, but Metal is significantly faster for matrix math.
+Because RAM and GPU memory are the same physical chip, `GpuLayers = 999` does not create a separate VRAM claim: it tells the Metal backend to run the layers on the GPU compute units. The total memory footprint is the same whether you run on CPU or Metal, but Metal is significantly faster for matrix math.
 
 You do not need to worry about "VRAM fits" calculations on Apple Silicon. If the model plus KV cache fit in system RAM, they fit for Metal too.
 
@@ -59,17 +59,17 @@ Typical memory ceilings per Mac:
 | M2 / M3 Ultra | 64 GB, 128 GB, 192 GB |
 | M4 / M4 Pro / M4 Max | 16 GB up to 128 GB |
 
-A 7B Q4_K_M model needs ~8-12 GB including KV cache — comfortable on any 16 GB Mac. A 70B Q4 needs 40+ GB and realistically wants an M2/M3 Ultra or M4 Max with 64 GB or more.
+A 7B Q4_K_M model needs ~8-12 GB including KV cache: comfortable on any 16 GB Mac. A 70B Q4 needs 40+ GB and realistically wants an M2/M3 Ultra or M4 Max with 64 GB or more.
 
 ## Single-chip only
 
-Multi-GPU is not applicable on Apple Silicon. `MainGpu`, `SplitMode`, and `TensorSplit` have no effect — leave them at defaults.
+Multi-GPU is not applicable on Apple Silicon. `MainGpu`, `SplitMode`, and `TensorSplit` have no effect: leave them at defaults.
 
 ## Performance tips
 
-- **Full offload** — `GpuLayers = 999` always. Partial offload is rarely useful because there is no separate VRAM budget.
-- **Flash Attention** — `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled`. Metal implements flash attention kernels efficiently.
-- **Prefer smaller quantizations** — Apple Silicon's memory bandwidth, not compute, is often the bottleneck. Q4 models run noticeably faster than Q8 on the same hardware for this reason.
+- **Full offload**: `GpuLayers = 999` always. Partial offload is rarely useful because there is no separate VRAM budget.
+- **Flash Attention**: `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled`. Metal implements flash attention kernels efficiently.
+- **Prefer smaller quantizations**: Apple Silicon's memory bandwidth, not compute, is often the bottleneck. Q4 models run noticeably faster than Q8 on the same hardware for this reason.
 
 ## Power management
 
@@ -85,6 +85,6 @@ Metal respects macOS power policy. On battery, macOS may throttle GPU clocks and
 
 ## What's next
 
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — `GpuLayers` configuration.
-- [Context parameters](/net/developer-reference/parameters/context/) — flash attention and KV cache settings.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration`.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): `GpuLayers` configuration.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): flash attention and KV cache settings.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): `PreferredAcceleration`.

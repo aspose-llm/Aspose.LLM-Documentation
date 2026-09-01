@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/kv-overrides/
 feedback: LLMNET
 version: 26.5.0
 title: KvOverrides
-description: Runtime overrides for GGUF metadata keys in Aspose.LLM for .NET — patch context length, RoPE settings, architecture flags without modifying the file.
+description: Runtime overrides for GGUF metadata keys in Aspose.LLM for .NET, patch context length, RoPE settings, architecture flags without modifying the file.
 keywords:
 - KvOverrides
 - GGUF metadata
@@ -34,8 +34,8 @@ Each override has:
 
 | Field | Type |
 |---|---|
-| `Key` | `string` — metadata key (e.g., `llama.context_length`) |
-| `Type` | `ModelKvOverrideType` — `Int`, `Float`, `Bool`, `String` |
+| `Key` | `string`: metadata key (e.g., `llama.context_length`) |
+| `Type` | `ModelKvOverrideType`: `Int`, `Float`, `Bool`, `String` |
 | `IntValue`, `FloatValue`, `BoolValue`, `StringValue` | typed value slots |
 
 Only the slot matching `Type` is read.
@@ -44,10 +44,10 @@ Only the slot matching `Type` is read.
 
 | Scenario | Value |
 |---|---|
-| Default — trust GGUF metadata | `null` |
+| Default: trust GGUF metadata | `null` |
 | GGUF missing expected metadata | Single override for each missing key |
 | Force a specific YaRN/RoPE recipe | Overrides for `llama.rope.*` keys |
-| Diagnostic — test different metadata | Temporary overrides |
+| Diagnostic: test different metadata | Temporary overrides |
 
 Wrong overrides silently break the model. Only patch metadata you have a clear reason to change.
 
@@ -91,11 +91,11 @@ Exact key names vary by architecture. Inspect the model's metadata with a tool l
 
 ## Interactions
 
-- [`ContextParameters.RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — overriding `llama.rope.scaling.type` via `KvOverrides` has similar effect.
-- [`ContextParameters.ContextSize`](/net/developer-reference/parameters/context/context-size/) — at load time, `KvOverrides` of `llama.context_length` defines what the runtime treats as the trained window.
+- [`ContextParameters.RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/): overriding `llama.rope.scaling.type` via `KvOverrides` has similar effect.
+- [`ContextParameters.ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): at load time, `KvOverrides` of `llama.context_length` defines what the runtime treats as the trained window.
 
 ## What's next
 
-- [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/) — alternative way to control scaling.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — when `KvOverrides` helps.
-- [Bring your own GGUF](/net/use-cases/bring-your-own-gguf/) — custom-model workflows.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/): alternative way to control scaling.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/): when `KvOverrides` helps.
+- [Bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/): custom-model workflows.

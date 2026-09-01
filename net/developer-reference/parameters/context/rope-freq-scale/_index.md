@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/rope-freq-scale/
 feedback: LLMNET
 version: 26.5.0
 title: RopeFreqScale
-description: RoPE frequency scaling factor in Aspose.LLM for .NET — multiplicative factor applied to RoPE frequencies; null or 0 uses the model default.
+description: RoPE frequency scaling factor in Aspose.LLM for .NET, multiplicative factor applied to RoPE frequencies; null or 0 uses the model default.
 keywords:
 - RopeFreqScale
 - RoPE
@@ -15,7 +15,7 @@ keywords:
 - linear scaling
 ---
 
-`RopeFreqScale` is a multiplicative scaling factor applied to RoPE frequencies. It implements simple linear scaling of positions — equivalent to `Linear` [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) at the value set here.
+`RopeFreqScale` is a multiplicative scaling factor applied to RoPE frequencies. It implements simple linear scaling of positions: equivalent to `Linear` [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/) at the value set here.
 
 ## Quick reference
 
@@ -23,7 +23,7 @@ keywords:
 |---|---|
 | **Type** | `float?` |
 | **Default** | `null` (use model default) |
-| **Range** | `0` – `1.0`; `< 1.0` stretches the context window |
+| **Range** | `0` to `1.0`; `< 1.0` stretches the context window |
 | **Category** | Position encoding |
 | **Field on** | `ContextParameters.RopeFreqScale` |
 
@@ -31,9 +31,9 @@ keywords:
 
 RoPE frequencies are scaled by `RopeFreqScale`. A scale of `1.0` is no scaling. Smaller values stretch the effective context:
 
-- `RopeFreqScale = 1.0` — no scaling.
-- `RopeFreqScale = 0.5` — effective context doubled (2× training window). Moderate quality loss.
-- `RopeFreqScale = 0.25` — 4× training window. More quality loss.
+- `RopeFreqScale = 1.0`: no scaling.
+- `RopeFreqScale = 0.5`: effective context doubled (2× training window). Moderate quality loss.
+- `RopeFreqScale = 0.25`: 4× training window. More quality loss.
 
 This is the simplest context-extension approach. More sophisticated algorithms (`Yarn`, `LongRope`) produce better quality at the same effective extension.
 
@@ -59,12 +59,12 @@ preset.ContextParameters.RopeFreqScale = 0.5f;  // 2x linear extension
 
 ## Interactions
 
-- [`RopeScalingType`](/net/developer-reference/parameters/context/rope-scaling-type/) — `Linear` uses this scale; `Yarn`/`LongRope` have their own knobs.
-- [`RopeFreqBase`](/net/developer-reference/parameters/context/rope-freq-base/) — base frequency.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — the target extended context size.
+- [`RopeScalingType`](/llm/net/developer-reference/parameters/context/rope-scaling-type/): `Linear` uses this scale; `Yarn`/`LongRope` have their own knobs.
+- [`RopeFreqBase`](/llm/net/developer-reference/parameters/context/rope-freq-base/): base frequency.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): the target extended context size.
 
 ## What's next
 
-- [RopeScalingType](/net/developer-reference/parameters/context/rope-scaling-type/) — algorithm selector.
-- [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/) — better long-context extension via YaRN.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — practical recipes.
+- [RopeScalingType](/llm/net/developer-reference/parameters/context/rope-scaling-type/): algorithm selector.
+- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/): better long-context extension via YaRN.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/): practical recipes.

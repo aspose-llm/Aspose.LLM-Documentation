@@ -7,7 +7,7 @@ url: /net/developer-reference/extensibility/
 feedback: LLMNET
 version: 26.5.0
 title: Extensibility
-description: Replace core services in Aspose.LLM for .NET via dependency injection — IModelLoader, IModelFileProvider, IPromptFormatter, IMediaProcessor. Advanced customization for niche scenarios.
+description: Replace core services in Aspose.LLM for .NET via dependency injection, IModelLoader, IModelFileProvider, IPromptFormatter, IMediaProcessor. Advanced customization for niche scenarios.
 keywords:
 - extensibility
 - IModelLoader
@@ -18,7 +18,7 @@ keywords:
 - custom
 ---
 
-Most users never need to touch extensibility — a preset plus a few parameter overrides covers everything. But for niche scenarios — custom model registries, alternative prompt formats, bespoke media pre-processing — the SDK exposes four public interfaces you can substitute via a DI container.
+Most users never need to touch extensibility: a preset plus a few parameter overrides covers everything. But for niche scenarios: custom model registries, alternative prompt formats, bespoke media pre-processing: the SDK exposes four public interfaces you can substitute via a DI container.
 
 ## When to use extensibility
 
@@ -29,16 +29,16 @@ Consider extending only when:
 - You have special image preprocessing requirements (specific color spaces, DICOM, sensor calibration).
 - You need to inject instrumentation, caching, or auditing at the service boundary.
 
-For everyday customization — different model, sampler settings, GPU layers — use a [preset](/net/developer-reference/presets/) and the [parameter bags](/net/developer-reference/parameters/). That covers the vast majority of cases.
+For everyday customization: different model, sampler settings, GPU layers: use a [preset](/llm/net/developer-reference/presets/) and the [parameter bags](/llm/net/developer-reference/parameters/). That covers the vast majority of cases.
 
 ## Available interfaces
 
 | Interface | Replaces | Page |
 |---|---|---|
-| `IModelLoader` | Full model loading pipeline | [Custom model loader](/net/developer-reference/extensibility/custom-model-loader/) |
-| `IModelFileProvider` | File resolution (download / local path) | [Custom file provider](/net/developer-reference/extensibility/custom-file-provider/) |
-| `IPromptFormatter` | Chat template formatting | [Custom prompt formatter](/net/developer-reference/extensibility/custom-prompt-formatter/) |
-| `IMediaProcessor` | Image preprocessing for vision presets | [Custom media processor](/net/developer-reference/extensibility/custom-media-processor/) |
+| `IModelLoader` | Full model loading pipeline | [Custom model loader](/llm/net/developer-reference/extensibility/custom-model-loader/) |
+| `IModelFileProvider` | File resolution (download / local path) | [Custom file provider](/llm/net/developer-reference/extensibility/custom-file-provider/) |
+| `IPromptFormatter` | Chat template formatting | [Custom prompt formatter](/llm/net/developer-reference/extensibility/custom-prompt-formatter/) |
+| `IMediaProcessor` | Image preprocessing for vision presets | [Custom media processor](/llm/net/developer-reference/extensibility/custom-media-processor/) |
 
 All four are public types. `IModelLoader`, `IModelFileProvider`, and `IPromptFormatter` live in `Aspose.LLM.Abstractions.Interfaces`. `IMediaProcessor` lives in `Aspose.LLM.Core.Services` (still publicly accessible after ILRepack merges).
 
@@ -64,16 +64,16 @@ var sp = services.BuildServiceProvider();
 var engine = sp.GetRequiredService<Engine>();
 ```
 
-Note: substitution of some services requires matching the downstream wiring. The SDK's `Engine` constructor has specific parameter shapes — review the [AsposeLLMApi](/net/developer-reference/asposellmapi/) and [Dependency injection](/net/developer-reference/dependency-injection/) references to confirm what each service needs to provide.
+Note: substitution of some services requires matching the downstream wiring. The SDK's `Engine` constructor has specific parameter shapes: review the [AsposeLLMApi](/llm/net/developer-reference/asposellmapi/) and [Dependency injection](/llm/net/developer-reference/dependency-injection/) references to confirm what each service needs to provide.
 
 {{% alert color="primary" %}}
-Extensibility is an advanced path. Custom implementations replace well-tested production code — validate thoroughly before using in production. The default implementations in the SDK are the reference for the contract each interface expects; read their source if available, or contact [Aspose support](https://forum.aspose.com/) for the exact requirements.
+Extensibility is an advanced path. Custom implementations replace well-tested production code: validate thoroughly before using in production. The default implementations in the SDK are the reference for the contract each interface expects; read their source if available, or contact [Aspose support](https://forum.aspose.com/) for the exact requirements.
 {{% /alert %}}
 
 ## What's next
 
-- [Custom model loader](/net/developer-reference/extensibility/custom-model-loader/) — `IModelLoader`.
-- [Custom file provider](/net/developer-reference/extensibility/custom-file-provider/) — `IModelFileProvider`.
-- [Custom prompt formatter](/net/developer-reference/extensibility/custom-prompt-formatter/) — `IPromptFormatter`.
-- [Custom media processor](/net/developer-reference/extensibility/custom-media-processor/) — `IMediaProcessor`.
-- [Dependency injection](/net/developer-reference/dependency-injection/) — the standard `AddLlamaServices` path.
+- [Custom model loader](/llm/net/developer-reference/extensibility/custom-model-loader/): `IModelLoader`.
+- [Custom file provider](/llm/net/developer-reference/extensibility/custom-file-provider/): `IModelFileProvider`.
+- [Custom prompt formatter](/llm/net/developer-reference/extensibility/custom-prompt-formatter/): `IPromptFormatter`.
+- [Custom media processor](/llm/net/developer-reference/extensibility/custom-media-processor/): `IMediaProcessor`.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): the standard `AddLlamaServices` path.

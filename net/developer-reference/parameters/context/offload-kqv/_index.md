@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/offload-kqv/
 feedback: LLMNET
 version: 26.5.0
 title: OffloadKqv
-description: Offload the KQV (attention) computation and KV cache to GPU in Aspose.LLM for .NET — true by default on GPU builds.
+description: Offload the KQV (attention) computation and KV cache to GPU in Aspose.LLM for .NET, true by default on GPU builds.
 keywords:
 - OffloadKqv
 - KQV
@@ -23,15 +23,15 @@ keywords:
 | | |
 |---|---|
 | **Type** | `bool?` |
-| **Default** | `null` (uses native default — typically `true` on GPU builds) |
+| **Default** | `null` (uses native default: typically `true` on GPU builds) |
 | **Category** | KV cache / GPU |
 | **Field on** | `ContextParameters.OffloadKqv` |
 
 ## What it does
 
-- `true` — KV cache tensors and attention computation live on the GPU. Benefits throughput; uses more VRAM.
-- `false` — KV cache stays on CPU even when layers are offloaded via [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/). Reduces VRAM usage; slower because GPU must read KV from host memory.
-- `null` — native default (usually `true` on GPU builds, irrelevant on CPU builds).
+- `true`: KV cache tensors and attention computation live on the GPU. Benefits throughput; uses more VRAM.
+- `false`: KV cache stays on CPU even when layers are offloaded via [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/). Reduces VRAM usage; slower because GPU must read KV from host memory.
+- `null`: native default (usually `true` on GPU builds, irrelevant on CPU builds).
 
 Disabling is useful on GPUs where the weights fit but the KV cache would push you into OOM at long contexts.
 
@@ -40,7 +40,7 @@ Disabling is useful on GPUs where the weights fit but the KV cache would push yo
 | Scenario | Value |
 |---|---|
 | Default GPU inference | `null` (true) |
-| Short on VRAM at long context — trade speed for memory | `false` |
+| Short on VRAM at long context: trade speed for memory | `false` |
 | CPU-only | `null` (irrelevant) |
 
 ## Example
@@ -54,12 +54,12 @@ preset.ContextParameters.ContextSize = 131072;          // long context
 
 ## Interactions
 
-- [`GpuLayers`](/net/developer-reference/parameters/model-inference/gpu-layers/) — with `OffloadKqv = false`, GPU layers access KV from CPU — slower but saves VRAM.
-- [`TypeK`](/net/developer-reference/parameters/context/type-k/), [`TypeV`](/net/developer-reference/parameters/context/type-v/) — quantizing KV reduces memory regardless of placement.
-- [`FlashAttentionMode`](/net/developer-reference/parameters/context/flash-attention-mode/) — FA reduces KV memory pressure.
+- [`GpuLayers`](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): with `OffloadKqv = false`, GPU layers access KV from CPU: slower but saves VRAM.
+- [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/), [`TypeV`](/llm/net/developer-reference/parameters/context/type-v/): quantizing KV reduces memory regardless of placement.
+- [`FlashAttentionMode`](/llm/net/developer-reference/parameters/context/flash-attention-mode/): FA reduces KV memory pressure.
 
 ## What's next
 
-- [TypeK](/net/developer-reference/parameters/context/type-k/), [TypeV](/net/developer-reference/parameters/context/type-v/) — KV dtype.
-- [GpuLayers](/net/developer-reference/parameters/model-inference/gpu-layers/) — weight offload.
-- [Out of memory troubleshooting](/net/troubleshooting/out-of-memory/) — memory pressure recipes.
+- [TypeK](/llm/net/developer-reference/parameters/context/type-k/), [TypeV](/llm/net/developer-reference/parameters/context/type-v/): KV dtype.
+- [GpuLayers](/llm/net/developer-reference/parameters/model-inference/gpu-layers/): weight offload.
+- [Out of memory troubleshooting](/llm/net/troubleshooting/out-of-memory/): memory pressure recipes.

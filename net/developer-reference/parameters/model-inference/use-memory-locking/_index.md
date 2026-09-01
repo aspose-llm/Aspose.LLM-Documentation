@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/use-memory-locking/
 feedback: LLMNET
 version: 26.5.0
 title: UseMemoryLocking
-description: Lock model memory to prevent OS paging in Aspose.LLM for .NET — requires mlock/VirtualLock privileges; off by default.
+description: Lock model memory to prevent OS paging in Aspose.LLM for .NET, requires mlock/VirtualLock privileges; off by default.
 keywords:
 - UseMemoryLocking
 - mlock
@@ -23,16 +23,16 @@ keywords:
 | | |
 |---|---|
 | **Type** | `bool?` |
-| **Default** | `null` (native default — usually `false`) |
+| **Default** | `null` (native default: usually `false`) |
 | **Category** | Model loading |
 | **Field on** | `ModelInferenceParameters.UseMemoryLocking` |
 
 ## What it does
 
-- `true` — the engine calls `mlock` (Linux/macOS) or `VirtualLock` (Windows) on the model memory. The OS will not page it out.
-- `false` or `null` — no locking. OS may page model memory under pressure.
+- `true`: the engine calls `mlock` (Linux/macOS) or `VirtualLock` (Windows) on the model memory. The OS will not page it out.
+- `false` or `null`: no locking. OS may page model memory under pressure.
 
-Paging inference model memory is catastrophic for performance — suddenly generation stalls for seconds while the kernel pages weights back from disk. `UseMemoryLocking = true` prevents that.
+Paging inference model memory is catastrophic for performance: suddenly generation stalls for seconds while the kernel pages weights back from disk. `UseMemoryLocking = true` prevents that.
 
 **Cost**: requires appropriate privileges. On Linux, the user must have sufficient `RLIMIT_MEMLOCK` (raise via `ulimit -l` or `/etc/security/limits.conf`). On Windows, the process needs "Lock Pages in Memory" permission.
 
@@ -62,10 +62,10 @@ dotnet run
 
 ## Interactions
 
-- [`UseMemoryMapping`](/net/developer-reference/parameters/model-inference/use-memory-mapping/) — with mmap on, `mlock` locks the mapped pages as they fault in.
-- System-level configuration — `mlock` availability depends on OS limits.
+- [`UseMemoryMapping`](/llm/net/developer-reference/parameters/model-inference/use-memory-mapping/): with mmap on, `mlock` locks the mapped pages as they fault in.
+- System-level configuration: `mlock` availability depends on OS limits.
 
 ## What's next
 
-- [UseMemoryMapping](/net/developer-reference/parameters/model-inference/use-memory-mapping/) — companion load-time knob.
-- [Model inference hub](/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [UseMemoryMapping](/llm/net/developer-reference/parameters/model-inference/use-memory-mapping/): companion load-time knob.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/): all inference knobs.

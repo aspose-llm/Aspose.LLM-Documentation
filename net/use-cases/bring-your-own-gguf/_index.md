@@ -7,7 +7,7 @@ url: /net/use-cases/bring-your-own-gguf/
 feedback: LLMNET
 version: 26.5.0
 title: Bring your own GGUF
-description: Run a custom GGUF model in Aspose.LLM for .NET — pick the file, write a preset, verify compatibility, tune parameters.
+description: Run a custom GGUF model in Aspose.LLM for .NET, pick the file, write a preset, verify compatibility, tune parameters.
 keywords:
 - custom GGUF
 - bring your own model
@@ -17,7 +17,7 @@ keywords:
 - fine-tune
 ---
 
-When a built-in preset does not cover your model — your organization's fine-tune, a newly-released open-weight model, a community variant — extend `PresetCoreBase` and point it at the GGUF file. This use case walks through the full workflow from download to first response.
+When a built-in preset does not cover your model: your organization's fine-tune, a newly-released open-weight model, a community variant: extend `PresetCoreBase` and point it at the GGUF file. This use case walks through the full workflow from download to first response.
 
 ## When to use this pattern
 
@@ -28,9 +28,9 @@ When a built-in preset does not cover your model — your organization's fine-tu
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
-- A GGUF file — either a local path or a Hugging Face repo identifier.
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
+- A GGUF file: either a local path or a Hugging Face repo identifier.
 
 ## Step 1. Identify the model
 
@@ -39,7 +39,7 @@ Pick a source:
 - **Hugging Face**: find the repo and file name. Example: `bartowski/Qwen2.5-7B-Instruct-GGUF` / `Qwen2.5-7B-Instruct-Q6_K.gguf`.
 - **Local file**: absolute path to a `.gguf` on disk.
 
-Confirm the model's base family — that determines which chat template the engine auto-selects. Check the Hugging Face README for "derived from" or the GGUF metadata. Supported families: LLaVA, Qwen2/2.5/3, Pixtral (Mistral), InternVL, Gemma 3, Llama 4, MiniCPM-V, plus the text families of built-in presets.
+Confirm the model's base family: that determines which chat template the engine auto-selects. Check the Hugging Face README for "derived from" or the GGUF metadata. Supported families: LLaVA, Qwen2/2.5/3, Pixtral (Mistral), InternVL, Gemma 3, Llama 4, MiniCPM-V, plus the text families of built-in presets.
 
 ## Step 2. Write a preset
 
@@ -83,11 +83,11 @@ public class MyFullPreset : PresetCoreBase
         BaseModelSourceParameters.HuggingFaceRepoId = "your-org/your-model-GGUF";
         BaseModelSourceParameters.HuggingFaceFileName = "your-model.Q4_K_M.gguf";
 
-        // Context — match or exceed your typical prompt length.
+        // Context: match or exceed your typical prompt length.
         ContextParameters.ContextSize = 16384;
         ContextParameters.NBatch = 2048;
 
-        // Sampling — tune for your use case.
+        // Sampling: tune for your use case.
         SamplerParameters.Temperature = 0.7f;
         SamplerParameters.TopP = 0.9f;
         SamplerParameters.TopK = 40;
@@ -105,7 +105,7 @@ public class MyFullPreset : PresetCoreBase
 }
 ```
 
-Start with one of the built-in presets for your family as a reference — copy its values to your custom preset and adjust.
+Start with one of the built-in presets for your family as a reference: copy its values to your custom preset and adjust.
 
 ## Step 4. Verify with debug logging
 
@@ -131,7 +131,7 @@ Expected log highlights:
 - Chat template selected matches your model family.
 - First token produced within a reasonable time.
 
-If the reply contains literal `<image>` or other template markers — the engine fell back to a generic template. Check the model's GGUF metadata; see [Chat templates](/net/developer-reference/multimodal/chat-templates/).
+If the reply contains literal `<image>` or other template markers: the engine fell back to a generic template. Check the model's GGUF metadata; see [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/).
 
 ## Step 5. Validate quality
 
@@ -179,11 +179,11 @@ public class MyCustomVisionPreset : PresetCoreBase
 }
 ```
 
-See [Vision presets](/net/developer-reference/multimodal/vision-presets/) for the chat-template caveats.
+See [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/) for the chat-template caveats.
 
 ## Step 6. Share the preset
 
-Commit the preset class to your source control. Team members get the same tuning by instantiating the class — no duplication of HF IDs, context sizes, or sampler knobs across code paths.
+Commit the preset class to your source control. Team members get the same tuning by instantiating the class, no duplication of HF IDs, context sizes, or sampler knobs across code paths.
 
 ## Common errors
 
@@ -197,6 +197,6 @@ Commit the preset class to your source control. Team members get the same tuning
 
 ## What's next
 
-- [Creating a preset from scratch](/net/developer-reference/presets/creating-from-scratch/) — presets reference.
-- [Custom preset use case](/net/use-cases/custom-preset/) — simpler override patterns.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — how detection works.
+- [Creating a preset from scratch](/llm/net/developer-reference/presets/creating-from-scratch/): presets reference.
+- [Custom preset use case](/llm/net/use-cases/custom-preset/): simpler override patterns.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/): how detection works.

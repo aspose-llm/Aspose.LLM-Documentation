@@ -7,7 +7,7 @@ url: /net/developer-reference/extensibility/custom-file-provider/
 feedback: LLMNET
 version: 26.5.0
 title: Custom file provider
-description: Replace IModelFileProvider in Aspose.LLM for .NET to source model files from custom locations — S3, internal registries, encrypted storage, or air-gapped networks.
+description: Replace IModelFileProvider in Aspose.LLM for .NET to source model files from custom locations, S3, internal registries, encrypted storage, or air-gapped networks.
 keywords:
 - IModelFileProvider
 - file provider
@@ -18,11 +18,11 @@ keywords:
 - extensibility
 ---
 
-`IModelFileProvider` abstracts **file resolution** — the step that turns a `ModelSourceParameters` into a local file path. The default SDK ships two providers: `LocalFilesystemProvider` (for `ModelFilePath`) and `HuggingFaceProvider` (for `HuggingFaceRepoId` + `HuggingFaceFileName`).
+`IModelFileProvider` abstracts **file resolution**: the step that turns a `ModelSourceParameters` into a local file path. The default SDK ships two providers: `LocalFilesystemProvider` (for `ModelFilePath`) and `HuggingFaceProvider` (for `HuggingFaceRepoId` + `HuggingFaceFileName`).
 
-Implement a custom provider when you need to source models from a location the defaults do not cover — private S3 buckets, artifact repositories (Artifactory, Nexus), encrypted storage, or signed internal model catalogs.
+Implement a custom provider when you need to source models from a location the defaults do not cover: private S3 buckets, artifact repositories (Artifactory, Nexus), encrypted storage, or signed internal model catalogs.
 
-This is a narrower surface than [`IModelLoader`](/net/developer-reference/extensibility/custom-model-loader/) and usually what you actually need.
+This is a narrower surface than [`IModelLoader`](/llm/net/developer-reference/extensibility/custom-model-loader/) and usually what you actually need.
 
 ## Interface reference
 
@@ -40,14 +40,14 @@ public interface IModelFileProvider
 
 The method:
 
-- Takes `ModelSourceParameters` — resolve whichever fields are set, by priority.
+- Takes `ModelSourceParameters`: resolve whichever fields are set, by priority.
 - Reports progress via `IProgress<double>` (0.0 to 1.0) for downloads.
 - Returns the path to a local file that downstream loaders can read.
 - Throws `ArgumentNullException` on null `modelParameters`.
 - Throws `InvalidOperationException` when the file cannot be retrieved.
 - Throws `OperationCanceledException` when the operation is canceled.
 
-## Example — S3 provider
+## Example: S3 provider
 
 ```csharp
 using Amazon.S3;
@@ -114,7 +114,7 @@ public class S3ModelFileProvider : IModelFileProvider
 
 Usage in a preset: set `AsposeModelId` to the S3 key, leave `HuggingFaceRepoId` unset.
 
-## Example — air-gapped internal registry
+## Example: air-gapped internal registry
 
 For air-gapped deployments where models are prepopulated in a shared directory:
 
@@ -148,7 +148,7 @@ public class InternalRegistryProvider : IModelFileProvider
 `ModelSourceParameters` has three priority-ordered fields: `ModelFilePath`, `AsposeModelId`, `HuggingFaceRepoId` + `HuggingFaceFileName`. Your provider decides which field(s) to respect. Common patterns:
 
 - **Single-source provider**: respect one field only (e.g., `AsposeModelId` for an internal registry). Let callers set that field explicitly.
-- **Multi-source provider**: honor the full priority chain — check `ModelFilePath` first, then your custom source, then fall back to Hugging Face.
+- **Multi-source provider**: honor the full priority chain: check `ModelFilePath` first, then your custom source, then fall back to Hugging Face.
 
 ## Registration
 
@@ -161,12 +161,12 @@ services.AddLlamaServices(new Qwen25Preset());
 services.AddSingleton<IModelFileProvider>(new InternalRegistryProvider(@"/opt/models"));
 ```
 
-The default `ModelManager` is registered by `AddLlamaServices`. Adding your own `IModelFileProvider` registration overrides it only if the downstream consumer (`ModelManager`) is wired to consume `IModelFileProvider` directly — in the current SDK, `ModelManager` uses concrete providers (`LocalFilesystemProvider`, `HuggingFaceProvider`). You may need a custom `IModelLoader` that uses your `IModelFileProvider` instead of `ModelManager`.
+The default `ModelManager` is registered by `AddLlamaServices`. Adding your own `IModelFileProvider` registration overrides it only if the downstream consumer (`ModelManager`) is wired to consume `IModelFileProvider` directly: in the current SDK, `ModelManager` uses concrete providers (`LocalFilesystemProvider`, `HuggingFaceProvider`). You may need a custom `IModelLoader` that uses your `IModelFileProvider` instead of `ModelManager`.
 
-Confirm the current wiring before committing to a custom provider — contact [Aspose support](https://forum.aspose.com/) if the injection point does not behave as you expect.
+Confirm the current wiring before committing to a custom provider: contact [Aspose support](https://forum.aspose.com/) if the injection point does not behave as you expect.
 
 ## What's next
 
-- [Custom model loader](/net/developer-reference/extensibility/custom-model-loader/) — broader surface when you need full pipeline control.
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — what `ModelSourceParameters` carries.
-- [Dependency injection](/net/developer-reference/dependency-injection/) — standard service wiring.
+- [Custom model loader](/llm/net/developer-reference/extensibility/custom-model-loader/): broader surface when you need full pipeline control.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/): what `ModelSourceParameters` carries.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): standard service wiring.

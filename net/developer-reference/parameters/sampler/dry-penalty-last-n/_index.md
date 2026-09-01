@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/dry-penalty-last-n/
 feedback: LLMNET
 version: 26.5.0
 title: DryPenaltyLastN
-description: Window of recent tokens scanned by DRY in Aspose.LLM for .NET — 0 means scan everything; positive values limit the look-back distance.
+description: Window of recent tokens scanned by DRY in Aspose.LLM for .NET, 0 means scan everything; positive values limit the look-back distance.
 keywords:
 - DryPenaltyLastN
 - DRY
@@ -31,9 +31,9 @@ keywords:
 
 DRY scans the last `DryPenaltyLastN` tokens of generation for consecutive-token sequences matching whatever the model is about to emit.
 
-- `DryPenaltyLastN = 0` (default) — scan all available tokens; no distance limit.
-- `DryPenaltyLastN = 512` — only the last 512 tokens are scanned for matches. Older content is ignored.
-- `DryPenaltyLastN = 128` — very local; catches only immediate phrase repeats.
+- `DryPenaltyLastN = 0` (default): scan all available tokens; no distance limit.
+- `DryPenaltyLastN = 512`: only the last 512 tokens are scanned for matches. Older content is ignored.
+- `DryPenaltyLastN = 128`: very local; catches only immediate phrase repeats.
 
 Narrowing the window speeds up DRY scanning slightly and relaxes the constraint for long conversations where older repeats are benign.
 
@@ -59,11 +59,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) — gate; `DryPenaltyLastN` only matters when DRY is active.
+- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/): gate; `DryPenaltyLastN` only matters when DRY is active.
 - Other DRY knobs operate within this window.
 
 ## What's next
 
-- [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
-- [DrySequenceBreakers](/net/developer-reference/parameters/sampler/dry-sequence-breakers/) — reset tokens.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/): enables DRY.
+- [DrySequenceBreakers](/llm/net/developer-reference/parameters/sampler/dry-sequence-breakers/): reset tokens.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

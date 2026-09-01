@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/mirostat-eta/
 feedback: LLMNET
 version: 26.5.0
 title: MirostatEta
-description: Mirostat learning rate in Aspose.LLM for .NET — how fast the adaptive sampler adjusts toward the target entropy.
+description: Mirostat learning rate in Aspose.LLM for .NET, how fast the adaptive sampler adjusts toward the target entropy.
 keywords:
 - MirostatEta
 - Mirostat
@@ -15,7 +15,7 @@ keywords:
 - sampler
 ---
 
-`MirostatEta` is the learning rate of Mirostat's adaptive loop. It controls how quickly Mirostat reacts to divergence between observed entropy and the target entropy [`MirostatTau`](/net/developer-reference/parameters/sampler/mirostat-tau/).
+`MirostatEta` is the learning rate of Mirostat's adaptive loop. It controls how quickly Mirostat reacts to divergence between observed entropy and the target entropy [`MirostatTau`](/llm/net/developer-reference/parameters/sampler/mirostat-tau/).
 
 ## Quick reference
 
@@ -23,7 +23,7 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `0.1` |
-| **Range** | `> 0`; typical `0.05` – `0.3` |
+| **Range** | `> 0`; typical `0.05` to `0.3` |
 | **Category** | Adaptive sampler |
 | **Field on** | `SamplerParameters.MirostatEta` |
 
@@ -31,11 +31,11 @@ keywords:
 
 After each token, Mirostat computes the difference between the observed entropy and `MirostatTau`. It scales that difference by `MirostatEta` and adjusts its internal threshold accordingly.
 
-- `MirostatEta = 0.05` — slow adaptation. Smoother behavior; takes longer to settle.
-- `MirostatEta = 0.1` (default) — balanced.
-- `MirostatEta = 0.3` — fast adaptation. Tighter tracking of `Tau` but noisier.
+- `MirostatEta = 0.05`: slow adaptation. Smoother behavior; takes longer to settle.
+- `MirostatEta = 0.1` (default): balanced.
+- `MirostatEta = 0.3`: fast adaptation. Tighter tracking of `Tau` but noisier.
 
-`MirostatEta` only matters when [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) is enabled.
+`MirostatEta` only matters when [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/) is enabled.
 
 ## When to change it
 
@@ -43,7 +43,7 @@ After each token, Mirostat computes the difference between the observed entropy 
 |---|---|
 | Default | `0.1` |
 | Smoother, slower adaptation | `0.05` |
-| Fast tracking, aggressive correction | `0.2` – `0.3` |
+| Fast tracking, aggressive correction | `0.2` to `0.3` |
 
 Most users leave `MirostatEta = 0.1`. Adjust only when Mirostat's entropy wanders too far from `Tau` or oscillates too much.
 
@@ -60,11 +60,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — must be `1` or `2`.
-- [`MirostatTau`](/net/developer-reference/parameters/sampler/mirostat-tau/) — the target `MirostatEta` adapts toward.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/): must be `1` or `2`.
+- [`MirostatTau`](/llm/net/developer-reference/parameters/sampler/mirostat-tau/): the target `MirostatEta` adapts toward.
 
 ## What's next
 
-- [Mirostat](/net/developer-reference/parameters/sampler/mirostat/) — mode selector.
-- [MirostatTau](/net/developer-reference/parameters/sampler/mirostat-tau/) — entropy target.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [Mirostat](/llm/net/developer-reference/parameters/sampler/mirostat/): mode selector.
+- [MirostatTau](/llm/net/developer-reference/parameters/sampler/mirostat-tau/): entropy target.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

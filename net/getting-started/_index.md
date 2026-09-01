@@ -19,15 +19,15 @@ keywords:
 
 Get started with Aspose.LLM for .NET in a few steps:
 
-- [System requirements](/net/system-requirements/)
+- [System requirements](/llm/net/system-requirements/)
   Supported .NET runtimes, operating systems, and hardware.
-- [Installation](/net/installation/)
+- [Installation](/llm/net/installation/)
   Add the Aspose.LLM NuGet package to your project.
-- [Licensing](/net/licensing/)
+- [Licensing](/llm/net/licensing/)
   Apply a license (required for inference). Aspose.LLM does not run chat operations without one.
-- [How to run examples](/net/how-to-run-the-examples/)
+- [How to run examples](/llm/net/how-to-run-the-examples/)
   Build and run sample code.
-- [Hello, world!](/net/hello-world/)
+- [Hello, world!](/llm/net/hello-world/)
   Minimal example: create an API, send a message, get a response.
-- [Quick wins](/net/quick-wins/)
+- [Quick wins](/llm/net/quick-wins/)
   Five compact recipes: first message, image input, save and restore, CPU-only run, CUDA GPU run.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-inference/use-extra-buffers/
 feedback: LLMNET
 version: 26.5.0
 title: UseExtraBuffers
-description: Advanced llama.cpp flag in Aspose.LLM for .NET — enables additional buffer types for weight repacking; leave at default unless instructed.
+description: Advanced llama.cpp flag in Aspose.LLM for .NET, enables additional buffer types for weight repacking; leave at default unless instructed.
 keywords:
 - UseExtraBuffers
 - weight repacking
@@ -30,8 +30,8 @@ keywords:
 
 Internal to llama.cpp. Controls whether the engine uses additional buffer types during weight repacking for specific hardware paths. The exact behavior depends on the backend and release tag.
 
-- `null` — native default. Correct for almost all users.
-- `true` / `false` — override. Not useful without specific backend expertise.
+- `null`: native default. Correct for almost all users.
+- `true` / `false`: override. Not useful without specific backend expertise.
 
 ## When to change it
 
@@ -55,4 +55,4 @@ var preset = new Qwen25Preset();
 
 ## What's next
 
-- [Model inference hub](/net/developer-reference/parameters/model-inference/) — all inference knobs.
+- [Model inference hub](/llm/net/developer-reference/parameters/model-inference/): all inference knobs.

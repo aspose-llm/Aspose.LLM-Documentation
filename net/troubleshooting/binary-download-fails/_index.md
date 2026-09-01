@@ -7,7 +7,7 @@ url: /net/troubleshooting/binary-download-fails/
 feedback: LLMNET
 version: 26.5.0
 title: Binary download fails
-description: Diagnose why Aspose.LLM for .NET fails to download native llama.cpp binaries on first Create — proxy, firewall, rate limits, disk space, SSL.
+description: Diagnose why Aspose.LLM for .NET fails to download native llama.cpp binaries on first Create, proxy, firewall, rate limits, disk space, SSL.
 keywords:
 - binary download
 - GitHub
@@ -61,7 +61,7 @@ dotnet run
 
 ### 3. Pre-populate the cache
 
-If the host cannot reach GitHub at all, pre-download on a machine with internet access and copy the cache to the target. Full workflow: [Offline deployment](/net/use-cases/offline-deployment/).
+If the host cannot reach GitHub at all, pre-download on a machine with internet access and copy the cache to the target. Full workflow: [Offline deployment](/llm/net/use-cases/offline-deployment/).
 
 ### 4. Check the `ReleaseTag`
 
@@ -90,7 +90,7 @@ df -h ~/.local/share/Aspose.LLM/runtimes
 If logs mention HTTP 429, you are hitting GitHub's unauthenticated API limit (60 requests/hour per IP). Options:
 
 - Wait and retry.
-- Use an authenticated `HttpClient` (advanced — requires a custom `IModelFileProvider` in the extensibility layer).
+- Use an authenticated `HttpClient` (advanced: requires a custom `IModelFileProvider` in the extensibility layer).
 - Pre-populate the cache so subsequent runs do not hit the API.
 
 ### 7. TLS interception
@@ -102,16 +102,16 @@ Options (choose one):
 - Install the corporate root certificate into the host's certificate store.
 - Bypass interception for `*.github.com` and `*.githubusercontent.com` on the proxy.
 
-Do **not** disable TLS validation in production — it is a security regression.
+Do **not** disable TLS validation in production: it is a security regression.
 
 ## Prevention
 
 - **For production**: always pre-populate caches in your deployment pipeline. Do not rely on first-run downloads in production environments.
 - **For development**: keep `BinaryPath` and `ModelCachePath` on a shared network drive across your team so downloads happen once per team, not once per developer.
-- **Pin `ReleaseTag`** explicitly in your preset — do not rely on the default across SDK upgrades.
+- **Pin `ReleaseTag`** explicitly in your preset: do not rely on the default across SDK upgrades.
 
 ## What's next
 
-- [Offline deployment](/net/use-cases/offline-deployment/) — full pre-population workflow.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
-- [Architecture](/net/product-overview/architecture/) — the binary deployment stage.
+- [Offline deployment](/llm/net/use-cases/offline-deployment/): full pre-population workflow.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
+- [Architecture](/llm/net/product-overview/architecture/): the binary deployment stage.

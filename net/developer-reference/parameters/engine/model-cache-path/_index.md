@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/engine/model-cache-path/
 feedback: LLMNET
 version: 26.5.0
 title: ModelCachePath
-description: Folder where Aspose.LLM for .NET stores downloaded model files — defaults to a per-user cache; override for shared storage or non-default drives.
+description: Folder where Aspose.LLM for .NET stores downloaded model files, defaults to a per-user cache; override for shared storage or non-default drives.
 keywords:
 - ModelCachePath
 - model cache
@@ -33,7 +33,7 @@ keywords:
 - On Linux / macOS: the equivalent `Environment.SpecialFolder.LocalApplicationData` path, joined with `Aspose.LLM/models`.
 - Overriding sets a custom directory.
 
-At each `AsposeLLMApi.Create`, the engine checks this folder for the preset's model file. If present, load. If absent, download from the resolved source ([`BaseModelSourceParameters`](/net/developer-reference/parameters/model-source/)), save into this folder, and load.
+At each `AsposeLLMApi.Create`, the engine checks this folder for the preset's model file. If present, load. If absent, download from the resolved source ([`BaseModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/)), save into this folder, and load.
 
 ## When to change it
 
@@ -63,11 +63,11 @@ preset.EngineParameters.ModelCachePath = "/models";  // Docker volume mount
 
 ## Interactions
 
-- [`BaseModelSourceParameters`](/net/developer-reference/parameters/model-source/) — resolution order; the cached file must match the requested source.
-- [`BinaryManagerParameters.BinaryPath`](/net/developer-reference/parameters/binary-manager/binary-path/) — separate cache for native binaries; different folder.
+- [`BaseModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/): resolution order; the cached file must match the requested source.
+- [`BinaryManagerParameters.BinaryPath`](/llm/net/developer-reference/parameters/binary-manager/binary-path/): separate cache for native binaries; different folder.
 
 ## What's next
 
-- [Offline deployment use case](/net/use-cases/offline-deployment/) — pre-populating the cache.
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — what gets cached.
-- [Engine parameters hub](/net/developer-reference/parameters/engine/) — all engine knobs.
+- [Offline deployment use case](/llm/net/use-cases/offline-deployment/): pre-populating the cache.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/): what gets cached.
+- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/): all engine knobs.

@@ -7,7 +7,7 @@ url: /net/use-cases/vision-qa/
 feedback: LLMNET
 version: 26.5.0
 title: Vision question answering
-description: Ask questions about images in Aspose.LLM for .NET — single-image Q&A, multi-image comparison, and document transcription with vision presets.
+description: Ask questions about images in Aspose.LLM for .NET, single-image Q&A, multi-image comparison, and document transcription with vision presets.
 keywords:
 - vision
 - Q&A
@@ -29,9 +29,9 @@ Vision presets let you ask questions about images. Pass image bytes alongside th
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
-- A [vision preset](/net/developer-reference/multimodal/vision-presets/) — `Qwen3VL2BPreset`, `Qwen25VL3BPreset`, `Gemma3VisionPreset`, or `Ministral3VisionPreset`.
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
+- A [vision preset](/llm/net/developer-reference/multimodal/vision-presets/): `Qwen3VL2BPreset`, `Qwen25VL3BPreset`, `Gemma3VisionPreset`, or `Ministral3VisionPreset`.
 
 ## Minimal example
 
@@ -55,7 +55,7 @@ Console.WriteLine(reply);
 // Output: A gray tabby cat sits on a wooden floor near a window.
 ```
 
-Supported image formats: JPEG, PNG, BMP, GIF, WebP. Per-attachment size limit: 50 MB. See [Attaching images](/net/developer-reference/multimodal/attaching-images/).
+Supported image formats: JPEG, PNG, BMP, GIF, WebP. Per-attachment size limit: 50 MB. See [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/).
 
 ## Multi-image comparison
 
@@ -76,7 +76,7 @@ The engine preserves the image order in the prompt; each image sits at its marke
 
 ## Document transcription (OCR-style)
 
-Text-heavy images — scanned pages, PDFs rendered to images, screenshots of documents — work best with vision presets that have strong OCR fine-tunes.
+Text-heavy images: scanned pages, PDFs rendered to images, screenshots of documents: work best with vision presets that have strong OCR fine-tunes.
 
 ```csharp
 var preset = new Gemma3VisionPreset(); // fine-tuned for Latex and structured text
@@ -175,13 +175,13 @@ dotnet run -- cat.jpg "What breed of cat is this?"
 
 ## Common errors
 
-- **`Unknown or unsupported image format`** — convert the image to JPEG/PNG/BMP/GIF/WebP.
-- **`Image size exceeds maximum allowed (50MB)`** — downscale; the projector resizes to ~336-448 pixels anyway.
-- **Literal `<image>` markers in the reply** — chat-template mismatch. See [Debugging vision](/net/developer-reference/multimodal/debugging-vision/).
-- **Model ignores the image** — make sure you are using a vision preset and the prompt explicitly refers to "the image".
+- **`Unknown or unsupported image format`**: convert the image to JPEG/PNG/BMP/GIF/WebP.
+- **`Image size exceeds maximum allowed (50MB)`**: downscale; the projector resizes to ~336-448 pixels anyway.
+- **Literal `<image>` markers in the reply**: chat-template mismatch. See [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/).
+- **Model ignores the image**: make sure you are using a vision preset and the prompt explicitly refers to "the image".
 
 ## What's next
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — picking the right preset.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — format details and `MediaAttachment`.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — diagnose vision-specific issues.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/): picking the right preset.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/): format details and `MediaAttachment`.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): diagnose vision-specific issues.

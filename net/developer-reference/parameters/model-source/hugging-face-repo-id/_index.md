@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-source/hugging-face-repo-id/
 feedback: LLMNET
 version: 26.5.0
 title: HuggingFaceRepoId
-description: Third-priority model source in Aspose.LLM for .NET — Hugging Face repository identifier; paired with HuggingFaceFileName.
+description: Third-priority model source in Aspose.LLM for .NET, Hugging Face repository identifier; paired with HuggingFaceFileName.
 keywords:
 - HuggingFaceRepoId
 - Hugging Face
@@ -15,7 +15,7 @@ keywords:
 - priority
 ---
 
-`HuggingFaceRepoId` identifies a Hugging Face repository to download the model from. Used when neither [`ModelFilePath`](/net/developer-reference/parameters/model-source/model-file-path/) nor [`AsposeModelId`](/net/developer-reference/parameters/model-source/aspose-model-id/) is set.
+`HuggingFaceRepoId` identifies a Hugging Face repository to download the model from. Used when neither [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) nor [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/) is set.
 
 ## Quick reference
 
@@ -29,10 +29,10 @@ keywords:
 
 ## What it does
 
-The engine downloads `HuggingFaceFileName` from this repository when higher-priority fields are unset. Built-in presets populate this field — for example, `Qwen25Preset` sets it to `"bartowski/Qwen2.5-7B-Instruct-GGUF"`.
+The engine downloads `HuggingFaceFileName` from this repository when higher-priority fields are unset. Built-in presets populate this field: for example, `Qwen25Preset` sets it to `"bartowski/Qwen2.5-7B-Instruct-GGUF"`.
 
-- `null` — no Hugging Face download.
-- An Id like `"owner/repo"` — download from that repo.
+- `null`: no Hugging Face download.
+- An Id like `"owner/repo"`: download from that repo.
 
 ## When to change it
 
@@ -52,11 +52,11 @@ preset.BaseModelSourceParameters.HuggingFaceFileName = "Qwen2.5-7B-Instruct-Q4_K
 
 ## Interactions
 
-- [`HuggingFaceFileName`](/net/developer-reference/parameters/model-source/hugging-face-file-name/) — the specific file within the repo.
-- [`ModelFilePath`](/net/developer-reference/parameters/model-source/model-file-path/), [`AsposeModelId`](/net/developer-reference/parameters/model-source/aspose-model-id/) — higher-priority sources; override this.
+- [`HuggingFaceFileName`](/llm/net/developer-reference/parameters/model-source/hugging-face-file-name/): the specific file within the repo.
+- [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/), [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/): higher-priority sources; override this.
 
 ## What's next
 
-- [HuggingFaceFileName](/net/developer-reference/parameters/model-source/hugging-face-file-name/) — companion file selector.
-- [Bring your own GGUF](/net/use-cases/bring-your-own-gguf/) — custom-model workflow.
-- [Model source hub](/net/developer-reference/parameters/model-source/) — resolution order.
+- [HuggingFaceFileName](/llm/net/developer-reference/parameters/model-source/hugging-face-file-name/): companion file selector.
+- [Bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/): custom-model workflow.
+- [Model source hub](/llm/net/developer-reference/parameters/model-source/): resolution order.

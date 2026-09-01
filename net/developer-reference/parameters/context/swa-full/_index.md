@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/swa-full/
 feedback: LLMNET
 version: 26.5.0
 title: SwaFull
-description: Use full-size SWA cache in Aspose.LLM for .NET — relevant for sliding-window attention models; stores uncompressed window instead of compressed.
+description: Use full-size SWA cache in Aspose.LLM for .NET, relevant for sliding-window attention models; stores uncompressed window instead of compressed.
 keywords:
 - SwaFull
 - sliding window attention
@@ -30,8 +30,8 @@ keywords:
 
 Sliding-window attention (used by some Mistral, Gemma, and other architectures) attends only to a bounded recent window. The engine can store this window either:
 
-- **Compressed** (`SwaFull = false` or `null`) — smaller memory footprint, typical default.
-- **Full** (`SwaFull = true`) — uncompressed, larger memory footprint, may be faster in specific workloads.
+- **Compressed** (`SwaFull = false` or `null`): smaller memory footprint, typical default.
+- **Full** (`SwaFull = true`): uncompressed, larger memory footprint, may be faster in specific workloads.
 
 For models without SWA, this field has no effect.
 
@@ -48,16 +48,16 @@ Few models currently on the built-in preset list use SWA extensively. If you are
 ## Example
 
 ```csharp
-var preset = new Qwen25Preset();  // not SWA — SwaFull has no effect
+var preset = new Qwen25Preset();  // not SWA: SwaFull has no effect
 preset.ContextParameters.SwaFull = null;  // default
 ```
 
 ## Interactions
 
 - Only relevant for SWA-architected models.
-- [`TypeK`](/net/developer-reference/parameters/context/type-k/), [`TypeV`](/net/developer-reference/parameters/context/type-v/) — the dtype applies regardless.
+- [`TypeK`](/llm/net/developer-reference/parameters/context/type-k/), [`TypeV`](/llm/net/developer-reference/parameters/context/type-v/): the dtype applies regardless.
 
 ## What's next
 
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
-- [Supported presets](/net/product-overview/supported-presets/) — check which presets use SWA.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.
+- [Supported presets](/llm/net/product-overview/supported-presets/): check which presets use SWA.

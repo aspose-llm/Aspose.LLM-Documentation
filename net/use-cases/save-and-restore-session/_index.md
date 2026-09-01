@@ -23,13 +23,13 @@ Aspose.LLM for .NET can save a chat session to disk and restore it later. This l
 
 - A desktop or server application whose users expect the chat to persist between launches.
 - A long-running workflow where the conversation needs to outlive the process.
-- Backup and audit — snapshot an active conversation at a known point.
+- Backup and audit: snapshot an active conversation at a known point.
 - Migrating session state between machines that run the same SDK version and the same preset.
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 - A working `AsposeLLMApi` instance.
 
 ## Save a session
@@ -58,16 +58,16 @@ The call is synchronous and writes the entire session state as JSON.
 
 ## Restore a session
 
-`LoadChatSession` reads a file and returns the session ID of the restored session. The loaded session becomes the current session — you can use `SendMessageAsync` immediately without passing the ID.
+`LoadChatSession` reads a file and returns the session ID of the restored session. The loaded session becomes the current session: you can use `SendMessageAsync` immediately without passing the ID.
 
 ```csharp
 string sessionId = await api.LoadChatSession("session-42.json");
 string reply = await api.SendMessageToSessionAsync(sessionId, "What did we discuss?");
 ```
 
-## Full example — save, restart, resume
+## Full example: save, restart, resume
 
-This example saves after a short conversation, then — in a different `AsposeLLMApi` instance — reloads and continues.
+This example saves after a short conversation, then: in a different `AsposeLLMApi` instance: reloads and continues.
 
 ```csharp
 using Aspose.LLM;
@@ -109,7 +109,7 @@ using Aspose.LLM.Abstractions.Parameters.Presets;
 }
 ```
 
-The second run picks up the context of the first — the model remembers the customer's scenario and your earlier diagnostic steps.
+The second run picks up the context of the first: the model remembers the customer's scenario and your earlier diagnostic steps.
 
 ## What is saved
 
@@ -133,20 +133,20 @@ For archival, store alongside the `.json` file a small manifest with the SDK ver
 
 ## A known load-time nuance
 
-`LoadChatSession` creates the restored session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters` — not with the preset's values or the values that were in effect at save time.
+`LoadChatSession` creates the restored session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters`, not with the preset's values or the values that were in effect at save time.
 
 Practical impact:
 
-- The session continues with the model already loaded by the current `AsposeLLMApi` instance — that is correct.
+- The session continues with the model already loaded by the current `AsposeLLMApi` instance: that is correct.
 - But the **sampler temperature**, **max tokens**, **context size knobs**, and **system prompt** revert to library defaults.
 
 If your application depends on specific sampler settings or a system prompt, re-apply them to the session's parameters after loading, or start a fresh session and replay the saved history against it.
 
 ## Common errors
 
-- **`FileNotFoundException`** — check the path. Relative paths are resolved against the current working directory.
-- **`InvalidOperationException` on load** — the file is from an incompatible SDK version, or the JSON is corrupted.
-- **Garbled output after load** — the model or `ReleaseTag` does not match the one used at save time.
+- **`FileNotFoundException`**: check the path. Relative paths are resolved against the current working directory.
+- **`InvalidOperationException` on load**: the file is from an incompatible SDK version, or the JSON is corrupted.
+- **Garbled output after load**: the model or `ReleaseTag` does not match the one used at save time.
 
 ## Security
 
@@ -154,6 +154,6 @@ The saved file is plain JSON. It contains every user and assistant message verba
 
 ## What's next
 
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — manage sessions at runtime.
-- [Custom preset](/net/use-cases/custom-preset/) — configure the preset used when the session is first created.
-- [Session persistence reference](/net/developer-reference/session-persistence/) — full semantics of save and load.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/): manage sessions at runtime.
+- [Custom preset](/llm/net/use-cases/custom-preset/): configure the preset used when the session is first created.
+- [Session persistence reference](/llm/net/developer-reference/session-persistence/): full semantics of save and load.

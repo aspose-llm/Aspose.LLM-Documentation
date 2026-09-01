@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/binary-manager/owner/
 feedback: LLMNET
 version: 26.5.0
 title: Owner
-description: GitHub repository owner for llama.cpp releases in Aspose.LLM for .NET — defaults to ggml-org upstream; change only for validated forks.
+description: GitHub repository owner for llama.cpp releases in Aspose.LLM for .NET, defaults to ggml-org upstream; change only for validated forks.
 keywords:
 - Owner
 - GitHub
@@ -30,8 +30,8 @@ keywords:
 
 The `BinaryManager` constructs a GitHub release URL from `github.com/<Owner>/<Repo>/releases/tag/<ReleaseTag>`. `Owner` fills the first slot.
 
-- `"ggml-org"` (default) — upstream llama.cpp maintainers. Recommended.
-- A different owner — only when you mirror upstream releases to a fork that stays byte-compatible.
+- `"ggml-org"` (default): upstream llama.cpp maintainers. Recommended.
+- A different owner: only when you mirror upstream releases to a fork that stays byte-compatible.
 
 ## When to change it
 
@@ -40,7 +40,7 @@ The `BinaryManager` constructs a GitHub release URL from `github.com/<Owner>/<Re
 | Default | `"ggml-org"` |
 | Air-gapped enterprise mirror | Fork owner that hosts matching releases |
 
-Changing `Owner` without a byte-compatible mirror produces binaries whose P/Invoke signatures differ from what the SDK expects — runtime crashes.
+Changing `Owner` without a byte-compatible mirror produces binaries whose P/Invoke signatures differ from what the SDK expects: runtime crashes.
 
 ## Example
 
@@ -51,11 +51,11 @@ var preset = new Qwen25Preset();
 
 ## Interactions
 
-- [`Repo`](/net/developer-reference/parameters/binary-manager/repo/) — the repository name on that owner.
-- [`ReleaseTag`](/net/developer-reference/parameters/binary-manager/release-tag/) — specific release under the owner/repo.
+- [`Repo`](/llm/net/developer-reference/parameters/binary-manager/repo/): the repository name on that owner.
+- [`ReleaseTag`](/llm/net/developer-reference/parameters/binary-manager/release-tag/): specific release under the owner/repo.
 
 ## What's next
 
-- [Repo](/net/developer-reference/parameters/binary-manager/repo/) — repository name.
-- [ReleaseTag](/net/developer-reference/parameters/binary-manager/release-tag/) — version pin.
-- [Binary manager hub](/net/developer-reference/parameters/binary-manager/) — all binary-manager knobs.
+- [Repo](/llm/net/developer-reference/parameters/binary-manager/repo/): repository name.
+- [ReleaseTag](/llm/net/developer-reference/parameters/binary-manager/release-tag/): version pin.
+- [Binary manager hub](/llm/net/developer-reference/parameters/binary-manager/): all binary-manager knobs.

@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/temperature/
 feedback: LLMNET
 version: 26.5.0
 title: Temperature
-description: Sampler temperature in Aspose.LLM for .NET — scales logits before sampling, from deterministic (0.0) to high-randomness (>1.0).
+description: Sampler temperature in Aspose.LLM for .NET, scales logits before sampling, from deterministic (0.0) to high-randomness (>1.0).
 keywords:
 - Temperature
 - sampler
@@ -24,13 +24,13 @@ keywords:
 |---|---|
 | **Type** | `float` |
 | **Default** | `0.7` |
-| **Range** | `0.0` and above (typical `0.0` – `1.5`) |
+| **Range** | `0.0` and above (typical `0.0` to `1.5`) |
 | **Category** | Core sampling |
 | **Field on** | `SamplerParameters.Temperature` |
 
 ## What it does
 
-Each generation step produces a vector of logits — one value per vocabulary token. The engine divides every logit by `Temperature` before applying softmax:
+Each generation step produces a vector of logits: one value per vocabulary token. The engine divides every logit by `Temperature` before applying softmax:
 
 - At `Temperature = 1.0`, the softmax is unchanged; the model samples from its native distribution.
 - Below `1.0`, differences between logits are magnified. The top tokens become more likely; rare tokens are suppressed. At the limit `Temperature = 0.0`, the engine picks the single highest-logit token every step (greedy decoding).
@@ -43,9 +43,9 @@ Each generation step produces a vector of logits — one value per vocabulary to
 | Scenario | Value |
 |---|---|
 | Fully deterministic, reproducible output | `0.0` (greedy; `Seed` becomes irrelevant) |
-| Precise tasks — code, structured data, classification | `0.1` – `0.3` |
+| Precise tasks: code, structured data, classification | `0.1` to `0.3` |
 | General-purpose chat (default balance) | `0.7` |
-| Creative writing, brainstorming | `0.8` – `1.0` |
+| Creative writing, brainstorming | `0.8` to `1.0` |
 | Maximum variety, risk of incoherence | `> 1.0` |
 
 Temperature trades accuracy for variety. On factual questions, high temperature increases hallucination rate. On creative tasks, low temperature produces dull, repetitive output.
@@ -74,15 +74,15 @@ preset.SamplerParameters.Seed = 42; // seed is ignored when Temperature == 0
 
 ## Interactions
 
-- [`TopP`](/net/developer-reference/parameters/sampler/top-p/) — applies after temperature to trim the tail.
-- [`TopK`](/net/developer-reference/parameters/sampler/top-k/) — hard cap on candidate count after temperature.
-- [`MinP`](/net/developer-reference/parameters/sampler/min-p/) — minimum relative probability after temperature.
-- [`Seed`](/net/developer-reference/parameters/sampler/seed/) — irrelevant when `Temperature = 0`.
-- [`Mirostat`](/net/developer-reference/parameters/sampler/mirostat/) — when active, adaptively adjusts entropy and bypasses `Temperature` tuning.
-- [`DynatempRange`](/net/developer-reference/parameters/sampler/dynatemp-range/) — dynamically varies `Temperature` per step based on entropy.
+- [`TopP`](/llm/net/developer-reference/parameters/sampler/top-p/): applies after temperature to trim the tail.
+- [`TopK`](/llm/net/developer-reference/parameters/sampler/top-k/): hard cap on candidate count after temperature.
+- [`MinP`](/llm/net/developer-reference/parameters/sampler/min-p/): minimum relative probability after temperature.
+- [`Seed`](/llm/net/developer-reference/parameters/sampler/seed/): irrelevant when `Temperature = 0`.
+- [`Mirostat`](/llm/net/developer-reference/parameters/sampler/mirostat/): when active, adaptively adjusts entropy and bypasses `Temperature` tuning.
+- [`DynatempRange`](/llm/net/developer-reference/parameters/sampler/dynatemp-range/): dynamically varies `Temperature` per step based on entropy.
 
 ## What's next
 
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs at a glance.
-- [Tune for speed vs quality](/net/how-to/tune-for-speed-vs-quality/) — where `Temperature` sits in the trade-off.
-- [Garbled output troubleshooting](/net/troubleshooting/garbled-output/) — when high temperature causes incoherence.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs at a glance.
+- [Tune for speed vs quality](/llm/net/how-to/tune-for-speed-vs-quality/): where `Temperature` sits in the trade-off.
+- [Garbled output troubleshooting](/llm/net/troubleshooting/garbled-output/): when high temperature causes incoherence.

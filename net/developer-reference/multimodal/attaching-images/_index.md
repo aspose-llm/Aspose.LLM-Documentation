@@ -7,7 +7,7 @@ url: /net/developer-reference/multimodal/attaching-images/
 feedback: LLMNET
 version: 26.5.0
 title: Attaching images
-description: Pass images to Aspose.LLM for .NET chat methods — MediaAttachment class, supported formats (JPEG, PNG, BMP, GIF, WebP), 50 MB limit, magic-byte detection, and multiple images per message.
+description: Pass images to Aspose.LLM for .NET chat methods, MediaAttachment class, supported formats (JPEG, PNG, BMP, GIF, WebP), 50 MB limit, magic-byte detection, and multiple images per message.
 keywords:
 - image input
 - MediaAttachment
@@ -53,7 +53,7 @@ Each image must be 50 MB or smaller. Larger images throw:
 System.InvalidOperationException: Image size exceeds maximum allowed (50MB).
 ```
 
-In practice, downsize images to the projector's native resolution (typically 336 or 448 pixels on the short side) before attaching — large images are resized internally and eat wall time.
+In practice, downsize images to the projector's native resolution (typically 336 or 448 pixels on the short side) before attaching: large images are resized internally and eat wall time.
 
 ## Multiple images per message
 
@@ -70,11 +70,11 @@ string reply = await api.SendMessageAsync(
 
 The engine processes images in the order they appear in the array. The chat template places them at marker positions in the prompt.
 
-Not every vision model handles arbitrary numbers of images equally well — most are tuned for one or two. Refer to the model's own documentation for recommended limits.
+Not every vision model handles arbitrary numbers of images equally well: most are tuned for one or two. Refer to the model's own documentation for recommended limits.
 
 ## `MediaAttachment` class
 
-When `SendMessageAsync` receives `byte[]`, it wraps each array in a `MediaAttachment` internally. The class is also public if you need to handle attachments explicitly — for example, when adding them to `ChatMessage` instances manually.
+When `SendMessageAsync` receives `byte[]`, it wraps each array in a `MediaAttachment` internally. The class is also public if you need to handle attachments explicitly: for example, when adding them to `ChatMessage` instances manually.
 
 ```csharp
 namespace Aspose.LLM.Abstractions.Models;
@@ -101,7 +101,7 @@ public class MediaAttachment
 }
 ```
 
-### `FromBytes` — auto-detecting format
+### `FromBytes`: auto-detecting format
 
 The idiomatic constructor:
 
@@ -171,11 +171,11 @@ preset.ChatParameters.History = new List<ChatMessage> { msg };
 |---|---|---|
 | `Unknown or unsupported image format` | File is TIFF, HEIC, SVG, or corrupt. | Convert to JPEG/PNG/BMP/GIF/WebP. |
 | `Image size exceeds maximum allowed (50MB)` | Very high-resolution image. | Downscale or recompress before attaching. |
-| Garbled reply, no image detail | Chat template mismatch or wrong preset. | Verify you are using a vision preset; see [Chat templates](/net/developer-reference/multimodal/chat-templates/). |
+| Garbled reply, no image detail | Chat template mismatch or wrong preset. | Verify you are using a vision preset; see [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/). |
 | Reply ignores the image | Prompt is too generic. | Reference "the image", "this diagram", etc. explicitly. |
 
 ## What's next
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — pick the right preset for your images.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — how the engine inserts image markers.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — diagnose misalignments and garbled output.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/): pick the right preset for your images.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/): how the engine inserts image markers.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): diagnose misalignments and garbled output.

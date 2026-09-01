@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/sampler/dry-sequence-breakers/
 feedback: LLMNET
 version: 26.5.0
 title: DrySequenceBreakers
-description: Tokens that reset DRY's match detector in Aspose.LLM for .NET — default list covers newlines, colons, quotes, and asterisks.
+description: Tokens that reset DRY's match detector in Aspose.LLM for .NET, default list covers newlines, colons, quotes, and asterisks.
 keywords:
 - DrySequenceBreakers
 - DRY
@@ -29,14 +29,14 @@ keywords:
 
 ## What it does
 
-DRY detects long matches by comparing the token stream against earlier tokens. When the detector encounters a "breaker" string — typically punctuation or structural markup — it treats that as the end of one phrase and the start of the next. This prevents DRY from penalizing tokens that naturally repeat across paragraph boundaries.
+DRY detects long matches by comparing the token stream against earlier tokens. When the detector encounters a "breaker" string: typically punctuation or structural markup: it treats that as the end of one phrase and the start of the next. This prevents DRY from penalizing tokens that naturally repeat across paragraph boundaries.
 
 Default breakers:
 
-- `"\n"` — newline: paragraph boundary.
-- `":"` — colon: list-item or header boundary.
-- `"\""` — double quote: start/end of quoted text.
-- `"*"` — asterisk: markdown emphasis or list markers.
+- `"\n"`: newline: paragraph boundary.
+- `":"`: colon: list-item or header boundary.
+- `"\""`: double quote: start/end of quoted text.
+- `"*"`: asterisk: markdown emphasis or list markers.
 
 ## When to change it
 
@@ -45,7 +45,7 @@ Default breakers:
 | Default list | `["\n", ":", "\"", "*"]` |
 | Markdown-heavy output | Add `"#"` for headings, `"-"` for bullets |
 | Code generation | Add `"{"`, `"}"`, `";"`, `"("`, `")"` |
-| Minimal breakers — let DRY fire more aggressively across paragraphs | `["\n"]` or empty list |
+| Minimal breakers: let DRY fire more aggressively across paragraphs | `["\n"]` or empty list |
 
 Breakers shape what DRY considers a "phrase". Narrowing the list makes DRY more global; widening it localizes enforcement.
 
@@ -64,11 +64,11 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`DryMultiplier`](/net/developer-reference/parameters/sampler/dry-multiplier/) — DRY gate.
-- [`DryAllowedLength`](/net/developer-reference/parameters/sampler/dry-allowed-length/) — match length threshold within a phrase boundary.
+- [`DryMultiplier`](/llm/net/developer-reference/parameters/sampler/dry-multiplier/): DRY gate.
+- [`DryAllowedLength`](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/): match length threshold within a phrase boundary.
 
 ## What's next
 
-- [DryMultiplier](/net/developer-reference/parameters/sampler/dry-multiplier/) — enables DRY.
-- [DryAllowedLength](/net/developer-reference/parameters/sampler/dry-allowed-length/) — length threshold.
-- [Sampler parameters hub](/net/developer-reference/parameters/sampler/) — all sampler knobs.
+- [DryMultiplier](/llm/net/developer-reference/parameters/sampler/dry-multiplier/): enables DRY.
+- [DryAllowedLength](/llm/net/developer-reference/parameters/sampler/dry-allowed-length/): length threshold.
+- [Sampler parameters hub](/llm/net/developer-reference/parameters/sampler/): all sampler knobs.

@@ -7,7 +7,7 @@ url: /net/developer-reference/acceleration/hip-rocm/
 feedback: LLMNET
 version: 26.5.0
 title: HIP / ROCm
-description: Run Aspose.LLM for .NET on AMD GPUs with HIP (ROCm) acceleration — supported GPUs, driver requirements, and tuning notes.
+description: Run Aspose.LLM for .NET on AMD GPUs with HIP (ROCm) acceleration, supported GPUs, driver requirements, and tuning notes.
 keywords:
 - HIP
 - ROCm
@@ -26,7 +26,7 @@ HIP (and its underlying ROCm stack) is the AMD-specific GPU backend for Aspose.L
   - **Radeon**: RDNA 3 (RX 7900 series) and newer are officially supported. Some RDNA 2 cards (RX 6800/6900) work with `HSA_OVERRIDE_GFX_VERSION` workarounds.
 - **OS**: Linux with ROCm 6.x. Ubuntu 22.04 LTS and RHEL 9 are the commonly tested hosts.
 - **Driver**: install the ROCm stack via the official AMD packages. Verify with `rocminfo`.
-- **No Windows support**: AMD has Windows ROCm in preview, but Aspose.LLM's HIP binaries currently target Linux only. On Windows with AMD GPUs, use [Vulkan](/net/developer-reference/acceleration/vulkan/) instead.
+- **No Windows support**: AMD has Windows ROCm in preview, but Aspose.LLM's HIP binaries currently target Linux only. On Windows with AMD GPUs, use [Vulkan](/llm/net/developer-reference/acceleration/vulkan/) instead.
 
 Verify ROCm:
 
@@ -75,13 +75,13 @@ Apply this before starting your process. The override tricks ROCm into treating 
 
 ## Performance tips
 
-- **Flash Attention** — supported on recent ROCm releases; enable via `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled`.
-- **Partial offload** — for consumer Radeon cards with limited VRAM (16-24 GB), tune `GpuLayers` to slightly below full to leave room for KV cache.
-- **KV quantization** — aggressive `TypeV = GgmlType.Q8_0` or even `Q4_0` claws back meaningful VRAM on long contexts.
+- **Flash Attention**: supported on recent ROCm releases; enable via `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled`.
+- **Partial offload**: for consumer Radeon cards with limited VRAM (16-24 GB), tune `GpuLayers` to slightly below full to leave room for KV cache.
+- **KV quantization**: aggressive `TypeV = GgmlType.Q8_0` or even `Q4_0` claws back meaningful VRAM on long contexts.
 
 ## Windows AMD users: use Vulkan
 
-Aspose.LLM does not ship Windows HIP binaries. If your AMD GPU is on Windows, use [Vulkan](/net/developer-reference/acceleration/vulkan/) — AMD's Vulkan driver is excellent and gets you GPU acceleration without ROCm.
+Aspose.LLM does not ship Windows HIP binaries. If your AMD GPU is on Windows, use [Vulkan](/llm/net/developer-reference/acceleration/vulkan/): AMD's Vulkan driver is excellent and gets you GPU acceleration without ROCm.
 
 ## Common issues
 
@@ -94,6 +94,6 @@ Aspose.LLM does not ship Windows HIP binaries. If your AMD GPU is on Windows, us
 
 ## What's next
 
-- [Vulkan](/net/developer-reference/acceleration/vulkan/) — Windows alternative for AMD.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — `PreferredAcceleration` selection.
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — GPU offload and multi-GPU settings.
+- [Vulkan](/llm/net/developer-reference/acceleration/vulkan/): Windows alternative for AMD.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): `PreferredAcceleration` selection.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): GPU offload and multi-GPU settings.

@@ -7,7 +7,7 @@ url: /net/troubleshooting/model-not-loading/
 feedback: LLMNET
 version: 26.5.0
 title: Model not loading
-description: Fix Aspose.LLM for .NET errors during model load — corrupt GGUF, unsupported architecture, wrong file, disk space, permission issues.
+description: Fix Aspose.LLM for .NET errors during model load, corrupt GGUF, unsupported architecture, wrong file, disk space, permission issues.
 keywords:
 - model loading
 - GGUF
@@ -17,7 +17,7 @@ keywords:
 - model load error
 ---
 
-The SDK fails during model load — on the path from `AsposeLLMApi.Create` that downloads and initializes the GGUF file. This page covers the usual causes.
+The SDK fails during model load: on the path from `AsposeLLMApi.Create` that downloads and initializes the GGUF file. This page covers the usual causes.
 
 ## Symptom
 
@@ -30,11 +30,11 @@ The SDK fails during model load — on the path from `AsposeLLMApi.Create` that 
 
 Several distinct failure modes:
 
-- **Corrupted download** — partial or interrupted download; bad cached file.
-- **Unsupported model architecture** — a GGUF whose architecture is not supported by the pinned `ReleaseTag`.
-- **Wrong file name** — the file exists but does not match the expected quantization.
-- **Disk or permission issues** — the cache directory is not writable.
-- **`llama.cpp` release mismatch** — a tag older than the model's architecture.
+- **Corrupted download**: partial or interrupted download; bad cached file.
+- **Unsupported model architecture**: a GGUF whose architecture is not supported by the pinned `ReleaseTag`.
+- **Wrong file name**: the file exists but does not match the expected quantization.
+- **Disk or permission issues**: the cache directory is not writable.
+- **`llama.cpp` release mismatch**: a tag older than the model's architecture.
 
 ## Resolution
 
@@ -66,7 +66,7 @@ Enable `CheckTensors` on the inference parameters to validate every tensor durin
 preset.BaseModelInferenceParameters.CheckTensors = true;
 ```
 
-Start-up takes longer, but you get clear errors on malformed tensors. If validation fails, the file is corrupt — delete and re-download.
+Start-up takes longer, but you get clear errors on malformed tensors. If validation fails, the file is corrupt: delete and re-download.
 
 Disable `CheckTensors` in production after confirming the file is good.
 
@@ -108,7 +108,7 @@ ls -la ~/.local/share/Aspose.LLM/
 # Expect the folder to be owned by the user running the process.
 ```
 
-On Windows, check folder ACLs — especially when the process runs under a service account different from the install user.
+On Windows, check folder ACLs: especially when the process runs under a service account different from the install user.
 
 ### 7. Check disk space
 
@@ -130,10 +130,10 @@ preset.MmprojSourceParameters.HuggingFaceFileName = "mmproj-F16.gguf";
 
 - Pre-download and validate models in your CI / build pipeline. Failing early in CI beats failing at runtime.
 - Commit manifest files that record the expected model hash alongside the preset selection. Compare on load.
-- Pin a tested `ReleaseTag` — do not float on defaults across SDK upgrades without testing.
+- Pin a tested `ReleaseTag`: do not float on defaults across SDK upgrades without testing.
 
 ## What's next
 
-- [Model source parameters](/net/developer-reference/parameters/model-source/) — priority and resolution.
-- [Supported presets](/net/product-overview/supported-presets/) — confirmed compatible models and files.
-- [Binary download fails](/net/troubleshooting/binary-download-fails/) — related network issues.
+- [Model source parameters](/llm/net/developer-reference/parameters/model-source/): priority and resolution.
+- [Supported presets](/llm/net/product-overview/supported-presets/): confirmed compatible models and files.
+- [Binary download fails](/llm/net/troubleshooting/binary-download-fails/): related network issues.

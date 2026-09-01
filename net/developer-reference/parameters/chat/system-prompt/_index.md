@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/chat/system-prompt/
 feedback: LLMNET
 version: 26.5.0
 title: SystemPrompt
-description: Default system prompt for new chat sessions in Aspose.LLM for .NET — applied at session creation; empty string for presets with no system turn.
+description: Default system prompt for new chat sessions in Aspose.LLM for .NET, applied at session creation; empty string for presets with no system turn.
 keywords:
 - SystemPrompt
 - system message
@@ -28,11 +28,11 @@ keywords:
 
 ## What it does
 
-When a chat session starts — either explicitly via `StartNewChatAsync` or implicitly on the first `SendMessageAsync` — the engine injects a system turn with this text at the top of the conversation. The model sees the system prompt before any user input and uses it to shape its behavior across the session.
+When a chat session starts: either explicitly via `StartNewChatAsync` or implicitly on the first `SendMessageAsync`: the engine injects a system turn with this text at the top of the conversation. The model sees the system prompt before any user input and uses it to shape its behavior across the session.
 
-- `""` (default) — no system turn. Some presets (certain Gemma variants) prefer this.
-- A short instruction — role and tone. For example, "You are a concise technical assistant."
-- A longer instruction — include format constraints, forbidden topics, preferred output structure.
+- `""` (default): no system turn. Some presets (certain Gemma variants) prefer this.
+- A short instruction: role and tone. For example, "You are a concise technical assistant."
+- A longer instruction: include format constraints, forbidden topics, preferred output structure.
 
 The system prompt is applied once per session. Changes to `SystemPrompt` after `AsposeLLMApi.Create` do not affect already-running sessions.
 
@@ -45,7 +45,7 @@ The system prompt is applied once per session. Changes to `SystemPrompt` after `
 | Format enforcement | Explicit format rules |
 | Safety / content filtering | Instructions to refuse certain inputs |
 
-Keep system prompts concise — 50-300 tokens. Every token in the system prompt counts against [`ContextParameters.ContextSize`](/net/developer-reference/parameters/context/context-size/).
+Keep system prompts concise: 50-300 tokens. Every token in the system prompt counts against [`ContextParameters.ContextSize`](/llm/net/developer-reference/parameters/context/context-size/).
 
 ## Example
 
@@ -60,12 +60,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`History`](/net/developer-reference/parameters/chat/history/) — seeded history is appended after the system prompt.
-- [`CacheCleanupStrategy`](/net/developer-reference/parameters/chat/cache-cleanup-strategy/) — most strategies preserve the system prompt; the cleanup policy anchors on it.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — system prompt consumes tokens from the window.
+- [`History`](/llm/net/developer-reference/parameters/chat/history/): seeded history is appended after the system prompt.
+- [`CacheCleanupStrategy`](/llm/net/developer-reference/parameters/chat/cache-cleanup-strategy/): most strategies preserve the system prompt; the cleanup policy anchors on it.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): system prompt consumes tokens from the window.
 
 ## What's next
 
-- [System prompt recipes](/net/use-cases/system-prompt-recipes/) — effective patterns.
-- [CacheCleanupStrategy](/net/developer-reference/parameters/chat/cache-cleanup-strategy/) — how the system prompt interacts with cache trimming.
-- [Chat parameters hub](/net/developer-reference/parameters/chat/) — all chat knobs.
+- [System prompt recipes](/llm/net/use-cases/system-prompt-recipes/): effective patterns.
+- [CacheCleanupStrategy](/llm/net/developer-reference/parameters/chat/cache-cleanup-strategy/): how the system prompt interacts with cache trimming.
+- [Chat parameters hub](/llm/net/developer-reference/parameters/chat/): all chat knobs.

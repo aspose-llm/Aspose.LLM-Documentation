@@ -7,7 +7,7 @@ url: /net/developer-reference/session-persistence/portability/
 feedback: LLMNET
 version: 26.5.0
 title: Session file portability
-description: When you can safely move a saved Aspose.LLM for .NET chat session between machines, versions, and models — and what breaks compatibility.
+description: When you can safely move a saved Aspose.LLM for .NET chat session between machines, versions, and models, and what breaks compatibility.
 keywords:
 - session portability
 - SaveChatSession
@@ -17,7 +17,7 @@ keywords:
 - ReleaseTag
 ---
 
-Session files produced by `SaveChatSession` move between processes reliably — that is the whole point. Moving them between different machines, different SDK versions, or different models is a different story. This page covers when portability holds and when it breaks.
+Session files produced by `SaveChatSession` move between processes reliably: that is the whole point. Moving them between different machines, different SDK versions, or different models is a different story. This page covers when portability holds and when it breaks.
 
 ## When a session is portable
 
@@ -37,7 +37,7 @@ When any axis differs, behavior ranges from silent garbled output to a load-time
 
 ### Different model
 
-The KV cache records token positions tied to the original tokenization. A different model has a different tokenizer — the positions no longer align with the new model's token stream. Output becomes garbled or nonsense.
+The KV cache records token positions tied to the original tokenization. A different model has a different tokenizer: the positions no longer align with the new model's token stream. Output becomes garbled or nonsense.
 
 ### Different `ReleaseTag`
 
@@ -53,7 +53,7 @@ Minor versions within the same major are expected to be compatible, but verify a
 
 ### Different hardware architecture
 
-Same SDK version, same model, same tag — still works across different architectures (x64, ARM64, Apple Silicon) as long as the model loads on both. The session file is architecture-independent.
+Same SDK version, same model, same tag: still works across different architectures (x64, ARM64, Apple Silicon) as long as the model loads on both. The session file is architecture-independent.
 
 ## Recommended archive format
 
@@ -75,14 +75,14 @@ Before loading an archived session, compare the manifest against your current co
 
 ## Known load-time nuance
 
-`LoadChatSession` creates the restored session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters` — not the preset's values or the values in effect at save time.
+`LoadChatSession` creates the restored session with **default** `ContextParameters`, `ChatParameters`, and `SamplerParameters`, not the preset's values or the values in effect at save time.
 
 Practical impact:
 
-- **Model** — loaded by the current `AsposeLLMApi` instance. Correct as long as the model matches the save-time model.
-- **Sampler** — reverts to library defaults (temperature 0.7, top-p 0.9, etc.). If your application relies on specific sampler tuning, re-apply it after loading.
-- **System prompt** — reverts to default (typically empty). Re-apply if needed.
-- **Max tokens** — default `2048`. Verify this covers your use case, especially for reasoning models.
+- **Model**: loaded by the current `AsposeLLMApi` instance. Correct as long as the model matches the save-time model.
+- **Sampler**: reverts to library defaults (temperature 0.7, top-p 0.9, etc.). If your application relies on specific sampler tuning, re-apply it after loading.
+- **System prompt**: reverts to default (typically empty). Re-apply if needed.
+- **Max tokens**: default `2048`. Verify this covers your use case, especially for reasoning models.
 
 Workaround: after `LoadChatSession`, your application can re-apply configuration manually:
 
@@ -114,10 +114,10 @@ This costs re-inference time but guarantees the preset's full parameter set appl
 
 ## Security note
 
-Saved JSON is plain text — user prompts, assistant replies, and media metadata are visible to anyone with file access. Encrypt sensitive sessions at the application level before writing them to durable storage.
+Saved JSON is plain text: user prompts, assistant replies, and media metadata are visible to anyone with file access. Encrypt sensitive sessions at the application level before writing them to durable storage.
 
 ## What's next
 
-- [Session persistence](/net/developer-reference/session-persistence/) — save / load semantics.
-- [Save and restore session use case](/net/use-cases/save-and-restore-session/) — runnable example.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — pin `ReleaseTag` for deterministic restores.
+- [Session persistence](/llm/net/developer-reference/session-persistence/): save / load semantics.
+- [Save and restore session use case](/llm/net/use-cases/save-and-restore-session/): runnable example.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): pin `ReleaseTag` for deterministic restores.

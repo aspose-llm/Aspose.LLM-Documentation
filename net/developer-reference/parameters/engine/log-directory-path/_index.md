@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/engine/log-directory-path/
 feedback: LLMNET
 version: 26.5.0
 title: LogDirectoryPath
-description: File path for native log output in Aspose.LLM for .NET — defaults to logs/log.txt; the name says "directory" but the value is a full file path.
+description: File path for native log output in Aspose.LLM for .NET, defaults to logs/log.txt; the name says "directory" but the value is a full file path.
 keywords:
 - LogDirectoryPath
 - log file
@@ -15,7 +15,7 @@ keywords:
 - diagnostics
 ---
 
-`LogDirectoryPath` is the file path where the native logger writes output. Despite the name, the value is a full file path — not a directory.
+`LogDirectoryPath` is the file path where the native logger writes output. Despite the name, the value is a full file path, not a directory.
 
 ## Quick reference
 
@@ -28,10 +28,10 @@ keywords:
 
 ## What it does
 
-When the native logger writes (mostly when [`EnableDebugLogging`](/net/developer-reference/parameters/engine/enable-debug-logging/) is `true`), output goes to this file. If the file does not exist, it is created; if it does, output is appended.
+When the native logger writes (mostly when [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/) is `true`), output goes to this file. If the file does not exist, it is created; if it does, output is appended.
 
-- Default `logs/log.txt` — a file `log.txt` inside a `logs` folder, resolved relative to the current working directory.
-- Absolute path — write to a specific location regardless of working directory.
+- Default `logs/log.txt`: a file `log.txt` inside a `logs` folder, resolved relative to the current working directory.
+- Absolute path: write to a specific location regardless of working directory.
 
 ## When to change it
 
@@ -62,10 +62,10 @@ preset.EngineParameters.LogDirectoryPath = logFile;
 
 ## Interactions
 
-- [`EnableDebugLogging`](/net/developer-reference/parameters/engine/enable-debug-logging/) — the main switch for output that this file receives.
-- `ILogger` passed to `AsposeLLMApi.Create` — complementary managed-side logging.
+- [`EnableDebugLogging`](/llm/net/developer-reference/parameters/engine/enable-debug-logging/): the main switch for output that this file receives.
+- `ILogger` passed to `AsposeLLMApi.Create`: complementary managed-side logging.
 
 ## What's next
 
-- [Logging and diagnostics](/net/developer-reference/logging-and-diagnostics/) — full logging reference.
-- [Engine parameters hub](/net/developer-reference/parameters/engine/) — all engine knobs.
+- [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/): full logging reference.
+- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/): all engine knobs.

@@ -7,7 +7,7 @@ url: /net/product-overview/architecture/
 feedback: LLMNET
 version: 26.5.0
 title: Architecture
-description: Understand the layers, runtime flow, and lifecycle of Aspose.LLM for .NET — from the facade API down to native llama.cpp binaries.
+description: Understand the layers, runtime flow, and lifecycle of Aspose.LLM for .NET, from the facade API down to native llama.cpp binaries.
 keywords:
 - architecture
 - runtime
@@ -33,7 +33,7 @@ Read this page before tuning performance, planning an offline deployment, or int
 | `ModelManager` | Resolves the model file (local path, Aspose model ID, or Hugging Face repo), downloads it if needed, and loads it into native memory. |
 | `BinaryManager` | Downloads and caches the matching `llama.cpp` native binaries from GitHub releases on first use. |
 | `ChatSession` | One session per conversation. Holds the KV cache slice, chat history, and current KV position. |
-| `Aspose.LLM.Interop` | P/Invoke layer with 225+ bindings to `llama.cpp` and `mtmd`. Hidden from consumers — only `Aspose.LLM.dll` ships in the NuGet package. |
+| `Aspose.LLM.Interop` | P/Invoke layer with 225+ bindings to `llama.cpp` and `mtmd`. Hidden from consumers: only `Aspose.LLM.dll` ships in the NuGet package. |
 | llama.cpp native | The native runtime: `libllama`, `libmtmd`, and `libggml-*` acceleration backends. Selected per platform at runtime. |
 
 ## What happens when you create the API
@@ -67,9 +67,9 @@ Behind a corporate proxy or firewall, pre-download the release archive and point
 If the preset specifies a model source, the engine constructor calls `LoadModelAsync(preset)` synchronously:
 
 1. `ModelManager` resolves the model file in this priority order:
-   - `BaseModelSourceParameters.ModelFilePath` — explicit local path.
-   - `BaseModelSourceParameters.AsposeModelId` — internal Aspose model registry.
-   - `BaseModelSourceParameters.HuggingFaceRepoId` + `HuggingFaceFileName` — download from Hugging Face Hub.
+   - `BaseModelSourceParameters.ModelFilePath`: explicit local path.
+   - `BaseModelSourceParameters.AsposeModelId`: internal Aspose model registry.
+   - `BaseModelSourceParameters.HuggingFaceRepoId` + `HuggingFaceFileName`: download from Hugging Face Hub.
 2. The model file is loaded into native memory via `llama_model_load_from_file`.
 3. If the preset is a vision preset, the `mmproj` projector is loaded next via `mtmd_init_from_file_ptr`.
 
@@ -126,6 +126,6 @@ Native `llama.cpp` libraries are **not** bundled with the NuGet payload. They ar
 
 ## What's next
 
-- [Supported presets](/net/product-overview/supported-presets/) — pick a preset that matches your model and hardware.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how sessions are created, used, and disposed.
-- [Hello, world!](/net/hello-world/) — a minimal runnable example.
+- [Supported presets](/llm/net/product-overview/supported-presets/): pick a preset that matches your model and hardware.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): how sessions are created, used, and disposed.
+- [Hello, world!](/llm/net/hello-world/): a minimal runnable example.

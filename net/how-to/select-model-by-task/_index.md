@@ -7,7 +7,7 @@ url: /net/how-to/select-model-by-task/
 feedback: LLMNET
 version: 26.5.0
 title: Select a model by task
-description: Pick an Aspose.LLM for .NET built-in preset that fits your task — general chat, reasoning, code, vision, long context.
+description: Pick an Aspose.LLM for .NET built-in preset that fits your task, general chat, reasoning, code, vision, long context.
 keywords:
 - model selection
 - preset selection
@@ -16,6 +16,12 @@ keywords:
 ---
 
 Match a built-in preset to the task. Start small; move up only if output quality does not meet your bar.
+
+{{% alert color="warning" %}}
+**No built-in LLM is included in Aspose.LLM.** The library is a local inference runtime: you choose which open source model to use, and the model file is obtained separately and stored on your own machine. Model files are covered by the license of the model publisher, not by your license agreement with Aspose Pty Ltd.
+
+Check the license of the model a preset resolves to before using it commercially. Licenses are listed in [Supported presets](/llm/net/product-overview/supported-presets/).
+{{% /alert %}}
 
 ## Quick picker
 
@@ -26,11 +32,11 @@ Match a built-in preset to the task. Start small; move up only if output quality
 | Small footprint, fast, long context | `Llama32Preset` (3B, 131K) |
 | Smallest possible model | `Phi4Preset` (mini) |
 | Coding tasks | `DeepSeekCoder2Preset` |
-| Step-by-step reasoning | `DeepseekR1Qwen3Preset` or `Oss20Preset` |
-| Largest model, strongest reasoning | `Oss20Preset` (20B) |
+| Step-by-step reasoning | `DeepseekR1Qwen3Preset` |
+| Largest model, strongest reasoning | `SeedOss36BPreset` (36B) |
 | Image understanding, small | `Qwen3VL2BPreset` (2B) |
-| Image understanding, mid | `Qwen25VL3BPreset` (3B) |
-| Text-heavy images (OCR-style) | `Gemma3VisionPreset` |
+| Image understanding, mid | `Glm4_6VFlashPreset` |
+| Text-heavy images (OCR-style) | `Ministral3VisionPreset` |
 | Strongest vision reasoning | `Ministral3VisionPreset` (8B) |
 
 ## Decision tree
@@ -54,12 +60,18 @@ Match a built-in preset to the task. Start small; move up only if output quality
 
 ## After you pick
 
-Override the default values where they do not fit your scenario. See [Customizing presets](/net/developer-reference/presets/customizing/).
+Override the default values where they do not fit your scenario. See [Customizing presets](/llm/net/developer-reference/presets/customizing/).
 
-If none of the built-ins fit, [bring your own GGUF](/net/use-cases/bring-your-own-gguf/).
+If none of the built-ins fit, [bring your own GGUF](/llm/net/use-cases/bring-your-own-gguf/).
+
+## Before you ship
+
+{{% alert color="warning" %}}
+**Check the license of the model you selected.** Aspose.LLM supplies the runtime, not the model. Whichever model you load, its terms come from the party that published it and they apply to your product. They are not part of, and are not covered by, your license agreement with Aspose Pty Ltd. Some open source models allow commercial use with no strings attached, others attach conditions such as attribution or an acceptable use policy, and a few exclude commercial use or withdraw it above a revenue threshold. [Supported LLMs](/llm/net/product-overview/supported-llms/) lists the license of every family the SDK ships a preset for.
+{{% /alert %}}
 
 ## What's next
 
-- [Supported presets](/net/product-overview/supported-presets/) — catalog with Hugging Face sources.
-- [Using built-in presets](/net/developer-reference/presets/using-built-in/) — full picker guidance.
-- [Custom preset](/net/use-cases/custom-preset/) — patterns for tuning.
+- [Supported presets](/llm/net/product-overview/supported-presets/): catalog with Hugging Face sources.
+- [Using built-in presets](/llm/net/developer-reference/presets/using-built-in/): full picker guidance.
+- [Custom preset](/llm/net/use-cases/custom-preset/): patterns for tuning.

@@ -7,7 +7,7 @@ url: /net/how-to/tune-for-speed-vs-quality/
 feedback: LLMNET
 version: 26.5.0
 title: Tune for speed vs quality
-description: Move a preset along the speed-quality curve in Aspose.LLM for .NET — model size, quantization, sampler, context, GPU offload.
+description: Move a preset along the speed-quality curve in Aspose.LLM for .NET, model size, quantization, sampler, context, GPU offload.
 keywords:
 - speed
 - quality
@@ -21,7 +21,7 @@ Several knobs move a preset along the speed-quality curve. This how-to summarize
 
 ## Speed-biased configuration
 
-When throughput matters most — bulk processing, real-time chat, short answers.
+When throughput matters most: bulk processing, real-time chat, short answers.
 
 ```csharp
 var preset = new Llama32Preset(); // 3B model
@@ -43,7 +43,7 @@ Expected throughput: 50-100 tokens/sec on a mid-range GPU, 15-30 on modern CPU.
 
 ## Quality-biased configuration
 
-When the best possible output matters — deep analysis, complex reasoning, long-form writing.
+When the best possible output matters: deep analysis, complex reasoning, long-form writing.
 
 ```csharp
 var preset = new Oss20Preset(); // 20B model
@@ -106,10 +106,10 @@ Console.WriteLine($"Time: {sw.Elapsed.TotalSeconds:F2}s");
 Console.WriteLine($"Rate: ~{reply.Split(' ').Length / sw.Elapsed.TotalSeconds:F1} tok/s");
 ```
 
-Word count is an approximation — real tokens are usually 1.3-1.5× the word count for English.
+Word count is an approximation: real tokens are usually 1.3-1.5× the word count for English.
 
 ## What's next
 
-- [Sampler parameters](/net/developer-reference/parameters/sampler/) — fine-grained sampler control.
-- [Context parameters](/net/developer-reference/parameters/context/) — context, flash attention, KV cache.
-- [Understand quantization](/net/how-to/understand-quantization/) — how quantization affects throughput.
+- [Sampler parameters](/llm/net/developer-reference/parameters/sampler/): fine-grained sampler control.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): context, flash attention, KV cache.
+- [Understand quantization](/llm/net/how-to/understand-quantization/): how quantization affects throughput.

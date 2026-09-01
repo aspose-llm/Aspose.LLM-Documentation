@@ -17,7 +17,13 @@ keywords:
 - custom
 ---
 
-A **preset** bundles every parameter needed to configure a language model for inference: where to find the model file, how to load it, how to generate text, and — for vision presets — how to process images. Pass a preset to `AsposeLLMApi.Create(preset)` and the engine applies the whole configuration at once.
+A **preset** bundles every parameter needed to configure a language model for inference: where to find the model file, how to load it, how to generate text, and: for vision presets: how to process images. Pass a preset to `AsposeLLMApi.Create(preset)` and the engine applies the whole configuration at once.
+
+{{% alert color="warning" %}}
+**No built-in LLM is included in Aspose.LLM.** The library is a local inference runtime: you choose which open source model to use, and the model file is obtained separately and stored on your own machine. Model files are covered by the license of the model publisher, not by your license agreement with Aspose Pty Ltd.
+
+Check the license of the model a preset resolves to before using it commercially. Licenses are listed in [Supported presets](/llm/net/product-overview/supported-presets/).
+{{% /alert %}}
 
 ## Base type
 
@@ -25,17 +31,17 @@ All presets derive from `PresetCoreBase` in namespace `Aspose.LLM.Abstractions.P
 
 | Property | Type | Purpose |
 |---|---|---|
-| `BaseModelSourceParameters` | [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/) | Where to load the main model (local path, Aspose model ID, or Hugging Face repo and file name). |
-| `MmprojSourceParameters` | [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/) | Optional vision projector (mmproj). Set by vision presets; empty on text presets. |
-| `BinaryManagerParameters` | [`BinaryManagerParameters`](/net/developer-reference/parameters/binary-manager/) | Native `llama.cpp` release tag, binary cache path, and preferred acceleration backend. |
-| `EngineParameters` | [`EngineParameters`](/net/developer-reference/parameters/engine/) | Engine-wide settings: model cache path, debug logging, log directory, default threads. |
-| `ChatParameters` | [`ChatParameters`](/net/developer-reference/parameters/chat/) | System prompt, optional history, max tokens, cache cleanup strategy. |
-| `ContextParameters` | [`ContextParameters`](/net/developer-reference/parameters/context/) | `llama.cpp` context knobs: context size, batch sizes, rope scaling, flash attention, KV cache dtype. |
-| `SamplerParameters` | [`SamplerParameters`](/net/developer-reference/parameters/sampler/) | Sampler knobs: temperature, top-p, top-k, min-p, penalties, DRY, XTC, mirostat, seed, logit bias. |
-| `BaseModelInferenceParameters` | [`ModelInferenceParameters`](/net/developer-reference/parameters/model-inference/) | Model-load knobs: GPU layers, main GPU, split mode, tensor split, memory mapping, KV overrides. |
-| `MtmdContextParameters` | [`MultimodalContextParameters`](/net/developer-reference/parameters/multimodal-context/) | `mtmd` (vision) context: GPU use, timings, thread count, verbosity, media marker. Set by vision presets. |
+| `BaseModelSourceParameters` | [`ModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/) | Where to load the main model (local path, Aspose model ID, or Hugging Face repo and file name). |
+| `MmprojSourceParameters` | [`ModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/) | Optional vision projector (mmproj). Set by vision presets; empty on text presets. |
+| `BinaryManagerParameters` | [`BinaryManagerParameters`](/llm/net/developer-reference/parameters/binary-manager/) | Native `llama.cpp` release tag, binary cache path, and preferred acceleration backend. |
+| `EngineParameters` | [`EngineParameters`](/llm/net/developer-reference/parameters/engine/) | Engine-wide settings: model cache path, debug logging, log directory, default threads. |
+| `ChatParameters` | [`ChatParameters`](/llm/net/developer-reference/parameters/chat/) | System prompt, optional history, max tokens, cache cleanup strategy. |
+| `ContextParameters` | [`ContextParameters`](/llm/net/developer-reference/parameters/context/) | `llama.cpp` context knobs: context size, batch sizes, rope scaling, flash attention, KV cache dtype. |
+| `SamplerParameters` | [`SamplerParameters`](/llm/net/developer-reference/parameters/sampler/) | Sampler knobs: temperature, top-p, top-k, min-p, penalties, DRY, XTC, mirostat, seed, logit bias. |
+| `BaseModelInferenceParameters` | [`ModelInferenceParameters`](/llm/net/developer-reference/parameters/model-inference/) | Model-load knobs: GPU layers, main GPU, split mode, tensor split, memory mapping, KV overrides. |
+| `MtmdContextParameters` | [`MultimodalContextParameters`](/llm/net/developer-reference/parameters/multimodal-context/) | `mtmd` (vision) context: GPU use, timings, thread count, verbosity, media marker. Set by vision presets. |
 
-Every bag is lazy-initialized — accessing any property is safe even if you did not set it explicitly.
+Every bag is lazy-initialized: accessing any property is safe even if you did not set it explicitly.
 
 ## Create the API with a preset
 
@@ -47,7 +53,7 @@ var preset = new Qwen25Preset();
 using var api = AsposeLLMApi.Create(preset);
 ```
 
-The engine reads every bag on the preset during construction. Mutations to the preset **after** `Create` returns do not affect the alive engine — set everything you need first.
+The engine reads every bag on the preset during construction. Mutations to the preset **after** `Create` returns do not affect the alive engine: set everything you need first.
 
 ## Override preset parameters before `Create`
 
@@ -65,14 +71,14 @@ using var api = AsposeLLMApi.Create(preset);
 
 Common overrides:
 
-- **`ContextParameters.ContextSize`** — reduce to save memory or raise to fit long conversations.
-- **`SamplerParameters.Temperature`** — lower for deterministic tasks, higher for creative output.
-- **`BaseModelInferenceParameters.GpuLayers`** — control GPU offload (0 = CPU only; 999 = full offload).
-- **`BinaryManagerParameters.PreferredAcceleration`** — force CUDA, Metal, Vulkan, HIP, or CPU.
-- **`ChatParameters.SystemPrompt`** — set a default system prompt for new sessions.
-- **`ChatParameters.MaxTokens`** — cap the length of a single response.
+- **`ContextParameters.ContextSize`**: reduce to save memory or raise to fit long conversations.
+- **`SamplerParameters.Temperature`**: lower for deterministic tasks, higher for creative output.
+- **`BaseModelInferenceParameters.GpuLayers`**: control GPU offload (0 = CPU only; 999 = full offload).
+- **`BinaryManagerParameters.PreferredAcceleration`**: force CUDA, Metal, Vulkan, HIP, or CPU.
+- **`ChatParameters.SystemPrompt`**: set a default system prompt for new sessions.
+- **`ChatParameters.MaxTokens`**: cap the length of a single response.
 
-See the [custom preset](/net/use-cases/custom-preset/) use case for longer examples.
+See the [custom preset](/llm/net/use-cases/custom-preset/) use case for longer examples.
 
 ## Extend a built-in preset
 
@@ -120,11 +126,11 @@ public class MyCustomPreset : PresetCoreBase
 }
 ```
 
-See the [custom preset](/net/use-cases/custom-preset/) use case for a full walkthrough including chat template selection for non-standard models.
+See the [custom preset](/llm/net/use-cases/custom-preset/) use case for a full walkthrough including chat template selection for non-standard models.
 
 ## Default preset
 
-`AsposeLLMApi.GetDefaultPreset()` returns a fresh `Qwen25Preset` instance. It is a convenience helper for code that needs a sensible preset when none has been chosen yet — not a snapshot of the engine's internal defaults.
+`AsposeLLMApi.GetDefaultPreset()` returns a fresh `Qwen25Preset` instance. It is a convenience helper for code that needs a sensible preset when none has been chosen yet, not a snapshot of the engine's internal defaults.
 
 ```csharp
 PresetCoreBase defaultPreset = api.GetDefaultPreset();
@@ -142,10 +148,16 @@ For raw parameter values without a preset, call:
 
 ## Supported presets
 
-See [Supported presets](/net/product-overview/supported-presets/) for the full list of built-in text and vision presets with their Hugging Face model sources, context sizes, and quantization levels.
+See [Supported presets](/llm/net/product-overview/supported-presets/) for the full list of built-in text and vision presets with their Hugging Face model sources, context sizes, and quantization levels.
+
+## Before you ship
+
+{{% alert color="warning" %}}
+**Check the license of the model you selected.** Aspose.LLM supplies the runtime, not the model. Whichever model you load, its terms come from the party that published it and they apply to your product. They are not part of, and are not covered by, your license agreement with Aspose Pty Ltd. Some open source models allow commercial use with no strings attached, others attach conditions such as attribution or an acceptable use policy, and a few exclude commercial use or withdraw it above a revenue threshold. [Supported LLMs](/llm/net/product-overview/supported-llms/) lists the license of every family the SDK ships a preset for.
+{{% /alert %}}
 
 ## What's next
 
-- [Custom preset](/net/use-cases/custom-preset/) — extend or replace a built-in preset.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how the engine uses preset parameters per session.
-- [Supported presets](/net/product-overview/supported-presets/) — full catalog of built-in presets.
+- [Custom preset](/llm/net/use-cases/custom-preset/): extend or replace a built-in preset.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): how the engine uses preset parameters per session.
+- [Supported presets](/llm/net/product-overview/supported-presets/): full catalog of built-in presets.

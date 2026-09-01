@@ -7,7 +7,7 @@ url: /net/use-cases/simple-chat/
 feedback: LLMNET
 version: 26.5.0
 title: Simple chat
-description: Send messages to Aspose.LLM for .NET without managing sessions yourself — the engine creates and tracks a session implicitly.
+description: Send messages to Aspose.LLM for .NET without managing sessions yourself, the engine creates and tracks a session implicitly.
 keywords:
 - simple
 - chat
@@ -25,13 +25,13 @@ For a quick question, a short exchange, or any scenario where you do not need mu
 - CLI tools, scripts, or test harnesses that run one conversation at a time.
 - Prototypes where session management is not yet needed.
 
-For concurrent conversations (e.g., multiple users) or scenarios that need explicit control over session IDs, use [Multi-turn chat](/net/use-cases/multi-turn-chat/) with `StartNewChatAsync` and `SendMessageToSessionAsync`.
+For concurrent conversations (e.g., multiple users) or scenarios that need explicit control over session IDs, use [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/) with `StartNewChatAsync` and `SendMessageToSessionAsync`.
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
-- RAM for the chosen preset — see [System requirements](/net/system-requirements/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
+- RAM for the chosen preset: see [System requirements](/llm/net/system-requirements/).
 
 ## Minimal example
 
@@ -152,13 +152,13 @@ dotnet run
 
 ## Common errors
 
-- **`Not licensed for this method`** — apply a license before calling any chat method. See [Licensing](/net/licensing/).
-- **`Only one AsposeLLMApi instance can be created at a time`** — an earlier instance has not been disposed. Keep one instance for the process lifetime.
-- **Slow first response** — the engine downloads native binaries and the model file on first `Create`. Expect 5-15 minutes on a fresh machine. Subsequent runs use the local cache.
+- **`Not licensed for this method`**: apply a license before calling any chat method. See [Licensing](/llm/net/licensing/).
+- **`Only one AsposeLLMApi instance can be created at a time`**: an earlier instance has not been disposed. Keep one instance for the process lifetime.
+- **Slow first response**: the engine downloads native binaries and the model file on first `Create`. Expect 5-15 minutes on a fresh machine. Subsequent runs use the local cache.
 
 ## What's next
 
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — explicit sessions and multiple concurrent conversations.
-- [Save and restore session](/net/use-cases/save-and-restore-session/) — persist the conversation across process restarts.
-- [Custom preset](/net/use-cases/custom-preset/) — tailor a preset to your model and requirements.
-- [Chat sessions reference](/net/developer-reference/chat-sessions/) — full semantics of `SendMessageAsync` and the current session.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/): explicit sessions and multiple concurrent conversations.
+- [Save and restore session](/llm/net/use-cases/save-and-restore-session/): persist the conversation across process restarts.
+- [Custom preset](/llm/net/use-cases/custom-preset/): tailor a preset to your model and requirements.
+- [Chat sessions reference](/llm/net/developer-reference/chat-sessions/): full semantics of `SendMessageAsync` and the current session.

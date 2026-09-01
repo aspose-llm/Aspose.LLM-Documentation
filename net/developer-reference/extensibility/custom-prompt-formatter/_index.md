@@ -16,7 +16,7 @@ keywords:
 - extensibility
 ---
 
-`IPromptFormatter` abstracts **prompt formatting** — how each `ChatMessage` is rendered into the model-ready text before inference, and how the raw model output is cleaned up before the API returns.
+`IPromptFormatter` abstracts **prompt formatting**: how each `ChatMessage` is rendered into the model-ready text before inference, and how the raw model output is cleaned up before the API returns.
 
 Substitute the default formatter when your model uses a custom chat template that the SDK's built-in templates do not match, or when you want to inject post-processing on responses (stripping chain-of-thought blocks, tagging entities, redaction).
 
@@ -36,10 +36,10 @@ public interface IPromptFormatter
 | Member | Purpose |
 |---|---|
 | `ArtificalEOSToken` | Optional stop token the engine respects during generation. Return `null` to use the model's native EOS. |
-| `FormatPrompt` | Renders a single `ChatMessage` into template-formatted text. Called once per turn when building the prompt. `addGenerationPrompt` is `true` for the final turn — append the model's "assistant starts here" token. |
+| `FormatPrompt` | Renders a single `ChatMessage` into template-formatted text. Called once per turn when building the prompt. `addGenerationPrompt` is `true` for the final turn: append the model's "assistant starts here" token. |
 | `RefineResponse` | Cleans raw model output before the API returns. Typical work: strip template markup, trim control tokens. |
 
-## Example — strip reasoning blocks
+## Example: strip reasoning blocks
 
 Qwen3 and DeepSeek-R1 emit `<think>…</think>` blocks before the actual answer. If you want to hide those from end users, post-process them away:
 
@@ -77,7 +77,7 @@ public class StripThinkFormatter : IPromptFormatter
 }
 ```
 
-## Example — fully custom template
+## Example: fully custom template
 
 For a model with a non-standard format, implement both `FormatPrompt` and `RefineResponse` end-to-end:
 
@@ -126,8 +126,8 @@ public class MyCustomFormatter : IPromptFormatter
 
 ## Caveats
 
-- **Template correctness is load-bearing.** Getting `FormatPrompt` wrong produces garbled output — the model sees malformed sequences and generates nonsense.
-- **Vision presets have their own templates.** The chat templates for vision are handled internally by `Aspose.LLM.Interop.Multimodal.VisualModelChatTemplates` based on model metadata. A custom `IPromptFormatter` does not override vision template selection — that path is not yet extensible in the current release.
+- **Template correctness is load-bearing.** Getting `FormatPrompt` wrong produces garbled output: the model sees malformed sequences and generates nonsense.
+- **Vision presets have their own templates.** The chat templates for vision are handled internally by `Aspose.LLM.Interop.Multimodal.VisualModelChatTemplates` based on model metadata. A custom `IPromptFormatter` does not override vision template selection: that path is not yet extensible in the current release.
 - **Built-in presets use their own formatters.** Substituting `IPromptFormatter` in the DI container replaces the default, but each preset may wire its own formatter internally. Test carefully when substituting; when in doubt, contact [Aspose support](https://forum.aspose.com/).
 
 ## Registration
@@ -143,6 +143,6 @@ services.AddSingleton<IPromptFormatter, MyCustomFormatter>();
 
 ## What's next
 
-- [Chat templates (multimodal)](/net/developer-reference/multimodal/chat-templates/) — vision template auto-selection.
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how the formatter is invoked per turn.
-- [Extensibility overview](/net/developer-reference/extensibility/) — other substitution points.
+- [Chat templates (multimodal)](/llm/net/developer-reference/multimodal/chat-templates/): vision template auto-selection.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): how the formatter is invoked per turn.
+- [Extensibility overview](/llm/net/developer-reference/extensibility/): other substitution points.

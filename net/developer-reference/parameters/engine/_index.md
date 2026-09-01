@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/engine/
 feedback: LLMNET
 version: 26.5.0
 title: Engine parameters
-description: Configure engine-wide defaults in Aspose.LLM for .NET — model cache path, debug logging, log file location, and default thread count.
+description: Configure engine-wide defaults in Aspose.LLM for .NET, model cache path, debug logging, log file location, and default thread count.
 keywords:
 - EngineParameters
 - ModelCachePath
@@ -39,17 +39,17 @@ All four properties have working defaults. Override only when the default does n
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
 
-- [ModelCachePath](/net/developer-reference/parameters/engine/model-cache-path/)
-- [EnableDebugLogging](/net/developer-reference/parameters/engine/enable-debug-logging/)
-- [LogDirectoryPath](/net/developer-reference/parameters/engine/log-directory-path/)
-- [DefaultThreads](/net/developer-reference/parameters/engine/default-threads/)
+- [ModelCachePath](/llm/net/developer-reference/parameters/engine/model-cache-path/)
+- [EnableDebugLogging](/llm/net/developer-reference/parameters/engine/enable-debug-logging/)
+- [LogDirectoryPath](/llm/net/developer-reference/parameters/engine/log-directory-path/)
+- [DefaultThreads](/llm/net/developer-reference/parameters/engine/default-threads/)
 
 ## Fields
 
 | Field | Type | Default | Purpose |
 |---|---|---|---|
 | `ModelCachePath` | `string?` | `<LocalAppData>/Aspose.LLM/models` | Folder where downloaded model files are stored. |
-| `EnableDebugLogging` | `bool` | `false` | Enables native-level debug logs from `llama.cpp`. Verbose — use for diagnosis, not in production. |
+| `EnableDebugLogging` | `bool` | `false` | Enables native-level debug logs from `llama.cpp`. Verbose: use for diagnosis, not in production. |
 | `LogDirectoryPath` | `string` | `"logs/log.txt"` | File path for native log output. Despite the name, this is a full file path, not a directory. |
 | `DefaultThreads` | `int` | `ProcessorCount - 1` | Default thread count used when a parameter bag does not specify its own threading. |
 
@@ -58,17 +58,17 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 Points to the folder where downloaded GGUF files are cached. On first run, the engine:
 
 1. Checks whether the model file already exists under this folder.
-2. If not, downloads it from the source defined in [`ModelSourceParameters`](/net/developer-reference/parameters/model-source/).
+2. If not, downloads it from the source defined in [`ModelSourceParameters`](/llm/net/developer-reference/parameters/model-source/).
 3. Loads the cached file on subsequent runs.
 
 Typical reasons to override:
 
 - **Shared model cache** across multiple applications or users.
-- **Faster disk** — point to an SSD when your `LocalApplicationData` is on an HDD.
-- **Constrained disk layout** — put models on a data drive, code on the system drive.
-- **Docker / container** scenarios — mount the cache as a volume so models survive restarts.
+- **Faster disk**: point to an SSD when your `LocalApplicationData` is on an HDD.
+- **Constrained disk layout**: put models on a data drive, code on the system drive.
+- **Docker / container** scenarios: mount the cache as a volume so models survive restarts.
 
-Example — use a shared cache under `D:\models`:
+Example: use a shared cache under `D:\models`:
 
 ```csharp
 var preset = new Qwen25Preset();
@@ -79,7 +79,7 @@ using var api = AsposeLLMApi.Create(preset);
 
 ### `EnableDebugLogging`
 
-When `true`, the native `llama.cpp` layer emits verbose logs — useful when diagnosing inference errors, template mismatches, or KV cache issues. Combine with an `ILogger` passed to `AsposeLLMApi.Create(preset, logger)` to capture the output:
+When `true`, the native `llama.cpp` layer emits verbose logs: useful when diagnosing inference errors, template mismatches, or KV cache issues. Combine with an `ILogger` passed to `AsposeLLMApi.Create(preset, logger)` to capture the output:
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -112,18 +112,18 @@ preset.EngineParameters.LogDirectoryPath = @"C:\logs\aspose-llm\app.log";
 
 ### `DefaultThreads`
 
-Thread count used when `ContextParameters.NThreads` is not set explicitly. The default is `Environment.ProcessorCount - 1` — one fewer than the total logical cores — to leave one core for the rest of your application.
+Thread count used when `ContextParameters.NThreads` is not set explicitly. The default is `Environment.ProcessorCount - 1`: one fewer than the total logical cores: to leave one core for the rest of your application.
 
 Override in two situations:
 
-- **Dedicated inference machine** — use `Environment.ProcessorCount` for maximum throughput.
-- **Tight envelope (containers, laaS)** — use a fixed smaller number to stay inside a CPU quota.
+- **Dedicated inference machine**: use `Environment.ProcessorCount` for maximum throughput.
+- **Tight envelope (containers, laaS)**: use a fixed smaller number to stay inside a CPU quota.
 
 ```csharp
 preset.EngineParameters.DefaultThreads = 4;
 ```
 
-For finer control over threading during generation, set [`ContextParameters.NThreads`](/net/developer-reference/parameters/context/) and `NThreadsBatch` directly — those override `DefaultThreads` when set.
+For finer control over threading during generation, set [`ContextParameters.NThreads`](/llm/net/developer-reference/parameters/context/) and `NThreadsBatch` directly: those override `DefaultThreads` when set.
 
 ## Typical recipes
 
@@ -156,6 +156,6 @@ preset.EngineParameters.DefaultThreads = 4;                   // CPU quota
 
 ## What's next
 
-- [Context parameters](/net/developer-reference/parameters/context/) — threads per inference call, batch sizes.
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — where native `llama.cpp` binaries are cached.
-- [Logging and diagnostics](/net/developer-reference/) — `ILogger` integration and native log tags (planned reference page in a future release).
+- [Context parameters](/llm/net/developer-reference/parameters/context/): threads per inference call, batch sizes.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): where native `llama.cpp` binaries are cached.
+- [Logging and diagnostics](/llm/net/developer-reference/): `ILogger` integration and native log tags (planned reference page in a future release).

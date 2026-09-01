@@ -7,7 +7,7 @@ url: /net/developer-reference/presets/creating-from-scratch/
 feedback: LLMNET
 version: 26.5.0
 title: Creating a preset from scratch
-description: Extend PresetCoreBase to bring your own GGUF model into Aspose.LLM for .NET — text or vision, with full control over every parameter bag.
+description: Extend PresetCoreBase to bring your own GGUF model into Aspose.LLM for .NET, text or vision, with full control over every parameter bag.
 keywords:
 - PresetCoreBase
 - custom preset
@@ -16,7 +16,13 @@ keywords:
 - custom model
 ---
 
-For models that do not have a built-in preset — your own fine-tune, a new open-weight release, a model from a less-common repository — extend `PresetCoreBase` and populate the parameter bags yourself.
+For models that do not have a built-in preset: your own fine-tune, a new open-weight release, a model from a less-common repository: extend `PresetCoreBase` and populate the parameter bags yourself.
+
+{{% alert color="warning" %}}
+**No built-in LLM is included in Aspose.LLM.** The library is a local inference runtime: you choose which open source model to use, and the model file is obtained separately and stored on your own machine. Model files are covered by the license of the model publisher, not by your license agreement with Aspose Pty Ltd.
+
+Check the license of the model a preset resolves to before using it commercially. Licenses are listed in [Supported presets](/llm/net/product-overview/supported-presets/).
+{{% /alert %}}
 
 ## Minimum requirements
 
@@ -118,20 +124,20 @@ The SDK picks the chat template from the model's GGUF metadata at load time. Tem
 
 For a custom GGUF:
 
-- **Model from one of the supported families** — template auto-detection usually works.
-- **Non-standard template** — the current release does not expose a public override. You may see garbled output. Workarounds:
+- **Model from one of the supported families**: template auto-detection usually works.
+- **Non-standard template**: the current release does not expose a public override. You may see garbled output. Workarounds:
   - Pick a different GGUF export with richer metadata.
   - File a [support request](https://forum.aspose.com/) with the model's Hugging Face URL.
 
-See [Chat templates](/net/developer-reference/multimodal/chat-templates/) for the vision side.
+See [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) for the vision side.
 
 ## Source priority
 
 `ModelSourceParameters` has three fields priority-ordered:
 
-1. `ModelFilePath` — local path, highest priority.
-2. `AsposeModelId` — Aspose catalog, second.
-3. `HuggingFaceRepoId` + `HuggingFaceFileName` — third.
+1. `ModelFilePath`: local path, highest priority.
+2. `AsposeModelId`: Aspose catalog, second.
+3. `HuggingFaceRepoId` + `HuggingFaceFileName`: third.
 
 For a local GGUF:
 
@@ -147,13 +153,19 @@ Before deploying a new custom preset, verify:
 - Model downloads successfully from Hugging Face (or the file exists locally).
 - The first `Create` completes without errors.
 - A simple prompt produces coherent output.
-- Multimodal input (for vision presets) is processed correctly — see [Debugging vision](/net/developer-reference/multimodal/debugging-vision/).
+- Multimodal input (for vision presets) is processed correctly: see [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/).
 
 Enable debug logging (`EngineParameters.EnableDebugLogging = true`) during initial testing to see template selection, projector load, and batch sizes.
 
+## Before you ship
+
+{{% alert color="warning" %}}
+**Check the license of the model you selected.** Aspose.LLM supplies the runtime, not the model. Whichever model you load, its terms come from the party that published it and they apply to your product. They are not part of, and are not covered by, your license agreement with Aspose Pty Ltd. Some open source models allow commercial use with no strings attached, others attach conditions such as attribution or an acceptable use policy, and a few exclude commercial use or withdraw it above a revenue threshold. [Supported LLMs](/llm/net/product-overview/supported-llms/) lists the license of every family the SDK ships a preset for.
+{{% /alert %}}
+
 ## What's next
 
-- [Using built-in presets](/net/developer-reference/presets/using-built-in/) — for models that already have a preset.
-- [Customizing](/net/developer-reference/presets/customizing/) — tweak a built-in preset.
-- [Parameters reference](/net/developer-reference/parameters/) — every knob available to a custom preset.
-- [Custom preset use case](/net/use-cases/custom-preset/) — runnable end-to-end example.
+- [Using built-in presets](/llm/net/developer-reference/presets/using-built-in/): for models that already have a preset.
+- [Customizing](/llm/net/developer-reference/presets/customizing/): tweak a built-in preset.
+- [Parameters reference](/llm/net/developer-reference/parameters/): every knob available to a custom preset.
+- [Custom preset use case](/llm/net/use-cases/custom-preset/): runnable end-to-end example.

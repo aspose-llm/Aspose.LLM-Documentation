@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/engine/enable-debug-logging/
 feedback: LLMNET
 version: 26.5.0
 title: EnableDebugLogging
-description: Turn on verbose native-level logs in Aspose.LLM for .NET — useful for diagnosis; off by default to keep production throughput high.
+description: Turn on verbose native-level logs in Aspose.LLM for .NET, useful for diagnosis; off by default to keep production throughput high.
 keywords:
 - EnableDebugLogging
 - debug logs
@@ -29,10 +29,10 @@ keywords:
 
 ## What it does
 
-- `false` (default) — the native layer produces no diagnostic output. Inference runs at full throughput.
-- `true` — the native layer emits tagged lines (`[MM]`, `[CTX]`, `[KV]`, etc.) via `NativeLoggerAdapter` into the `ILogger` you pass to `AsposeLLMApi.Create`. Lines are also written to the file at [`LogDirectoryPath`](/net/developer-reference/parameters/engine/log-directory-path/).
+- `false` (default): the native layer produces no diagnostic output. Inference runs at full throughput.
+- `true`: the native layer emits tagged lines (`[MM]`, `[CTX]`, `[KV]`, etc.) via `NativeLoggerAdapter` into the `ILogger` you pass to `AsposeLLMApi.Create`. Lines are also written to the file at [`LogDirectoryPath`](/llm/net/developer-reference/parameters/engine/log-directory-path/).
 
-Debug logging adds measurable overhead — typically 5-15 % throughput loss. Not intended for production.
+Debug logging adds measurable overhead: typically 5-15 % throughput loss. Not intended for production.
 
 ## When to change it
 
@@ -41,7 +41,7 @@ Debug logging adds measurable overhead — typically 5-15 % throughput loss. Not
 | Default production | `false` |
 | Diagnosing template mismatch, KV eviction, vision alignment | `true` |
 | Benchmarking a specific backend | `false` (avoid logging overhead) |
-| CI / staging runs | Either — depends on debugging requirements |
+| CI / staging runs | Either: depends on debugging requirements |
 
 ## Example
 
@@ -62,12 +62,12 @@ using var api = AsposeLLMApi.Create(preset, logger);
 
 ## Interactions
 
-- [`LogDirectoryPath`](/net/developer-reference/parameters/engine/log-directory-path/) — file destination for debug output.
-- [`MultimodalContextParameters.Verbosity`](/net/developer-reference/parameters/multimodal-context/verbosity/) — mtmd-layer verbosity, independent of this flag.
-- `ILogger` passed to `AsposeLLMApi.Create` — debug lines route through it.
+- [`LogDirectoryPath`](/llm/net/developer-reference/parameters/engine/log-directory-path/): file destination for debug output.
+- [`MultimodalContextParameters.Verbosity`](/llm/net/developer-reference/parameters/multimodal-context/verbosity/): mtmd-layer verbosity, independent of this flag.
+- `ILogger` passed to `AsposeLLMApi.Create`: debug lines route through it.
 
 ## What's next
 
-- [Logging and diagnostics](/net/developer-reference/logging-and-diagnostics/) — tagged log taxonomy.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnosis.
-- [Engine parameters hub](/net/developer-reference/parameters/engine/) — all engine knobs.
+- [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/): tagged log taxonomy.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): multimodal-specific diagnosis.
+- [Engine parameters hub](/llm/net/developer-reference/parameters/engine/): all engine knobs.

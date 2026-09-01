@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/attention-type/
 feedback: LLMNET
 version: 26.5.0
 title: AttentionType
-description: Causal vs non-causal attention in Aspose.LLM for .NET — standard chat uses Causal; embedding workflows may use NonCausal.
+description: Causal vs non-causal attention in Aspose.LLM for .NET, standard chat uses Causal; embedding workflows may use NonCausal.
 keywords:
 - AttentionType
 - causal attention
@@ -42,7 +42,7 @@ All built-in chat presets use `Causal` implicitly (via model metadata). Change t
 
 | Scenario | Value |
 |---|---|
-| Default — chat / text generation | `Unspecified` (model wins) |
+| Default: chat / text generation | `Unspecified` (model wins) |
 | Bidirectional embedding extraction | `NonCausal` |
 
 ## Example
@@ -59,11 +59,11 @@ preset.ContextParameters.PoolingType = PoolingType.Mean;
 
 ## Interactions
 
-- [`Embeddings`](/net/developer-reference/parameters/context/embeddings/) — embedding extraction usually pairs with `NonCausal`.
-- [`PoolingType`](/net/developer-reference/parameters/context/pooling-type/) — how embeddings are pooled.
+- [`Embeddings`](/llm/net/developer-reference/parameters/context/embeddings/): embedding extraction usually pairs with `NonCausal`.
+- [`PoolingType`](/llm/net/developer-reference/parameters/context/pooling-type/): how embeddings are pooled.
 
 ## What's next
 
-- [Embeddings](/net/developer-reference/parameters/context/embeddings/) — extraction mode flag.
-- [PoolingType](/net/developer-reference/parameters/context/pooling-type/) — embedding pooling.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [Embeddings](/llm/net/developer-reference/parameters/context/embeddings/): extraction mode flag.
+- [PoolingType](/llm/net/developer-reference/parameters/context/pooling-type/): embedding pooling.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

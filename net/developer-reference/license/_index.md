@@ -7,7 +7,7 @@ url: /net/developer-reference/license/
 feedback: LLMNET
 version: 26.5.0
 title: License class
-description: API reference for the Aspose.LLM.License class — SetLicense methods and IsLicensed property.
+description: API reference for the Aspose.LLM.License class, SetLicense methods and IsLicensed property.
 keywords:
 - license
 - License class
@@ -16,7 +16,7 @@ keywords:
 - API
 ---
 
-`Aspose.LLM.License` is the class used to apply and check the product license at runtime. This page covers the API surface; for the process of obtaining and deploying a license (including the free temporary license), see [Licensing](/net/licensing/).
+`Aspose.LLM.License` is the class used to apply and check the product license at runtime. This page covers the API surface; for the process of obtaining and deploying a license (including the free temporary license), see [Licensing](/llm/net/licensing/).
 
 ## Class reference
 
@@ -73,13 +73,13 @@ bool isLicensed = Aspose.LLM.License.IsLicensed;
 
 ## Effect of licensing on the API
 
-- **Without a license** — `StartNewChatAsync`, `SendMessageAsync`, and `SendMessageToSessionAsync` throw `Exception("Not licensed for this method")`.
-- **With a valid license** — all methods work normally.
-- **With an expired temporary license** — same behavior as without a license.
+- **Without a license**: `StartNewChatAsync`, `SendMessageAsync`, and `SendMessageToSessionAsync` throw `Exception("Not licensed for this method")`.
+- **With a valid license**: all methods work normally.
+- **With an expired temporary license**: same behavior as without a license.
 
 Non-inference operations (`AsposeLLMApi.Create`, `Dispose`, `GetDefaultPreset`) work regardless of license state.
 
 ## What's next
 
-- [Licensing](/net/licensing/) — how to obtain and deploy a license, including embedded resources and temporary licenses.
-- [Hello, world!](/net/hello-world/) — first runnable example with licensing.
+- [Licensing](/llm/net/licensing/): how to obtain and deploy a license, including embedded resources and temporary licenses.
+- [Hello, world!](/llm/net/hello-world/): first runnable example with licensing.

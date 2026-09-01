@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/binary-manager/
 feedback: LLMNET
 version: 26.5.0
 title: Binary manager parameters
-description: Configure how Aspose.LLM for .NET downloads and caches native llama.cpp binaries — release tag, cache path, system specification, and preferred acceleration backend.
+description: Configure how Aspose.LLM for .NET downloads and caches native llama.cpp binaries, release tag, cache path, system specification, and preferred acceleration backend.
 keywords:
 - BinaryManagerParameters
 - ReleaseTag
@@ -40,12 +40,12 @@ public class BinaryManagerParameters
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
 
-- [Owner](/net/developer-reference/parameters/binary-manager/owner/)
-- [Repo](/net/developer-reference/parameters/binary-manager/repo/)
-- [ReleaseTag](/net/developer-reference/parameters/binary-manager/release-tag/)
-- [BinaryPath](/net/developer-reference/parameters/binary-manager/binary-path/)
-- [SystemSpecification](/net/developer-reference/parameters/binary-manager/system-specification/)
-- [PreferredAcceleration](/net/developer-reference/parameters/binary-manager/preferred-acceleration/)
+- [Owner](/llm/net/developer-reference/parameters/binary-manager/owner/)
+- [Repo](/llm/net/developer-reference/parameters/binary-manager/repo/)
+- [ReleaseTag](/llm/net/developer-reference/parameters/binary-manager/release-tag/)
+- [BinaryPath](/llm/net/developer-reference/parameters/binary-manager/binary-path/)
+- [SystemSpecification](/llm/net/developer-reference/parameters/binary-manager/system-specification/)
+- [PreferredAcceleration](/llm/net/developer-reference/parameters/binary-manager/preferred-acceleration/)
 
 ## Fields
 
@@ -60,7 +60,7 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 
 ### `Owner` and `Repo`
 
-Together they form `github.com/<Owner>/<Repo>/releases/...`. The defaults target the upstream `llama.cpp` repository. Change them only if you mirror releases to a fork that stays byte-compatible with upstream — for example, in an air-gapped enterprise setup that syncs selected releases into a private GitHub Enterprise instance.
+Together they form `github.com/<Owner>/<Repo>/releases/...`. The defaults target the upstream `llama.cpp` repository. Change them only if you mirror releases to a fork that stays byte-compatible with upstream: for example, in an air-gapped enterprise setup that syncs selected releases into a private GitHub Enterprise instance.
 
 ### `ReleaseTag`
 
@@ -76,18 +76,18 @@ preset.BinaryManagerParameters.ReleaseTag = "b8816";
 ```
 
 {{% alert color="primary" %}}
-The SDK's P/Invoke layer is validated against the default `ReleaseTag`. Pinning a different tag can produce runtime errors if upstream changed a struct layout or function signature. Do not ship custom tags to production without a migration pass — see the `llama-cpp-migration` workflow used by the Aspose team.
+The SDK's P/Invoke layer is validated against the default `ReleaseTag`. Pinning a different tag can produce runtime errors if upstream changed a struct layout or function signature. Do not ship custom tags to production without a migration pass: see the `llama-cpp-migration` workflow used by the Aspose team.
 {{% /alert %}}
 
 ### `BinaryPath`
 
-Folder where downloaded binaries live. The default is `<LocalAppData>/Aspose.LLM/runtimes` — `%LOCALAPPDATA%\Aspose.LLM\runtimes` on Windows and the equivalent `LocalApplicationData` folder elsewhere.
+Folder where downloaded binaries live. The default is `<LocalAppData>/Aspose.LLM/runtimes`: `%LOCALAPPDATA%\Aspose.LLM\runtimes` on Windows and the equivalent `LocalApplicationData` folder elsewhere.
 
 Override when:
 
 - **Shared cache** across multiple applications or services on the same host.
-- **Read-only root filesystem** — point the cache at a writable volume.
-- **Pre-populated deployment** — bundle the binaries with your application and point `BinaryPath` at them to skip the download on first run.
+- **Read-only root filesystem**: point the cache at a writable volume.
+- **Pre-populated deployment**: bundle the binaries with your application and point `BinaryPath` at them to skip the download on first run.
 
 ```csharp
 preset.BinaryManagerParameters.BinaryPath = @"/var/lib/aspose-llm/runtimes";
@@ -95,7 +95,7 @@ preset.BinaryManagerParameters.BinaryPath = @"/var/lib/aspose-llm/runtimes";
 
 ### `SystemSpecification`
 
-When `null` (the default), the SDK detects the host's OS, architecture, and available accelerations at engine construction. Override with an explicit `SystemSpec` only for diagnostics or cross-platform binary preparation — leaving this `null` is correct for normal deployments.
+When `null` (the default), the SDK detects the host's OS, architecture, and available accelerations at engine construction. Override with an explicit `SystemSpec` only for diagnostics or cross-platform binary preparation: leaving this `null` is correct for normal deployments.
 
 ### `PreferredAcceleration`
 
@@ -115,7 +115,7 @@ Supported values (see `Aspose.LLM.Abstractions.Acceleration.AccelerationType`):
 | `NoAVX` | Very old CPUs | Last-resort compatibility. |
 | `Kompute`, `OpenCL`, `SYCL`, `OpenBLAS` | Platform-dependent | Less common; verify availability for your target. |
 
-The enum has additional values (`None`) used internally — avoid setting them explicitly.
+The enum has additional values (`None`) used internally: avoid setting them explicitly.
 
 ## Typical recipes
 
@@ -154,10 +154,10 @@ preset.BinaryManagerParameters.BinaryPath = @"/opt/aspose-llm/runtimes";
 preset.BinaryManagerParameters.BinaryPath = @"/srv/shared/aspose-llm/runtimes";
 ```
 
-Make sure every service using this cache runs the same SDK version — version mismatches produce binary incompatibilities.
+Make sure every service using this cache runs the same SDK version: version mismatches produce binary incompatibilities.
 
 ## What's next
 
-- [System requirements](/net/system-requirements/) — what runtimes and hardware the binaries support.
-- [Model inference parameters](/net/developer-reference/parameters/model-inference/) — complement `PreferredAcceleration` with `GpuLayers` and split settings.
-- [Architecture](/net/product-overview/architecture/) — what happens during first-run binary deployment.
+- [System requirements](/llm/net/system-requirements/): what runtimes and hardware the binaries support.
+- [Model inference parameters](/llm/net/developer-reference/parameters/model-inference/): complement `PreferredAcceleration` with `GpuLayers` and split settings.
+- [Architecture](/llm/net/product-overview/architecture/): what happens during first-run binary deployment.

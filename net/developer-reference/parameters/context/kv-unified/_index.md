@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/kv-unified/
 feedback: LLMNET
 version: 26.5.0
 title: KvUnified
-description: Use a unified KV buffer across sequences in Aspose.LLM for .NET — llama.cpp internal flag; leave at default unless instructed otherwise.
+description: Use a unified KV buffer across sequences in Aspose.LLM for .NET, llama.cpp internal flag; leave at default unless instructed otherwise.
 keywords:
 - KvUnified
 - KV cache
@@ -30,9 +30,9 @@ keywords:
 
 The unified buffer layout can optimize some multi-sequence scenarios by colocating K and V for all sequences in one memory block. Whether this helps or hurts depends on backend and workload.
 
-- `null` — native default. Usually correct.
-- `true` — force unified buffer.
-- `false` — force separate buffers.
+- `null`: native default. Usually correct.
+- `true`: force unified buffer.
+- `false`: force separate buffers.
 
 ## When to change it
 
@@ -52,8 +52,8 @@ var preset = new Qwen25Preset();
 
 ## Interactions
 
-- [`NSeqMax`](/net/developer-reference/parameters/context/n-seq-max/) — multi-sequence scenarios may interact with unified-buffer layout.
+- [`NSeqMax`](/llm/net/developer-reference/parameters/context/n-seq-max/): multi-sequence scenarios may interact with unified-buffer layout.
 
 ## What's next
 
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

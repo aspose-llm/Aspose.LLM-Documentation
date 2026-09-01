@@ -7,7 +7,7 @@ url: /net/use-cases/offline-deployment/
 feedback: LLMNET
 version: 26.5.0
 title: Offline deployment
-description: Deploy Aspose.LLM for .NET to air-gapped, firewalled, or no-internet environments — pre-download native binaries and model files, wire up local cache paths.
+description: Deploy Aspose.LLM for .NET to air-gapped, firewalled, or no-internet environments, pre-download native binaries and model files, wire up local cache paths.
 keywords:
 - offline
 - air-gapped
@@ -32,8 +32,8 @@ Aspose.LLM for .NET downloads native `llama.cpp` binaries and model files from t
 
 - A connected machine where you can run the SDK once to populate the caches.
 - The same platform / acceleration profile on the connected machine as the production host (so the downloaded binaries match).
-- [Install the NuGet package](/net/installation/) on both.
-- [Apply a license](/net/licensing/) on the production host.
+- [Install the NuGet package](/llm/net/installation/) on both.
+- [Apply a license](/llm/net/licensing/) on the production host.
 
 ## Step 1. Populate caches on a connected machine
 
@@ -50,7 +50,7 @@ var license = new Aspose.LLM.License();
 license.SetLicense("Aspose.LLM.lic");
 
 var preset = new Qwen25Preset();
-// Optional — set explicit paths so you know what to copy.
+// Optional: set explicit paths so you know what to copy.
 preset.BinaryManagerParameters.BinaryPath = @"C:\aspose-prep\runtimes";
 preset.EngineParameters.ModelCachePath = @"C:\aspose-prep\models";
 
@@ -120,11 +120,11 @@ foreach (var preset in presets)
 
     using var api = AsposeLLMApi.Create(preset);
     await api.SendMessageAsync("ping"); // force full load
-    // api disposed here — next preset can take the single-instance slot.
+    // api disposed here: next preset can take the single-instance slot.
 }
 ```
 
-Native binaries for the same `ReleaseTag` and platform are shared across presets — downloaded once.
+Native binaries for the same `ReleaseTag` and platform are shared across presets: downloaded once.
 
 ## Pinning `ReleaseTag`
 
@@ -134,7 +134,7 @@ For deterministic offline deployments, pin `BinaryManagerParameters.ReleaseTag` 
 preset.BinaryManagerParameters.ReleaseTag = "b8816";
 ```
 
-The default in v26.5.0 is already `b8816`. If you upgrade the SDK later, a new default `ReleaseTag` may require a fresh binary download — re-populate the cache.
+The default in v26.5.0 is already `b8816`. If you upgrade the SDK later, a new default `ReleaseTag` may require a fresh binary download: re-populate the cache.
 
 ## Docker / container deployments
 
@@ -168,12 +168,12 @@ preset.EngineParameters.ModelCachePath =
 
 ## Common errors
 
-- **`FileNotFoundException` at Create** — cache paths wrong, or the pre-populated folder is missing an asset for the requested `ReleaseTag`. Verify both folders.
-- **License fails** — license file also needs to travel to the offline host.
-- **Binary mismatch** — connected and offline machines have different CPUs (one has AVX-512, the other does not). Pre-download on a machine with the same or lower AVX level.
+- **`FileNotFoundException` at Create**: cache paths wrong, or the pre-populated folder is missing an asset for the requested `ReleaseTag`. Verify both folders.
+- **License fails**: license file also needs to travel to the offline host.
+- **Binary mismatch**: connected and offline machines have different CPUs (one has AVX-512, the other does not). Pre-download on a machine with the same or lower AVX level.
 
 ## What's next
 
-- [Binary manager parameters](/net/developer-reference/parameters/binary-manager/) — full reference for `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
-- [Engine parameters](/net/developer-reference/parameters/engine/) — `ModelCachePath`.
-- [Installation](/net/installation/) — initial NuGet setup.
+- [Binary manager parameters](/llm/net/developer-reference/parameters/binary-manager/): full reference for `BinaryPath`, `ReleaseTag`, `PreferredAcceleration`.
+- [Engine parameters](/llm/net/developer-reference/parameters/engine/): `ModelCachePath`.
+- [Installation](/llm/net/installation/): initial NuGet setup.

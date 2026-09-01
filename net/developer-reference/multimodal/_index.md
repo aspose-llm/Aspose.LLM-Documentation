@@ -7,7 +7,7 @@ url: /net/developer-reference/multimodal/
 feedback: LLMNET
 version: 26.5.0
 title: Multimodal
-description: Multimodal (vision) support in Aspose.LLM for .NET — attach images to chat messages, pick a vision preset, understand chat templates, and debug vision flows.
+description: Multimodal (vision) support in Aspose.LLM for .NET, attach images to chat messages, pick a vision preset, understand chat templates, and debug vision flows.
 keywords:
 - multimodal
 - vision
@@ -18,16 +18,16 @@ keywords:
 - vision-language model
 ---
 
-Aspose.LLM for .NET supports image input alongside text through `mtmd` — the `llama.cpp` multimodal layer — and a small set of built-in vision presets. This section covers everything you need to work with images: picking a preset, attaching images to messages, understanding chat templates, and diagnosing common problems.
+Aspose.LLM for .NET supports image input alongside text through `mtmd`: the `llama.cpp` multimodal layer, and a small set of built-in vision presets. This section covers everything you need to work with images: picking a preset, attaching images to messages, understanding chat templates, and diagnosing common problems.
 
 The SDK does **not** support audio input in the current release, even though the underlying `mtmd` layer can handle audio chunks.
 
 ## Sections
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — built-in presets with their model sources, projector sources, and picker guidance.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — `MediaAttachment`, supported formats (JPEG, PNG, BMP, GIF, WebP), the 50 MB limit, and how to pass images to `SendMessageAsync`.
-- [Chat templates](/net/developer-reference/multimodal/chat-templates/) — the eight vision chat templates the SDK recognizes and how auto-selection works.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — tagged logs, `parse_mm_logs.zsh`, and common misalignments.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/): built-in presets with their model sources, projector sources, and picker guidance.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/): `MediaAttachment`, supported formats (JPEG, PNG, BMP, GIF, WebP), the 50 MB limit, and how to pass images to `SendMessageAsync`.
+- [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/): the eight vision chat templates the SDK recognizes and how auto-selection works.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): tagged logs, `parse_mm_logs.zsh`, and common misalignments.
 
 ## At a glance
 
@@ -52,10 +52,10 @@ string reply = await api.SendMessageAsync(
 Console.WriteLine(reply);
 ```
 
-`media` is `IEnumerable<byte[]>` — you can pass one or several images per message.
+`media` is `IEnumerable<byte[]>`: you can pass one or several images per message.
 
 ## What's next
 
-- [Vision presets](/net/developer-reference/multimodal/vision-presets/) — pick the right built-in preset.
-- [Attaching images](/net/developer-reference/multimodal/attaching-images/) — formats and limits.
-- [Supported presets](/net/product-overview/supported-presets/#vision-presets) — quick catalog.
+- [Vision presets](/llm/net/developer-reference/multimodal/vision-presets/): pick the right built-in preset.
+- [Attaching images](/llm/net/developer-reference/multimodal/attaching-images/): formats and limits.
+- [Supported presets](/llm/net/product-overview/supported-presets/#vision-presets): quick catalog.

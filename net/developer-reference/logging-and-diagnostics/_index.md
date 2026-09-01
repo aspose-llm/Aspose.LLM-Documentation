@@ -35,7 +35,7 @@ using var api = AsposeLLMApi.Create(new Qwen25Preset(), logger);
 
 Logs from the engine, model manager, binary manager, and chat sessions flow into this logger. Without a logger, the engine produces no managed-side log output.
 
-When you use the [DI path](/net/developer-reference/dependency-injection/) (`AddLlamaServices`), logging is configured automatically — a console provider plus a file provider pointed at `EngineParameters.LogDirectoryPath`.
+When you use the [DI path](/llm/net/developer-reference/dependency-injection/) (`AddLlamaServices`), logging is configured automatically: a console provider plus a file provider pointed at `EngineParameters.LogDirectoryPath`.
 
 ## Enable native debug logs
 
@@ -55,7 +55,7 @@ When true:
 - The logger minimum level for the engine becomes `Debug`.
 - Native logs are written to both the `ILogger` and the file at `LogDirectoryPath`.
 
-Debug logging adds measurable overhead — disable in production.
+Debug logging adds measurable overhead: disable in production.
 
 ## Log-line tags
 
@@ -63,10 +63,10 @@ Native logs use prefix tags so you can filter by concern. Common tags:
 
 | Tag | Meaning |
 |---|---|
-| `[MM]` | Multimodal — projector load, template selection, chunk tokenization, alignment. |
-| `[CTX]` | Context manager — batch dispatch, sequence IDs, context state. |
-| `[KV]` | KV cache — reservations, evictions, cleanup strategy application. |
-| `DBG tok:` | Tokenizer — raw tokens for prompts and generation steps. |
+| `[MM]` | Multimodal: projector load, template selection, chunk tokenization, alignment. |
+| `[CTX]` | Context manager: batch dispatch, sequence IDs, context state. |
+| `[KV]` | KV cache: reservations, evictions, cleanup strategy application. |
+| `DBG tok:` | Tokenizer: raw tokens for prompts and generation steps. |
 | `DBG mtmd-tokenize` | `mtmd_tokenize` details for image chunks. |
 
 Example lines:
@@ -87,13 +87,13 @@ grep '^\[KV\]' run.log
 
 ## `parse_mm_logs.zsh` helper
 
-For multimodal debugging, the SDK repository ships `parse_mm_logs.zsh` — a zsh script that sections raw log output by concern (projector load, template choice, chunks, alignment, KV state, token stream, final answer). Useful when vision output is garbled and you need to localize the failure to a specific stage.
+For multimodal debugging, the SDK repository ships `parse_mm_logs.zsh`: a zsh script that sections raw log output by concern (projector load, template choice, chunks, alignment, KV state, token stream, final answer). Useful when vision output is garbled and you need to localize the failure to a specific stage.
 
 ```bash
 ./parse_mm_logs.zsh < raw.log > sectioned.txt
 ```
 
-See [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) for typical failure patterns and how the sectioned output helps.
+See [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/) for typical failure patterns and how the sectioned output helps.
 
 ## Log levels at a glance
 
@@ -104,7 +104,7 @@ See [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) fo
 | Diagnosing a specific issue | `Debug` | `true` |
 | Full firehose during model porting / migration | `Debug` | `true` |
 
-In the DI path, `EnableDebugLogging` sets the engine's effective level automatically. In the facade path, you control the level via the `ILogger` you pass in — `EnableDebugLogging` still controls the native-side verbosity independently.
+In the DI path, `EnableDebugLogging` sets the engine's effective level automatically. In the facade path, you control the level via the `ILogger` you pass in: `EnableDebugLogging` still controls the native-side verbosity independently.
 
 ## Sample: log to console and file
 
@@ -126,11 +126,11 @@ preset.EngineParameters.EnableDebugLogging = true;
 using var api = AsposeLLMApi.Create(preset, logger);
 ```
 
-The SDK itself does not bundle a file sink — add the provider of your choice (Serilog, NLog, built-in `AddFile` extensions) from your application.
+The SDK itself does not bundle a file sink: add the provider of your choice (Serilog, NLog, built-in `AddFile` extensions) from your application.
 
 ## What's next
 
-- [Engine parameters](/net/developer-reference/parameters/engine/) — `EnableDebugLogging` and `LogDirectoryPath`.
-- [Dependency injection](/net/developer-reference/dependency-injection/) — automatic logging wiring in the DI path.
-- [Debugging vision](/net/developer-reference/multimodal/debugging-vision/) — multimodal-specific diagnostics.
-- [Multimodal context parameters](/net/developer-reference/parameters/multimodal-context/) — `Verbosity` for `mtmd` layer logs.
+- [Engine parameters](/llm/net/developer-reference/parameters/engine/): `EnableDebugLogging` and `LogDirectoryPath`.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): automatic logging wiring in the DI path.
+- [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/): multimodal-specific diagnostics.
+- [Multimodal context parameters](/llm/net/developer-reference/parameters/multimodal-context/): `Verbosity` for `mtmd` layer logs.

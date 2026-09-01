@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/context/rope-scaling-type/
 feedback: LLMNET
 version: 26.5.0
 title: RopeScalingType
-description: RoPE position encoding scaling algorithm in Aspose.LLM for .NET — choose None, Linear, YaRN, or LongRoPE for extending context beyond the model's training window.
+description: RoPE position encoding scaling algorithm in Aspose.LLM for .NET, choose None, Linear, YaRN, or LongRoPE for extending context beyond the model's training window.
 keywords:
 - RopeScalingType
 - RoPE
@@ -38,10 +38,10 @@ Transformer models use RoPE to encode token positions. The frequencies RoPE uses
 | `Unspecified` (`-1`) | Use whatever the model's GGUF metadata specifies. |
 | `None` (`0`) | No scaling; use raw RoPE. Only valid within the trained context. |
 | `Linear` (`1`) | Linear interpolation of positions. Simple, moderate quality loss. |
-| `Yarn` (`2`) | YaRN (Yet another RoPE extensioN) — higher quality at long contexts. |
+| `Yarn` (`2`) | YaRN (Yet another RoPE extensioN): higher quality at long contexts. |
 | `LongRope` (`3`) | LongRoPE algorithm for very extended contexts. |
 
-Most built-in presets leave this as `Unspecified` — the model's metadata declares its own preferred scaling. Override only when you push the model past its declared maximum.
+Most built-in presets leave this as `Unspecified`: the model's metadata declares its own preferred scaling. Override only when you push the model past its declared maximum.
 
 ## When to change it
 
@@ -68,12 +68,12 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`RopeFreqBase`](/net/developer-reference/parameters/context/rope-freq-base/), [`RopeFreqScale`](/net/developer-reference/parameters/context/rope-freq-scale/) — apply on top of the chosen scaling.
-- [`YarnExtFactor`](/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/net/developer-reference/parameters/context/yarn-beta-slow/), [`YarnOrigCtx`](/net/developer-reference/parameters/context/yarn-orig-ctx/) — only used when `RopeScalingType = Yarn`.
-- [`ContextSize`](/net/developer-reference/parameters/context/context-size/) — larger than the model's training window requires RoPE scaling.
+- [`RopeFreqBase`](/llm/net/developer-reference/parameters/context/rope-freq-base/), [`RopeFreqScale`](/llm/net/developer-reference/parameters/context/rope-freq-scale/): apply on top of the chosen scaling.
+- [`YarnExtFactor`](/llm/net/developer-reference/parameters/context/yarn-ext-factor/), [`YarnAttnFactor`](/llm/net/developer-reference/parameters/context/yarn-attn-factor/), [`YarnBetaFast`](/llm/net/developer-reference/parameters/context/yarn-beta-fast/), [`YarnBetaSlow`](/llm/net/developer-reference/parameters/context/yarn-beta-slow/), [`YarnOrigCtx`](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/): only used when `RopeScalingType = Yarn`.
+- [`ContextSize`](/llm/net/developer-reference/parameters/context/context-size/): larger than the model's training window requires RoPE scaling.
 
 ## What's next
 
-- [YarnOrigCtx](/net/developer-reference/parameters/context/yarn-orig-ctx/) — the model's native context length.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — practical recipes.
-- [Context parameters hub](/net/developer-reference/parameters/context/) — all context knobs.
+- [YarnOrigCtx](/llm/net/developer-reference/parameters/context/yarn-orig-ctx/): the model's native context length.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/): practical recipes.
+- [Context parameters hub](/llm/net/developer-reference/parameters/context/): all context knobs.

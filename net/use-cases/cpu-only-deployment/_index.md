@@ -7,7 +7,7 @@ url: /net/use-cases/cpu-only-deployment/
 feedback: LLMNET
 version: 26.5.0
 title: CPU-only deployment
-description: Run Aspose.LLM for .NET without a GPU — pick a small preset, tune threads, and set realistic performance expectations.
+description: Run Aspose.LLM for .NET without a GPU, pick a small preset, tune threads, and set realistic performance expectations.
 keywords:
 - CPU only
 - no GPU
@@ -29,8 +29,8 @@ CPU-only deployments trade inference speed for simplicity: no GPU drivers, no CU
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 - A CPU with AVX2 support (most CPUs from 2014+).
 
 ## Pick a preset sized for CPU
@@ -39,6 +39,9 @@ Small and mid-size presets run well on CPU. Large models (20B+) are usable but s
 
 | Preset | Model size | Expected t/s on modern CPU |
 |---|---|---:|
+| `SmallModelPreset` | 0.5B Q4_K_M (Qwen 2 base) | 30-50 |
+| `TinyLlamaPreset` | 1.1B Q4_K_M | 25-45 |
+| `Llama32_1BPreset` | 1B Q4_K_M | 20-35 |
 | `Llama32Preset` | 3B Q4_K_M | 10-20 |
 | `Phi4Preset` | Mini Q4_K_M | 10-18 |
 | `Qwen25Preset` | 7B Q4_K_M | 5-12 |
@@ -47,9 +50,28 @@ Small and mid-size presets run well on CPU. Large models (20B+) are usable but s
 
 Estimates assume 8-core modern CPU with AVX2. AVX-512 adds 20-40 %.
 
-## Configure CPU-only
+## Use the `*PresetCpu` twin
 
-Force CPU execution with two settings on the preset:
+27 presets ship with a CPU-tuned twin: the preset class name plus `Cpu` (`Llama31_8BPresetCpu`, `Mistral7PresetCpu`, `Hermes3_8BPresetCpu`, etc.). The twin inherits everything from the parent and applies CPU-friendly defaults in one step: zero GPU offload, context capped at 4 K, batch and ubatch shrunk, FlashAttention and KV-cache offload disabled.
+
+See [CPU-tuned variants](/llm/net/product-overview/supported-presets/#cpu-tuned-variants-presetcpu) for the complete list, and for the presets that ship no twin: `Qwen25PresetCpu`, `Llama32PresetCpu`, and `Phi4PresetCpu` do not exist.
+
+```csharp
+using Aspose.LLM;
+using Aspose.LLM.Abstractions.Acceleration;
+using Aspose.LLM.Abstractions.Parameters.Presets;
+
+var preset = new Llama31_8BPresetCpu();
+preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.AVX2;
+
+using var api = AsposeLLMApi.Create(preset);
+```
+
+Pick the twin when you want the canonical CPU configuration without hand-tuning. The parent preset's model URL, chat template, system prompt, and sampler stay intact: only GPU/backend fields are overridden.
+
+## Configure CPU-only manually
+
+If you need a different context size than the 4 K cap that the twin enforces, or you want to use a preset that does not have a twin (all vision presets, `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llama32Preset`, `Phi4Preset`, `Oss20Preset`, `DeepseekR1Qwen3Preset`, `DeepSeekCoder2Preset`, and the 20B+ frontier presets), drive the GPU preset directly and force CPU execution with two settings:
 
 ```csharp
 using Aspose.LLM;
@@ -69,8 +91,8 @@ using var api = AsposeLLMApi.Create(preset);
 
 Two knobs:
 
-- `ContextParameters.NThreads` — threads for generation (token-by-token decode). Typically half of `ProcessorCount`.
-- `ContextParameters.NThreadsBatch` — threads for prompt processing. Typically all cores.
+- `ContextParameters.NThreads`: threads for generation (token-by-token decode). Typically half of `ProcessorCount`.
+- `ContextParameters.NThreadsBatch`: threads for prompt processing. Typically all cores.
 
 ```csharp
 preset.ContextParameters.NThreads = 6;        // generation
@@ -79,20 +101,20 @@ preset.ContextParameters.NThreadsBatch = 12;  // prompt ingestion
 
 Why different counts:
 
-- Prompt processing is embarrassingly parallel — more threads help.
+- Prompt processing is embarrassingly parallel: more threads help.
 - Generation is sequential at the token level and bound by memory bandwidth. Adding threads past 8-12 rarely helps and sometimes hurts.
 
 Benchmark on your target hardware. Start with `NThreads = ProcessorCount / 2`, `NThreadsBatch = ProcessorCount`, then adjust.
 
 ## Save memory
 
-CPU inference uses system RAM for everything — model weights, KV cache, intermediate buffers. Several levers:
+CPU inference uses system RAM for everything: model weights, KV cache, intermediate buffers. Several levers:
 
 ```csharp
-// Shorter context — less KV memory.
+// Shorter context: less KV memory.
 preset.ContextParameters.ContextSize = 4096;
 
-// Smaller KV dtype — halves V-cache memory.
+// Smaller KV dtype: halves V-cache memory.
 preset.ContextParameters.TypeV = GgmlType.Q8_0;
 
 // Memory mapping avoids doubling RAM use during load.
@@ -171,12 +193,12 @@ For real-time chat UIs, aim for 8+ t/s. Below that, users notice visible lag per
 ## Tips
 
 - **Close other CPU-heavy work** during inference. Competing threads tank throughput.
-- **Disable turbo boost sparingly** — sustained AVX work throttles CPU clocks; undervolting or cooler upgrades can help.
+- **Disable turbo boost sparingly**: sustained AVX work throttles CPU clocks; undervolting or cooler upgrades can help.
 - **Benchmark first with a representative prompt**, not a one-word test.
 - **Enable Flash Attention** on long contexts: `ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled`.
 
 ## What's next
 
-- [CPU acceleration](/net/developer-reference/acceleration/cpu/) — AVX variants and threading detail.
-- [Context parameters](/net/developer-reference/parameters/context/) — `NThreads`, `NThreadsBatch`, KV dtype.
-- [Low-memory tuning](/net/use-cases/low-memory-tuning/) — further memory optimization.
+- [CPU acceleration](/llm/net/developer-reference/acceleration/cpu/): AVX variants and threading detail.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): `NThreads`, `NThreadsBatch`, KV dtype.
+- [Low-memory tuning](/llm/net/use-cases/low-memory-tuning/): further memory optimization.

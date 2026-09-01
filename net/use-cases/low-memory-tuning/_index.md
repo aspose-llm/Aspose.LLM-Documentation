@@ -7,7 +7,7 @@ url: /net/use-cases/low-memory-tuning/
 feedback: LLMNET
 version: 26.5.0
 title: Low memory tuning
-description: Fit Aspose.LLM for .NET into a tight memory budget — small model, short context, KV cache quantization, aggressive offload, and memory mapping.
+description: Fit Aspose.LLM for .NET into a tight memory budget, small model, short context, KV cache quantization, aggressive offload, and memory mapping.
 keywords:
 - low memory
 - small memory
@@ -18,7 +18,7 @@ keywords:
 - context size
 ---
 
-When memory is tight — edge devices, small VMs, constrained containers, laptops with 16 GB RAM — pick a small preset and tune several levers together. This use case walks through the moves that matter most.
+When memory is tight: edge devices, small VMs, constrained containers, laptops with 16 GB RAM: pick a small preset and tune several levers together. This use case walks through the moves that matter most.
 
 ## When to use this pattern
 
@@ -29,8 +29,8 @@ When memory is tight — edge devices, small VMs, constrained containers, laptop
 
 ## Prerequisites
 
-- [Install the NuGet package](/net/installation/).
-- [Apply a license](/net/licensing/).
+- [Install the NuGet package](/llm/net/installation/).
+- [Apply a license](/llm/net/licensing/).
 
 ## Pick a small model
 
@@ -38,12 +38,18 @@ Start with the smallest preset that meets your quality bar:
 
 | Preset | Model size | Memory footprint (Q4 + default context) |
 |---|---|---|
+| `SmallModelPreset` | 0.5B (Qwen 2) | ~0.6-1 GB |
+| `TinyLlamaPreset` | 1.1B | ~1-2 GB |
+| `Llama32_1BPreset` | 1B | ~1-2 GB |
+| `Lfm2_1_2BPreset` | 1.2B (hybrid SSM) | ~1-2 GB |
+| `SmolLM2_1_7BPreset` | 1.7B | ~2-3 GB |
+| `Qwen25_3BPreset` | 3B | ~3-5 GB |
 | `Llama32Preset` | 3B | ~6-8 GB |
 | `Phi4Preset` | Mini | ~4-6 GB |
 | `Qwen25VL3BPreset` | 3B VL | ~4-6 GB + projector |
 | `Qwen3VL2BPreset` | 2B VL | ~3-5 GB + projector |
 
-Larger presets (7B, 8B, 20B) push past 8 GB — avoid them when memory is scarce.
+For a turn-key low-memory configuration, use the `*PresetCpu` twin of any of the text presets: the twin enforces a 4 K context cap and disables FlashAttention and KV offload in one step. Larger presets (7B, 8B, 20B) push past 8 GB: avoid them when memory is scarce.
 
 ## Shrink context size
 
@@ -154,7 +160,7 @@ Check real memory usage after load:
 - **Linux**: `top`, `htop`, or `/proc/<pid>/status`.
 - **macOS**: Activity Monitor → memory.
 
-The real number includes OS page cache of memory-mapped model files — it may look high but most of it is reclaimable under memory pressure.
+The real number includes OS page cache of memory-mapped model files: it may look high but most of it is reclaimable under memory pressure.
 
 ## Trade-offs
 
@@ -163,7 +169,7 @@ The real number includes OS page cache of memory-mapped model files — it may l
 | Context size | Less room for long prompts; no long-form analysis. |
 | KV quantization to Q8_0 | Minor quality drop on long contexts. |
 | KV quantization to Q4_0 | Noticeable quality drop. |
-| `MaxTokens` | Truncated answers; bad for reasoning models (see [Chat parameters](/net/developer-reference/parameters/chat/)). |
+| `MaxTokens` | Truncated answers; bad for reasoning models (see [Chat parameters](/llm/net/developer-reference/parameters/chat/)). |
 | Small model | Lower reasoning quality. |
 | CPU-only | Slower throughput (5-15 t/s vs 40-100+ on GPU). |
 
@@ -171,6 +177,6 @@ Start by cutting context and enabling KV quantization. Only if memory is still t
 
 ## What's next
 
-- [Context parameters](/net/developer-reference/parameters/context/) — every knob that affects memory.
-- [CPU-only deployment](/net/use-cases/cpu-only-deployment/) — when GPU memory is unavailable.
-- [Long context tuning](/net/use-cases/long-context-tuning/) — the opposite direction.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): every knob that affects memory.
+- [CPU-only deployment](/llm/net/use-cases/cpu-only-deployment/): when GPU memory is unavailable.
+- [Long context tuning](/llm/net/use-cases/long-context-tuning/): the opposite direction.

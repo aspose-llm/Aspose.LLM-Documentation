@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/chat/
 feedback: LLMNET
 version: 26.5.0
 title: Chat parameters
-description: Configure session-level conversation settings in Aspose.LLM for .NET — system prompt, prior history, max tokens per response, and KV cache cleanup strategy.
+description: Configure session-level conversation settings in Aspose.LLM for .NET, system prompt, prior history, max tokens per response, and KV cache cleanup strategy.
 keywords:
 - ChatParameters
 - SystemPrompt
@@ -47,10 +47,10 @@ public enum CacheCleanupStrategy
 
 Each field has a dedicated page with full defaults, scenario tables, code examples, and interactions.
 
-- [SystemPrompt](/net/developer-reference/parameters/chat/system-prompt/)
-- [History](/net/developer-reference/parameters/chat/history/)
-- [MaxTokens](/net/developer-reference/parameters/chat/max-tokens/)
-- [CacheCleanupStrategy](/net/developer-reference/parameters/chat/cache-cleanup-strategy/)
+- [SystemPrompt](/llm/net/developer-reference/parameters/chat/system-prompt/)
+- [History](/llm/net/developer-reference/parameters/chat/history/)
+- [MaxTokens](/llm/net/developer-reference/parameters/chat/max-tokens/)
+- [CacheCleanupStrategy](/llm/net/developer-reference/parameters/chat/cache-cleanup-strategy/)
 
 ## Fields
 
@@ -63,7 +63,7 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 
 ### `SystemPrompt`
 
-The default system prompt for sessions created from this preset. Applied at session-creation time — both when you call `StartNewChatAsync` and when `SendMessageAsync` creates the current session implicitly.
+The default system prompt for sessions created from this preset. Applied at session-creation time: both when you call `StartNewChatAsync` and when `SendMessageAsync` creates the current session implicitly.
 
 Empty string is a valid choice for presets whose chat template does not want a system turn (some Gemma variants, for example). To disable the system turn entirely, keep this empty:
 
@@ -80,7 +80,7 @@ preset.ChatParameters.SystemPrompt =
 
 ### `History`
 
-Optional pre-filled conversation history. When set, new sessions start with these turns already in the KV cache — useful for few-shot priming or for restoring a context that you assembled in your application.
+Optional pre-filled conversation history. When set, new sessions start with these turns already in the KV cache: useful for few-shot priming or for restoring a context that you assembled in your application.
 
 Leave `null` for a blank session:
 
@@ -107,7 +107,7 @@ The history is applied to every new session created from this preset. If you onl
 Upper bound on tokens the engine generates for a single assistant response. The default `2048` fits most general-purpose models and prompts.
 
 {{% alert color="primary" %}}
-**Reasoning-model budget.** Qwen3, DeepSeek-R1, and other chain-of-thought models emit a hidden `<think>…</think>` block before the actual answer. That block alone routinely uses 300-500 tokens for even trivial questions. Set `MaxTokens` to **at least 512** — ideally 1024-2048 — when using such models, or the response is truncated mid-reasoning and you get no visible answer. The `/no_think` directive (Qwen3) is unreliable across versions; raise the token budget instead.
+**Reasoning-model budget.** Qwen3, DeepSeek-R1, and other chain-of-thought models emit a hidden `<think>…</think>` block before the actual answer. That block alone routinely uses 300-500 tokens for even trivial questions. Set `MaxTokens` to **at least 512**: ideally 1024-2048: when using such models, or the response is truncated mid-reasoning and you get no visible answer. The `/no_think` directive (Qwen3) is unreliable across versions; raise the token budget instead.
 {{% /alert %}}
 
 Pick based on the task:
@@ -120,7 +120,7 @@ Pick based on the task:
 | Reasoning-model output (Qwen3, DeepSeek-R1) | 1024 - 4096 |
 | Code generation | 1024 - 4096 |
 
-Raising `MaxTokens` does not cost anything upfront — it is a cap, not an allocation. The engine generates as many tokens as needed up to this limit.
+Raising `MaxTokens` does not cost anything upfront: it is a cap, not an allocation. The engine generates as many tokens as needed up to this limit.
 
 ### `CacheCleanupStrategy`
 
@@ -134,7 +134,7 @@ Policy the engine applies when the current session's KV cache would overflow `Co
 | `KeepSystemPromptAndFirstUserMessage` | System prompt + the first user turn | Recall-heavy tasks where the original ask matters (long analyses, debugging sessions). |
 | `KeepSystemPromptAndLastUserMessage` | System prompt + the most recent user turn | Focus on the current question, drop the middle. |
 
-See [Chat sessions — Manage the KV cache](/net/developer-reference/chat-sessions/#manage-the-kv-cache) for the call-site details and runtime semantics.
+See [Chat sessions: Manage the KV cache](/llm/net/developer-reference/chat-sessions/#manage-the-kv-cache) for the call-site details and runtime semantics.
 
 ## Typical recipes
 
@@ -183,6 +183,6 @@ preset.ChatParameters.History = new List<ChatMessage>
 
 ## What's next
 
-- [Chat sessions](/net/developer-reference/chat-sessions/) — how the engine uses these parameters at runtime.
-- [Context parameters](/net/developer-reference/parameters/context/) — the `ContextSize` field that drives cache cleanup timing.
-- [Multi-turn chat](/net/use-cases/multi-turn-chat/) — runnable example showing cache management in practice.
+- [Chat sessions](/llm/net/developer-reference/chat-sessions/): how the engine uses these parameters at runtime.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): the `ContextSize` field that drives cache cleanup timing.
+- [Multi-turn chat](/llm/net/use-cases/multi-turn-chat/): runnable example showing cache management in practice.

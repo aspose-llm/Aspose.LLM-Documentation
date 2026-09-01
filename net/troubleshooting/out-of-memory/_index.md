@@ -7,7 +7,7 @@ url: /net/troubleshooting/out-of-memory/
 feedback: LLMNET
 version: 26.5.0
 title: Out of memory
-description: Fix out-of-memory errors in Aspose.LLM for .NET — GPU VRAM, system RAM, KV cache growth, swap thrashing.
+description: Fix out-of-memory errors in Aspose.LLM for .NET, GPU VRAM, system RAM, KV cache growth, swap thrashing.
 keywords:
 - out of memory
 - OOM
@@ -29,7 +29,7 @@ Out-of-memory failures happen at model load, during long sessions, or when runni
 ## Cause
 
 - Model weights plus KV cache exceed the available memory pool.
-- KV cache grows as sessions accumulate — each active session claims a slice of `ContextSize`.
+- KV cache grows as sessions accumulate: each active session claims a slice of `ContextSize`.
 - Multiple sessions, long prompts, and long responses compound.
 - On Apple Silicon (unified memory), system RAM is the shared ceiling.
 
@@ -72,7 +72,7 @@ preset.ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled;
 preset.BaseModelInferenceParameters.GpuLayers = 20;
 ```
 
-See [Low memory tuning](/net/use-cases/low-memory-tuning/) for the full recipe.
+See [Low memory tuning](/llm/net/use-cases/low-memory-tuning/) for the full recipe.
 
 ### 3. Switch to a smaller preset
 
@@ -92,7 +92,7 @@ In multi-user hosts, cap the active session count. A back-of-envelope budget:
 max_sessions = (available_memory - model_weights - overhead) / per_session_kv_budget
 ```
 
-Use [Estimate memory requirements](/net/how-to/estimate-memory-requirements/) for concrete numbers.
+Use [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/) for concrete numbers.
 
 Evict idle sessions by periodically disposing `AsposeLLMApi` and recreating it. The current SDK does not provide an explicit per-session evict API.
 
@@ -108,16 +108,16 @@ Expect a 5-30 second restart cost on warm caches.
 
 ### 6. On unified memory (Apple Silicon)
 
-There is no separate VRAM to optimize — everything is RAM. Apply system-RAM reductions: smaller model, shorter context, KV quantization.
+There is no separate VRAM to optimize: everything is RAM. Apply system-RAM reductions: smaller model, shorter context, KV quantization.
 
 ## Prevention
 
 - Measure peak memory during load tests. Budget against the measured peak, not theoretical estimates.
 - Run with `EnableDebugLogging = true` in staging and watch `[KV]` lines to track cache growth.
-- Size the host for your expected session concurrency at your chosen preset — do not size for the minimum case.
+- Size the host for your expected session concurrency at your chosen preset: do not size for the minimum case.
 
 ## What's next
 
-- [Low memory tuning](/net/use-cases/low-memory-tuning/) — recipes for memory-constrained hosts.
-- [Estimate memory requirements](/net/how-to/estimate-memory-requirements/) — predictive sizing.
-- [Context parameters](/net/developer-reference/parameters/context/) — KV cache dtype and flash attention.
+- [Low memory tuning](/llm/net/use-cases/low-memory-tuning/): recipes for memory-constrained hosts.
+- [Estimate memory requirements](/llm/net/how-to/estimate-memory-requirements/): predictive sizing.
+- [Context parameters](/llm/net/developer-reference/parameters/context/): KV cache dtype and flash attention.
