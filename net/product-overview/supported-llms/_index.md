@@ -35,6 +35,9 @@ Every family below can be used through a ready-made preset. Any other open sourc
 
 The **Commercial use** column reflects the license of the model as published by its author. It is not legal advice, and it is your responsibility to review the license of any model you deploy.
 
+<!-- EDITORS: update the date below every time the license information in this table is re-verified. -->
+**License information last verified: 26 August 2026.** Each entry was checked against the exact repository its preset resolves to. Model publishers can change a license at any time, so this date is updated whenever the table is re-verified.
+
 | Family | Publisher | License | Commercial use | Presets |
 |---|---|---|---|---|
 | Llama 3.1, 3.2, 3.3 | Meta | [Llama Community License](https://developer.meta.com/ai/llama3_2/license/) | Yes, with attribution and acceptable-use conditions | `Llama31_8BPreset`, `Llama32Preset`, `Llama32_1BPreset`, `Llama3_3_70BPreset` |
@@ -88,5 +91,5 @@ The model and family names on this page are used solely to identify the models a
 ## Before you ship
 
 {{% alert color="warning" %}}
-**Check the license of the model you selected.** Aspose.LLM supplies the runtime, not the model. Whichever model you load, its terms come from the party that published it and they apply to your product. They are not part of, and are not covered by, your license agreement with Aspose Pty Ltd. The table above states the license of every family, but it is a summary written on the date of publication: read the linked license itself before you deploy, and re-read it when you change the model a preset points at. See also [Supported presets](/llm/net/product-overview/supported-presets/) for the per-preset breakdown.
+**Check the license of the model you selected.** Aspose.LLM supplies the runtime, not the model. Whichever model you load, its terms come from the party that published it and they apply to your product. They are not part of, and are not covered by, your license agreement with Aspose Pty Ltd. The table above states the license of every family, but it is a summary verified on the date shown above the table: read the linked license itself before you deploy, and re-read it when you change the model a preset points at. See also [Supported presets](/llm/net/product-overview/supported-presets/) for the per-preset breakdown.
 {{% /alert %}}
