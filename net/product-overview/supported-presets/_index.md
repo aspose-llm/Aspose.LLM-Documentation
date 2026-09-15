@@ -63,7 +63,7 @@ The default tier for production chat. Balanced quality and speed; expect 6-10 GB
 | `AyaExpanse8BPreset` | Cohere Aya Expanse 8B (multilingual, 23 languages) | `bartowski/aya-expanse-8b-GGUF` | 8 192 | [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/): **non-commercial use only** |
 | `OpenChat3_5Preset` | OpenChat 3.5 (Mistral-7B base) | `TheBloke/openchat-3.5-0106-GGUF` | 8 192 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Olmo2_7BPreset` | AllenAI OLMo 2 7B Instruct (fully-open research model) | `bartowski/OLMo-2-1124-7B-Instruct-GGUF` | 4 096 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) plus a vendor rider referencing the [Gemma Terms of Use](https://ai.google.dev/gemma/terms) |
-| `Gemma3Preset` | Community checkpoint published as gemma-3 (source under review) | `mradermacher/gemma-3-GGUF` | 8 192 | **Unlicensed source: under review, do not use commercially** |
+| `Gemma3Preset` | Google Gemma 3 4B Instruct (text path) | `ggml-org/gemma-3-4b-it-GGUF` | 8 192 | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) |
 
 ### Mid-size (3-6B)
 
@@ -132,7 +132,7 @@ These models emit explicit step-by-step reasoning. Budget `MaxTokens = 1024-2048
 | Preset | Model | Hugging Face source | Default context | License |
 |---|---|---|---|---|
 | `DeepseekR1Qwen3Preset` | DeepSeek-R1 distilled from Qwen 3 8B | `lmstudio-community/DeepSeek-R1-0528-Qwen3-8B-GGUF` | 131 072 | [MIT](https://opensource.org/license/mit) |
-| `Oss20Preset` | Third-party gpt-oss 20B fine-tune (source under review) | `mradermacher/gpt-oss-20b-multilingual-reasoner-i1-GGUF` | 131 072 | **Unlicensed source: under review, do not use commercially** |
+| `Oss20Preset` | OpenAI GPT-OSS 20B (native MXFP4) | `ggml-org/gpt-oss-20b-GGUF` | 131 072 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
 ### Limited compatibility
 
@@ -303,7 +303,7 @@ Vision presets configure both the base language model and its multimodal project
 |---|---|---|---|---|---|---|
 | `Qwen25VL3BPreset` | Qwen 2.5 VL 3B Instruct | `unsloth/Qwen2.5-VL-3B-Instruct-GGUF` | `mmproj-F16.gguf` | 128 000 | Q4_K_M | Qwen Research License: **non-commercial use only** |
 | `Qwen3VL2BPreset` | Qwen 3 VL 2B Instruct | `Qwen/Qwen3-VL-2B-Instruct-GGUF` | `mmproj-Qwen3VL-2B-Instruct-Q8_0.gguf` | 262 144 | Q4_K_M | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| `Gemma3VisionPreset` | Gemma 3 Vision Latex fine-tune (source under review) | `mradermacher/Gemma-3-Vision-Latex-GGUF` | `Gemma-3-Vision-Latex.mmproj-f16.gguf` | 8 096 | Q4_K_M | **Unlicensed source: under review, do not use commercially** |
+| `Gemma3VisionPreset` | Google Gemma 3 4B Instruct (vision path) | `ggml-org/gemma-3-4b-it-GGUF` | `mmproj-model-f16.gguf` | 8 096 | Q4_K_M | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) |
 | `Ministral3VisionPreset` | Ministral 3 8B Instruct (Mistral AI, 2512 release) | `mistralai/Ministral-3-8B-Instruct-2512-GGUF` | `Ministral-3-8B-Instruct-2512-BF16-mmproj.gguf` | 262 144 | Q4_K_M | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Glm4_6VFlashPreset` | Zhipu GLM-4.6V Flash vision | `unsloth/GLM-4.6V-Flash-GGUF` | bundled `mmproj` in same repo | 32 768 | Q4_K_M | [MIT](https://opensource.org/license/mit) |
 | `NemotronOmniPreset` | NVIDIA Nemotron-3-Nano-Omni 30B-A3B Reasoning (multimodal MoE) | `unsloth/NVIDIA-Nemotron-3-Nano-Omni-30B-A3B-Reasoning-GGUF` | `mmproj-F16.gguf` | 8 192 | UD-Q4_K_M | [NVIDIA Open Model Agreement](https://www.nvidia.com/en-us/agreements/enterprise-software/nvidia-open-model-agreement/) |

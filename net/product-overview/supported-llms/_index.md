@@ -36,7 +36,7 @@ Every family below can be used through a ready-made preset. Any other open sourc
 The **Commercial use** column reflects the license of the model as published by its author. It is not legal advice, and it is your responsibility to review the license of any model you deploy.
 
 <!-- EDITORS: update the date below every time the license information in this table is re-verified. -->
-**License information last verified: 26 August 2026.** Each entry was checked against the exact repository its preset resolves to. Model publishers can change a license at any time, so this date is updated whenever the table is re-verified.
+**License information last verified: 15 September 2026.** Each entry was checked against the exact repository its preset resolves to. Model publishers can change a license at any time, so this date is updated whenever the table is re-verified.
 
 | Family | Publisher | License | Commercial use | Presets |
 |---|---|---|---|---|
@@ -45,11 +45,12 @@ The **Commercial use** column reflects the license of the model as published by 
 | Qwen 2.5 | Alibaba | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0), except the 3B models | Yes, except the 3B models | `Qwen25Preset`, `Qwen25Coder7BPreset` |
 | Qwen 2 | Alibaba | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `SmallModelPreset` (Qwen 2 0.5B) |
 | Qwen 2.5 3B and VL 3B | Alibaba | Qwen Research License | **No, research use only** | `Qwen25_3BPreset`, `Qwen25VL3BPreset` |
+| Gemma 3 | Google | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) | Yes, subject to the Gemma prohibited use policy | `Gemma3Preset`, `Gemma3VisionPreset` |
 | Gemma 3n | Google | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) | Yes, subject to the Gemma prohibited use policy | `Gemma3nE4BPreset` |
 | Gemma 4 | Google | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `Gemma4_E4B_ItPreset` |
 | Mistral, Ministral, Devstral | Mistral AI | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `Mistral7Preset`, `MistralSmall3Preset`, `DevstralSmall2_24BPreset`, `Ministral3VisionPreset` |
 | Phi 3.5, 4 | Microsoft | [MIT](https://opensource.org/license/mit) | Yes | `Phi35MiniPreset`, `Phi4Preset`, `Phi4_14BPreset` |
-| gpt-oss | OpenAI | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `GptOss120BPreset` |
+| gpt-oss | OpenAI | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `Oss20Preset`, `GptOss120BPreset` |
 | DeepSeek Coder V2 | DeepSeek | [DeepSeek License v1.0](https://github.com/deepseek-ai/DeepSeek-Coder-V2/blob/main/LICENSE-MODEL) | Yes, with use restrictions that flow down to you | `DeepSeekCoder2Preset` |
 | DeepSeek R1 distill | DeepSeek | [MIT](https://opensource.org/license/mit) | Yes | `DeepseekR1Qwen3Preset` |
 | GLM 4.6V, 4.7 | Z.ai (Zhipu) | [MIT](https://opensource.org/license/mit) | Yes | `Glm4_7FlashPreset`, `Glm4_6VFlashPreset` |
@@ -68,7 +69,6 @@ The **Commercial use** column reflects the license of the model as published by 
 | Aya Expanse | Cohere | [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | **No, non-commercial use only** | `AyaExpanse8BPreset` |
 | LFM 2, 2.5 | Liquid AI | [LFM Open License](https://www.liquid.ai/lfm-license) | **Only below USD 10M annual revenue** | `Lfm2_1_2BPreset`, `Lfm2_5_1_2BPreset` |
 | Stable Code | Stability AI | [Stability AI Community License](https://stability.ai/community-license-agreement) | **Only below USD 1M annual revenue** | `StableCode3BPreset` |
-| Under source review | n/a | Not established for the current model source | **No, do not use commercially until the review completes** | `Gemma3Preset`, `Gemma3VisionPreset`, `Oss20Preset` |
 
 ## Reading the license column
 
