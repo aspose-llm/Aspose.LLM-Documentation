@@ -137,7 +137,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Aspose.LLM.Abstractions.Interfaces;
 using Aspose.LLM.Core.DependencyInjection;
 
-services.AddLlamaServices(new Qwen25Preset());
+services.AddLlmServices(new Qwen25Preset());
 services.AddSingleton<IPromptFormatter, MyCustomFormatter>();
 ```
 

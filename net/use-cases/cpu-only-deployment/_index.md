@@ -40,9 +40,9 @@ Small and mid-size presets run well on CPU. Large models (20B+) are usable but s
 | Preset | Model size | Expected t/s on modern CPU |
 |---|---|---:|
 | `SmallModelPreset` | 0.5B Q4_K_M (Qwen 2 base) | 30-50 |
-| `TinyLlamaPreset` | 1.1B Q4_K_M | 25-45 |
-| `Llama32_1BPreset` | 1B Q4_K_M | 20-35 |
-| `Llama32Preset` | 3B Q4_K_M | 10-20 |
+| `TinyLlmPreset` | 1.1B Q4_K_M | 25-45 |
+| `Llm32_1BPreset` | 1B Q4_K_M | 20-35 |
+| `Llm32Preset` | 3B Q4_K_M | 10-20 |
 | `Phi4Preset` | Mini Q4_K_M | 10-18 |
 | `Qwen25Preset` | 7B Q4_K_M | 5-12 |
 | `Qwen3Preset` | 8B Q4_K_M | 5-10 |
@@ -52,7 +52,7 @@ Estimates assume 8-core modern CPU with AVX2. AVX-512 adds 20-40 %.
 
 ## Use the `*PresetCpu` twin
 
-27 presets ship with a CPU-tuned twin: the preset class name plus `Cpu` (`Llama31_8BPresetCpu`, `Mistral7PresetCpu`, `Hermes3_8BPresetCpu`, etc.). The twin inherits everything from the parent and applies CPU-friendly defaults in one step: zero GPU offload, context capped at 4 K, batch and ubatch shrunk, FlashAttention and KV-cache offload disabled.
+27 presets ship with a CPU-tuned twin: the preset class name plus `Cpu` (`Llm31_8BPresetCpu`, `Mistral7PresetCpu`, `Hermes3_8BPresetCpu`, etc.). The twin inherits everything from the parent and applies CPU-friendly defaults in one step: zero GPU offload, context capped at 4 K, batch and ubatch shrunk, FlashAttention and KV-cache offload disabled.
 
 See [CPU-tuned variants](/llm/net/product-overview/supported-presets/#cpu-tuned-variants-presetcpu) for the complete list, and for the presets that ship no twin: `Qwen25PresetCpu`, `Llama32PresetCpu`, and `Phi4PresetCpu` do not exist.
 
@@ -61,7 +61,7 @@ using Aspose.LLM;
 using Aspose.LLM.Abstractions.Acceleration;
 using Aspose.LLM.Abstractions.Parameters.Presets;
 
-var preset = new Llama31_8BPresetCpu();
+var preset = new Llm31_8BPresetCpu();
 preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.AVX2;
 
 using var api = AsposeLLMApi.Create(preset);
@@ -71,14 +71,14 @@ Pick the twin when you want the canonical CPU configuration without hand-tuning.
 
 ## Configure CPU-only manually
 
-If you need a different context size than the 4 K cap that the twin enforces, or you want to use a preset that does not have a twin (all vision presets, `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llama32Preset`, `Phi4Preset`, `Oss20Preset`, `DeepseekR1Qwen3Preset`, `DeepSeekCoder2Preset`, and the 20B+ frontier presets), drive the GPU preset directly and force CPU execution with two settings:
+If you need a different context size than the 4 K cap that the twin enforces, or you want to use a preset that does not have a twin (all vision presets, `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llm32Preset`, `Phi4Preset`, `Oss20Preset`, `DeepseekR1Qwen3Preset`, `DeepSeekCoder2Preset`, and the 20B+ frontier presets), drive the GPU preset directly and force CPU execution with two settings:
 
 ```csharp
 using Aspose.LLM;
 using Aspose.LLM.Abstractions.Acceleration;
 using Aspose.LLM.Abstractions.Parameters.Presets;
 
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.AVX2;
 preset.BaseModelInferenceParameters.GpuLayers = 0;
 
@@ -138,7 +138,7 @@ internal class CpuOnlyDemo
         var license = new Aspose.LLM.License();
         license.SetLicense("Aspose.LLM.lic");
 
-        var preset = new Llama32Preset();
+        var preset = new Llm32Preset();
 
         // Force CPU.
         preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.AVX2;

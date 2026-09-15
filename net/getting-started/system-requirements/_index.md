@@ -82,7 +82,7 @@ RAM requirements scale with model size, quantization, and context size. The tabl
 
 | Preset example | Model size | Default context | RAM (CPU) / VRAM (GPU) |
 |---|---|---:|---|
-| `Llama32Preset` | 3B Q4_K_M | 131 072 | 6-8 GB |
+| `Llm32Preset` | 3B Q4_K_M | 131 072 | 6-8 GB |
 | `Phi4Preset` | Mini Q4_K_M | 16 384 | 4-6 GB |
 | `Qwen25Preset` | 7B Q4_K_M | 32 768 | 8-12 GB |
 | `Qwen3Preset` | 8B Q4_K_M | 32 768 | 8-12 GB |

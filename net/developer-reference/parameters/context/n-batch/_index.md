@@ -45,7 +45,7 @@ When the engine processes a prompt (system message + conversation history + new 
 | Memory-constrained | `512` or `1024` |
 | Very long prompts (summarization, long context) | `4096` to `8192` |
 
-Built-in presets set `NBatch` based on the model's needs: `Qwen25Preset` uses 3072, `Llama32Preset` uses 2048, vision presets often use 4096.
+Built-in presets set `NBatch` based on the model's needs: `Qwen25Preset` uses 3072, `Llm32Preset` uses 2048, vision presets often use 4096.
 
 ## Example
 

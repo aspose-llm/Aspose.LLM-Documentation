@@ -109,7 +109,7 @@ Pre-download every preset your production code might use. Each preset references
 var presets = new PresetCoreBase[]
 {
     new Qwen25Preset(),
-    new Llama32Preset(),
+    new Llm32Preset(),
     new Qwen3VL2BPreset(),
 };
 

@@ -18,7 +18,7 @@ keywords:
 - rope scaling
 ---
 
-Several built-in presets support very long contexts: `Llama32Preset` (131K), `Oss20Preset` (131K), `DeepSeekCoder2Preset` (163K), `Qwen3VL2BPreset` (262K), `Ministral3VisionPreset` (262K). Running them at full context takes specific tuning: flash attention, KV dtype, sometimes YaRN.
+Several built-in presets support very long contexts: `Llm32Preset` (131K), `Oss20Preset` (131K), `DeepSeekCoder2Preset` (163K), `Qwen3VL2BPreset` (262K), `Ministral3VisionPreset` (262K). Running them at full context takes specific tuning: flash attention, KV dtype, sometimes YaRN.
 
 ## When to use this pattern
 
@@ -36,7 +36,7 @@ Several built-in presets support very long contexts: `Llama32Preset` (131K), `Os
 
 | Preset | Default context | Notes |
 |---|---:|---|
-| `Llama32Preset` | 131 072 | 3B; good fit for long-document summarization. |
+| `Llm32Preset` | 131 072 | 3B; good fit for long-document summarization. |
 | `Oss20Preset` | 131 072 | 20B; better reasoning at length. |
 | `DeepSeekCoder2Preset` | 163 840 | Code-focused. |
 | `Qwen3VL2BPreset` | 262 144 | Vision + long context. |
@@ -103,7 +103,7 @@ using Aspose.LLM.Abstractions.Parameters.Presets;
 var license = new Aspose.LLM.License();
 license.SetLicense("Aspose.LLM.lic");
 
-var preset = new Llama32Preset(); // 3B, 131K context
+var preset = new Llm32Preset(); // 3B, 131K context
 preset.ChatParameters.SystemPrompt =
     "You summarize long documents. Produce a concise 5-bullet summary of the key points.";
 preset.ChatParameters.MaxTokens = 512;

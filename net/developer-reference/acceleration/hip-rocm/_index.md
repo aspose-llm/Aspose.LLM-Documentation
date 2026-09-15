@@ -55,7 +55,7 @@ The SDK downloads the HIP variant (typically 300-500 MB) on first run.
 HIP supports multi-GPU across AMD cards of the same ROCm generation.
 
 ```csharp
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 // Optionally tune TensorSplit per-GPU VRAM.
 ```
@@ -90,7 +90,7 @@ Aspose.LLM does not ship Windows HIP binaries. If your AMD GPU is on Windows, us
 | `rocblas_status_internal_error` on load | Incompatible ROCm version. | Match ROCm 6.x; upgrade if older. |
 | Unsupported GPU at startup | Card not on ROCm's support list. | Use Vulkan as fallback, or try `HSA_OVERRIDE_GFX_VERSION`. |
 | Inference on CPU despite HIP binary | `GpuLayers = 0` or ROCm runtime missing. | Set `GpuLayers = 999`; verify with `rocminfo`. |
-| Multi-GPU instability | Mixing different RDNA generations. | Stick to same-generation GPUs; try `LLAMA_SPLIT_MODE_LAYER`. |
+| Multi-GPU instability | Mixing different RDNA generations. | Stick to same-generation GPUs; try `LLM_SPLIT_MODE_LAYER`. |
 
 ## What's next
 

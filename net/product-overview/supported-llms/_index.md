@@ -40,7 +40,7 @@ The **Commercial use** column reflects the license of the model as published by 
 
 | Family | Publisher | License | Commercial use | Presets |
 |---|---|---|---|---|
-| Llama 3.1, 3.2, 3.3 | Meta | [Llama Community License](https://developer.meta.com/ai/llama3_2/license/) | Yes, with attribution and acceptable-use conditions | `Llama31_8BPreset`, `Llama32Preset`, `Llama32_1BPreset`, `Llama3_3_70BPreset` |
+| Llama 3.1, 3.2, 3.3 | Meta | [Llama Community License](https://developer.meta.com/ai/llama3_2/license/) | Yes, with attribution and acceptable-use conditions | `Llm31_8BPreset`, `Llm32Preset`, `Llm32_1BPreset`, `Llm3_3_70BPreset` |
 | Qwen 3, 3.5, 3.6 | Alibaba | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `Qwen3Preset`, `Qwen3_5_9BPreset`, `Qwen3_6_27BPreset`, `Qwen3Coder30BPreset`, `Qwen3VL2BPreset` |
 | Qwen 2.5 | Alibaba | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0), except the 3B models | Yes, except the 3B models | `Qwen25Preset`, `Qwen25Coder7BPreset` |
 | Qwen 2 | Alibaba | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `SmallModelPreset` (Qwen 2 0.5B) |
@@ -63,7 +63,7 @@ The **Commercial use** column reflects the license of the model as published by 
 | SmolLM2 | Hugging Face | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `SmolLM2_1_7BPreset` |
 | OpenChat 3.5 | OpenChat | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `OpenChat3_5Preset` |
 | Seed-OSS | ByteDance | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `SeedOss36BPreset` |
-| TinyLlama | StatNLP | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `TinyLlamaPreset` |
+| TinyLlama | StatNLP | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) | Yes | `TinyLlmPreset` |
 | Hermes 3 | Nous Research | [Llama Community License](https://developer.meta.com/ai/llama3_1/license/), inherited from the base model | Yes, with attribution and acceptable-use conditions | `Hermes3_8BPreset` |
 | Aya Expanse | Cohere | [CC-BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) | **No, non-commercial use only** | `AyaExpanse8BPreset` |
 | LFM 2, 2.5 | Liquid AI | [LFM Open License](https://www.liquid.ai/lfm-license) | **Only below USD 10M annual revenue** | `Lfm2_1_2BPreset`, `Lfm2_5_1_2BPreset` |

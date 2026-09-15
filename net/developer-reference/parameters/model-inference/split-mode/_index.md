@@ -22,9 +22,9 @@ keywords:
 
 | | |
 |---|---|
-| **Type** | `LlamaSplitMode?` enum |
+| **Type** | `LlmSplitMode?` enum |
 | **Default** | `null` (use native default) |
-| **Values** | `LLAMA_SPLIT_MODE_NONE`, `LLAMA_SPLIT_MODE_LAYER`, `LLAMA_SPLIT_MODE_ROW` |
+| **Values** | `LLM_SPLIT_MODE_NONE`, `LLM_SPLIT_MODE_LAYER`, `LLM_SPLIT_MODE_ROW` |
 | **Category** | GPU distribution |
 | **Field on** | `ModelInferenceParameters.SplitMode` |
 
@@ -32,9 +32,9 @@ keywords:
 
 | Value | Behavior |
 |---|---|
-| `LLAMA_SPLIT_MODE_NONE` (`0`) | Single GPU. Whole model on [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/). |
-| `LLAMA_SPLIT_MODE_LAYER` (`1`) | Split layers across GPUs. KV cache follows layers. Good default for multi-GPU. |
-| `LLAMA_SPLIT_MODE_ROW` (`2`) | Split layers and rows across GPUs. Uses tensor parallelism when supported. Fastest on high-bandwidth GPU interconnects (NVLink). |
+| `LLM_SPLIT_MODE_NONE` (`0`) | Single GPU. Whole model on [`MainGpu`](/llm/net/developer-reference/parameters/model-inference/main-gpu/). |
+| `LLM_SPLIT_MODE_LAYER` (`1`) | Split layers across GPUs. KV cache follows layers. Good default for multi-GPU. |
+| `LLM_SPLIT_MODE_ROW` (`2`) | Split layers and rows across GPUs. Uses tensor parallelism when supported. Fastest on high-bandwidth GPU interconnects (NVLink). |
 
 On fully connected multi-GPU setups (NVLink, consumer PCIe with good topology), `ROW` is often fastest. On PCIe-only consumer setups, `LAYER` is safer.
 
@@ -42,9 +42,9 @@ On fully connected multi-GPU setups (NVLink, consumer PCIe with good topology), 
 
 | Scenario | Value |
 |---|---|
-| Single GPU | `LLAMA_SPLIT_MODE_NONE` (or `null`) |
-| Multi-GPU default | `LLAMA_SPLIT_MODE_LAYER` |
-| High-bandwidth multi-GPU (NVLink) | `LLAMA_SPLIT_MODE_ROW` |
+| Single GPU | `LLM_SPLIT_MODE_NONE` (or `null`) |
+| Multi-GPU default | `LLM_SPLIT_MODE_LAYER` |
+| High-bandwidth multi-GPU (NVLink) | `LLM_SPLIT_MODE_ROW` |
 | Testing multi-GPU setup | Start with `LAYER`, try `ROW` if stable |
 
 ## Example
@@ -53,7 +53,7 @@ On fully connected multi-GPU setups (NVLink, consumer PCIe with good topology), 
 using Aspose.LLM.Abstractions.Parameters;
 
 var preset = new Qwen25Preset();
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
 // 2:1 split for unequal-VRAM GPUs (e.g., 24 GB + 12 GB).

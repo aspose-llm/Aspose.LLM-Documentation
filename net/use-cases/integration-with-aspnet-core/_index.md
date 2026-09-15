@@ -47,7 +47,7 @@ var license = new Aspose.LLM.License();
 license.SetLicense("Aspose.LLM.lic");
 
 // Register LLM services.
-builder.Services.AddLlamaServices(new Qwen25Preset());
+builder.Services.AddLlmServices(new Qwen25Preset());
 
 var app = builder.Build();
 

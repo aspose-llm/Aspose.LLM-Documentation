@@ -66,7 +66,7 @@ On hosts with multiple GPUs, `MainGpu` picks which one gets the entire model whe
 using Aspose.LLM.Abstractions.Parameters;
 
 preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.CUDA;
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_NONE;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_NONE;
 preset.BaseModelInferenceParameters.MainGpu = 1;    // use GPU index 1
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 ```
@@ -79,7 +79,7 @@ Distribute the model across multiple GPUs.
 
 ```csharp
 preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.CUDA;
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 ```
 
@@ -87,9 +87,9 @@ Split modes:
 
 | Mode | Behavior |
 |---|---|
-| `LLAMA_SPLIT_MODE_NONE` | Single GPU only. Whole model on `MainGpu`. |
-| `LLAMA_SPLIT_MODE_LAYER` | Split layers across GPUs. Good default for multi-GPU. |
-| `LLAMA_SPLIT_MODE_ROW` | Split rows: enables tensor parallelism where supported. Fastest on setups with high-bandwidth GPU interconnects (NVLink). |
+| `LLM_SPLIT_MODE_NONE` | Single GPU only. Whole model on `MainGpu`. |
+| `LLM_SPLIT_MODE_LAYER` | Split layers across GPUs. Good default for multi-GPU. |
+| `LLM_SPLIT_MODE_ROW` | Split rows: enables tensor parallelism where supported. Fastest on setups with high-bandwidth GPU interconnects (NVLink). |
 
 For unequal GPU memory sizes, set `TensorSplit` to balance the load:
 

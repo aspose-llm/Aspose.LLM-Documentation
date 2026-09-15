@@ -54,7 +54,7 @@ Use the standard environment variables to constrain visibility globally:
 using Aspose.LLM.Abstractions.Parameters;
 
 var preset = new Qwen25Preset();
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_NONE;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_NONE;
 preset.BaseModelInferenceParameters.MainGpu = 1;  // use GPU 1
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 

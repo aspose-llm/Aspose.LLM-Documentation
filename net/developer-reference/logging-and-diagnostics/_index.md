@@ -35,7 +35,7 @@ using var api = AsposeLLMApi.Create(new Qwen25Preset(), logger);
 
 Logs from the engine, model manager, binary manager, and chat sessions flow into this logger. Without a logger, the engine produces no managed-side log output.
 
-When you use the [DI path](/llm/net/developer-reference/dependency-injection/) (`AddLlamaServices`), logging is configured automatically: a console provider plus a file provider pointed at `EngineParameters.LogDirectoryPath`.
+When you use the [DI path](/llm/net/developer-reference/dependency-injection/) (`AddLlmServices`), logging is configured automatically: a console provider plus a file provider pointed at `EngineParameters.LogDirectoryPath`.
 
 ## Enable native debug logs
 

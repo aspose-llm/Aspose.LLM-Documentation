@@ -43,7 +43,7 @@ Built-in presets set `ContextSize` to a model-appropriate default. For example:
 | `Phi4Preset` | 16 384 |
 | `Qwen25Preset` | 32 768 |
 | `Qwen3Preset` | 32 768 |
-| `Llama32Preset` | 131 072 |
+| `Llm32Preset` | 131 072 |
 | `Oss20Preset` | 131 072 |
 | `DeepSeekCoder2Preset` | 163 840 |
 

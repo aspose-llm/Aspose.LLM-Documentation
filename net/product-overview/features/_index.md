@@ -108,7 +108,7 @@ Set `ContextParameters.Embeddings = true` to configure the context for embedding
 
 ### Extensibility via DI
 
-Core services are registered in Microsoft.Extensions.DependencyInjection through `AddLlamaServices(preset)`. You can swap implementations of `IModelLoader`, `IModelFileProvider`, `IPromptFormatter`, and `IMediaProcessor`: useful for custom model stores, alternative prompt formats, or bespoke media pre-processing.
+Core services are registered in Microsoft.Extensions.DependencyInjection through `AddLlmServices(preset)`. You can swap implementations of `IModelLoader`, `IModelFileProvider`, `IPromptFormatter`, and `IMediaProcessor`: useful for custom model stores, alternative prompt formats, or bespoke media pre-processing.
 
 ### Logging and diagnostics
 

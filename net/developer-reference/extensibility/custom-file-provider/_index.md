@@ -157,11 +157,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Aspose.LLM.Abstractions.Interfaces;
 using Aspose.LLM.Core.DependencyInjection;
 
-services.AddLlamaServices(new Qwen25Preset());
+services.AddLlmServices(new Qwen25Preset());
 services.AddSingleton<IModelFileProvider>(new InternalRegistryProvider(@"/opt/models"));
 ```
 
-The default `ModelManager` is registered by `AddLlamaServices`. Adding your own `IModelFileProvider` registration overrides it only if the downstream consumer (`ModelManager`) is wired to consume `IModelFileProvider` directly: in the current SDK, `ModelManager` uses concrete providers (`LocalFilesystemProvider`, `HuggingFaceProvider`). You may need a custom `IModelLoader` that uses your `IModelFileProvider` instead of `ModelManager`.
+The default `ModelManager` is registered by `AddLlmServices`. Adding your own `IModelFileProvider` registration overrides it only if the downstream consumer (`ModelManager`) is wired to consume `IModelFileProvider` directly: in the current SDK, `ModelManager` uses concrete providers (`LocalFilesystemProvider`, `HuggingFaceProvider`). You may need a custom `IModelLoader` that uses your `IModelFileProvider` instead of `ModelManager`.
 
 Confirm the current wiring before committing to a custom provider: contact [Aspose support](https://forum.aspose.com/) if the injection point does not behave as you expect.
 

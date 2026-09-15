@@ -48,7 +48,7 @@ For end-to-end scenarios, see [Use cases](/llm/net/use-cases/). For compact task
 - [Cache management](/llm/net/developer-reference/cache-management/): five `CacheCleanupStrategy` modes and when to apply each.
 - [Multimodal](/llm/net/developer-reference/multimodal/): vision presets, attaching images, chat templates, and debugging.
 - [Acceleration](/llm/net/developer-reference/acceleration/): CUDA, HIP, Metal, Vulkan, CPU backends.
-- [Dependency injection](/llm/net/developer-reference/dependency-injection/): `AddLlamaServices` for ASP.NET Core and Worker Service hosts.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): `AddLlmServices` for ASP.NET Core and Worker Service hosts.
 - [Extensibility](/llm/net/developer-reference/extensibility/): replace core services via `IModelLoader`, `IModelFileProvider`, `IPromptFormatter`, `IMediaProcessor`.
 - [Logging and diagnostics](/llm/net/developer-reference/logging-and-diagnostics/): `ILogger` integration, debug logs, tagged output.
 - [License](/llm/net/developer-reference/license/): the `License` class API.

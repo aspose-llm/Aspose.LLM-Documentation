@@ -56,7 +56,7 @@ The default tier for production chat. Balanced quality and speed; expect 6-10 GB
 | `Qwen25Preset` | Qwen 2.5 7B Instruct | `bartowski/Qwen2.5-7B-Instruct-GGUF` | 32 768 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Qwen3Preset` | Qwen 3 8B | `bartowski/Qwen_Qwen3-8B-GGUF` | 32 768 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Qwen3_5_9BPreset` | Qwen 3.5 9B | `unsloth/Qwen3.5-9B-GGUF` | 32 768 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| `Llama31_8BPreset` | Meta Llama 3.1 8B Instruct | `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF` | 32 768 | [Community license](https://developer.meta.com/ai/llama3_1/license/) |
+| `Llm31_8BPreset` | Meta Llama 3.1 8B Instruct | `bartowski/Meta-Llama-3.1-8B-Instruct-GGUF` | 32 768 | [Community license](https://developer.meta.com/ai/llama3_1/license/) |
 | `Mistral7Preset` | Mistral 7B Instruct v0.3 | `bartowski/Mistral-7B-Instruct-v0.3-GGUF` | 32 768 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Hermes3_8BPreset` | NousResearch Hermes 3 (Llama 3.1 8B base) | `bartowski/Hermes-3-Llama-3.1-8B-GGUF` | 32 768 | [Community license](https://developer.meta.com/ai/llama3_1/license/) (inherited from the base model) |
 | `Granite3_8BPreset` | IBM Granite 3.1 8B Instruct | `bartowski/granite-3.1-8b-instruct-GGUF` | 32 768 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
@@ -76,7 +76,7 @@ Sweet spot for laptops with a discrete GPU or 16 GB-class systems.
 | `Phi4Preset` | Microsoft Phi 4 Mini Instruct | `unsloth/Phi-4-mini-instruct-GGUF` | 16 384 | [MIT](https://opensource.org/license/mit) |
 | `MiniCPM3_4BPreset` | OpenBMB MiniCPM3 4B | `openbmb/MiniCPM3-4B-GGUF` | 32 768 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Gemma3nE4BPreset` | Google Gemma 3n E4B-it (per-layer-embedding variant) | `unsloth/gemma-3n-E4B-it-GGUF` | 32 768 | [Gemma Terms of Use](https://ai.google.dev/gemma/terms) |
-| `Llama32Preset` | Meta Llama 3.2 3B Instruct | `bartowski/Llama-3.2-3B-Instruct-GGUF` | 131 072 | [Community license](https://developer.meta.com/ai/llama3_2/license/) |
+| `Llm32Preset` | Meta Llama 3.2 3B Instruct | `bartowski/Llama-3.2-3B-Instruct-GGUF` | 131 072 | [Community license](https://developer.meta.com/ai/llama3_2/license/) |
 | `Qwen25_3BPreset` | Qwen 2.5 3B Instruct | `Qwen/Qwen2.5-3B-Instruct-GGUF` | 32 768 | Qwen Research License: **non-commercial use only** |
 | `Glm4_7FlashPreset` | Zhipu GLM-4.7 Flash | `unsloth/GLM-4.7-Flash-GGUF` | 32 768 | [MIT](https://opensource.org/license/mit) |
 
@@ -89,8 +89,8 @@ CPU-only deployments, tutorials, smoke tests, and constrained-memory hosts.
 | `SmolLM2_1_7BPreset` | HuggingFaceTB SmolLM2 1.7B Instruct | `HuggingFaceTB/SmolLM2-1.7B-Instruct-GGUF` | 8 192 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Lfm2_1_2BPreset` | Liquid LFM2 1.2B (hybrid SSM + attention) | `LiquidAI/LFM2-1.2B-GGUF` | 32 768 | [LFM Open License](https://www.liquid.ai/lfm-license): **no commercial grant above USD 10M annual revenue** |
 | `Lfm2_5_1_2BPreset` | Liquid LFM 2.5 1.2B Thinking | `unsloth/LFM2.5-1.2B-Thinking-GGUF` | 32 768 | [LFM Open License](https://www.liquid.ai/lfm-license): **no commercial grant above USD 10M annual revenue** |
-| `Llama32_1BPreset` | Meta Llama 3.2 1B Instruct (edge sibling of `Llama32Preset`) | `bartowski/Llama-3.2-1B-Instruct-GGUF` | 16 384 | [Community license](https://developer.meta.com/ai/llama3_2/license/) |
-| `TinyLlamaPreset` | TinyLlama 1.1B Chat v1.0 (smoke-test baseline) | `TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF` | 2 048 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
+| `Llm32_1BPreset` | Meta Llama 3.2 1B Instruct (edge sibling of `Llm32Preset`) | `bartowski/Llama-3.2-1B-Instruct-GGUF` | 16 384 | [Community license](https://developer.meta.com/ai/llama3_2/license/) |
+| `TinyLlmPreset` | TinyLlama 1.1B Chat v1.0 (smoke-test baseline) | `TheBloke/TinyLlama-1.1B-Chat-v1.0-GGUF` | 2 048 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `SmallModelPreset` | Qwen 2 0.5B Instruct (CPU-first; ~400 MB on disk) | `QuantFactory/Qwen2-0.5B-Instruct-GGUF` | 4 096 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
 `SmallModelPreset` defaults to `GpuLayers = 0`, `OffloadKqv = false`, `FlashAttention = false` so it runs on any laptop without a GPU. Switch to `GpuLayers = -1` to offload everything to GPU when one is available.
@@ -107,7 +107,7 @@ Larger models for hosts with 32 GB+ system RAM or substantial VRAM. Run with par
 | `DevstralSmall2_24BPreset` | Mistral Devstral Small 2 24B Instruct (coding-tuned) | `unsloth/Devstral-Small-2-24B-Instruct-2512-GGUF` | 4 096 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `Ernie4_5_21BPreset` | Baidu ERNIE 4.5 21B-A3B Thinking (reasoning MoE) | `bartowski/baidu_ERNIE-4.5-21B-A3B-Thinking-GGUF` | 4 096 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 | `SeedOss36BPreset` | ByteDance Seed-OSS 36B Instruct | `unsloth/Seed-OSS-36B-Instruct-GGUF` | 4 096 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
-| `Llama3_3_70BPreset` | Meta Llama 3.3 70B Instruct | `unsloth/Llama-3.3-70B-Instruct-GGUF` | 4 096 | [Community license](https://developer.meta.com/ai/llama3_3/license/) |
+| `Llm3_3_70BPreset` | Meta Llama 3.3 70B Instruct | `unsloth/Llama-3.3-70B-Instruct-GGUF` | 4 096 | [Community license](https://developer.meta.com/ai/llama3_3/license/) |
 | `GptOss120BPreset` | gpt-oss 120B: **documentation-only**, hard-capped at 50 GB on disk | `unsloth/gpt-oss-120b-GGUF` | 8 192 | [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0) |
 
 `GptOss120BPreset` is wired into the SDK so the configuration is documented, but the integration sweep auto-skips it: at ~65 GB on disk it exceeds the 50 GB hard cap. Use it only if you have the disk space and RAM headroom and accept the slow first-run download.
@@ -176,7 +176,7 @@ Only the hardware-facing parameters differ:
 | `BaseModelInferenceParameters.UseExtraBuffers` | preset-specific | `false` |
 | `BaseModelInferenceParameters.UseMemoryLocking` | preset-specific | `false` |
 
-The caps are one-way: they only ever lower a value. A parent already below a cap keeps its own setting, which is why `TinyLlamaPresetCpu` stays at 2 048 rather than being raised to 4 096.
+The caps are one-way: they only ever lower a value. A parent already below a cap keeps its own setting, which is why `TinyLlmPresetCpu` stays at 2 048 rather than being raised to 4 096.
 
 Reach for the twin instead of setting `GpuLayers = 0` by hand: it is the canonical CPU configuration and disables the GPU-side code paths (`FlashAttention`, KV-cache offload, extra buffers, memory locking) that would otherwise be requested and silently ignored or fail on a CPU-only host.
 
@@ -195,7 +195,7 @@ Grouped by the parent's tier. "Parent context" is the GPU default; "CPU context"
 | CPU preset | Parent | Parent context | CPU context |
 |---|---|---|---|
 | `Qwen3_5_9BPresetCpu` | `Qwen3_5_9BPreset` | 32 768 | 4 096 |
-| `Llama31_8BPresetCpu` | `Llama31_8BPreset` | 32 768 | 4 096 |
+| `Llm31_8BPresetCpu` | `Llm31_8BPreset` | 32 768 | 4 096 |
 | `Mistral7PresetCpu` | `Mistral7Preset` | 32 768 | 4 096 |
 | `Hermes3_8BPresetCpu` | `Hermes3_8BPreset` | 32 768 | 4 096 |
 | `Granite3_8BPresetCpu` | `Granite3_8BPreset` | 32 768 | 4 096 |
@@ -221,8 +221,8 @@ Grouped by the parent's tier. "Parent context" is the GPU default; "CPU context"
 | `SmolLM2_1_7BPresetCpu` | `SmolLM2_1_7BPreset` | 8 192 | 4 096 |
 | `Lfm2_1_2BPresetCpu` | `Lfm2_1_2BPreset` | 32 768 | 4 096 |
 | `Lfm2_5_1_2BPresetCpu` | `Lfm2_5_1_2BPreset` | 32 768 | 4 096 |
-| `Llama32_1BPresetCpu` | `Llama32_1BPreset` | 16 384 | 4 096 |
-| `TinyLlamaPresetCpu` | `TinyLlamaPreset` | 2 048 | 2 048 (unchanged) |
+| `Llm32_1BPresetCpu` | `Llm32_1BPreset` | 16 384 | 4 096 |
+| `TinyLlmPresetCpu` | `TinyLlmPreset` | 2 048 | 2 048 (unchanged) |
 
 #### Frontier (10B+)
 
@@ -261,9 +261,9 @@ Not every preset has a `Cpu` sibling. Do not guess at a name: `Qwen25PresetCpu`,
 |---|---|
 | `SmallModelPreset` | Already CPU-first: ships `GpuLayers = 0`, `OffloadKqv = false`, `FlashAttention = false` by default. |
 | `UnifiedDefaultLlmParameters` | Conservative CPU-safe baseline template, not a model preset. |
-| `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llama32Preset`, `Phi4Preset` | No twin shipped in 26.6.0. Apply the overrides by hand: see [CPU-only deployment](/llm/net/use-cases/cpu-only-deployment/). |
+| `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llm32Preset`, `Phi4Preset` | No twin shipped in 26.6.0. Apply the overrides by hand: see [CPU-only deployment](/llm/net/use-cases/cpu-only-deployment/). |
 | `DeepSeekCoder2Preset`, `DeepseekR1Qwen3Preset`, `Oss20Preset` | Long-context (131 K-163 K) models whose value depends on the context the 4 K cap would remove. |
-| `DevstralSmall2_24BPreset`, `Ernie4_5_21BPreset`, `SeedOss36BPreset`, `Llama3_3_70BPreset`, `GptOss120BPreset` | Already ship a 4 K-8 K default context; set `GpuLayers = 0` directly for CPU-only runs. |
+| `DevstralSmall2_24BPreset`, `Ernie4_5_21BPreset`, `SeedOss36BPreset`, `Llm3_3_70BPreset`, `GptOss120BPreset` | Already ship a 4 K-8 K default context; set `GpuLayers = 0` directly for CPU-only runs. |
 | All vision presets | The multimodal projector path is not part of the CPU-defaults contract. |
 
 To get twin-equivalent behavior on any preset without one, apply the same overrides yourself:
@@ -287,7 +287,7 @@ using var api = AsposeLLMApi.Create(preset);
 The 4 K cap is applied once, in the constructor. Assigning a larger value afterwards is honored: nothing re-clamps it:
 
 ```csharp
-var preset = new Llama31_8BPresetCpu();
+var preset = new Llm31_8BPresetCpu();
 preset.ContextParameters.ContextSize = 16384;   // opt back in, if RAM allows
 
 using var api = AsposeLLMApi.Create(preset);
@@ -318,21 +318,21 @@ Supported image formats across all vision presets: JPEG, PNG, BMP, GIF, WebP. Ma
 
 | If you want… | Try |
 |---|---|
-| A balanced general-purpose model | `Qwen25Preset`, `Qwen3Preset`, `Llama31_8BPreset`, or `Mistral7Preset` |
-| A small, fast model | `Llama32Preset` (3B) or `Phi4Preset` (mini) |
-| The smallest possible footprint | `SmallModelPreset` (0.5B CPU-first), `TinyLlamaPreset` (1.1B), or `Llama32_1BPreset` (1B) |
-| A long-context model | `Llama32Preset` (131K) or `DeepSeekCoder2Preset` (163K) |
+| A balanced general-purpose model | `Qwen25Preset`, `Qwen3Preset`, `Llm31_8BPreset`, or `Mistral7Preset` |
+| A small, fast model | `Llm32Preset` (3B) or `Phi4Preset` (mini) |
+| The smallest possible footprint | `SmallModelPreset` (0.5B CPU-first), `TinyLlmPreset` (1.1B), or `Llm32_1BPreset` (1B) |
+| A long-context model | `Llm32Preset` (131K) or `DeepSeekCoder2Preset` (163K) |
 | A coding-focused model | `DeepSeekCoder2Preset`, `Qwen25Coder7BPreset`, `Qwen3Coder30BPreset`, or `DevstralSmall2_24BPreset` |
 | A reasoning-tuned model | `DeepseekR1Qwen3Preset`, `Ernie4_5_21BPreset`, or `SeedOss36BPreset` |
 | Strong multilingual coverage | `Qwen3Preset` or `MistralSmall3Preset` |
 | An enterprise-tuned model | `Granite3_8BPreset` (IBM Granite 3.1) |
 | A fully-open research model | `Olmo2_7BPreset` (AllenAI OLMo 2) |
-| The largest model that fits a workstation | `Llama3_3_70BPreset`, `SeedOss36BPreset`, or `MistralSmall3Preset` |
+| The largest model that fits a workstation | `Llm3_3_70BPreset`, `SeedOss36BPreset`, or `MistralSmall3Preset` |
 | Image input | `Qwen3VL2BPreset` (small, very long context) or `Glm4_6VFlashPreset` |
 | A Mistral family vision model | `Ministral3VisionPreset` |
 | A multimodal reasoning model | `NemotronOmniPreset` (30B MoE, vision + reasoning) |
-| To run without a GPU | The [`*PresetCpu` twin](#cpu-tuned-variants-presetcpu) of any preset above: e.g. `Mistral7PresetCpu`, `Phi35MiniPresetCpu`, `TinyLlamaPresetCpu` |
-| The lightest CPU-only option | `SmallModelPreset` (0.5B, CPU-first by default) or `TinyLlamaPresetCpu` (1.1B, 2 K context) |
+| To run without a GPU | The [`*PresetCpu` twin](#cpu-tuned-variants-presetcpu) of any preset above: e.g. `Mistral7PresetCpu`, `Phi35MiniPresetCpu`, `TinyLlmPresetCpu` |
+| The lightest CPU-only option | `SmallModelPreset` (0.5B, CPU-first by default) or `TinyLlmPresetCpu` (1.1B, 2 K context) |
 
 ## Before you ship
 
