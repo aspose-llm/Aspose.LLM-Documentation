@@ -131,6 +131,10 @@ Any IDE or editor with .NET support works:
 **Check the license of the model you selected.** Aspose.LLM supplies the runtime, not the model. Whichever model you load, its terms come from the party that published it and they apply to your product. They are not part of, and are not covered by, your license agreement with Aspose Pty Ltd. Some open source models allow commercial use with no strings attached, others attach conditions such as attribution or an acceptable use policy, and a few exclude commercial use or withdraw it above a revenue threshold. [Supported LLMs](/llm/net/product-overview/supported-llms/) lists the license of every family the SDK ships a preset for.
 {{% /alert %}}
 
+## GPU acceleration on Linux with NVIDIA CUDA
+
+Starting with the b10988 runtime line, CUDA acceleration on Linux works out of the box: the official llama.cpp releases carry no Linux CUDA binaries, so Aspose.LLM resolves them from the [aspose-llm/native-runtimes](https://github.com/aspose-llm/native-runtimes) releases, which are built from the same llama.cpp tag and bundle the required NVIDIA runtime libraries. The only prerequisite on the machine is an NVIDIA driver of the 12.x line; no CUDA toolkit installation is needed. Expect a one-time runtime download of roughly 600-800 MB for the CUDA builds (other backends stay in the usual 100-500 MB range). The same source provides self-contained Windows CUDA archives, removing the separate CUDA runtime installation there as well.
+
 ## What's next
 
 - [Installation](/llm/net/installation/): add the NuGet package to your project.
