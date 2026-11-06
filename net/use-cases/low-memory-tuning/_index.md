@@ -39,12 +39,12 @@ Start with the smallest preset that meets your quality bar:
 | Preset | Model size | Memory footprint (Q4 + default context) |
 |---|---|---|
 | `SmallModelPreset` | 0.5B (Qwen 2) | ~0.6-1 GB |
-| `TinyLlamaPreset` | 1.1B | ~1-2 GB |
-| `Llama32_1BPreset` | 1B | ~1-2 GB |
+| `TinyLlmPreset` | 1.1B | ~1-2 GB |
+| `Llm32_1BPreset` | 1B | ~1-2 GB |
 | `Lfm2_1_2BPreset` | 1.2B (hybrid SSM) | ~1-2 GB |
 | `SmolLM2_1_7BPreset` | 1.7B | ~2-3 GB |
 | `Qwen25_3BPreset` | 3B | ~3-5 GB |
-| `Llama32Preset` | 3B | ~6-8 GB |
+| `Llm32Preset` | 3B | ~6-8 GB |
 | `Phi4Preset` | Mini | ~4-6 GB |
 | `Qwen25VL3BPreset` | 3B VL | ~4-6 GB + projector |
 | `Qwen3VL2BPreset` | 2B VL | ~3-5 GB + projector |
@@ -56,7 +56,7 @@ For a turn-key low-memory configuration, use the `*PresetCpu` twin of any of the
 Built-in presets often declare very long contexts. Shorten to what you actually need:
 
 ```csharp
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 preset.ContextParameters.ContextSize = 4096; // default is 131072
 ```
 
@@ -120,7 +120,7 @@ using Aspose.LLM.Abstractions.Parameters.Presets;
 var license = new Aspose.LLM.License();
 license.SetLicense("Aspose.LLM.lic");
 
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 
 // CPU-only to avoid GPU memory.
 preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.AVX2;

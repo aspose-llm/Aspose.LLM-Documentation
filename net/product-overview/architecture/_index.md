@@ -30,7 +30,7 @@ Read this page before tuning performance, planning an offline deployment, or int
 |---|---|
 | `AsposeLLMApi` | Public facade. Creates the engine, enforces a single-instance guard, and exposes chat and session operations. |
 | `Engine` | Orchestrates model loading, chat session lifecycle, cache cleanup, and session persistence. |
-| `ModelManager` | Resolves the model file (local path, Aspose model ID, or Hugging Face repo), downloads it if needed, and loads it into native memory. |
+| `ModelManager` | Resolves a local model file or configured Hugging Face source and loads it into native memory. `AsposeModelId` is reserved and ignored. |
 | `BinaryManager` | Downloads and caches the matching `llama.cpp` native binaries from GitHub releases on first use. |
 | `ChatSession` | One session per conversation. Holds the KV cache slice, chat history, and current KV position. |
 | `Aspose.LLM.Interop` | P/Invoke layer with 225+ bindings to `llama.cpp` and `mtmd`. Hidden from consumers: only `Aspose.LLM.dll` ships in the NuGet package. |
@@ -68,8 +68,7 @@ If the preset specifies a model source, the engine constructor calls `LoadModelA
 
 1. `ModelManager` resolves the model file in this priority order:
    - `BaseModelSourceParameters.ModelFilePath`: explicit local path.
-   - `BaseModelSourceParameters.AsposeModelId`: internal Aspose model registry.
-   - `BaseModelSourceParameters.HuggingFaceRepoId` + `HuggingFaceFileName`: download from Hugging Face Hub.
+   - `BaseModelSourceParameters.HuggingFaceRepoId` + `HuggingFaceFileName`: configured Hugging Face source when no local path is set.
 2. The model file is loaded into native memory via `llama_model_load_from_file`.
 3. If the preset is a vision preset, the `mmproj` projector is loaded next via `mtmd_init_from_file_ptr`.
 

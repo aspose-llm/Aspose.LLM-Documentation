@@ -138,7 +138,7 @@ public class MyCustomPreset : PresetCoreBase
 }
 ```
 
-Use the model-file priority order: if `ModelFilePath` is set, it wins over `AsposeModelId`, which wins over `HuggingFaceRepoId` + `HuggingFaceFileName`.
+`ModelFilePath` takes precedence over `HuggingFaceRepoId` and `HuggingFaceFileName`. `AsposeModelId` is reserved and ignored by the built-in provider.
 
 ### Vision preset from scratch
 

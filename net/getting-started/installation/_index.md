@@ -1,11 +1,11 @@
 ---
 weight: 20
-date: "2026-04-23"
+date: "2026-11-05"
 author: "Alex Golshtein"
 type: docs
 url: /net/installation/
 feedback: LLMNET
-version: 26.5.0
+version: 26.11.0
 title: Installation
 description: Install the Aspose.LLM NuGet package, understand the package payload, and prepare for the first-run native binary download.
 keywords:
@@ -39,7 +39,7 @@ dotnet add package Aspose.LLM
 To pin a specific version:
 
 ```bash
-dotnet add package Aspose.LLM --version 26.5.0
+dotnet add package Aspose.LLM --version 26.11.0
 ```
 
 ### Visual Studio
@@ -61,8 +61,10 @@ The NuGet package contains a single managed assembly: **`Aspose.LLM.dll`**. The 
 
 Direct NuGet dependencies:
 
-- `System.Text.Json` 8.0.0: session serialization.
+- `System.Text.Json` 9.0.0: model source handling and session serialization.
 - `Microsoft.Extensions.Logging.Abstractions` 2.1.1: optional `ILogger` integration.
+- `Microsoft.Extensions.DependencyInjection.Abstractions` 2.1.1: service registration.
+- `Microsoft.Extensions.Hosting.Abstractions` 2.1.1: host integration.
 
 Additional internal package references are merged into the main assembly and do not show up as separate references in your project.
 
@@ -73,8 +75,8 @@ Additional internal package references are merged into the main assembly and do 
 The first time you call `AsposeLLMApi.Create(preset)` in a fresh environment, the SDK downloads the native `llama.cpp` binaries that match your platform and acceleration backend. This is a one-time operation:
 
 - Size: 100-500 MB, depending on the acceleration backend (CUDA downloads are larger than CPU).
-- Source: `github.com/ggml-org/llama.cpp/releases/tag/<ReleaseTag>` (default tag: `b8816`).
-- Location: a per-user cache folder; override via `BinaryManagerParameters.BinaryPath` on the preset.
+- Source: GitHub release assets for the configured `ReleaseTag` (default: `b10988`). The configured supplementary runtime repository can supply backends absent from the primary release.
+- Location: a per-user cache folder; override via `BinaryManagerParameters.BinaryPath` on the preset or `ASPOSE_LLM_RUNTIME_CACHE_DIR` when the preset keeps its default path.
 
 Subsequent runs use the local cache.
 
@@ -97,15 +99,26 @@ _ = typeof(Qwen25Preset);
 
 For a runnable first example, continue to [Hello, world!](/llm/net/hello-world/).
 
+To verify the same package in a new .NET 10 project:
+
+```bash
+dotnet new console -f net10.0 -n AsposeLlmQuickStart
+cd AsposeLlmQuickStart
+dotnet add package Aspose.LLM --version 26.11.0
+dotnet build
+```
+
+The `net10.0` project consumes the package's `netstandard2.0` assembly; no separate .NET 10 package is required. Use `-f net8.0` to create a .NET 8 project with the same package.
+
 ## Updating
 
 Update to a newer version via the same tooling:
 
 ```bash
-dotnet add package Aspose.LLM --version 26.6.0
+dotnet add package Aspose.LLM --version 26.11.0
 ```
 
-Between minor versions, the API is generally stable. Between major versions, review the release notes for any breaking changes, especially to the session persistence format.
+Review the release notes when upgrading: 26.11.0 renames some public API identifiers, so source code using their previous names must be updated.
 
 ## What's next
 

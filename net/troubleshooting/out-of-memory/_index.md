@@ -80,7 +80,7 @@ If quick wins do not help, step down to a smaller model:
 
 | From | To | Savings |
 |---|---|---|
-| `Qwen25Preset` (7B) | `Llama32Preset` (3B) | ~3-4 GB |
+| `Qwen25Preset` (7B) | `Llm32Preset` (3B) | ~3-4 GB |
 | `Oss20Preset` (20B) | `Qwen25Preset` (7B) | ~6-8 GB |
 | Any F16/Q8 preset | Q4_K_M equivalent | 50 % |
 

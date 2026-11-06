@@ -7,7 +7,7 @@ url: /net/developer-reference/parameters/model-source/hugging-face-repo-id/
 feedback: LLMNET
 version: 26.5.0
 title: HuggingFaceRepoId
-description: Third-priority model source in Aspose.LLM for .NET, Hugging Face repository identifier; paired with HuggingFaceFileName.
+description: Hugging Face model repository identifier used when no local model path is set.
 keywords:
 - HuggingFaceRepoId
 - Hugging Face
@@ -15,7 +15,7 @@ keywords:
 - priority
 ---
 
-`HuggingFaceRepoId` identifies a Hugging Face repository to download the model from. Used when neither [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) nor [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/) is set.
+`HuggingFaceRepoId` identifies a Hugging Face model repository. It is used when [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) is unset. [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/) is reserved and ignored.
 
 ## Quick reference
 
@@ -23,7 +23,7 @@ keywords:
 |---|---|
 | **Type** | `string?` |
 | **Default** | `null` (set by built-in presets) |
-| **Priority** | 3 (lowest) |
+| **Priority** | 2, after `ModelFilePath` |
 | **Category** | Model source |
 | **Field on** | `ModelSourceParameters.HuggingFaceRepoId` |
 
@@ -53,7 +53,7 @@ preset.BaseModelSourceParameters.HuggingFaceFileName = "Qwen2.5-7B-Instruct-Q4_K
 ## Interactions
 
 - [`HuggingFaceFileName`](/llm/net/developer-reference/parameters/model-source/hugging-face-file-name/): the specific file within the repo.
-- [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/), [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/): higher-priority sources; override this.
+- [`ModelFilePath`](/llm/net/developer-reference/parameters/model-source/model-file-path/) takes priority. [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/) does not affect source selection.
 
 ## What's next
 

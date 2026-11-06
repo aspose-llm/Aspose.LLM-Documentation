@@ -49,17 +49,17 @@ Every preset follows the same pattern: swap the class name to change the model.
 
 | Goal | Preset | Notes |
 |---|---|---|
-| Balanced general assistant | `Qwen25Preset`, `Qwen3Preset`, `Llama31_8BPreset`, or `Mistral7Preset` | 7-8B, good at most tasks. |
-| Smallest footprint | `Llama32Preset` (3B) or `Phi4Preset` (mini) | Run on modest hardware. |
-| Smallest possible (CPU-only) | `SmallModelPreset` (0.5B), `TinyLlamaPreset` (1.1B), or `Llama32_1BPreset` (1B) | Tutorials, smoke tests, edge boxes. |
-| Very long context | `Llama32Preset` (131K) or `DeepSeekCoder2Preset` (163K) | For long documents. |
+| Balanced general assistant | `Qwen25Preset`, `Qwen3Preset`, `Llm31_8BPreset`, or `Mistral7Preset` | 7-8B, good at most tasks. |
+| Smallest footprint | `Llm32Preset` (3B) or `Phi4Preset` (mini) | Run on modest hardware. |
+| Smallest possible (CPU-only) | `SmallModelPreset` (0.5B), `TinyLlmPreset` (1.1B), or `Llm32_1BPreset` (1B) | Tutorials, smoke tests, edge boxes. |
+| Very long context | `Llm32Preset` (131K) or `DeepSeekCoder2Preset` (163K) | For long documents. |
 | Coding | `DeepSeekCoder2Preset`, `Qwen25Coder7BPreset`, `Qwen3Coder30BPreset`, or `DevstralSmall2_24BPreset` | Specialized training on code. |
 | Multilingual coverage | `Qwen3Preset` or `MistralSmall3Preset` | Trained on broad language mixes. |
 | Enterprise-tuned | `Granite3_8BPreset` | IBM Granite 3.1, safety-aligned. |
 | Fully-open research | `Olmo2_7BPreset` | AllenAI OLMo 2, fully open training and data. |
-| Frontier on a workstation | `Llama3_3_70BPreset`, `SeedOss36BPreset`, or `MistralSmall3Preset` | 24-70B, needs 32 GB+ RAM and partial GPU offload. |
+| Frontier on a workstation | `Llm3_3_70BPreset`, `SeedOss36BPreset`, or `MistralSmall3Preset` | 24-70B, needs 32 GB+ RAM and partial GPU offload. |
 | Step-by-step reasoning | `DeepseekR1Qwen3Preset`, `Ernie4_5_21BPreset`, or `SeedOss36BPreset` | Chain-of-thought style output. Budget 1024-2048 MaxTokens. |
-| No GPU available | The `*PresetCpu` twin of any preset: `Mistral7PresetCpu`, `Llama31_8BPresetCpu`, `Phi35MiniPresetCpu`, … | 27 twins ship. `GpuLayers = 0`, context capped at 4 K. See [CPU-tuned variants](/llm/net/product-overview/supported-presets/#cpu-tuned-variants-presetcpu). |
+| No GPU available | The `*PresetCpu` twin of any preset: `Mistral7PresetCpu`, `Llm31_8BPresetCpu`, `Phi35MiniPresetCpu`, … | 27 twins ship. `GpuLayers = 0`, context capped at 4 K. See [CPU-tuned variants](/llm/net/product-overview/supported-presets/#cpu-tuned-variants-presetcpu). |
 | No built-in preset: use your own GGUF | Extend `PresetCoreBase` | See [Creating from scratch](/llm/net/developer-reference/presets/creating-from-scratch/). |
 
 ### Vision

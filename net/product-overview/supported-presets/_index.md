@@ -29,7 +29,7 @@ keywords:
 - GGUF
 ---
 
-Aspose.LLM for .NET ships ready-to-use presets for several popular open-weight model families. Each preset specifies the model source (Hugging Face repository and file name), context size, chat template, and sampler defaults. Pass a preset to `AsposeLLMApi.Create(preset)` and the engine downloads the model and any vision projector on first use.
+Aspose.LLM for .NET ships ready-to-use presets for several popular open-weight model families. Each preset specifies a model source, context size, chat template, and sampler defaults. Obtain model and projector files separately after reviewing their licenses, and set their local paths before creating the API. In version 26.11.0, a configured remote source may otherwise be fetched without a separate opt-in; that control is not yet implemented.
 
 {{% alert color="warning" %}}
 **No built-in LLM is included in Aspose.LLM, so you choose and install your favorite LLM on your own.** A preset is configuration, not a model: a ready-made set of values for one open source model, namely context size, sampling parameters, chat template, and which model file to load. No model weights ship inside the package.

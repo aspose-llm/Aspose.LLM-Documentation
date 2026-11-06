@@ -50,7 +50,7 @@ The following types form the everyday public surface. The external reference has
 | Type | Purpose |
 |---|---|
 | `PresetCoreBase` | Base class holding all nine parameter bags. Extend it for custom presets. |
-| `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llama32Preset`, `Phi4Preset`, `Oss20Preset`, `DeepSeekCoder2Preset`, `DeepseekR1Qwen3Preset`, `UnifiedDefaultLlmParameters` | Built-in text presets. |
+| `Qwen25Preset`, `Qwen3Preset`, `Gemma3Preset`, `Llm32Preset`, `Phi4Preset`, `Oss20Preset`, `DeepSeekCoder2Preset`, `DeepseekR1Qwen3Preset`, `UnifiedDefaultLlmParameters` | Built-in text presets. |
 | `Qwen25VL3BPreset`, `Qwen3VL2BPreset`, `Gemma3VisionPreset`, `Ministral3VisionPreset` | Built-in vision presets (set both base model and `mmproj`). |
 
 ### Aspose.LLM.Abstractions.Models
@@ -75,8 +75,8 @@ The following types form the everyday public surface. The external reference has
 
 | Type | Purpose |
 |---|---|
-| `ILlamaModel` | Loaded text model contract. |
-| `IMultimodalModel` | Vision-capable extension of `ILlamaModel`. |
+| `ILlmModel` | Loaded text model contract. |
+| `IMultimodalModel` | Vision-capable extension of `ILlmModel`. |
 | `IChatSession` | Session contract: history, media, KV tracking, response generation. |
 | `IModelLoader`, `IModelFileProvider`, `IPromptFormatter` | Extensibility interfaces for custom implementations via DI. |
 

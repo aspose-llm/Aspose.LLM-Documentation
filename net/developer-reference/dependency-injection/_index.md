@@ -7,10 +7,10 @@ url: /net/developer-reference/dependency-injection/
 feedback: LLMNET
 version: 26.5.0
 title: Dependency injection
-description: Register Aspose.LLM for .NET services in a Microsoft.Extensions.DependencyInjection container via AddLlamaServices. Alternative entry point for ASP.NET Core and Worker Service applications.
+description: Register Aspose.LLM for .NET services in a Microsoft.Extensions.DependencyInjection container via AddLlmServices. Alternative entry point for ASP.NET Core and Worker Service applications.
 keywords:
 - dependency injection
-- AddLlamaServices
+- AddLlmServices
 - IServiceCollection
 - ASP.NET Core
 - Worker Service
@@ -32,7 +32,7 @@ namespace Aspose.LLM.Core.DependencyInjection;
 
 public static class Configuration
 {
-    public static IServiceCollection AddLlamaServices(
+    public static IServiceCollection AddLlmServices(
         this IServiceCollection services,
         PresetCoreBase preset,
         Action<PresetCoreBase>? configure = null);
@@ -47,7 +47,7 @@ Arguments:
 
 ## What gets registered
 
-`AddLlamaServices` registers these services as **singletons**:
+`AddLlmServices` registers these services as **singletons**:
 
 | Service | Purpose |
 |---|---|
@@ -85,7 +85,7 @@ var license = new Aspose.LLM.License();
 license.SetLicense("Aspose.LLM.lic");
 
 // Register LLM services.
-builder.Services.AddLlamaServices(new Qwen25Preset());
+builder.Services.AddLlmServices(new Qwen25Preset());
 
 var app = builder.Build();
 
@@ -106,7 +106,7 @@ Resolve `Engine`, or any registered service: via constructor injection or `app.S
 Pass a `configure` callback to adjust the preset before it is stored:
 
 ```csharp
-builder.Services.AddLlamaServices(new Qwen25Preset(), preset =>
+builder.Services.AddLlmServices(new Qwen25Preset(), preset =>
 {
     preset.ContextParameters.ContextSize = 16384;
     preset.SamplerParameters.Temperature = 0.3f;
@@ -132,7 +132,7 @@ await Host.CreateDefaultBuilder(args)
         var license = new Aspose.LLM.License();
         license.SetLicense("Aspose.LLM.lic");
 
-        services.AddLlamaServices(new Qwen25Preset());
+        services.AddLlmServices(new Qwen25Preset());
         services.AddHostedService<ChatWorker>();
     })
     .Build()
@@ -169,7 +169,7 @@ public class ChatWorker : BackgroundService
 
 ## Constraints that still apply
 
-- **Single instance per process.** The underlying `Engine` shares the single-instance guard with `AsposeLLMApi`. Registering `AddLlamaServices` in a web host and also creating an `AsposeLLMApi` on the side throws. Pick one entry point.
+- **Single instance per process.** The underlying `Engine` shares the single-instance guard with `AsposeLLMApi`. Registering `AddLlmServices` in a web host and also creating an `AsposeLLMApi` on the side throws. Pick one entry point.
 - **License is still required** before chat methods. Apply the license before any request handler calls `Engine` methods.
 - **Model loads on first resolve**: the first request hitting `Engine` can take minutes on a cold machine. Consider eager resolution at startup:
 
@@ -182,5 +182,5 @@ public class ChatWorker : BackgroundService
 ## What's next
 
 - [AsposeLLMApi facade](/llm/net/developer-reference/asposellmapi/): the simpler non-DI entry point.
-- [Engine parameters](/llm/net/developer-reference/parameters/engine/): logging and threading defaults applied via `AddLlamaServices`.
+- [Engine parameters](/llm/net/developer-reference/parameters/engine/): logging and threading defaults applied via `AddLlmServices`.
 - [Licensing](/llm/net/licensing/): license application in host startup.

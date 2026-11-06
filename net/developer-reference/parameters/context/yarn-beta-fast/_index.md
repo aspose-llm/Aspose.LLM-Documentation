@@ -47,7 +47,7 @@ Rarely touched. The model's metadata carries sensible values.
 
 ```csharp
 // Default: do not override.
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 ```
 

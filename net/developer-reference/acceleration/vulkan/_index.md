@@ -69,7 +69,7 @@ Use Vulkan when portability trumps raw speed.
 Vulkan supports multi-GPU setups via `SplitMode` and `TensorSplit` like CUDA, but driver support for multi-device Vulkan is less mature. Test on your specific hardware before committing: single-GPU Vulkan is well-trodden; multi-GPU Vulkan is hit-or-miss.
 
 ```csharp
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 // Optional TensorSplit for unequal GPU sizes.
 ```

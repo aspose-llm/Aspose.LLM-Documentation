@@ -46,7 +46,7 @@ Rarely touched in production.
 ## Example
 
 ```csharp
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 // preset.ContextParameters.YarnAttnFactor = null; // default: from model
 ```

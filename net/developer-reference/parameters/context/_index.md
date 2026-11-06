@@ -103,7 +103,7 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 
 Length of the context window in tokens: the maximum number of tokens the model sees at once. Set to `null` (or `0`) to use the model's maximum from its GGUF metadata.
 
-Built-in presets pre-set this: `Qwen25Preset` uses 32 768, `Llama32Preset` uses 131 072, `Oss20Preset` uses 131 072. See [Supported presets](/llm/net/product-overview/supported-presets/) for each default.
+Built-in presets pre-set this: `Qwen25Preset` uses 32 768, `Llm32Preset` uses 131 072, `Oss20Preset` uses 131 072. See [Supported presets](/llm/net/product-overview/supported-presets/) for each default.
 
 Trade-off: larger context allows longer conversations and documents, but the KV cache size scales with `ContextSize × model-depth`. Going from 32K to 131K quadruples KV memory.
 

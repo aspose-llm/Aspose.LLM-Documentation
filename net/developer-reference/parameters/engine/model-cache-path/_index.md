@@ -16,7 +16,7 @@ keywords:
 - disk
 ---
 
-`ModelCachePath` is the folder where the engine stores downloaded model files. First-run downloads from Hugging Face (or the Aspose catalog) land here; subsequent runs load from this cache.
+`ModelCachePath` is the folder where the engine stores model files retrieved from the configured source; subsequent runs can use this cache. Aspose.LLM does not host a model catalog.
 
 ## Quick reference
 

@@ -29,7 +29,7 @@ Check the license of the model a preset resolves to before using it commercially
 |---|---|
 | General chat, mid-complexity tasks | `Qwen25Preset` (7B) |
 | Latest general-purpose model | `Qwen3Preset` (8B) |
-| Small footprint, fast, long context | `Llama32Preset` (3B, 131K) |
+| Small footprint, fast, long context | `Llm32Preset` (3B, 131K) |
 | Smallest possible model | `Phi4Preset` (mini) |
 | Coding tasks | `DeepSeekCoder2Preset` |
 | Step-by-step reasoning | `DeepseekR1Qwen3Preset` |
@@ -54,7 +54,7 @@ Check the license of the model a preset resolves to before using it commercially
    - No → continue.
 
 4. **How much memory do you have?**
-   - 4-8 GB → `Llama32Preset` or `Phi4Preset`.
+   - 4-8 GB → `Llm32Preset` or `Phi4Preset`.
    - 12-16 GB → `Qwen25Preset` or `Qwen3Preset`.
    - 24+ GB → any preset; `Oss20Preset` for best quality.
 

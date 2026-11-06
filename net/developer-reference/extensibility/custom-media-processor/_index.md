@@ -173,7 +173,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Aspose.LLM.Core.Services;
 using Aspose.LLM.Core.DependencyInjection;
 
-services.AddLlamaServices(new Qwen3VL2BPreset());
+services.AddLlmServices(new Qwen3VL2BPreset());
 services.AddSingleton<IMediaProcessor, StricterMediaProcessor>();
 ```
 
