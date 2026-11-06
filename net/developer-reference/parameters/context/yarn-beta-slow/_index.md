@@ -47,7 +47,7 @@ Typical YaRN recipe values: `YarnBetaFast = 32`, `YarnBetaSlow = 1`.
 ## Example
 
 ```csharp
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 // preset.ContextParameters.YarnBetaSlow = null; // default
 ```

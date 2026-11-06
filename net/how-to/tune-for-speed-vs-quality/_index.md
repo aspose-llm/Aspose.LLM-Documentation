@@ -24,7 +24,7 @@ Several knobs move a preset along the speed-quality curve. This how-to summarize
 When throughput matters most: bulk processing, real-time chat, short answers.
 
 ```csharp
-var preset = new Llama32Preset(); // 3B model
+var preset = new Llm32Preset(); // 3B model
 preset.ContextParameters.ContextSize = 4096;
 preset.ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled;
 preset.ContextParameters.TypeV = GgmlType.Q8_0;
@@ -79,7 +79,7 @@ Expected throughput: 30-60 tokens/sec on a mid-range GPU.
 
 | Knob | Faster | Better quality |
 |---|---|---|
-| Model size | Smaller (`Phi4Preset`, `Llama32Preset`) | Larger (`Oss20Preset`, `Qwen3Preset`) |
+| Model size | Smaller (`Phi4Preset`, `Llm32Preset`) | Larger (`Oss20Preset`, `Qwen3Preset`) |
 | Quantization | Q4_K_M, Q4_0 | Q8_0, F16 |
 | `ContextSize` | Shorter | Longer |
 | `FlashAttentionMode` | `Enabled` | `Enabled` (both) |

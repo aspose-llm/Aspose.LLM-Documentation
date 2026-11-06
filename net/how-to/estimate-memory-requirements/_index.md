@@ -55,7 +55,7 @@ Depends on model architecture (number of layers, heads, head dimension), context
 
 | Preset | KV at default context (F16) | KV at default context (Q8_0 V) |
 |---|---|---|
-| `Llama32Preset` (131K) | ~8 GB | ~5 GB |
+| `Llm32Preset` (131K) | ~8 GB | ~5 GB |
 | `Qwen25Preset` (32K) | ~2 GB | ~1.3 GB |
 | `Qwen3Preset` (32K) | ~2 GB | ~1.3 GB |
 | `DeepseekR1Qwen3Preset` (131K) | ~6 GB | ~4 GB |

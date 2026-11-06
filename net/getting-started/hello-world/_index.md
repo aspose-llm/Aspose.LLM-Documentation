@@ -1,11 +1,11 @@
 ---
 weight: 50
-date: "2026-04-23"
+date: "2026-11-05"
 author: "Alex Golshtein"
 type: docs
 url: /net/hello-world/
 feedback: LLMNET
-version: 26.5.0
+version: 26.11.0
 title: Hello, world!
 description: Minimal end-to-end example with Aspose.LLM for .NET, create the API from a preset, send a message, and print the response.
 keywords:
@@ -23,10 +23,11 @@ This page walks through the smallest possible Aspose.LLM for .NET program. It ap
 - [Install](/llm/net/installation/) the Aspose.LLM NuGet package.
 - Obtain a [license](/llm/net/licensing/) (a free [temporary license](https://purchase.aspose.com/temporary-license) works for evaluation).
 - Enough RAM for the chosen model. `Qwen25Preset` needs roughly 8-12 GB: see [System requirements](/llm/net/system-requirements/).
-- Internet access on first run (see the warning below).
+- Obtain the model file from its publisher's chosen source after reviewing its license. Set `ASPOSE_LLM_MODEL_FILE` to its local path.
+- Internet access for native runtime binaries if they are not already cached.
 
 {{% alert color="primary" %}}
-The first `AsposeLLMApi.Create(preset)` call downloads native `llama.cpp` binaries (100-500 MB) from GitHub and the model file (~4 GB for `Qwen25Preset` Q4_K_M) from Hugging Face. Expect several minutes on first run; subsequent runs use local caches.
+The example uses a model file you have obtained separately. Native `llama.cpp` binaries may be downloaded from GitHub on first use and cached locally. Version 26.11.0 can also fetch a configured remote model when no local path is supplied; the opt-in download control is not yet implemented. Set the local path as shown before creating the API.
 {{% /alert %}}
 
 ## Code
@@ -50,6 +51,10 @@ Create an instance from a built-in preset. `Qwen25Preset` is a good general-purp
 using Aspose.LLM.Abstractions.Parameters.Presets;
 
 var preset = new Qwen25Preset();
+var modelPath = Environment.GetEnvironmentVariable("ASPOSE_LLM_MODEL_FILE");
+if (string.IsNullOrWhiteSpace(modelPath) || !File.Exists(modelPath))
+    throw new InvalidOperationException("Provide a local Qwen 2.5 7B Instruct GGUF via ASPOSE_LLM_MODEL_FILE. Preset source: https://huggingface.co/bartowski/Qwen2.5-7B-Instruct-GGUF; model license: https://www.apache.org/licenses/LICENSE-2.0");
+preset.BaseModelSourceParameters.ModelFilePath = modelPath;
 using var api = AsposeLLMApi.Create(preset);
 ```
 
@@ -75,6 +80,10 @@ var license = new Aspose.LLM.License();
 license.SetLicense("Aspose.LLM.lic");
 
 var preset = new Qwen25Preset();
+var modelPath = Environment.GetEnvironmentVariable("ASPOSE_LLM_MODEL_FILE");
+if (string.IsNullOrWhiteSpace(modelPath) || !File.Exists(modelPath))
+    throw new InvalidOperationException("Provide a local Qwen 2.5 7B Instruct GGUF via ASPOSE_LLM_MODEL_FILE. Preset source: https://huggingface.co/bartowski/Qwen2.5-7B-Instruct-GGUF; model license: https://www.apache.org/licenses/LICENSE-2.0");
+preset.BaseModelSourceParameters.ModelFilePath = modelPath;
 using var api = AsposeLLMApi.Create(preset);
 
 string response = await api.SendMessageAsync("Say hello in one short sentence.");
@@ -90,7 +99,7 @@ dotnet run
 ## Troubleshooting
 
 - **`Not licensed for this method`**: the license has not been applied. Call `SetLicense` before `AsposeLLMApi.Create`. See [Licensing](/llm/net/licensing/).
-- **First `Create` hangs for a long time**: it is downloading binaries and the model. On a slow network, budget 5-15 minutes. Monitor progress via `ILogger` (pass one to `AsposeLLMApi.Create(preset, logger)`).
+- **First `Create` takes a long time**: the native runtime may need downloading, and model loading can take time. Check the local model path and monitor progress via `ILogger` (pass one to `AsposeLLMApi.Create(preset, logger)`).
 - **`Only one AsposeLLMApi instance can be created at a time`**: a previous instance has not been disposed yet. Keep one instance for the process lifetime, or dispose the old one first.
 
 ## What's next

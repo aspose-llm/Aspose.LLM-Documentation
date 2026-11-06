@@ -1,11 +1,11 @@
 ---
 weight: 10
-date: "2026-04-23"
+date: "2026-11-05"
 author: "Alex Golshtein"
 type: docs
 url: /net/system-requirements/
 feedback: LLMNET
-version: 26.5.0
+version: 26.11.0
 title: System requirements
 description: Supported .NET runtimes, operating systems, CPU and GPU requirements, and disk/RAM sizing for Aspose.LLM for .NET.
 keywords:
@@ -42,6 +42,8 @@ Aspose.LLM targets **.NET Standard 2.0**. It runs on any .NET runtime that suppo
 - **.NET Framework 4.7.2** and later
 
 New projects should use **.NET 8 LTS** or **.NET 10**. All examples in this documentation assume `dotnet` CLI tooling and modern .NET runtime features.
+
+The same `netstandard2.0` Aspose.LLM package works in both `net8.0` and `net10.0` projects. Install the matching .NET SDK for the project you build; targeting `net10.0` requires a .NET 10 SDK.
 
 .NET Framework 4.7.2 is the minimum Framework version the SDK is validated against. Earlier Framework versions may work because the SDK builds against .NET Standard 2.0, but they are not tested and not supported.
 
@@ -82,7 +84,7 @@ RAM requirements scale with model size, quantization, and context size. The tabl
 
 | Preset example | Model size | Default context | RAM (CPU) / VRAM (GPU) |
 |---|---|---:|---|
-| `Llama32Preset` | 3B Q4_K_M | 131 072 | 6-8 GB |
+| `Llm32Preset` | 3B Q4_K_M | 131 072 | 6-8 GB |
 | `Phi4Preset` | Mini Q4_K_M | 16 384 | 4-6 GB |
 | `Qwen25Preset` | 7B Q4_K_M | 32 768 | 8-12 GB |
 | `Qwen3Preset` | 8B Q4_K_M | 32 768 | 8-12 GB |

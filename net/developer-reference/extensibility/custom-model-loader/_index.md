@@ -15,7 +15,7 @@ keywords:
 - model loading
 ---
 
-`IModelLoader` is the contract the engine uses to turn `ModelSourceParameters` into an `ILlamaModel`. Substituting this interface gives you full control over the model-loading pipeline: file resolution, native `llama.cpp` model creation, inference parameter application, and any diagnostics you want to inject around it.
+`IModelLoader` is the contract the engine uses to turn `ModelSourceParameters` into an `ILlmModel`. Substituting this interface gives you full control over the model-loading pipeline: file resolution, native `llama.cpp` model creation, inference parameter application, and any diagnostics you want to inject around it.
 
 This is the broadest extensibility point. Prefer [`IModelFileProvider`](/llm/net/developer-reference/extensibility/custom-file-provider/) if you only need to change **where** the model file comes from; `IModelLoader` is for changing **how** it is loaded.
 
@@ -26,7 +26,7 @@ namespace Aspose.LLM.Abstractions.Interfaces;
 
 public interface IModelLoader
 {
-    Task<ILlamaModel> LoadModelAsync(
+    Task<ILlmModel> LoadModelAsync(
         ModelSourceParameters modelParameters,
         ModelInferenceParameters inferenceParameters,
         IProgress<double>? progress = null,
@@ -38,7 +38,7 @@ The method:
 
 - Takes `ModelSourceParameters` (where to find the model) and `ModelInferenceParameters` (how to load it: `GpuLayers`, `SplitMode`, etc.).
 - Reports progress via `IProgress<double>` (0.0 to 1.0) during long operations.
-- Returns an `ILlamaModel`: the loaded model ready for inference.
+- Returns an `ILlmModel`: the loaded model ready for inference.
 - Throws `ArgumentNullException` on null `modelParameters`.
 - Throws `InvalidOperationException` when the model cannot be loaded.
 
@@ -50,7 +50,7 @@ using Aspose.LLM.Abstractions.Parameters;
 
 public class MyModelLoader : IModelLoader
 {
-    public async Task<ILlamaModel> LoadModelAsync(
+    public async Task<ILlmModel> LoadModelAsync(
         ModelSourceParameters modelParameters,
         ModelInferenceParameters inferenceParameters,
         IProgress<double>? progress = null,
@@ -69,7 +69,7 @@ public class MyModelLoader : IModelLoader
 
         // 3. Delegate to the SDK's native loading path, or call llama.cpp yourself.
         progress?.Report(0.9);
-        ILlamaModel model = await LoadIntoNativeMemoryAsync(
+        ILlmModel model = await LoadIntoNativeMemoryAsync(
             modelFilePath,
             inferenceParameters,
             cancellationToken);
@@ -105,7 +105,7 @@ public class LoggingModelLoader : IModelLoader
         _logger = logger;
     }
 
-    public async Task<ILlamaModel> LoadModelAsync(
+    public async Task<ILlmModel> LoadModelAsync(
         ModelSourceParameters modelParameters,
         ModelInferenceParameters inferenceParameters,
         IProgress<double>? progress = null,
@@ -133,10 +133,10 @@ public class LoggingModelLoader : IModelLoader
 
 ## Registration
 
-Register your implementation after `AddLlamaServices`:
+Register your implementation after `AddLlmServices`:
 
 ```csharp
-services.AddLlamaServices(new Qwen25Preset());
+services.AddLlmServices(new Qwen25Preset());
 services.AddSingleton<IModelLoader, MyModelLoader>();
 ```
 
@@ -146,4 +146,4 @@ If you want to decorate the default loader, keep the default registration and wr
 
 - [Custom file provider](/llm/net/developer-reference/extensibility/custom-file-provider/): narrower surface, often what you actually need.
 - [Extensibility overview](/llm/net/developer-reference/extensibility/): when to use which interface.
-- [Dependency injection](/llm/net/developer-reference/dependency-injection/): how `AddLlamaServices` wires services.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): how `AddLlmServices` wires services.

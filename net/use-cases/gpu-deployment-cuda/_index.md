@@ -92,7 +92,7 @@ using Aspose.LLM.Abstractions.Parameters;
 var preset = new Oss20Preset(); // 20B: typically needs 16-24 GB
 
 preset.BinaryManagerParameters.PreferredAcceleration = AccelerationType.CUDA;
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 
 // For equal-VRAM GPUs, leave TensorSplit null (equal split).
@@ -106,16 +106,16 @@ Split modes:
 
 | Mode | Good for |
 |---|---|
-| `LLAMA_SPLIT_MODE_NONE` | Single GPU; all on `MainGpu`. |
-| `LLAMA_SPLIT_MODE_LAYER` | General multi-GPU. Splits layers across devices. |
-| `LLAMA_SPLIT_MODE_ROW` | Multi-GPU with high-bandwidth interconnect (NVLink). Best throughput with tensor parallelism. |
+| `LLM_SPLIT_MODE_NONE` | Single GPU; all on `MainGpu`. |
+| `LLM_SPLIT_MODE_LAYER` | General multi-GPU. Splits layers across devices. |
+| `LLM_SPLIT_MODE_ROW` | Multi-GPU with high-bandwidth interconnect (NVLink). Best throughput with tensor parallelism. |
 
 ## Unequal VRAM
 
 If the cards differ (e.g., 24 GB RTX 4090 + 12 GB RTX 3080), bias the split toward the larger:
 
 ```csharp
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
 // 2:1 proportion: values normalized.
 ```
@@ -125,7 +125,7 @@ preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
 `MainGpu` picks the device when split mode is `None`. On hosts with multiple GPUs where you only want one for inference:
 
 ```csharp
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_NONE;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_NONE;
 preset.BaseModelInferenceParameters.MainGpu = 1; // index 1
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 ```
@@ -180,7 +180,7 @@ internal class CudaDemo
 
         // Full GPU offload.
         preset.BaseModelInferenceParameters.GpuLayers = 999;
-        preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_NONE;
+        preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_NONE;
 
         // Save VRAM on long sessions.
         preset.ContextParameters.FlashAttentionMode = FlashAttentionType.Enabled;

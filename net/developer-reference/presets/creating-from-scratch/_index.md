@@ -133,11 +133,12 @@ See [Chat templates](/llm/net/developer-reference/multimodal/chat-templates/) fo
 
 ## Source priority
 
-`ModelSourceParameters` has three fields priority-ordered:
+The built-in model provider selects sources in this order:
 
 1. `ModelFilePath`: local path, highest priority.
-2. `AsposeModelId`: Aspose catalog, second.
-3. `HuggingFaceRepoId` + `HuggingFaceFileName`: third.
+2. `HuggingFaceRepoId` + `HuggingFaceFileName`: configured remote source when no local path is set.
+
+`AsposeModelId` is reserved and ignored. Obtain the model separately after reviewing its license and configure a local path before creating the API. In version 26.11.0, the remote source may otherwise be fetched without a separate opt-in.
 
 For a local GGUF:
 

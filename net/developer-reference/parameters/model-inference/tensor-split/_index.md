@@ -53,7 +53,7 @@ The array length should match the number of GPUs visible to the process (after a
 using Aspose.LLM.Abstractions.Parameters;
 
 var preset = new Qwen25Preset();
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
 // 2/3 of layers on GPU 0 (larger VRAM), 1/3 on GPU 1.

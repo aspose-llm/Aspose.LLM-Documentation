@@ -58,7 +58,7 @@ Most built-in presets leave this as `Unspecified`: the model's metadata declares
 ```csharp
 using Aspose.LLM.Abstractions.Models;
 
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 preset.ContextParameters.ContextSize = 131072;
 preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 preset.ContextParameters.YarnOrigCtx = 8192;  // the model's original training context

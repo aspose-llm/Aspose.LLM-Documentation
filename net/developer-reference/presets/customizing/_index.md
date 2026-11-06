@@ -80,12 +80,12 @@ Subclasses inherit the base preset's model source and chat template: you change 
 
 ### Built-in subclass: the `*PresetCpu` twin
 
-27 of the text presets ship with a ready-made subclass for CPU-only inference: `Llama31_8BPresetCpu`, `Mistral7PresetCpu`, `Hermes3_8BPresetCpu`, and so on. The twin inherits the GPU parent and applies CPU-friendly defaults: zero GPU offload, context capped at 4 K, batch and ubatch shrunk, `FlashAttention` and KV-cache offload disabled. Reach for the twin instead of toggling `GpuLayers = 0` by hand when you want the canonical CPU configuration.
+27 of the text presets ship with a ready-made subclass for CPU-only inference: `Llm31_8BPresetCpu`, `Mistral7PresetCpu`, `Hermes3_8BPresetCpu`, and so on. The twin inherits the GPU parent and applies CPU-friendly defaults: zero GPU offload, context capped at 4 K, batch and ubatch shrunk, `FlashAttention` and KV-cache offload disabled. Reach for the twin instead of toggling `GpuLayers = 0` by hand when you want the canonical CPU configuration.
 
 Not every preset has one: check [CPU-tuned variants](/llm/net/product-overview/supported-presets/#cpu-tuned-variants-presetcpu) for the full list and for the presets that have no twin.
 
 ```csharp
-using var api = AsposeLLMApi.Create(new Llama31_8BPresetCpu());
+using var api = AsposeLLMApi.Create(new Llm31_8BPresetCpu());
 ```
 
 The twin is a vanilla `public sealed class`: it follows exactly the subclass pattern shown above, just authored once in the SDK so every consumer gets the same CPU settings. See [CPU-only deployment](/llm/net/use-cases/cpu-only-deployment/) for the full pattern.

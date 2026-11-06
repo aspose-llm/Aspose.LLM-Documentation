@@ -34,7 +34,7 @@ public class ModelInferenceParameters
     public bool? UseMemoryMapping { get; set; }
     public bool? UseMemoryLocking { get; set; }
     public int? MainGpu { get; set; }
-    public LlamaSplitMode? SplitMode { get; set; }
+    public LlmSplitMode? SplitMode { get; set; }
     public bool? VocabOnly { get; set; }
     public bool? CheckTensors { get; set; }
     public bool? UseExtraBuffers { get; set; }
@@ -59,7 +59,7 @@ Each field has a dedicated page with full defaults, scenario tables, code exampl
 | `UseMemoryMapping` | `bool?` | native default (`true`) | Map the GGUF file instead of reading it in. Reduces startup time and memory copying. |
 | `UseMemoryLocking` | `bool?` | native default (`false`) | Lock model memory to prevent OS paging. Needs `mlock` / `VirtualLock` privileges. |
 | `MainGpu` | `int?` | `0` | Index of the GPU used when `SplitMode` is `None`. |
-| `SplitMode` | `LlamaSplitMode?` | native default | How to split the model across multiple GPUs. |
+| `SplitMode` | `LlmSplitMode?` | native default | How to split the model across multiple GPUs. |
 | `VocabOnly` | `bool?` | native default (`false`) | Load only the vocabulary without weights. Used for tokenizer-only scenarios. |
 | `CheckTensors` | `bool?` | native default (`false`) | Validate tensor data on load. Adds startup time; helpful for diagnosing corrupted GGUF files. |
 | `UseExtraBuffers` | `bool?` | native default | Use extra buffer types for weight repacking. Advanced. |
@@ -102,19 +102,19 @@ On multi-GPU hosts, `SplitMode` decides how to place the model and `MainGpu` sel
 
 | `SplitMode` | Behavior |
 |---|---|
-| `LLAMA_SPLIT_MODE_NONE` | Single GPU. Whole model on device `MainGpu`. |
-| `LLAMA_SPLIT_MODE_LAYER` | Split layers across GPUs. KV cache follows layers. |
-| `LLAMA_SPLIT_MODE_ROW` | Split layers and rows across GPUs. Uses tensor parallelism where supported. |
+| `LLM_SPLIT_MODE_NONE` | Single GPU. Whole model on device `MainGpu`. |
+| `LLM_SPLIT_MODE_LAYER` | Split layers across GPUs. KV cache follows layers. |
+| `LLM_SPLIT_MODE_ROW` | Split layers and rows across GPUs. Uses tensor parallelism where supported. |
 
 ```csharp
 using Aspose.LLM.Abstractions.Parameters;
 
 // Single GPU, use device 1:
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_NONE;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_NONE;
 preset.BaseModelInferenceParameters.MainGpu = 1;
 
 // Split across all GPUs, layer mode:
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.TensorSplit = null; // equal distribution
 ```
 
@@ -128,7 +128,7 @@ Proportion of the model placed on each GPU. The array length should match the nu
 Useful when GPUs have different memory sizes (for example, a 24 GB card paired with a 12 GB card):
 
 ```csharp
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
 ```
 
@@ -213,7 +213,7 @@ Benchmark to find the right split for your hardware: "offload until VRAM is ~1-2
 A 24 GB GPU paired with a 12 GB GPU:
 
 ```csharp
-preset.BaseModelInferenceParameters.SplitMode = LlamaSplitMode.LLAMA_SPLIT_MODE_LAYER;
+preset.BaseModelInferenceParameters.SplitMode = LlmSplitMode.LLM_SPLIT_MODE_LAYER;
 preset.BaseModelInferenceParameters.TensorSplit = new float[] { 2.0f, 1.0f };
 preset.BaseModelInferenceParameters.GpuLayers = 999;
 ```

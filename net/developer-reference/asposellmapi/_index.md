@@ -278,4 +278,4 @@ Calling methods after `Dispose` throws `ObjectDisposedException`.
 - [Session persistence](/llm/net/developer-reference/session-persistence/): save / load details.
 - [Cache management](/llm/net/developer-reference/cache-management/): trimming strategies.
 - [Presets](/llm/net/developer-reference/presets/): the preset passed at construction.
-- [Dependency injection](/llm/net/developer-reference/dependency-injection/): the alternative `AddLlamaServices` path.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): the alternative `AddLlmServices` path.

@@ -23,13 +23,13 @@ keywords:
 |---|---|
 | **Type** | `string?` |
 | **Default** | `null` |
-| **Priority** | 1 (highest; wins over `AsposeModelId` and Hugging Face fields) |
+| **Priority** | 1 (takes precedence over the Hugging Face source) |
 | **Category** | Model source |
 | **Field on** | `ModelSourceParameters.ModelFilePath` |
 
 ## What it does
 
-- `null` or empty: skip this priority level; fall through to [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/), then Hugging Face fields.
+- `null` or empty: the configured Hugging Face source may be used. `AsposeModelId` is reserved and ignored.
 - A path: load the GGUF from that file. No download.
 
 The file must be accessible and readable by the process.
@@ -38,7 +38,7 @@ The file must be accessible and readable by the process.
 
 | Scenario | Value |
 |---|---|
-| Default (use Hugging Face or Aspose catalog) | `null` |
+| Use the configured Hugging Face source | `null` |
 | Air-gapped deployment with pre-downloaded model | Absolute path |
 | Custom local GGUF | Path to the file |
 | Testing a model before mirroring to Hugging Face | Local path |
@@ -56,7 +56,7 @@ using var api = AsposeLLMApi.Create(preset);
 
 ## Interactions
 
-- [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/): priority 2; ignored when `ModelFilePath` is set.
+- [`AsposeModelId`](/llm/net/developer-reference/parameters/model-source/aspose-model-id/): reserved and ignored.
 - [`HuggingFaceRepoId`](/llm/net/developer-reference/parameters/model-source/hugging-face-repo-id/) + [`HuggingFaceFileName`](/llm/net/developer-reference/parameters/model-source/hugging-face-file-name/): priority 3; ignored when `ModelFilePath` is set.
 - [`EngineParameters.ModelCachePath`](/llm/net/developer-reference/parameters/engine/model-cache-path/): cache is not used when loading from an explicit `ModelFilePath`.
 

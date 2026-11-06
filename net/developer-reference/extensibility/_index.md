@@ -44,7 +44,7 @@ All four are public types. `IModelLoader`, `IModelFileProvider`, and `IPromptFor
 
 ## How substitution works
 
-The SDK's default implementations (`LocalFilesystemProvider`, `HuggingFaceProvider`, built-in formatters, `MediaManager`) are wired into `Engine` in `Configuration.AddLlamaServices`. The facade path (`AsposeLLMApi.Create`) instantiates `Engine` the same way.
+The SDK's default implementations (`LocalFilesystemProvider`, `HuggingFaceProvider`, built-in formatters, `MediaManager`) are wired into `Engine` in `Configuration.AddLlmServices`. The facade path (`AsposeLLMApi.Create`) instantiates `Engine` the same way.
 
 Neither entry point provides an easy "replace this one implementation" option out of the box. To substitute an interface, you take the DI path and configure the container yourself:
 
@@ -54,7 +54,7 @@ using Aspose.LLM.Abstractions.Interfaces;
 using Aspose.LLM.Core.DependencyInjection;
 
 var services = new ServiceCollection();
-services.AddLlamaServices(new Qwen25Preset());
+services.AddLlmServices(new Qwen25Preset());
 
 // Substitute the default file provider with your implementation:
 services.AddSingleton<IModelFileProvider, MyS3ModelFileProvider>();
@@ -76,4 +76,4 @@ Extensibility is an advanced path. Custom implementations replace well-tested pr
 - [Custom file provider](/llm/net/developer-reference/extensibility/custom-file-provider/): `IModelFileProvider`.
 - [Custom prompt formatter](/llm/net/developer-reference/extensibility/custom-prompt-formatter/): `IPromptFormatter`.
 - [Custom media processor](/llm/net/developer-reference/extensibility/custom-media-processor/): `IMediaProcessor`.
-- [Dependency injection](/llm/net/developer-reference/dependency-injection/): the standard `AddLlamaServices` path.
+- [Dependency injection](/llm/net/developer-reference/dependency-injection/): the standard `AddLlmServices` path.

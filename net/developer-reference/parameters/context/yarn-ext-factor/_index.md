@@ -46,7 +46,7 @@ YaRN combines position interpolation and extrapolation. `YarnExtFactor` controls
 ## Example
 
 ```csharp
-var preset = new Llama32Preset();
+var preset = new Llm32Preset();
 preset.ContextParameters.RopeScalingType = RopeScalingType.Yarn;
 // preset.ContextParameters.YarnExtFactor = null; // default: use model's value
 ```

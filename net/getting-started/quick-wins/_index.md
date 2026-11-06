@@ -111,7 +111,7 @@ The saved file contains the message history and the KV cache positions. The form
 The quickest way is to pick a `*PresetCpu` twin: they ship CPU-friendly defaults out of the box (`GpuLayers = 0`, context capped at 4 K, batches shrunk, FlashAttention and KV offload disabled). 27 presets have one; see [CPU-tuned variants](/llm/net/product-overview/supported-presets/#cpu-tuned-variants-presetcpu) for the list.
 
 ```csharp
-var preset = new Llama31_8BPresetCpu();   // or Mistral7PresetCpu, Qwen25_3BPresetCpu, etc.
+var preset = new Llm31_8BPresetCpu();   // or Mistral7PresetCpu, Qwen25_3BPresetCpu, etc.
 using var api = AsposeLLMApi.Create(preset);
 
 string reply = await api.SendMessageAsync("Summarize CPU inference in one sentence.");
