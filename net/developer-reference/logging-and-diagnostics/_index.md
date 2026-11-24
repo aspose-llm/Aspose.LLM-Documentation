@@ -5,7 +5,7 @@ author: "Alex Golshtein"
 type: docs
 url: /net/developer-reference/logging-and-diagnostics/
 feedback: LLMNET
-version: 26.5.0
+version: 26.11.1
 title: Logging and diagnostics
 description: Integrate ILogger with Aspose.LLM for .NET, enable native debug logs, and interpret tagged log output for multimodal, context, and KV cache diagnostics.
 keywords:
@@ -21,7 +21,7 @@ Aspose.LLM for .NET routes diagnostic output through standard `ILogger` abstract
 
 ## Connect an ILogger
 
-Pass an `ILogger` to `AsposeLLMApi.Create`:
+Pass an `ILogger` to `AsposeLLMApi.Create`. The console example uses the `Microsoft.Extensions.Logging.Console` NuGet package.
 
 ```csharp
 using Microsoft.Extensions.Logging;
@@ -33,7 +33,7 @@ var logger = loggerFactory.CreateLogger<Program>();
 using var api = AsposeLLMApi.Create(new Qwen25Preset(), logger);
 ```
 
-Logs from the engine, model manager, binary manager, and chat sessions flow into this logger. Without a logger, the engine produces no managed-side log output.
+Logs from the engine, model manager, binary manager, and chat sessions flow into this logger. In version 26.11.1, creating the API without an `ILogger` also suppresses native backend messages on standard output and standard error, including during multimodal inference.
 
 When you use the [DI path](/llm/net/developer-reference/dependency-injection/) (`AddLlmServices`), logging is configured automatically: a console provider plus a file provider pointed at `EngineParameters.LogDirectoryPath`.
 
@@ -44,18 +44,13 @@ Set `EngineParameters.EnableDebugLogging` before creating the API:
 ```csharp
 var preset = new Qwen25Preset();
 preset.EngineParameters.EnableDebugLogging = true;
-preset.EngineParameters.LogDirectoryPath = "logs/debug.log";
 
 using var api = AsposeLLMApi.Create(preset, logger);
 ```
 
-When true:
+With the facade, set `EnableDebugLogging` to forward native diagnostics to the supplied logger. Set the logger's minimum level to `Debug` to see verbose messages. Configure a file provider on your logger if you want to write those messages to disk.
 
-- The native `llama.cpp` layer emits verbose diagnostic lines via `NativeLoggerAdapter`.
-- The logger minimum level for the engine becomes `Debug`.
-- Native logs are written to both the `ILogger` and the file at `LogDirectoryPath`.
-
-Debug logging adds measurable overhead: disable in production.
+Enable debug logging while diagnosing an issue.
 
 ## Log-line tags
 
@@ -104,7 +99,7 @@ See [Debugging vision](/llm/net/developer-reference/multimodal/debugging-vision/
 | Diagnosing a specific issue | `Debug` | `true` |
 | Full firehose during model porting / migration | `Debug` | `true` |
 
-In the DI path, `EnableDebugLogging` sets the engine's effective level automatically. In the facade path, you control the level via the `ILogger` you pass in: `EnableDebugLogging` still controls the native-side verbosity independently.
+In the DI path, `EnableDebugLogging` sets the engine's effective level automatically. In the facade path, the supplied `ILogger` controls message filtering and destinations.
 
 ## Sample: log to console and file
 
@@ -126,7 +121,7 @@ preset.EngineParameters.EnableDebugLogging = true;
 using var api = AsposeLLMApi.Create(preset, logger);
 ```
 
-The SDK itself does not bundle a file sink: add the provider of your choice (Serilog, NLog, built-in `AddFile` extensions) from your application.
+The sample uses an application-provided file logger. Install a provider that supplies `AddFile` or configure the file sink of your choice.
 
 ## What's next
 
