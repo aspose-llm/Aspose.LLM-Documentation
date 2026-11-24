@@ -5,7 +5,7 @@ author: "Alex Golshtein"
 type: docs
 url: /net/installation/
 feedback: LLMNET
-version: 26.11.0
+version: 26.11.1
 title: Installation
 description: Install the Aspose.LLM NuGet package, understand the package payload, and prepare for the first-run native binary download.
 keywords:
@@ -19,7 +19,7 @@ keywords:
 - .NET 10
 ---
 
-Install Aspose.LLM for .NET from NuGet and add it to your project. A single package contains the full SDK, no additional references are needed.
+Install Aspose.LLM for .NET from NuGet to add the SDK and resolve its managed dependencies.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ dotnet add package Aspose.LLM
 To pin a specific version:
 
 ```bash
-dotnet add package Aspose.LLM --version 26.11.0
+dotnet add package Aspose.LLM --version 26.11.1
 ```
 
 ### Visual Studio
@@ -59,7 +59,7 @@ Install-Package Aspose.LLM
 
 The NuGet package contains a single managed assembly: **`Aspose.LLM.dll`**. The internal assemblies (`Aspose.LLM.Abstractions`, `Aspose.LLM.Core`, `Aspose.LLM.Interop`) are merged into it with ILRepack, so your project references only one DLL.
 
-Direct NuGet dependencies:
+NuGet resolves these direct dependencies during restore:
 
 - `System.Text.Json` 9.0.0: model source handling and session serialization.
 - `Microsoft.Extensions.Logging.Abstractions` 2.1.1: optional `ILogger` integration.
@@ -69,6 +69,10 @@ Direct NuGet dependencies:
 Additional internal package references are merged into the main assembly and do not show up as separate references in your project.
 
 **Native `llama.cpp` binaries are not bundled.** They are downloaded from GitHub on first use.
+
+### Use the DLL from the MSI installer or ZIP archive
+
+Reference `Aspose.LLM.dll` in your project and add the managed dependencies from the matching NuGet package metadata as separate package references. The MSI and ZIP include the Aspose.LLM assembly. NuGet supplies the Microsoft and System dependencies.
 
 ## First-run native binary download
 
@@ -81,7 +85,7 @@ The first time you call `AsposeLLMApi.Create(preset)` in a fresh environment, th
 Subsequent runs use the local cache.
 
 {{% alert color="primary" %}}
-If your build server or production machine runs behind a strict firewall or proxy, pre-download the binaries on a machine with internet access and point `BinaryManagerParameters.BinaryPath` at the pre-populated cache folder. The same applies to Hugging Face model downloads (`EngineParameters.ModelCachePath`).
+If your build server or production machine runs behind a strict firewall or proxy, pre-download the native binaries on a machine with internet access and point `BinaryManagerParameters.BinaryPath` at the pre-populated cache folder. For model files, follow the instructions for [using a local GGUF model](/llm/net/use-cases/bring-your-own-gguf/).
 {{% /alert %}}
 
 ## Verify the install
@@ -104,21 +108,23 @@ To verify the same package in a new .NET 10 project:
 ```bash
 dotnet new console -f net10.0 -n AsposeLlmQuickStart
 cd AsposeLlmQuickStart
-dotnet add package Aspose.LLM --version 26.11.0
+dotnet add package Aspose.LLM --version 26.11.1
 dotnet build
 ```
 
 The `net10.0` project consumes the package's `netstandard2.0` assembly; no separate .NET 10 package is required. Use `-f net8.0` to create a .NET 8 project with the same package.
+
+.NET Framework 4.7.2 projects use the same package. Version 26.11.1 removes the `NETStandard.Library` framework assembly reference that could trigger `MSB3245` on .NET Framework.
 
 ## Updating
 
 Update to a newer version via the same tooling:
 
 ```bash
-dotnet add package Aspose.LLM --version 26.11.0
+dotnet add package Aspose.LLM --version 26.11.1
 ```
 
-Review the release notes when upgrading: 26.11.0 renames some public API identifiers, so source code using their previous names must be updated.
+See the [26.11.1 release notes](https://releases.aspose.com/llm/net/release-notes/2026/aspose-llm-for-net-26-11-1-release-notes/). If you are upgrading from a version earlier than 26.11.0, update any public API identifiers that were renamed in 26.11.0.
 
 ## What's next
 
